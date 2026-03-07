@@ -28,6 +28,27 @@ a{text-decoration:none;color:inherit}
 .cat-tab:hover { background: #f8fafc; color: #0f172a; border-color: #cbd5e1; }
 .cat-tab.active { background: #0f172a; color: #ffffff; border-color: #0f172a; }
 
+/* 🚀 1. 퀵 가이드 특수 탭 스타일 */
+.special-tab { background: linear-gradient(135deg, #ef4444, #f97316); color: white !important; border: none; font-weight: 800; padding: 8px 22px; }
+.special-tab:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3); }
+.special-tab.active { background: #0f172a; color: #ffffff !important; box-shadow: none; transform: none; }
+
+/* 🚀 2. Live Search Dropdown 스타일 */
+.live-search-dropdown { position: absolute; top: calc(100% + 10px); left: 0; width: 340px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); z-index: 1000; overflow: hidden; display: none; max-height: 400px; overflow-y: auto; }
+.live-search-item { display: flex; gap: 12px; padding: 12px 16px; border-bottom: 1px solid #f1f5f9; cursor: pointer; transition: 0.2s; align-items: center; }
+.live-search-item:last-child { border-bottom: none; }
+.live-search-item:hover { background: #f8fafc; }
+.ls-thumb { width: 48px; height: 48px; border-radius: 8px; object-fit: cover; background: #f1f5f9; flex-shrink: 0; border: 1px solid #e2e8f0;}
+.ls-info { flex: 1; min-width: 0; }
+.ls-title { font-size: 13.5px; font-weight: 700; color: #1e293b; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 2px; }
+.ls-cat { font-size: 11px; color: var(--primary); font-weight: 700; }
+@media (max-width: 768px) { .live-search-dropdown { width: 100%; top: calc(100% + 5px); } }
+
+/* 🚀 3. Tag Cloud 스타일 */
+.tag-cloud-wrap { padding: 20px 24px; display: flex; flex-wrap: wrap; gap: 8px; }
+.tag-cloud-item { background: #f1f5f9; color: #475569; border: 1px solid #e2e8f0; border-radius: 8px; padding: 6px 12px; font-size: 13px; font-weight: 600; cursor: pointer; transition: 0.2s; }
+.tag-cloud-item:hover { background: var(--primary-light); color: var(--primary); border-color: var(--primary); transform: translateY(-2px); box-shadow: 0 4px 10px rgba(59, 130, 246, 0.15); }
+
 /* 메인 레이아웃 */
 .feed-layout { max-width: var(--max-width); margin: 40px auto; padding: 0 24px; display: grid; grid-template-columns: 1fr 340px; gap: 40px; align-items: start; }
 
@@ -56,7 +77,7 @@ a{text-decoration:none;color:inherit}
 /* 사이드바 */
 .feed-sidebar { display: flex; flex-direction: column; gap: 30px; position: sticky; top: calc(var(--header-h) + 24px); }
 
-/* 🚀[추가] 에디터 신뢰도 위젯 (Trust Badge) */
+/* 에디터 신뢰도 위젯 (Trust Badge) */
 .trust-widget { background: linear-gradient(145deg, #0f172a, #1e293b); border-radius: 20px; padding: 30px 24px; color: #ffffff; position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.15); }
 .trust-widget::after { content: ''; position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: #3b82f6; border-radius: 50%; filter: blur(60px); opacity: 0.3; pointer-events: none; }
 .trust-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; position: relative; z-index: 1; }
@@ -66,7 +87,7 @@ a{text-decoration:none;color:inherit}
 .trust-desc { font-size: 13.5px; line-height: 1.6; color: #cbd5e1; margin: 0; position: relative; z-index: 1; word-break: keep-all; }
 .trust-desc strong { color: #3b82f6; }
 
-/* 🚀 [추가] 트렌딩 리뷰 위젯 (Trending Posts) */
+/* 트렌딩 리뷰 위젯 (Trending Posts) */
 .trending-widget { background: #ffffff; border: 1px solid #f1f5f9; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.02); overflow: hidden; }
 .trending-header { font-size: 14px; font-weight: 800; color: #0f172a; padding: 20px 24px 16px; letter-spacing: 0.05em; text-transform: uppercase; border-bottom: 1px solid #f1f5f9; display: flex; align-items: center; gap: 8px; }
 .trending-list { display: flex; flex-direction: column; padding: 12px 24px 24px; counter-reset: trend-counter; gap: 16px; }
@@ -153,19 +174,7 @@ a{text-decoration:none;color:inherit}
 
 <div class="filter-bar">
     <div class="filter-inner">
-        <div class="tab-scroll">
-            <button class="cat-tab active" data-tag="전체">전체</button>
-        
-            <button class="cat-tab " data-tag="노트북">노트북</button>
-        
-            <button class="cat-tab " data-tag="리뷰">리뷰</button>
-        
-            <button class="cat-tab " data-tag="가전제품">가전제품</button>
-        
-            <button class="cat-tab " data-tag="스마트홈">스마트홈</button>
-        
-            <button class="cat-tab " data-tag="스마트TV">스마트TV</button>
-        </div>
+        <div class="tab-scroll"><button class="cat-tab active " data-tag="전체">전체</button><button class="cat-tab  special-tab" data-tag="가성비 Best">🔥 가성비 Best</button><button class="cat-tab  special-tab" data-tag="프리미엄 선택">🔥 프리미엄 선택</button><button class="cat-tab  special-tab" data-tag="구매 가이드">🔥 구매 가이드</button><button class="cat-tab  " data-tag="노트북">노트북</button><button class="cat-tab  " data-tag="리뷰">리뷰</button><button class="cat-tab  " data-tag="가전제품">가전제품</button><button class="cat-tab  " data-tag="스마트홈">스마트홈</button><button class="cat-tab  " data-tag="스마트TV">스마트TV</button></div>
     </div>
 </div>
 
@@ -183,7 +192,7 @@ a{text-decoration:none;color:inherit}
     <!-- 통합 사이드바 (우측) -->
     <aside class="feed-sidebar">
 
-        <!-- 🚀 1. 에디터 신뢰도 위젯 -->
+        <!-- 에디터 신뢰도 위젯 -->
         <div class="trust-widget">
             <div class="trust-header">
                 <img src="https://pickrise.com/images/favicon.png" alt="PickRise">
@@ -195,7 +204,18 @@ a{text-decoration:none;color:inherit}
             <p class="trust-desc">제조사의 딱딱한 스펙 시트 너머, <strong>진짜 실사용 환경에서의 장단점</strong>을 가감 없이 팩트체크합니다.</p>
         </div>
 
-        <!-- 🚀 2. 트렌딩 리뷰 위젯 -->
+        <!-- 🚀 3. 인기 키워드 (Tag Cloud) 위젯 -->
+        <div class="trending-widget" style="margin-bottom: 30px;">
+            <div class="trending-header">
+                <span class="iconify" data-icon="carbon:tag-group" style="font-size: 18px; color: #3b82f6;"></span>
+                인기 키워드 탐색
+            </div>
+            <div class="tag-cloud-wrap">
+                <button class="tag-cloud-item" data-tag="가전제품">#가전제품</button><button class="tag-cloud-item" data-tag="스마트홈">#스마트홈</button><button class="tag-cloud-item" data-tag="스마트TV">#스마트TV</button><button class="tag-cloud-item" data-tag="노트북">#노트북</button><button class="tag-cloud-item" data-tag="리뷰">#리뷰</button>
+            </div>
+        </div>
+
+        <!-- 트렌딩 리뷰 위젯 -->
         <div class="trending-widget">
             <div class="trending-header">
                 <span class="iconify" data-icon="carbon:chart-line" style="font-size: 18px; color: #3b82f6;"></span>
@@ -203,10 +223,10 @@ a{text-decoration:none;color:inherit}
             </div>
             <div class="trending-list">
                 
-            <a href="post/LG전자-디오스-AI-오브제컬렉션-냉장고-832L-실사용-리뷰-및-2도어-vs-4.html" class="trend-item">
-                <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1772863536188.webp" alt=""></div>
+            <a href="post/이노스-FHD-삼탠바이미-32인치-스마트TV-무빙거치대-솔직-리뷰.html" class="trend-item">
+                <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1772830209125.webp" alt=""></div>
                 <div class="trend-info">
-                    <div class="trend-title">LG전자 디오스 AI 오브제컬렉션 냉장고 832L 실사용 리뷰 및 2도어 vs 4도어 비교 (대용량인데 왜 이렇게 저렴할까?)</div>
+                    <div class="trend-title">이노스 FHD 삼탠바이미 32인치 스마트TV + 무빙거치대 솔직 리뷰 (가성비 이동식 TV의 끝판왕일까?)</div>
                     <div class="trend-cat">생활가전</div>
                 </div>
             </a>
@@ -235,18 +255,18 @@ a{text-decoration:none;color:inherit}
                 </div>
             </a>
         
-            <a href="post/이노스-FHD-삼탠바이미-32인치-스마트TV-무빙거치대-솔직-리뷰.html" class="trend-item">
-                <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1772830209125.webp" alt=""></div>
+            <a href="post/LG전자-2025-그램-16-코어Ultra5-실사용-리뷰.html" class="trend-item">
+                <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1772859741520.webp" alt=""></div>
                 <div class="trend-info">
-                    <div class="trend-title">이노스 FHD 삼탠바이미 32인치 스마트TV + 무빙거치대 솔직 리뷰 (가성비 이동식 TV의 끝판왕일까?)</div>
-                    <div class="trend-cat">생활가전</div>
+                    <div class="trend-title">LG전자 2025 그램 16 코어Ultra5 실사용 리뷰 (16인치인데 1.2kg? 가벼움의 끝판왕, 직접 확인해봤습니다)</div>
+                    <div class="trend-cat">PC/노트북</div>
                 </div>
             </a>
         
             </div>
         </div>
 
-        <!-- 3. 추천 상품 (광고) 위젯 모음 -->
+        <!-- 추천 상품 (광고) 위젯 모음 -->
         <div class="ad-block"><div class="ad-label">Sponsored</div><div><div style="padding:20px; text-align:center; color:#94a3b8; font-size:13px;">광고 준비 중</div></div></div>
         <div class="ad-block"><div class="ad-label">Sponsored</div><div><div style="padding:20px; text-align:center; color:#94a3b8; font-size:13px;">광고 준비 중</div></div></div>
 
@@ -276,7 +296,7 @@ a{text-decoration:none;color:inherit}
 
 <script>
 (function() {
-    const posts = [{"id":1772859741520,"groupId":1772859741519,"title":"LG전자 2025 그램 16 코어Ultra5 실사용 리뷰 (16인치인데 1.2kg? 가벼움의 끝판왕, 직접 확인해봤습니다)","filename":"post/LG전자-2025-그램-16-코어Ultra5-실사용-리뷰.html","excerpt":"1.2kg대의 초경량 16인치 바디, 인텔 코어 Ultra5, WQXGA 고해상도 디스플레이, 77Wh 대용량 배터리. 그램이 매년 선택받는 이유가 있는지 스펙과 실사용 두 가지 관점으로 꼼꼼히 짚어봤습니다.","date":"2026. 3. 7.","category":"PC/노트북","tags":["노트북","리뷰"],"keywords":"노트북, 리뷰","thumbnail":"https://pickrise.com/images/thumb-1772859741520.webp"},{"id":1772857280714,"groupId":1772857280714,"title":"파테크 한일전자 초고출력 헤어 드라이어 2300W 실사용 리뷰 (머리숱 많은 분들, 이거 하나로 해결됩니다)","filename":"post/파테크-한일전자-초고출력-헤어-드라이어-2300W-실사용-리뷰.html","excerpt":"2300W 초고출력, 6단계 세밀한 온도·풍속 조절, 이중 안전장치까지. 쿠팡 헤어드라이어 판매 1위의 이유를 화질이 아닌 바람으로 직접 증명해봤습니다.","date":"2026. 3. 7.","category":"생활가전","tags":["가전제품","스마트홈"],"keywords":"가전제품, 스마트홈","thumbnail":"https://pickrise.com/images/thumb-1772857280714.webp"},{"id":1772856069487,"groupId":1772856069487,"title":"위드라이프 43인치 FHD TV 대기업 정품 패널 실사용 리뷰 (10만 원대 가성비 TV, 진짜 믿고 살 수 있을까?)","filename":"post/위드라이프-43인치-FHD-TV-대기업-정품-패널-실사용-리뷰.html","excerpt":"대기업 정품 패널 탑재, 에너지 소비효율 1등급, 유·무상 5년 AS까지. 10만 원대 중소기업 TV가 이 정도면 충분한지, 화질·음향·내구성까지 낱낱이 파헤쳐 봤습니다.","date":"2026. 3. 7.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1772856069487.webp"},{"id":1772851162047,"groupId":1772851162047,"title":"필립스 3000 시리즈 무선 전기주전자 HD9318/HD9319 완전 분석 (2만 원대 가성비 전기포트, 진짜 살 만할까?)","filename":"post/필립스-3000-시리즈-무선-전기주전자-HD9318HD9319-완전-분석.html","excerpt":"빠른 가열 속도, 군더더기 없는 디자인, 탄탄한 안전 시스템까지. 필립스 3000 시리즈 전기주전자가 꾸준히 베스트셀러 자리를 지키는 이유를 하드웨어 구조부터 실사용 환경까지 낱낱이 분석했습니다.","date":"2026. 3. 7.","category":"생활가전","tags":["가전제품","스마트홈"],"keywords":"가전제품, 스마트홈","thumbnail":"https://pickrise.com/images/thumb-1772851162047.webp"},{"id":1772830209125,"groupId":1772830209125,"title":"이노스 FHD 삼탠바이미 32인치 스마트TV + 무빙거치대 솔직 리뷰 (가성비 이동식 TV의 끝판왕일까?)","filename":"post/이노스-FHD-삼탠바이미-32인치-스마트TV-무빙거치대-솔직-리뷰.html","excerpt":"LG·삼성 이동식 TV의 절반 가격으로 '삼탠바이미' 스타일을 구현할 수 있다면? 이노스 FHD 삼탠바이미 32인치의 화질, 이동성, 스마트 기능까지 낱낱이 파헤쳤습니다.","date":"2026. 3. 7.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1772830209125.webp"},{"id":1772863536188,"groupId":1772865568771,"title":"LG전자 디오스 AI 오브제컬렉션 냉장고 832L 실사용 리뷰 및 2도어 vs 4도어 비교 (대용량인데 왜 이렇게 저렴할까?)","filename":"post/LG전자-디오스-AI-오브제컬렉션-냉장고-832L-실사용-리뷰-및-2도어-vs-4.html","excerpt":"24시간 자동 정온 시스템과 AI 냉기 케어로 식재료 신선도를 지키는 832리터 대용량 양문형 냉장고. 넉넉한 수납공간과 세련된 오브제 디자인, 그리고 합리적인 가격까지. 10년 이상 장수한 구형 모델 사용자들의 교체 사례를 통해 본 실제 체감 변화와 숨겨진 단점까지 낱낱이 공개합니다.","date":"2026. 3. 6.","category":"생활가전","tags":["가전제품","스마트홈","리뷰"],"keywords":"가전제품, 스마트홈, 리뷰","thumbnail":"https://pickrise.com/images/thumb-1772863536188.webp"}];
+    const posts = [{"id":1772859741520,"groupId":1772859741519,"title":"LG전자 2025 그램 16 코어Ultra5 실사용 리뷰 (16인치인데 1.2kg? 가벼움의 끝판왕, 직접 확인해봤습니다)","filename":"post/LG전자-2025-그램-16-코어Ultra5-실사용-리뷰.html","excerpt":"1.2kg대의 초경량 16인치 바디, 인텔 코어 Ultra5, WQXGA 고해상도 디스플레이, 77Wh 대용량 배터리. 그램이 매년 선택받는 이유가 있는지 스펙과 실사용 두 가지 관점으로 꼼꼼히 짚어봤습니다.","date":"2026. 3. 7.","category":"PC/노트북","tags":["노트북","리뷰"],"keywords":"노트북, 리뷰","thumbnail":"https://pickrise.com/images/thumb-1772859741520.webp"},{"id":1772857280714,"groupId":1772857280714,"title":"파테크 한일전자 초고출력 헤어 드라이어 2300W 실사용 리뷰 (머리숱 많은 분들, 이거 하나로 해결됩니다)","filename":"post/파테크-한일전자-초고출력-헤어-드라이어-2300W-실사용-리뷰.html","excerpt":"2300W 초고출력, 6단계 세밀한 온도·풍속 조절, 이중 안전장치까지. 쿠팡 헤어드라이어 판매 1위의 이유를 화질이 아닌 바람으로 직접 증명해봤습니다.","date":"2026. 3. 7.","category":"생활가전","tags":["가전제품","스마트홈"],"keywords":"가전제품, 스마트홈","thumbnail":"https://pickrise.com/images/thumb-1772857280714.webp"},{"id":1772856069487,"groupId":1772856069487,"title":"위드라이프 43인치 FHD TV 대기업 정품 패널 실사용 리뷰 (10만 원대 가성비 TV, 진짜 믿고 살 수 있을까?)","filename":"post/위드라이프-43인치-FHD-TV-대기업-정품-패널-실사용-리뷰.html","excerpt":"대기업 정품 패널 탑재, 에너지 소비효율 1등급, 유·무상 5년 AS까지. 10만 원대 중소기업 TV가 이 정도면 충분한지, 화질·음향·내구성까지 낱낱이 파헤쳐 봤습니다.","date":"2026. 3. 7.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1772856069487.webp"},{"id":1772851162047,"groupId":1772851162047,"title":"필립스 3000 시리즈 무선 전기주전자 HD9318/HD9319 완전 분석 (2만 원대 가성비 전기포트, 진짜 살 만할까?)","filename":"post/필립스-3000-시리즈-무선-전기주전자-HD9318HD9319-완전-분석.html","excerpt":"빠른 가열 속도, 군더더기 없는 디자인, 탄탄한 안전 시스템까지. 필립스 3000 시리즈 전기주전자가 꾸준히 베스트셀러 자리를 지키는 이유를 하드웨어 구조부터 실사용 환경까지 낱낱이 분석했습니다.","date":"2026. 3. 7.","category":"생활가전","tags":["가전제품","스마트홈"],"keywords":"가전제품, 스마트홈","thumbnail":"https://pickrise.com/images/thumb-1772851162047.webp"},{"id":1772830209125,"groupId":1772830209125,"title":"이노스 FHD 삼탠바이미 32인치 스마트TV + 무빙거치대 솔직 리뷰 (가성비 이동식 TV의 끝판왕일까?)","filename":"post/이노스-FHD-삼탠바이미-32인치-스마트TV-무빙거치대-솔직-리뷰.html","excerpt":"LG·삼성 이동식 TV의 절반 가격으로 '삼탠바이미' 스타일을 구현할 수 있다면? 이노스 FHD 삼탠바이미 32인치의 화질, 이동성, 스마트 기능까지 낱낱이 파헤쳤습니다.","date":"2026. 3. 7.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1772830209125.webp"}];
     posts.sort((a, b) => new Date(b.date) - new Date(a.date));
     const PER_PAGE = 10;
     let currentPage = 1;
@@ -355,7 +375,10 @@ a{text-decoration:none;color:inherit}
     document.querySelectorAll('.cat-tab').forEach(btn => {
         btn.addEventListener('click', () => {
             document.querySelectorAll('.cat-tab').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active'); activeTag = btn.dataset.tag; render(true);
+            btn.classList.add('active');
+            activeTag = btn.dataset.tag;
+            if(headerSearch) headerSearch.value = ''; // 탭 전환 시 검색어 초기화
+            render(true);
         });
     });
 
@@ -364,6 +387,74 @@ a{text-decoration:none;color:inherit}
             if (e.key === 'Enter') { e.preventDefault(); render(true); }
         });
     }
+
+    // 🚀 2. [기능 추가] Live Search (실시간 검색 팝업)
+    const searchBox = document.getElementById('global-search-box');
+    if (headerSearch && searchBox) {
+        const dropdown = document.createElement('div');
+        dropdown.className = 'live-search-dropdown';
+        searchBox.appendChild(dropdown);
+
+        headerSearch.addEventListener('input', (e) => {
+            const keyword = e.target.value.toLowerCase().trim();
+            if (!keyword) {
+                dropdown.style.display = 'none';
+                return;
+            }
+            // 일치하는 제목/내용 기반으로 상위 5개 추출
+            const matched = posts.filter(p => p.title.toLowerCase().includes(keyword) || (p.excerpt || '').toLowerCase().includes(keyword)).slice(0, 5);
+
+            if (matched.length > 0) {
+                dropdown.innerHTML = matched.map(p => `
+                    <a href="${p.filename}" class="live-search-item">
+                        <img src="${p.thumbnail}" class="ls-thumb" alt="">
+                        <div class="ls-info">
+                            <div class="ls-title">${p.title}</div>
+                            <div class="ls-cat">${p.category}</div>
+                        </div>
+                    </a>
+                `).join('');
+            } else {
+                dropdown.innerHTML = '<div style="padding:16px; text-align:center; color:#94a3b8; font-size:13px;">검색 결과가 없습니다.</div>';
+            }
+            dropdown.style.display = 'block';
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!searchBox.contains(e.target)) {
+                dropdown.style.display = 'none';
+            }
+        });
+
+        headerSearch.addEventListener('focus', () => {
+            if (headerSearch.value.trim() !== '') dropdown.style.display = 'block';
+        });
+    }
+
+    // 🚀 3. [기능 추가] Tag Cloud 클릭 이벤트 연동
+    document.querySelectorAll('.tag-cloud-item').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const targetTag = btn.dataset.tag;
+            const targetTab = Array.from(document.querySelectorAll('.cat-tab')).find(t => t.dataset.tag === targetTag);
+
+            if (targetTab) {
+                document.querySelectorAll('.cat-tab').forEach(b => b.classList.remove('active'));
+                targetTab.classList.add('active');
+                activeTag = targetTag;
+                // 해당 탭 위치로 가로 스크롤 이동 (모바일 배려)
+                targetTab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            } else {
+                document.querySelectorAll('.cat-tab').forEach(b => b.classList.remove('active'));
+                activeTag = targetTag;
+            }
+
+            if(headerSearch) headerSearch.value = '';
+            render(true);
+
+            // 모바일을 위해 리스트 갱신 후 상단으로 스크롤 부드럽게 올려줌
+            window.scrollTo({ top: document.querySelector('.filter-bar').offsetTop - 20, behavior: 'smooth' });
+        });
+    });
 
     render(true);
 })();
