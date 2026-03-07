@@ -19,21 +19,19 @@
 body{font-family:'Pretendard',-apple-system,sans-serif;background:var(--bg-page);color:var(--text-main);line-height:1.6;-webkit-font-smoothing:antialiased}
 a{text-decoration:none;color:inherit}
 
-/* 필터 바 */
+/* 필터 바 & 퀵가이드 탭 */
 .filter-bar { position: sticky; top: var(--header-h); z-index: 50; background: rgba(255,255,255,0.9); backdrop-filter: blur(12px); border-bottom: 1px solid #e2e8f0; }
 .filter-inner { max-width: var(--max-width); margin: 0 auto; display: flex; align-items: center; height: 70px; }
 .tab-scroll { display: flex; gap: 10px; overflow-x: auto; scrollbar-width: none; padding: 0 24px; width: 100%; align-items: center; }
 .tab-scroll::-webkit-scrollbar { display: none; }
-.cat-tab { padding: 8px 20px; border-radius: 30px; border: 1px solid #e2e8f0; background: #fff; color: #64748b; font-size: 14px; font-weight: 500; cursor: pointer; transition: all 0.2s; white-space: nowrap; flex-shrink: 0; }
+.cat-tab { padding: 8px 20px; border-radius: 30px; border: 1px solid #e2e8f0; background: #fff; color: #64748b; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s; white-space: nowrap; flex-shrink: 0; }
 .cat-tab:hover { background: #f8fafc; color: #0f172a; border-color: #cbd5e1; }
 .cat-tab.active { background: #0f172a; color: #ffffff; border-color: #0f172a; }
-
-/* 🚀 1. 퀵 가이드 특수 탭 스타일 */
-.special-tab { background: linear-gradient(135deg, #ef4444, #f97316); color: white !important; border: none; font-weight: 400; padding: 8px 22px; }
+.special-tab { background: linear-gradient(135deg, #ef4444, #f97316); color: white !important; border: none; font-weight: 500; padding: 8px 22px; }
 .special-tab:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3); }
 .special-tab.active { background: #0f172a; color: #ffffff !important; box-shadow: none; transform: none; }
 
-/* 🚀 2. Live Search Dropdown 스타일 */
+/* 라이브 서치 */
 .live-search-dropdown { position: absolute; top: calc(100% + 10px); left: 0; width: 340px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); z-index: 1000; overflow: hidden; display: none; max-height: 400px; overflow-y: auto; }
 .live-search-item { display: flex; gap: 12px; padding: 12px 16px; border-bottom: 1px solid #f1f5f9; cursor: pointer; transition: 0.2s; align-items: center; }
 .live-search-item:last-child { border-bottom: none; }
@@ -42,15 +40,21 @@ a{text-decoration:none;color:inherit}
 .ls-info { flex: 1; min-width: 0; }
 .ls-title { font-size: 13.5px; font-weight: 700; color: #1e293b; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 2px; }
 .ls-cat { font-size: 11px; color: var(--primary); font-weight: 700; }
-@media (max-width: 768px) { .live-search-dropdown { width: 100%; top: calc(100% + 5px); } }
-
-/* 🚀 3. Tag Cloud 스타일 */
-.tag-cloud-wrap { padding: 20px 24px; display: flex; flex-wrap: wrap; gap: 8px; }
-.tag-cloud-item { background: #f1f5f9; color: #475569; border: 1px solid #e2e8f0; border-radius: 8px; padding: 6px 12px; font-size: 13px; font-weight: 600; cursor: pointer; transition: 0.2s; }
-.tag-cloud-item:hover { background: var(--primary-light); color: var(--primary); border-color: var(--primary); transform: translateY(-2px); box-shadow: 0 4px 10px rgba(59, 130, 246, 0.15); }
 
 /* 메인 레이아웃 */
 .feed-layout { max-width: var(--max-width); margin: 40px auto; padding: 0 24px; display: grid; grid-template-columns: 1fr 340px; gap: 40px; align-items: start; }
+
+/* VS 섹션 */
+.vs-section { margin-bottom: 50px; background: #ffffff; padding: 24px 30px; border-radius: 24px; border: 1px solid #f1f5f9; box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
+.vs-header { font-size: 20px; font-weight: 800; color: #0f172a; margin-bottom: 20px; display: flex; align-items: center; gap: 8px; letter-spacing: -0.02em;}
+.vs-scroll { display: flex; gap: 20px; overflow-x: auto; scrollbar-width: none; padding-bottom: 10px; }
+.vs-scroll::-webkit-scrollbar { display: none; }
+.vs-card { min-width: 280px; width: 280px; background: #fff; border-radius: 16px; border: 1px solid #e2e8f0; overflow: hidden; display: flex; flex-direction: column; transition: 0.3s; position: relative; }
+.vs-card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.08); border-color: #cbd5e1; }
+.vs-badge { position: absolute; top: 12px; left: 12px; background: #ef4444; color: #fff; font-size: 12px; font-weight: 900; padding: 4px 10px; border-radius: 8px; z-index: 10; font-style: italic; letter-spacing: 0.05em; }
+.vs-thumb { width: 100%; aspect-ratio: 16/10; object-fit: cover; border-bottom: 1px solid #f1f5f9;}
+.vs-info { padding: 16px; flex: 1; }
+.vs-title { font-size: 15px; font-weight: 700; color: #1e293b; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 
 /* Hero Post */
 .hero-post { display: flex; background: #ffffff; border-radius: 24px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.04); margin-bottom: 40px; border: 1px solid #f1f5f9; cursor: pointer; transition: transform 0.3s; flex-direction: column; }
@@ -62,7 +66,7 @@ a{text-decoration:none;color:inherit}
 .hero-title { font-size: 28px; font-weight: 800; color: #0f172a; line-height: 1.35; margin-bottom: 16px; word-break: keep-all; letter-spacing: -0.02em;}
 .hero-excerpt { font-size: 16px; color: #64748b; line-height: 1.6; }
 
-/* Grid Posts */
+/* Grid Posts & Inline Banner */
 .post-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
 .post-card { cursor: pointer; border-radius: 20px; background: #ffffff; transition: all 0.3s; display: flex; flex-direction: column; border: 1px solid #f1f5f9; overflow: hidden; }
 .post-card:hover { transform: translateY(-4px); box-shadow: 0 15px 30px rgba(0,0,0,0.06); border-color: #e2e8f0; }
@@ -74,10 +78,37 @@ a{text-decoration:none;color:inherit}
 .card-title { font-size: 18px; font-weight: 800; line-height: 1.4; color: var(--text-main); word-break: keep-all; margin-bottom: 10px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;}
 .card-desc { font-size: 14px; color: #64748b; line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 
-/* 사이드바 */
+.inline-banner { grid-column: 1 / -1; background: linear-gradient(135deg, #2563eb, #1e40af); border-radius: 20px; padding: 28px 32px; color: #fff; display: flex; justify-content: space-between; align-items: center; cursor: pointer; transition: 0.3s; box-shadow: 0 15px 30px rgba(37,99,235,0.2); margin: 10px 0; }
+.inline-banner:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(37,99,235,0.3); }
+.ib-text h3 { font-size: 20px; font-weight: 800; margin-bottom: 6px; letter-spacing:-0.02em; }
+.ib-text p { font-size: 14px; opacity: 0.85; margin:0; }
+.ib-btn { background: #fff; color: #1e40af; padding: 12px 24px; border-radius: 30px; font-weight: 800; font-size: 14px; flex-shrink: 0; }
+
+/* 사이드바 공통 */
 .feed-sidebar { display: flex; flex-direction: column; gap: 30px; position: sticky; top: calc(var(--header-h) + 24px); }
 
-/* 에디터 신뢰도 위젯 (Trust Badge) */
+/* 카카오톡 채널 위젯 */
+.kakao-widget { background: #FEE500; border-radius: 20px; padding: 28px 24px; text-align: center; color: #1e1e1e; box-shadow: 0 10px 30px rgba(254, 229, 0, 0.2); }
+.kakao-widget h3 { font-size: 17px; font-weight: 800; margin: 16px 0 8px; letter-spacing: -0.02em; }
+.kakao-widget p { font-size: 13.5px; font-weight: 600; color: #3f3f46; margin-bottom: 20px; word-break: keep-all; line-height: 1.5; }
+.kakao-btn { display: inline-flex; align-items: center; justify-content: center; width: 100%; background: #1e1e1e; color: #FEE500; font-weight: 800; font-size: 15px; padding: 14px; border-radius: 12px; transition: 0.2s; cursor: pointer;}
+.kakao-btn:hover { background: #000; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+
+/* 테크 캘린더 위젯 */
+.cal-widget { background: #ffffff; border: 1px solid #f1f5f9; border-radius: 20px; padding: 24px; box-shadow: 0 4px 20px rgba(0,0,0,0.02); }
+.cal-header { font-size: 15px; font-weight: 800; color: #0f172a; margin-bottom: 24px; display: flex; align-items: center; gap: 8px; text-transform: uppercase; letter-spacing: 0.05em; }
+.cal-timeline { position: relative; padding-left: 20px; border-left: 2px solid #e2e8f0; display: flex; flex-direction: column; gap: 20px; margin-left: 6px; }
+.cal-item { position: relative; }
+.cal-item::before { content: ''; position: absolute; left: -27px; top: 4px; width: 12px; height: 12px; background: #3b82f6; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 0 0 1px #e2e8f0; }
+.cal-item.past::before { background: #cbd5e1; }
+.cal-item.highlight::before { background: #ef4444; box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2); }
+.cal-month { font-size: 12px; font-weight: 800; color: #3b82f6; margin-bottom: 4px; display:inline-block; }
+.cal-item.past .cal-month { color: #94a3b8; }
+.cal-item.highlight .cal-month { color: #ef4444; background: #fee2e2; padding: 2px 8px; border-radius: 10px; margin-bottom: 6px;}
+.cal-event { font-size: 14px; font-weight: 700; color: #1e293b; line-height: 1.4; word-break: keep-all;}
+.cal-item.past .cal-event { color: #94a3b8; text-decoration: line-through; }
+
+/* Tag Cloud & Trust & Trending */
 .trust-widget { background: linear-gradient(145deg, #0f172a, #1e293b); border-radius: 20px; padding: 30px 24px; color: #ffffff; position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.15); }
 .trust-widget::after { content: ''; position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: #3b82f6; border-radius: 50%; filter: blur(60px); opacity: 0.3; pointer-events: none; }
 .trust-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; position: relative; z-index: 1; }
@@ -87,7 +118,10 @@ a{text-decoration:none;color:inherit}
 .trust-desc { font-size: 13.5px; line-height: 1.6; color: #cbd5e1; margin: 0; position: relative; z-index: 1; word-break: keep-all; }
 .trust-desc strong { color: #3b82f6; }
 
-/* 트렌딩 리뷰 위젯 (Trending Posts) */
+.tag-cloud-wrap { padding: 20px 24px; display: flex; flex-wrap: wrap; gap: 8px; }
+.tag-cloud-item { background: #f1f5f9; color: #475569; border: 1px solid #e2e8f0; border-radius: 8px; padding: 6px 12px; font-size: 13px; font-weight: 600; cursor: pointer; transition: 0.2s; }
+.tag-cloud-item:hover { background: var(--primary-light); color: var(--primary); border-color: var(--primary); transform: translateY(-2px); box-shadow: 0 4px 10px rgba(59, 130, 246, 0.15); }
+
 .trending-widget { background: #ffffff; border: 1px solid #f1f5f9; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.02); overflow: hidden; }
 .trending-header { font-size: 14px; font-weight: 800; color: #0f172a; padding: 20px 24px 16px; letter-spacing: 0.05em; text-transform: uppercase; border-bottom: 1px solid #f1f5f9; display: flex; align-items: center; gap: 8px; }
 .trending-list { display: flex; flex-direction: column; padding: 12px 24px 24px; counter-reset: trend-counter; gap: 16px; }
@@ -103,7 +137,6 @@ a{text-decoration:none;color:inherit}
 .trend-cat { font-size: 11px; color: var(--primary); font-weight: 700; margin-bottom: 2px; }
 .trend-title { font-size: 13.5px; font-weight: 700; color: #1e293b; line-height: 1.4; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; transition: 0.2s; }
 
-/* 광고 블록 */
 .ad-block { background: #ffffff; border: 1px solid #f1f5f9; border-radius: 20px; overflow: hidden; }
 .ad-label { font-size: 10px; font-weight: 800; color: #94a3b8; text-transform: uppercase; padding: 12px 20px; border-bottom: 1px dashed #e2e8f0; }
 
@@ -117,6 +150,8 @@ a{text-decoration:none;color:inherit}
 @media (max-width: 640px) {
     .post-grid { grid-template-columns: 1fr; }
     .hero-title { font-size: 24px; }
+    .inline-banner { flex-direction: column; text-align: center; gap: 16px; padding: 24px; }
+    .ib-btn { width: 100%; }
 }
 
 :root {
@@ -174,7 +209,7 @@ a{text-decoration:none;color:inherit}
 
 <div class="filter-bar">
     <div class="filter-inner">
-        <div class="tab-scroll"><button class="cat-tab active " data-tag="전체">전체</button><button class="cat-tab  special-tab" data-tag="가성비 Best">🔥 가성비 Best</button><button class="cat-tab  special-tab" data-tag="프리미엄 선택">🔥 프리미엄 선택</button><button class="cat-tab  special-tab" data-tag="구매 가이드">🔥 구매 가이드</button><button class="cat-tab  " data-tag="가전제품">가전제품</button><button class="cat-tab  " data-tag="리뷰">리뷰</button><button class="cat-tab  " data-tag="스마트홈">스마트홈</button><button class="cat-tab  " data-tag="노트북">노트북</button><button class="cat-tab  " data-tag="스마트TV">스마트TV</button></div>
+        <div class="tab-scroll"><button class="cat-tab active " data-tag="전체">전체</button><button class="cat-tab  special-tab" data-tag="가성비 Best">🔥 가성비 Best</button><button class="cat-tab  special-tab" data-tag="프리미엄 선택">🔥 프리미엄 선택</button><button class="cat-tab  special-tab" data-tag="구매 가이드">🔥 구매 가이드</button><button class="cat-tab  " data-tag="스마트폰">스마트폰</button><button class="cat-tab  " data-tag="삼성">삼성</button><button class="cat-tab  " data-tag="리뷰">리뷰</button><button class="cat-tab  " data-tag="웨어러블">웨어러블</button><button class="cat-tab  " data-tag="가전제품">가전제품</button><button class="cat-tab  " data-tag="스마트홈">스마트홈</button><button class="cat-tab  " data-tag="노트북">노트북</button><button class="cat-tab  " data-tag="스마트TV">스마트TV</button></div>
     </div>
 </div>
 
@@ -183,6 +218,31 @@ a{text-decoration:none;color:inherit}
     <!-- 메인 피드 (좌측) -->
     <div class="feed-main">
         <div id="hero-post-container"></div>
+
+        <!-- 🚀 VS 매치 가로 스크롤 섹션 -->
+        
+                <div class="vs-section">
+                    <div class="vs-header"><span class="iconify" data-icon="carbon:compare" style="color:#ef4444; font-size:22px;"></span> 결정장애 해결! 라이벌 매치</div>
+                    <div class="vs-scroll">
+                <a href="post/쿠쿠-전기보온-에그밥솥-6인용-실사용-리뷰-및-밥맛-테스트.html" class="vs-card">
+                    <span class="vs-badge">VS MATCH</span>
+                    <img src="https://pickrise.com/images/thumb-1772868391538.webp" class="vs-thumb" alt="">
+                    <div class="vs-info">
+                        <div class="vs-title">쿠쿠 전기보온 에그밥솥 6인용 실사용 리뷰 및 밥맛 테스트 (압력밥솥 vs 전기밥솥, 진짜 차이는?)</div>
+                    </div>
+                </a>
+            
+                <a href="post/LG전자-디오스-AI-오브제컬렉션-냉장고-832L-실사용-리뷰-및-2도어-vs-4.html" class="vs-card">
+                    <span class="vs-badge">VS MATCH</span>
+                    <img src="https://pickrise.com/images/thumb-1772867207203.webp" class="vs-thumb" alt="">
+                    <div class="vs-info">
+                        <div class="vs-title">LG전자 디오스 AI 오브제컬렉션 냉장고 832L 실사용 리뷰 및 2도어 vs 4도어 비교 (대용량인데 왜 이렇게 저렴할까?)</div>
+                    </div>
+                </a>
+            </div>
+                </div>
+            
+
         <div class="post-grid" id="post-grid"></div>
         <div id="load-more-wrap" style="display:none;">
             <button class="load-more-btn" id="load-more-btn">리뷰 더 보기</button>
@@ -204,14 +264,51 @@ a{text-decoration:none;color:inherit}
             <p class="trust-desc">제조사의 딱딱한 스펙 시트 너머, <strong>진짜 실사용 환경에서의 장단점</strong>을 가감 없이 팩트체크합니다.</p>
         </div>
 
-        <!-- 🚀 3. 인기 키워드 (Tag Cloud) 위젯 -->
-        <div class="trending-widget" style="margin-bottom: 30px;">
+        <!-- 🚀 카카오톡 채널 위젯 -->
+        <div class="kakao-widget">
+            <span class="iconify" data-icon="ri:kakao-talk-fill" style="font-size: 46px; color: #000000;"></span>
+            <h3>에디터와 카톡 친구맺기</h3>
+            <p>IT 신제품 리뷰와 숨겨진 특가 할인 소식을 가장 먼저 무료로 받아보세요!</p>
+            <div class="kakao-btn" onclick="alert('카카오톡 채널 추가 페이지로 연결됩니다.')">
+                채널 추가하기
+            </div>
+        </div>
+
+        <!-- 🚀 2026 캘린더 위젯 -->
+        <div class="cal-widget">
+            <div class="cal-header"><span class="iconify" data-icon="carbon:calendar" style="color:#3b82f6; font-size:20px;"></span> 2026 주요 테크 일정</div>
+            <div class="cal-timeline">
+                <div class="cal-item past">
+                    <div class="cal-month">1월</div>
+                    <div class="cal-event">갤럭시 S26 시리즈 언팩</div>
+                </div>
+                <div class="cal-item highlight">
+                    <div class="cal-month">3월 (Now)</div>
+                    <div class="cal-event">Apple Spring Event (예상)</div>
+                </div>
+                <div class="cal-item">
+                    <div class="cal-month">6월</div>
+                    <div class="cal-event">Apple WWDC 26</div>
+                </div>
+                <div class="cal-item">
+                    <div class="cal-month">7월</div>
+                    <div class="cal-event">갤럭시 Z폴드/플립 8 공개</div>
+                </div>
+                <div class="cal-item">
+                    <div class="cal-month">9월</div>
+                    <div class="cal-event">아이폰 18 시리즈 발표</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 인기 키워드 (Tag Cloud) 위젯 -->
+        <div class="trending-widget">
             <div class="trending-header">
                 <span class="iconify" data-icon="carbon:tag-group" style="font-size: 18px; color: #3b82f6;"></span>
                 인기 키워드 탐색
             </div>
             <div class="tag-cloud-wrap">
-                <button class="tag-cloud-item" data-tag="가전제품">#가전제품</button><button class="tag-cloud-item" data-tag="리뷰">#리뷰</button><button class="tag-cloud-item" data-tag="스마트홈">#스마트홈</button><button class="tag-cloud-item" data-tag="스마트TV">#스마트TV</button><button class="tag-cloud-item" data-tag="노트북">#노트북</button>
+                <button class="tag-cloud-item" data-tag="가전제품">#가전제품</button><button class="tag-cloud-item" data-tag="리뷰">#리뷰</button><button class="tag-cloud-item" data-tag="스마트홈">#스마트홈</button><button class="tag-cloud-item" data-tag="스마트TV">#스마트TV</button><button class="tag-cloud-item" data-tag="스마트폰">#스마트폰</button><button class="tag-cloud-item" data-tag="삼성">#삼성</button><button class="tag-cloud-item" data-tag="웨어러블">#웨어러블</button><button class="tag-cloud-item" data-tag="노트북">#노트북</button>
             </div>
         </div>
 
@@ -223,18 +320,18 @@ a{text-decoration:none;color:inherit}
             </div>
             <div class="trending-list">
                 
-            <a href="post/LG전자-2025-그램-16-코어Ultra5-실사용-리뷰.html" class="trend-item">
-                <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1772859741520.webp" alt=""></div>
+            <a href="post/파테크-한일전자-초고출력-헤어-드라이어-2300W-실사용-리뷰.html" class="trend-item">
+                <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1772857280714.webp" alt=""></div>
                 <div class="trend-info">
-                    <div class="trend-title">LG전자 2025 그램 16 코어Ultra5 실사용 리뷰 (16인치인데 1.2kg? 가벼움의 끝판왕, 직접 확인해봤습니다)</div>
-                    <div class="trend-cat">PC/노트북</div>
+                    <div class="trend-title">파테크 한일전자 초고출력 헤어 드라이어 2300W 실사용 리뷰 (머리숱 많은 분들, 이거 하나로 해결됩니다)</div>
+                    <div class="trend-cat">생활가전</div>
                 </div>
             </a>
         
-            <a href="post/필립스-3000-시리즈-무선-전기주전자-HD9318HD9319-완전-분석.html" class="trend-item">
-                <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1772851162047.webp" alt=""></div>
+            <a href="post/이노스-FHD-삼탠바이미-32인치-스마트TV-무빙거치대-솔직-리뷰.html" class="trend-item">
+                <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1772830209125.webp" alt=""></div>
                 <div class="trend-info">
-                    <div class="trend-title">필립스 3000 시리즈 무선 전기주전자 HD9318/HD9319 완전 분석 (2만 원대 가성비 전기포트, 진짜 살 만할까?)</div>
+                    <div class="trend-title">이노스 FHD 삼탠바이미 32인치 스마트TV + 무빙거치대 솔직 리뷰 (가성비 이동식 TV의 끝판왕일까?)</div>
                     <div class="trend-cat">생활가전</div>
                 </div>
             </a>
@@ -247,18 +344,18 @@ a{text-decoration:none;color:inherit}
                 </div>
             </a>
         
-            <a href="post/파테크-한일전자-초고출력-헤어-드라이어-2300W-실사용-리뷰.html" class="trend-item">
-                <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1772857280714.webp" alt=""></div>
+            <a href="post/삼성전자-갤럭시-S26-자급제-실사용-리뷰-디자인성능카메라-총정리.html" class="trend-item">
+                <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1772873523097.webp" alt=""></div>
                 <div class="trend-info">
-                    <div class="trend-title">파테크 한일전자 초고출력 헤어 드라이어 2300W 실사용 리뷰 (머리숱 많은 분들, 이거 하나로 해결됩니다)</div>
-                    <div class="trend-cat">생활가전</div>
+                    <div class="trend-title">삼성전자 갤럭시 S26 자급제 실사용 리뷰 — 디자인·성능·카메라 총정리 (아이폰 이탈자들이 돌아오는 이유가 있었다)</div>
+                    <div class="trend-cat">스마트기기</div>
                 </div>
             </a>
         
-            <a href="post/LG전자-디오스-AI-오브제컬렉션-냉장고-832L-실사용-리뷰-및-2도어-vs-4.html" class="trend-item">
-                <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1772867207203.webp" alt=""></div>
+            <a href="post/쿠쿠-전기보온-에그밥솥-6인용-실사용-리뷰-및-밥맛-테스트.html" class="trend-item">
+                <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1772868391538.webp" alt=""></div>
                 <div class="trend-info">
-                    <div class="trend-title">LG전자 디오스 AI 오브제컬렉션 냉장고 832L 실사용 리뷰 및 2도어 vs 4도어 비교 (대용량인데 왜 이렇게 저렴할까?)</div>
+                    <div class="trend-title">쿠쿠 전기보온 에그밥솥 6인용 실사용 리뷰 및 밥맛 테스트 (압력밥솥 vs 전기밥솥, 진짜 차이는?)</div>
                     <div class="trend-cat">생활가전</div>
                 </div>
             </a>
@@ -296,7 +393,8 @@ a{text-decoration:none;color:inherit}
 
 <script>
 (function() {
-    const posts = [{"id":1772868391538,"groupId":1772868391537,"title":"쿠쿠 전기보온 에그밥솥 6인용 실사용 리뷰 및 밥맛 테스트 (압력밥솥 vs 전기밥솥, 진짜 차이는?)","filename":"post/쿠쿠-전기보온-에그밥솥-6인용-실사용-리뷰-및-밥맛-테스트.html","excerpt":"동글동글 귀여운 에그 디자인과 에너지 효율 1등급, 그리고 10% 환급 혜택까지. 6만 원대 가성비 밥솥의 실제 밥맛은 과연 어떨까요? 자취생부터 소가족까지, 30개의 실사용 후기를 바탕으로 장단점을 낱낱이 공개합니다.","date":"2026. 3. 6.","category":"생활가전","tags":["가전제품","리뷰"],"keywords":"가전제품, 리뷰","thumbnail":"https://pickrise.com/images/thumb-1772868391538.webp"},{"id":1772867207203,"groupId":1772867207202,"title":"LG전자 디오스 AI 오브제컬렉션 냉장고 832L 실사용 리뷰 및 2도어 vs 4도어 비교 (대용량인데 왜 이렇게 저렴할까?)","filename":"post/LG전자-디오스-AI-오브제컬렉션-냉장고-832L-실사용-리뷰-및-2도어-vs-4.html","excerpt":"24시간 자동 정온 시스템과 AI 냉기 케어로 식재료 신선도를 지키는 832리터 대용량 양문형 냉장고. 넉넉한 수납공간과 세련된 오브제 디자인, 그리고 합리적인 가격까지. 10년 이상 장수한 구형 모델 사용자들의 교체 사례를 통해 본 실제 체감 변화와 숨겨진 단점까지 낱낱이 공개합니다.","date":"2026. 3. 6.","category":"생활가전","tags":["가전제품","스마트홈","리뷰"],"keywords":"가전제품, 스마트홈, 리뷰","thumbnail":"https://pickrise.com/images/thumb-1772867207203.webp"},{"id":1772859741520,"groupId":1772859741519,"title":"LG전자 2025 그램 16 코어Ultra5 실사용 리뷰 (16인치인데 1.2kg? 가벼움의 끝판왕, 직접 확인해봤습니다)","filename":"post/LG전자-2025-그램-16-코어Ultra5-실사용-리뷰.html","excerpt":"1.2kg대의 초경량 16인치 바디, 인텔 코어 Ultra5, WQXGA 고해상도 디스플레이, 77Wh 대용량 배터리. 그램이 매년 선택받는 이유가 있는지 스펙과 실사용 두 가지 관점으로 꼼꼼히 짚어봤습니다.","date":"2026. 3. 7.","category":"PC/노트북","tags":["노트북","리뷰"],"keywords":"노트북, 리뷰","thumbnail":"https://pickrise.com/images/thumb-1772859741520.webp"},{"id":1772857280714,"groupId":1772857280714,"title":"파테크 한일전자 초고출력 헤어 드라이어 2300W 실사용 리뷰 (머리숱 많은 분들, 이거 하나로 해결됩니다)","filename":"post/파테크-한일전자-초고출력-헤어-드라이어-2300W-실사용-리뷰.html","excerpt":"2300W 초고출력, 6단계 세밀한 온도·풍속 조절, 이중 안전장치까지. 쿠팡 헤어드라이어 판매 1위의 이유를 화질이 아닌 바람으로 직접 증명해봤습니다.","date":"2026. 3. 7.","category":"생활가전","tags":["가전제품","스마트홈"],"keywords":"가전제품, 스마트홈","thumbnail":"https://pickrise.com/images/thumb-1772857280714.webp"},{"id":1772856069487,"groupId":1772856069487,"title":"위드라이프 43인치 FHD TV 대기업 정품 패널 실사용 리뷰 (10만 원대 가성비 TV, 진짜 믿고 살 수 있을까?)","filename":"post/위드라이프-43인치-FHD-TV-대기업-정품-패널-실사용-리뷰.html","excerpt":"대기업 정품 패널 탑재, 에너지 소비효율 1등급, 유·무상 5년 AS까지. 10만 원대 중소기업 TV가 이 정도면 충분한지, 화질·음향·내구성까지 낱낱이 파헤쳐 봤습니다.","date":"2026. 3. 7.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1772856069487.webp"},{"id":1772851162047,"groupId":1772851162047,"title":"필립스 3000 시리즈 무선 전기주전자 HD9318/HD9319 완전 분석 (2만 원대 가성비 전기포트, 진짜 살 만할까?)","filename":"post/필립스-3000-시리즈-무선-전기주전자-HD9318HD9319-완전-분석.html","excerpt":"빠른 가열 속도, 군더더기 없는 디자인, 탄탄한 안전 시스템까지. 필립스 3000 시리즈 전기주전자가 꾸준히 베스트셀러 자리를 지키는 이유를 하드웨어 구조부터 실사용 환경까지 낱낱이 분석했습니다.","date":"2026. 3. 7.","category":"생활가전","tags":["가전제품","스마트홈"],"keywords":"가전제품, 스마트홈","thumbnail":"https://pickrise.com/images/thumb-1772851162047.webp"},{"id":1772830209125,"groupId":1772830209125,"title":"이노스 FHD 삼탠바이미 32인치 스마트TV + 무빙거치대 솔직 리뷰 (가성비 이동식 TV의 끝판왕일까?)","filename":"post/이노스-FHD-삼탠바이미-32인치-스마트TV-무빙거치대-솔직-리뷰.html","excerpt":"LG·삼성 이동식 TV의 절반 가격으로 '삼탠바이미' 스타일을 구현할 수 있다면? 이노스 FHD 삼탠바이미 32인치의 화질, 이동성, 스마트 기능까지 낱낱이 파헤쳤습니다.","date":"2026. 3. 7.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1772830209125.webp"}];
+    const posts = [{"id":1772873523097,"groupId":1772873523097,"title":"삼성전자 갤럭시 S26 자급제 실사용 리뷰 — 디자인·성능·카메라 총정리 (아이폰 이탈자들이 돌아오는 이유가 있었다)","filename":"post/삼성전자-갤럭시-S26-자급제-실사용-리뷰-디자인성능카메라-총정리.html","excerpt":"엑시노스 2500 탑재, 120Hz AMOLED 디스플레이, 그리고 Galaxy AI까지. 일주일간 직접 사용하며 확인한 갤럭시 S26의 확실한 강점과 반드시 알아야 할 단점을 솔직하게 정리했습니다.","date":"2026. 3. 7.","category":"스마트기기","tags":["스마트폰","삼성","리뷰","웨어러블"],"keywords":"스마트폰, 삼성, 리뷰, 웨어러블","thumbnail":"https://pickrise.com/images/thumb-1772873523097.webp"},{"id":1772868391538,"groupId":1772868391537,"title":"쿠쿠 전기보온 에그밥솥 6인용 실사용 리뷰 및 밥맛 테스트 (압력밥솥 vs 전기밥솥, 진짜 차이는?)","filename":"post/쿠쿠-전기보온-에그밥솥-6인용-실사용-리뷰-및-밥맛-테스트.html","excerpt":"동글동글 귀여운 에그 디자인과 에너지 효율 1등급, 그리고 10% 환급 혜택까지. 6만 원대 가성비 밥솥의 실제 밥맛은 과연 어떨까요? 자취생부터 소가족까지, 30개의 실사용 후기를 바탕으로 장단점을 낱낱이 공개합니다.","date":"2026. 3. 6.","category":"생활가전","tags":["가전제품","리뷰"],"keywords":"가전제품, 리뷰","thumbnail":"https://pickrise.com/images/thumb-1772868391538.webp"},{"id":1772867207203,"groupId":1772867207202,"title":"LG전자 디오스 AI 오브제컬렉션 냉장고 832L 실사용 리뷰 및 2도어 vs 4도어 비교 (대용량인데 왜 이렇게 저렴할까?)","filename":"post/LG전자-디오스-AI-오브제컬렉션-냉장고-832L-실사용-리뷰-및-2도어-vs-4.html","excerpt":"24시간 자동 정온 시스템과 AI 냉기 케어로 식재료 신선도를 지키는 832리터 대용량 양문형 냉장고. 넉넉한 수납공간과 세련된 오브제 디자인, 그리고 합리적인 가격까지. 10년 이상 장수한 구형 모델 사용자들의 교체 사례를 통해 본 실제 체감 변화와 숨겨진 단점까지 낱낱이 공개합니다.","date":"2026. 3. 6.","category":"생활가전","tags":["가전제품","스마트홈","리뷰"],"keywords":"가전제품, 스마트홈, 리뷰","thumbnail":"https://pickrise.com/images/thumb-1772867207203.webp"},{"id":1772859741520,"groupId":1772859741519,"title":"LG전자 2025 그램 16 코어Ultra5 실사용 리뷰 (16인치인데 1.2kg? 가벼움의 끝판왕, 직접 확인해봤습니다)","filename":"post/LG전자-2025-그램-16-코어Ultra5-실사용-리뷰.html","excerpt":"1.2kg대의 초경량 16인치 바디, 인텔 코어 Ultra5, WQXGA 고해상도 디스플레이, 77Wh 대용량 배터리. 그램이 매년 선택받는 이유가 있는지 스펙과 실사용 두 가지 관점으로 꼼꼼히 짚어봤습니다.","date":"2026. 3. 7.","category":"PC/노트북","tags":["노트북","리뷰"],"keywords":"노트북, 리뷰","thumbnail":"https://pickrise.com/images/thumb-1772859741520.webp"},{"id":1772857280714,"groupId":1772857280714,"title":"파테크 한일전자 초고출력 헤어 드라이어 2300W 실사용 리뷰 (머리숱 많은 분들, 이거 하나로 해결됩니다)","filename":"post/파테크-한일전자-초고출력-헤어-드라이어-2300W-실사용-리뷰.html","excerpt":"2300W 초고출력, 6단계 세밀한 온도·풍속 조절, 이중 안전장치까지. 쿠팡 헤어드라이어 판매 1위의 이유를 화질이 아닌 바람으로 직접 증명해봤습니다.","date":"2026. 3. 7.","category":"생활가전","tags":["가전제품","스마트홈"],"keywords":"가전제품, 스마트홈","thumbnail":"https://pickrise.com/images/thumb-1772857280714.webp"},{"id":1772856069487,"groupId":1772856069487,"title":"위드라이프 43인치 FHD TV 대기업 정품 패널 실사용 리뷰 (10만 원대 가성비 TV, 진짜 믿고 살 수 있을까?)","filename":"post/위드라이프-43인치-FHD-TV-대기업-정품-패널-실사용-리뷰.html","excerpt":"대기업 정품 패널 탑재, 에너지 소비효율 1등급, 유·무상 5년 AS까지. 10만 원대 중소기업 TV가 이 정도면 충분한지, 화질·음향·내구성까지 낱낱이 파헤쳐 봤습니다.","date":"2026. 3. 7.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1772856069487.webp"},{"id":1772851162047,"groupId":1772851162047,"title":"필립스 3000 시리즈 무선 전기주전자 HD9318/HD9319 완전 분석 (2만 원대 가성비 전기포트, 진짜 살 만할까?)","filename":"post/필립스-3000-시리즈-무선-전기주전자-HD9318HD9319-완전-분석.html","excerpt":"빠른 가열 속도, 군더더기 없는 디자인, 탄탄한 안전 시스템까지. 필립스 3000 시리즈 전기주전자가 꾸준히 베스트셀러 자리를 지키는 이유를 하드웨어 구조부터 실사용 환경까지 낱낱이 분석했습니다.","date":"2026. 3. 7.","category":"생활가전","tags":["가전제품","스마트홈"],"keywords":"가전제품, 스마트홈","thumbnail":"https://pickrise.com/images/thumb-1772851162047.webp"},{"id":1772830209125,"groupId":1772830209125,"title":"이노스 FHD 삼탠바이미 32인치 스마트TV + 무빙거치대 솔직 리뷰 (가성비 이동식 TV의 끝판왕일까?)","filename":"post/이노스-FHD-삼탠바이미-32인치-스마트TV-무빙거치대-솔직-리뷰.html","excerpt":"LG·삼성 이동식 TV의 절반 가격으로 '삼탠바이미' 스타일을 구현할 수 있다면? 이노스 FHD 삼탠바이미 32인치의 화질, 이동성, 스마트 기능까지 낱낱이 파헤쳤습니다.","date":"2026. 3. 7.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1772830209125.webp"}];
+    // 🚀 [버그 픽스 유지] id 기반 정렬로 새 상품 최상단 보장
     posts.sort((a, b) => b.id - a.id);
     const PER_PAGE = 10;
     let currentPage = 1;
@@ -343,6 +441,17 @@ a{text-decoration:none;color:inherit}
         </div>`;
     }
 
+    // 🚀 인라인 띠 배너 템플릿
+    const inlineBannerHtml = `
+        <div class="inline-banner" onclick="alert('기획전 페이지로 이동합니다.')">
+            <div class="ib-text">
+                <h3>🎒 2026년 신학기 가성비 노트북 TOP 5</h3>
+                <p>스펙부터 실사용 후기까지, 에디터가 직접 고른 최고의 선택</p>
+            </div>
+            <div class="ib-btn">기획전 보기 &rarr;</div>
+        </div>
+    `;
+
     function render(reset = false) {
         filteredPosts = getFiltered();
         if (reset) {
@@ -365,7 +474,18 @@ a{text-decoration:none;color:inherit}
             itemsToRender = filteredPosts.slice(start, start + PER_PAGE);
         }
 
-        postGrid.innerHTML += itemsToRender.map(p => renderCard(p)).join('');
+        // 🚀 포스트 카드 출력 및 중간 배너 삽입 (4번째 아이템 뒤)
+        let htmlStr = '';
+        itemsToRender.forEach((p, idx) => {
+            htmlStr += renderCard(p);
+            // 1페이지에서 3번째 아이템(인덱스 기준) 출력 후 띠 배너 삽입
+            if (currentPage === 1 && idx === 3) {
+                htmlStr += inlineBannerHtml;
+            }
+        });
+
+        postGrid.innerHTML += htmlStr;
+
         const shown = (currentPage === 1) ? itemsToRender.length + 1 : ((currentPage - 1) * PER_PAGE + 1) + itemsToRender.length;
         loadMoreWrap.style.display = shown < filteredPosts.length ? 'block' : 'none';
     }
@@ -388,7 +508,7 @@ a{text-decoration:none;color:inherit}
         });
     }
 
-    // 🚀 2. [기능 추가] Live Search (실시간 검색 팝업)
+    // 라이브 서치 (실시간 검색 팝업)
     const searchBox = document.getElementById('global-search-box');
     if (headerSearch && searchBox) {
         const dropdown = document.createElement('div');
@@ -401,7 +521,6 @@ a{text-decoration:none;color:inherit}
                 dropdown.style.display = 'none';
                 return;
             }
-            // 일치하는 제목/내용 기반으로 상위 5개 추출
             const matched = posts.filter(p => p.title.toLowerCase().includes(keyword) || (p.excerpt || '').toLowerCase().includes(keyword)).slice(0, 5);
 
             if (matched.length > 0) {
@@ -431,7 +550,7 @@ a{text-decoration:none;color:inherit}
         });
     }
 
-    // 🚀 3. [기능 추가] Tag Cloud 클릭 이벤트 연동
+    // Tag Cloud 클릭 이벤트
     document.querySelectorAll('.tag-cloud-item').forEach(btn => {
         btn.addEventListener('click', () => {
             const targetTag = btn.dataset.tag;
@@ -441,7 +560,6 @@ a{text-decoration:none;color:inherit}
                 document.querySelectorAll('.cat-tab').forEach(b => b.classList.remove('active'));
                 targetTab.classList.add('active');
                 activeTag = targetTag;
-                // 해당 탭 위치로 가로 스크롤 이동 (모바일 배려)
                 targetTab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
             } else {
                 document.querySelectorAll('.cat-tab').forEach(b => b.classList.remove('active'));
@@ -450,8 +568,6 @@ a{text-decoration:none;color:inherit}
 
             if(headerSearch) headerSearch.value = '';
             render(true);
-
-            // 모바일을 위해 리스트 갱신 후 상단으로 스크롤 부드럽게 올려줌
             window.scrollTo({ top: document.querySelector('.filter-bar').offsetTop - 20, behavior: 'smooth' });
         });
     });
