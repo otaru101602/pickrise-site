@@ -28,10 +28,10 @@ a{text-decoration:none;color:inherit}
 .cat-tab:hover { background: #f8fafc; color: #0f172a; border-color: #cbd5e1; }
 .cat-tab.active { background: #0f172a; color: #ffffff; border-color: #0f172a; }
 
-/* 🚀 완전히 바뀐 피드 레이아웃 (2단 구조) */
+/* 메인 레이아웃 */
 .feed-layout { max-width: var(--max-width); margin: 40px auto; padding: 0 24px; display: grid; grid-template-columns: 1fr 340px; gap: 40px; align-items: start; }
 
-/* 최상단 Hero Card */
+/* Hero Post */
 .hero-post { display: flex; background: #ffffff; border-radius: 24px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.04); margin-bottom: 40px; border: 1px solid #f1f5f9; cursor: pointer; transition: transform 0.3s; flex-direction: column; }
 .hero-post:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); border-color: #e2e8f0; }
 .hero-thumb { width: 100%; aspect-ratio: 16/9; position: relative; background:#f8fafc;}
@@ -41,7 +41,7 @@ a{text-decoration:none;color:inherit}
 .hero-title { font-size: 28px; font-weight: 800; color: #0f172a; line-height: 1.35; margin-bottom: 16px; word-break: keep-all; letter-spacing: -0.02em;}
 .hero-excerpt { font-size: 16px; color: #64748b; line-height: 1.6; }
 
-/* 일반 리스트 (수직형 카드로 변경) */
+/* Grid Posts */
 .post-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
 .post-card { cursor: pointer; border-radius: 20px; background: #ffffff; transition: all 0.3s; display: flex; flex-direction: column; border: 1px solid #f1f5f9; overflow: hidden; }
 .post-card:hover { transform: translateY(-4px); box-shadow: 0 15px 30px rgba(0,0,0,0.06); border-color: #e2e8f0; }
@@ -55,6 +55,34 @@ a{text-decoration:none;color:inherit}
 
 /* 사이드바 */
 .feed-sidebar { display: flex; flex-direction: column; gap: 30px; position: sticky; top: calc(var(--header-h) + 24px); }
+
+/* 🚀[추가] 에디터 신뢰도 위젯 (Trust Badge) */
+.trust-widget { background: linear-gradient(145deg, #0f172a, #1e293b); border-radius: 20px; padding: 30px 24px; color: #ffffff; position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.15); }
+.trust-widget::after { content: ''; position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: #3b82f6; border-radius: 50%; filter: blur(60px); opacity: 0.3; pointer-events: none; }
+.trust-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; position: relative; z-index: 1; }
+.trust-header img { width: 44px; height: 44px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.1); }
+.trust-header h3 { font-size: 16px; font-weight: 800; margin: 0; letter-spacing: -0.01em; }
+.trust-header span { font-size: 12px; color: #94a3b8; font-weight: 600; }
+.trust-desc { font-size: 13.5px; line-height: 1.6; color: #cbd5e1; margin: 0; position: relative; z-index: 1; word-break: keep-all; }
+.trust-desc strong { color: #3b82f6; }
+
+/* 🚀 [추가] 트렌딩 리뷰 위젯 (Trending Posts) */
+.trending-widget { background: #ffffff; border: 1px solid #f1f5f9; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.02); overflow: hidden; }
+.trending-header { font-size: 14px; font-weight: 800; color: #0f172a; padding: 20px 24px 16px; letter-spacing: 0.05em; text-transform: uppercase; border-bottom: 1px solid #f1f5f9; display: flex; align-items: center; gap: 8px; }
+.trending-list { display: flex; flex-direction: column; padding: 12px 24px 24px; counter-reset: trend-counter; gap: 16px; }
+.trend-item { display: flex; gap: 14px; align-items: center; position: relative; transition: 0.2s; }
+.trend-item:hover .trend-title { color: var(--primary); }
+.trend-item::before { counter-increment: trend-counter; content: counter(trend-counter); width: 24px; height: 24px; background: #f1f5f9; color: #64748b; font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center; border-radius: 6px; flex-shrink: 0; }
+.trend-item:nth-child(1)::before { background: #3b82f6; color: white; }
+.trend-item:nth-child(2)::before { background: #60a5fa; color: white; }
+.trend-item:nth-child(3)::before { background: #93c5fd; color: white; }
+.trend-thumb { width: 56px; height: 56px; border-radius: 10px; overflow: hidden; background: #f8fafc; border: 1px solid #f1f5f9; flex-shrink: 0; }
+.trend-thumb img { width: 100%; height: 100%; object-fit: contain; }
+.trend-info { flex: 1; min-width: 0; }
+.trend-cat { font-size: 11px; color: var(--primary); font-weight: 700; margin-bottom: 2px; }
+.trend-title { font-size: 13.5px; font-weight: 700; color: #1e293b; line-height: 1.4; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; transition: 0.2s; }
+
+/* 광고 블록 */
 .ad-block { background: #ffffff; border: 1px solid #f1f5f9; border-radius: 20px; overflow: hidden; }
 .ad-label { font-size: 10px; font-weight: 800; color: #94a3b8; text-transform: uppercase; padding: 12px 20px; border-bottom: 1px dashed #e2e8f0; }
 
@@ -152,24 +180,74 @@ a{text-decoration:none;color:inherit}
 
     <!-- 통합 사이드바 (우측) -->
     <aside class="feed-sidebar">
-        <div class="ad-block"><div class="ad-label">Sponsored</div><div><div style="padding:20px; text-align:center; color:#94a3b8; font-size:13px;">광고 준비 중</div></div></div>
-        
-    <div class="widget" style="background: linear-gradient(145deg, #0f172a, #1e293b); border: none; position: relative; overflow: hidden; border-radius: 20px;">
-        <div style="position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: #6366f1; border-radius: 50%; filter: blur(60px); opacity: 0.4; pointer-events: none;"></div>
-        <div class="widget-body" style="position: relative; z-index: 1; padding: 28px 24px;">
-            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
-                <span class="iconify" data-icon="carbon:flash-filled" style="color: #6366f1; font-size: 24px;"></span>
-                <h3 style="font-size: 18px; font-weight: 800; margin: 0; color: #ffffff; letter-spacing: -0.02em;">Tech Deal & News</h3>
+
+        <!-- 🚀 1. 에디터 신뢰도 위젯 -->
+        <div class="trust-widget">
+            <div class="trust-header">
+                <img src="https://pickrise.com/images/favicon.png" alt="PickRise">
+                <div>
+                    <h3>PickRise Editor</h3>
+                    <span>IT & Tech Reviewer</span>
+                </div>
             </div>
-            <p style="font-size: 13px; color: #94a3b8; line-height: 1.6; margin-bottom: 20px; word-break: keep-all;">최신 IT 트렌드 리뷰와 숨겨진 전자기기 특가 할인 정보를 매주 이메일로 받아보세요.</p>
-            <div class="newsletter-card" style="margin:0; padding:0; background:transparent; border:none;">
-                <input type="email" id="subs-email" class="newsletter-input" placeholder="이메일 주소 입력" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #ffffff; width:100%; padding: 12px; border-radius:8px; margin-bottom:10px; outline:none;">
-                <button type="button" class="newsletter-btn" style="width:100%; padding:12px; background: #6366f1; color: #ffffff; border:none; border-radius:8px; font-weight:700; cursor:pointer;">무료로 구독하기</button>
+            <p class="trust-desc">제조사의 딱딱한 스펙 시트 너머, <strong>진짜 실사용 환경에서의 장단점</strong>을 가감 없이 팩트체크합니다.</p>
+        </div>
+
+        <!-- 🚀 2. 트렌딩 리뷰 위젯 -->
+        <div class="trending-widget">
+            <div class="trending-header">
+                <span class="iconify" data-icon="carbon:chart-line" style="font-size: 18px; color: #3b82f6;"></span>
+                Weekly Hot
+            </div>
+            <div class="trending-list">
+                
+            <a href="post/LG전자-2025-그램-16-코어Ultra5-실사용-리뷰.html" class="trend-item">
+                <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1772859741520.webp" alt=""></div>
+                <div class="trend-info">
+                    <div class="trend-title">LG전자 2025 그램 16 코어Ultra5 실사용 리뷰 (16인치인데 1.2kg? 가벼움의 끝판왕, 직접 확인해봤습니다)</div>
+                    <div class="trend-cat">PC/노트북</div>
+                </div>
+            </a>
+        
+            <a href="post/파테크-한일전자-초고출력-헤어-드라이어-2300W-실사용-리뷰.html" class="trend-item">
+                <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1772857280714.webp" alt=""></div>
+                <div class="trend-info">
+                    <div class="trend-title">파테크 한일전자 초고출력 헤어 드라이어 2300W 실사용 리뷰 (머리숱 많은 분들, 이거 하나로 해결됩니다)</div>
+                    <div class="trend-cat">생활가전</div>
+                </div>
+            </a>
+        
+            <a href="post/위드라이프-43인치-FHD-TV-대기업-정품-패널-실사용-리뷰.html" class="trend-item">
+                <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1772856069487.webp" alt=""></div>
+                <div class="trend-info">
+                    <div class="trend-title">위드라이프 43인치 FHD TV 대기업 정품 패널 실사용 리뷰 (10만 원대 가성비 TV, 진짜 믿고 살 수 있을까?)</div>
+                    <div class="trend-cat">생활가전</div>
+                </div>
+            </a>
+        
+            <a href="post/필립스-3000-시리즈-무선-전기주전자-HD9318HD9319-완전-분석.html" class="trend-item">
+                <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1772851162047.webp" alt=""></div>
+                <div class="trend-info">
+                    <div class="trend-title">필립스 3000 시리즈 무선 전기주전자 HD9318/HD9319 완전 분석 (2만 원대 가성비 전기포트, 진짜 살 만할까?)</div>
+                    <div class="trend-cat">생활가전</div>
+                </div>
+            </a>
+        
+            <a href="post/이노스-FHD-삼탠바이미-32인치-스마트TV-무빙거치대-솔직-리뷰.html" class="trend-item">
+                <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1772830209125.webp" alt=""></div>
+                <div class="trend-info">
+                    <div class="trend-title">이노스 FHD 삼탠바이미 32인치 스마트TV + 무빙거치대 솔직 리뷰 (가성비 이동식 TV의 끝판왕일까?)</div>
+                    <div class="trend-cat">생활가전</div>
+                </div>
+            </a>
+        
             </div>
         </div>
-    </div>
 
+        <!-- 3. 추천 상품 (광고) 위젯 모음 -->
         <div class="ad-block"><div class="ad-label">Sponsored</div><div><div style="padding:20px; text-align:center; color:#94a3b8; font-size:13px;">광고 준비 중</div></div></div>
+        <div class="ad-block"><div class="ad-label">Sponsored</div><div><div style="padding:20px; text-align:center; color:#94a3b8; font-size:13px;">광고 준비 중</div></div></div>
+
     </aside>
 
 </div>
