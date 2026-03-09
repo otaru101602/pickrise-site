@@ -227,6 +227,27 @@ a { text-decoration:none; color:inherit; }
     .footer-inner{grid-template-columns:1fr 1fr;gap:24px}
     .footer-brand{grid-column:1 / -1}
 }
+
+/* SHARED_CSS 블록 맨 끝에 아래 코드 추가 */
+html.dark-mode {
+    --bg-page: #0f172a;
+    --bg-surface: #1e293b;
+    --text-main: #f8fafc;
+    --text-primary: #f8fafc;
+    --text-sub: #cbd5e1;
+    --text-secondary: #cbd5e1;
+    --text-light: #64748b;
+    --text-tertiary: #64748b;
+    --border: #334155;
+}
+html.dark-mode .article-content-area, html.dark-mode .widget, html.dark-mode .widget-box, html.dark-mode .ad-block { background: #1e293b; border-color: #334155; }
+html.dark-mode .webzine-header { background: #0f172a; border-bottom: 1px solid #334155; }
+html.dark-mode .site-header { background: rgba(15, 23, 42, 0.95); border-bottom: 1px solid #334155; }
+html.dark-mode .search-input { background-color: #334155; color: #fff; }
+html.dark-mode .search-input:focus { background-color: #1e293b; }
+html.dark-mode .m-btn { color: #f8fafc; }
+
+
     </style>
 </head>
 <body>
@@ -237,16 +258,19 @@ a { text-decoration:none; color:inherit; }
         <a href="https://pickrise.com/index.html" class="logo">
             <img src="https://pickrise.com/images/logo.png" alt="PickRise" style="height:46px; width:auto;">
         </a>
-        <nav class="nav"><a href="https://pickrise.com/index.html#스마트기기">스마트기기</a><a href="https://pickrise.com/index.html#PC/노트북">PC/노트북</a><a href="https://pickrise.com/index.html#생활가전">생활가전</a><a href="https://pickrise.com/index.html#테크트렌드">테크트렌드</a></nav>
+        <nav class="nav"><a href="https://pickrise.com/index.htmlcategory-스마트기기.html">스마트기기</a><a href="https://pickrise.com/index.htmlcategory-PC-노트북.html">PC/노트북</a><a href="https://pickrise.com/index.htmlcategory-생활가전.html">생활가전</a><a href="https://pickrise.com/index.htmlcategory-테크트렌드.html">테크트렌드</a></nav>
         <div class="header-utils">
+                   <!-- 👇 다크모드 버튼 추가 👇 -->
+            <button class="m-btn" id="theme-toggle" style="display:flex;"><span class="iconify" data-icon="carbon:moon"></span></button>
         <div class="search-box" id="global-search-box">
+
             <span class="iconify search-icon-pos" data-icon="carbon:search"></span>
             <input type="text" class="search-input" id="search-input" placeholder="기기명, 브랜드 검색" autocomplete="off">
         </div>
             <button class="m-btn" id="m-search-toggle"><span class="iconify" data-icon="carbon:search"></span></button>
             <button class="m-btn" id="m-menu-toggle"><span class="iconify" data-icon="carbon:menu"></span></button>
         </div>
-    </div>
+
 </header>
 <!-- 🚀 진행률 바 (헤더 바로 밑에 부착) -->
 <div class="progress-container"><div class="progress-bar" id="progress-bar"></div></div>
@@ -257,7 +281,7 @@ a { text-decoration:none; color:inherit; }
         <img src="https://pickrise.com/images/logo.png" alt="PickRise" style="height:24px;">
         <button id="m-sidebar-close" style="background:none; border:none; font-size:32px;">&times;</button>
     </div>
-    <nav class="m-nav-list"><a href="https://pickrise.com/index.html#스마트기기">스마트기기</a><a href="https://pickrise.com/index.html#PC/노트북">PC/노트북</a><a href="https://pickrise.com/index.html#생활가전">생활가전</a><a href="https://pickrise.com/index.html#테크트렌드">테크트렌드</a></nav>
+    <nav class="m-nav-list"><a href="https://pickrise.com/index.htmlcategory-스마트기기.html">스마트기기</a><a href="https://pickrise.com/index.htmlcategory-PC-노트북.html">PC/노트북</a><a href="https://pickrise.com/index.htmlcategory-생활가전.html">생활가전</a><a href="https://pickrise.com/index.htmlcategory-테크트렌드.html">테크트렌드</a></nav>
 </div>
 
 <div class="filter-bar">
@@ -298,22 +322,6 @@ a { text-decoration:none; color:inherit; }
             <div class="widget-header">Weekly Trending</div>
             <div class="trending-list">
                 
-            <a href="post/LG전자-디오스-AI-오브제컬렉션-냉장고-832L-실사용-리뷰-및-2도어-vs-4.html" class="trend-item">
-                <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1772867207203.webp" alt=""></div>
-                <div class="trend-info">
-                    <div class="trend-title">LG전자 디오스 AI 오브제컬렉션 냉장고 832L 실사용 리뷰 및 2도어 vs 4도어 비교 (대용량인데 왜 이렇게 저렴할까?)</div>
-                    <div class="trend-cat">생활가전</div>
-                </div>
-            </a>
-        
-            <a href="post/HP-2025-노트북15-156-코어i5-인텔-13세대-완벽-분석.html" class="trend-item">
-                <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1773033576805.webp" alt=""></div>
-                <div class="trend-info">
-                    <div class="trend-title">HP 2025 노트북15 15.6 코어i5 인텔 13세대 완벽 분석 (사무용·대학생 노트북, 이 가격에 이 사양이 말이 되나요?)</div>
-                    <div class="trend-cat">PC/노트북</div>
-                </div>
-            </a>
-        
             <a href="post/LG-트롬-오브제컬렉션-워시콤보-FH25VAX-미니워시-세트-완벽-분석.html" class="trend-item">
                 <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1773045562155.webp" alt=""></div>
                 <div class="trend-info">
@@ -330,11 +338,27 @@ a { text-decoration:none; color:inherit; }
                 </div>
             </a>
         
-            <a href="post/파테크-한일전자-초고출력-헤어-드라이어-2300W-실사용-리뷰.html" class="trend-item">
-                <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1772857280714.webp" alt=""></div>
+            <a href="post/LG전자-디오스-AI-오브제컬렉션-냉장고-832L-실사용-리뷰-및-2도어-vs-4.html" class="trend-item">
+                <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1772867207203.webp" alt=""></div>
                 <div class="trend-info">
-                    <div class="trend-title">파테크 한일전자 초고출력 헤어 드라이어 2300W 실사용 리뷰 (머리숱 많은 분들, 이거 하나로 해결됩니다)</div>
+                    <div class="trend-title">LG전자 디오스 AI 오브제컬렉션 냉장고 832L 실사용 리뷰 및 2도어 vs 4도어 비교 (대용량인데 왜 이렇게 저렴할까?)</div>
                     <div class="trend-cat">생활가전</div>
+                </div>
+            </a>
+        
+            <a href="post/필립스-3000-시리즈-무선-전기주전자-HD9318HD9319-완전-분석.html" class="trend-item">
+                <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1772851162047.webp" alt=""></div>
+                <div class="trend-info">
+                    <div class="trend-title">필립스 3000 시리즈 무선 전기주전자 HD9318/HD9319 완전 분석 (2만 원대 가성비 전기포트, 진짜 살 만할까?)</div>
+                    <div class="trend-cat">생활가전</div>
+                </div>
+            </a>
+        
+            <a href="post/HP-2025-노트북15-156-코어i5-인텔-13세대-완벽-분석.html" class="trend-item">
+                <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1773033576805.webp" alt=""></div>
+                <div class="trend-info">
+                    <div class="trend-title">HP 2025 노트북15 15.6 코어i5 인텔 13세대 완벽 분석 (사무용·대학생 노트북, 이 가격에 이 사양이 말이 되나요?)</div>
+                    <div class="trend-cat">PC/노트북</div>
                 </div>
             </a>
         
@@ -384,7 +408,7 @@ a { text-decoration:none; color:inherit; }
     const PER_PAGE = 10;
     let currentPage = 1;
     let filteredPosts =[];
-    let activeTag = '전체';
+    let activeTag = '전체'; // 👈 이 부분 수정
 
     const heroContainer = document.getElementById('hero-post-container');
     const postGrid = document.getElementById('post-grid');
