@@ -6,13 +6,13 @@
     <title>PickRise | 스마트한 소비를 위한 가전 및 디지털 기기 리뷰</title>
     
 
-    <!-- ✅ [수정됨] 대폭 강화된 SEO 메타 태그 (인덱스용) -->
+    <!-- ✅ SEO 메타 태그 (인덱스용) -->
     <meta name="description" content="데이터와 실사용 경험에 기반한 스마트 기기, 가전제품 리뷰 및 IT 트렌드 정보 플랫폼">
     <meta name="keywords" content="스마트기기, PC/노트북, 생활가전, 테크트렌드, 테크, 리뷰, 가전, 스마트폰, 노트북, 벤치마크, 추천">
     <link rel="canonical" href="https://pickrise.com/index.html">
     <link rel="icon" type="image/png" href="https://pickrise.com/images/favicon.png">
 
-    <!-- Open Graph (Facebook, Kakao, Web 등 공유용) -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="PickRise | 스마트한 소비를 위한 가전 및 디지털 기기 리뷰">
     <meta property="og:description" content="데이터와 실사용 경험에 기반한 스마트 기기, 가전제품 리뷰 및 IT 트렌드 정보 플랫폼">
@@ -29,7 +29,7 @@
 
     <meta name="theme-color" content="#ffffff">
 
-    <!-- ✅ [수정됨] 검색엔진 최적화(SEO)를 위한 구조화된 데이터 -->
+    <!-- ✅ 구조화된 데이터(JSON-LD) -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -55,7 +55,7 @@
 :root{--bg-page:#f8fafc;--text-main:#0f172a;--text-sub:#475569;--text-light:#94a3b8;--primary:#3b82f6;--primary-light:#eff6ff;--border:#e2e8f0;--max-width:1240px;--header-h:72px;}
 *{box-sizing:border-box;margin:0;padding:0}
 
-/* 🚀 [추가] 모바일 가로 스크롤(화면 밀림) 완벽 차단 */
+/* 🚀 모바일 가로 스크롤(화면 밀림) 완벽 차단 */
 html, body { font-family:'Pretendard',-apple-system,sans-serif; background:var(--bg-page); color:var(--text-main); line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x: hidden; width: 100%; }
 a{text-decoration:none;color:inherit}
 
@@ -83,18 +83,6 @@ a{text-decoration:none;color:inherit}
 
 /* 메인 레이아웃 */
 .feed-layout { max-width: var(--max-width); margin: 40px auto; padding: 0 24px; display: grid; grid-template-columns: 1fr 340px; gap: 40px; align-items: start; width: 100%; box-sizing: border-box; }
-
-/* VS 섹션 */
-.vs-section { margin-bottom: 50px; background: #ffffff; padding: 24px 30px; border-radius: 24px; border: 1px solid #f1f5f9; box-shadow: 0 10px 30px rgba(0,0,0,0.02); width: 100%; box-sizing: border-box;}
-.vs-header { font-size: 20px; font-weight: 800; color: #0f172a; margin-bottom: 20px; display: flex; align-items: center; gap: 8px; letter-spacing: -0.02em;}
-.vs-scroll { display: flex; gap: 20px; overflow-x: auto; scrollbar-width: none; padding-bottom: 10px; width: 100%; }
-.vs-scroll::-webkit-scrollbar { display: none; }
-.vs-card { min-width: 280px; width: 280px; background: #fff; border-radius: 16px; border: 1px solid #e2e8f0; overflow: hidden; display: flex; flex-direction: column; transition: 0.3s; position: relative; }
-.vs-card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.08); border-color: #cbd5e1; }
-.vs-badge { position: absolute; top: 12px; left: 12px; background: #ef4444; color: #fff; font-size: 12px; font-weight: 900; padding: 4px 10px; border-radius: 8px; z-index: 10; font-style: italic; letter-spacing: 0.05em; }
-.vs-thumb { width: 100%; aspect-ratio: 16/10; object-fit: cover; border-bottom: 1px solid #f1f5f9;}
-.vs-info { padding: 16px; flex: 1; }
-.vs-title { font-size: 15px; font-weight: 700; color: #1e293b; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 
 /* Hero Post */
 .hero-post { display: flex; background: #ffffff; border-radius: 24px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.04); margin-bottom: 40px; border: 1px solid #f1f5f9; cursor: pointer; transition: transform 0.3s; flex-direction: column; width: 100%; }
@@ -161,34 +149,29 @@ a{text-decoration:none;color:inherit}
 .load-more-btn { display: inline-block; width: 100%; padding: 16px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; font-size: 15px; font-weight: 700; color: #475569; cursor: pointer; transition: 0.2s; text-align:center; margin-top:40px; }
 .load-more-btn:hover { background: #f8fafc; color: var(--primary); border-color: var(--primary); }
 
-/* 🚀 [수정됨] 모바일 반응형 완벽 보완 */
+/* 🚀 모바일 반응형 완벽 보완 (VS섹션 삭제 후 여백 정리) */
 @media (max-width: 1024px) {
     .feed-layout { grid-template-columns: 1fr; gap: 30px; padding: 0 24px; }
     .feed-sidebar { display: none; }
 }
 
 @media (max-width: 768px) {
-    /* 🚀 태블릿/모바일 진입 시 그리드를 1열로 변경하여 밀림 방지 */
     .post-grid { grid-template-columns: 1fr; gap: 20px; }
     .hero-info { padding: 24px; }
     .hero-title { font-size: 24px; line-height: 1.35; }
     .hero-excerpt { font-size: 15px; }
-    .vs-card { min-width: 240px; width: 240px; }
     .tab-scroll { padding: 0 20px; }
     .inline-banner { flex-direction: column; text-align: center; gap: 16px; padding: 24px 20px; }
     .ib-btn { width: 100%; }
 }
 
 @media (max-width: 480px) {
-    /* 🚀 작은 스마트폰 화면(아이폰 등) 최적화 */
     .feed-layout { margin: 20px auto; padding: 0 16px; gap: 24px; }
     .hero-title { font-size: 20px; }
     .hero-excerpt { font-size: 14px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
     .card-body { padding: 20px; }
     .card-title { font-size: 16.5px; }
     .card-desc { font-size: 13.5px; }
-    .vs-section { padding: 20px 16px; border-radius: 16px; margin-bottom: 24px; }
-    .vs-header { font-size: 18px; }
     .filter-bar .tab-scroll { padding: 0 16px; gap: 8px; }
     .cat-tab { padding: 6px 16px; font-size: 13.5px; }
 }
@@ -259,7 +242,7 @@ a{text-decoration:none;color:inherit}
 
 <div class="filter-bar">
     <div class="filter-inner">
-        <div class="tab-scroll"><button class="cat-tab active " data-tag="전체">전체</button><button class="cat-tab  special-tab" data-tag="가성비 Best">🔥 가성비 Best</button><button class="cat-tab  special-tab" data-tag="프리미엄 선택">🔥 프리미엄 선택</button><button class="cat-tab  special-tab" data-tag="구매 가이드">🔥 구매 가이드</button><button class="cat-tab  " data-tag="노트북">노트북</button><button class="cat-tab  " data-tag="리뷰">리뷰</button><button class="cat-tab  " data-tag="스마트폰">스마트폰</button><button class="cat-tab  " data-tag="삼성">삼성</button><button class="cat-tab  " data-tag="웨어러블">웨어러블</button><button class="cat-tab  " data-tag="가전제품">가전제품</button><button class="cat-tab  " data-tag="스마트홈">스마트홈</button><button class="cat-tab  " data-tag="스마트TV">스마트TV</button></div>
+        <div class="tab-scroll"><button class="cat-tab active " data-tag="전체">전체</button><button class="cat-tab  special-tab" data-tag="가성비 Best">🔥 가성비 Best</button><button class="cat-tab  special-tab" data-tag="프리미엄 선택">🔥 프리미엄 선택</button><button class="cat-tab  special-tab" data-tag="구매 가이드">🔥 구매 가이드</button><button class="cat-tab  " data-tag="가전제품">가전제품</button><button class="cat-tab  " data-tag="스마트TV">스마트TV</button><button class="cat-tab  " data-tag="노트북">노트북</button><button class="cat-tab  " data-tag="리뷰">리뷰</button><button class="cat-tab  " data-tag="스마트폰">스마트폰</button><button class="cat-tab  " data-tag="삼성">삼성</button><button class="cat-tab  " data-tag="웨어러블">웨어러블</button><button class="cat-tab  " data-tag="스마트홈">스마트홈</button></div>
     </div>
 </div>
 
@@ -268,31 +251,6 @@ a{text-decoration:none;color:inherit}
     <!-- 메인 피드 (좌측) -->
     <div class="feed-main">
         <div id="hero-post-container"></div>
-
-        <!-- 🚀 VS 매치 가로 스크롤 섹션 -->
-        
-                <div class="vs-section">
-                    <div class="vs-header"><span class="iconify" data-icon="carbon:compare" style="color:#ef4444; font-size:22px;"></span> 결정장애 해결! 라이벌 매치</div>
-                    <div class="vs-scroll">
-                <a href="post/쿠쿠-전기보온-에그밥솥-6인용-실사용-리뷰-및-밥맛-테스트.html" class="vs-card">
-                    <span class="vs-badge">VS MATCH</span>
-                    <img src="https://pickrise.com/images/thumb-1772868391538.webp" class="vs-thumb" alt="">
-                    <div class="vs-info">
-                        <div class="vs-title">쿠쿠 전기보온 에그밥솥 6인용 실사용 리뷰 및 밥맛 테스트 (압력밥솥 vs 전기밥솥, 진짜 차이는?)</div>
-                    </div>
-                </a>
-            
-                <a href="post/LG전자-디오스-AI-오브제컬렉션-냉장고-832L-실사용-리뷰-및-2도어-vs-4.html" class="vs-card">
-                    <span class="vs-badge">VS MATCH</span>
-                    <img src="https://pickrise.com/images/thumb-1772867207203.webp" class="vs-thumb" alt="">
-                    <div class="vs-info">
-                        <div class="vs-title">LG전자 디오스 AI 오브제컬렉션 냉장고 832L 실사용 리뷰 및 2도어 vs 4도어 비교 (대용량인데 왜 이렇게 저렴할까?)</div>
-                    </div>
-                </a>
-            </div>
-                </div>
-            
-
         <div class="post-grid" id="post-grid"></div>
         <div id="load-more-wrap" style="display:none;">
             <button class="load-more-btn" id="load-more-btn">리뷰 더 보기</button>
@@ -321,7 +279,7 @@ a{text-decoration:none;color:inherit}
                 인기 키워드 탐색
             </div>
             <div class="tag-cloud-wrap">
-                <button class="tag-cloud-item" data-tag="가전제품">#가전제품</button><button class="tag-cloud-item" data-tag="리뷰">#리뷰</button><button class="tag-cloud-item" data-tag="스마트홈">#스마트홈</button><button class="tag-cloud-item" data-tag="노트북">#노트북</button><button class="tag-cloud-item" data-tag="스마트TV">#스마트TV</button><button class="tag-cloud-item" data-tag="스마트폰">#스마트폰</button><button class="tag-cloud-item" data-tag="삼성">#삼성</button><button class="tag-cloud-item" data-tag="웨어러블">#웨어러블</button>
+                <button class="tag-cloud-item" data-tag="가전제품">#가전제품</button><button class="tag-cloud-item" data-tag="리뷰">#리뷰</button><button class="tag-cloud-item" data-tag="스마트TV">#스마트TV</button><button class="tag-cloud-item" data-tag="스마트홈">#스마트홈</button><button class="tag-cloud-item" data-tag="노트북">#노트북</button><button class="tag-cloud-item" data-tag="스마트폰">#스마트폰</button><button class="tag-cloud-item" data-tag="삼성">#삼성</button><button class="tag-cloud-item" data-tag="웨어러블">#웨어러블</button>
             </div>
         </div>
 
@@ -333,22 +291,6 @@ a{text-decoration:none;color:inherit}
             </div>
             <div class="trending-list">
                 
-            <a href="post/HP-2025-노트북15-156-코어i5-인텔-13세대-완벽-분석.html" class="trend-item">
-                <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1773033576805.webp" alt=""></div>
-                <div class="trend-info">
-                    <div class="trend-title">HP 2025 노트북15 15.6 코어i5 인텔 13세대 완벽 분석 (사무용·대학생 노트북, 이 가격에 이 사양이 말이 되나요?)</div>
-                    <div class="trend-cat">PC/노트북</div>
-                </div>
-            </a>
-        
-            <a href="post/필립스-3000-시리즈-무선-전기주전자-HD9318HD9319-완전-분석.html" class="trend-item">
-                <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1772851162047.webp" alt=""></div>
-                <div class="trend-info">
-                    <div class="trend-title">필립스 3000 시리즈 무선 전기주전자 HD9318/HD9319 완전 분석 (2만 원대 가성비 전기포트, 진짜 살 만할까?)</div>
-                    <div class="trend-cat">생활가전</div>
-                </div>
-            </a>
-        
             <a href="post/파테크-한일전자-초고출력-헤어-드라이어-2300W-실사용-리뷰.html" class="trend-item">
                 <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1772857280714.webp" alt=""></div>
                 <div class="trend-info">
@@ -357,19 +299,35 @@ a{text-decoration:none;color:inherit}
                 </div>
             </a>
         
-            <a href="post/이노스-FHD-삼탠바이미-32인치-스마트TV-무빙거치대-솔직-리뷰.html" class="trend-item">
-                <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1772830209125.webp" alt=""></div>
+            <a href="post/위드라이프-43인치-FHD-TV-대기업-정품-패널-실사용-리뷰.html" class="trend-item">
+                <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1772856069487.webp" alt=""></div>
                 <div class="trend-info">
-                    <div class="trend-title">이노스 FHD 삼탠바이미 32인치 스마트TV + 무빙거치대 솔직 리뷰 (가성비 이동식 TV의 끝판왕일까?)</div>
+                    <div class="trend-title">위드라이프 43인치 FHD TV 대기업 정품 패널 실사용 리뷰 (10만 원대 가성비 TV, 진짜 믿고 살 수 있을까?)</div>
                     <div class="trend-cat">생활가전</div>
                 </div>
             </a>
         
-            <a href="post/LG전자-디오스-AI-오브제컬렉션-냉장고-832L-실사용-리뷰-및-2도어-vs-4.html" class="trend-item">
-                <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1772867207203.webp" alt=""></div>
+            <a href="post/LG전자-2025-그램-16-코어Ultra5-실사용-리뷰.html" class="trend-item">
+                <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1772859741520.webp" alt=""></div>
                 <div class="trend-info">
-                    <div class="trend-title">LG전자 디오스 AI 오브제컬렉션 냉장고 832L 실사용 리뷰 및 2도어 vs 4도어 비교 (대용량인데 왜 이렇게 저렴할까?)</div>
-                    <div class="trend-cat">생활가전</div>
+                    <div class="trend-title">LG전자 2025 그램 16 코어Ultra5 실사용 리뷰 (16인치인데 1.2kg? 가벼움의 끝판왕, 직접 확인해봤습니다)</div>
+                    <div class="trend-cat">PC/노트북</div>
+                </div>
+            </a>
+        
+            <a href="post/삼성전자-갤럭시-S26-자급제-실사용-리뷰-디자인성능카메라-총정리.html" class="trend-item">
+                <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1772873523097.webp" alt=""></div>
+                <div class="trend-info">
+                    <div class="trend-title">삼성전자 갤럭시 S26 자급제 실사용 리뷰 — 디자인·성능·카메라 총정리 (아이폰 이탈자들이 돌아오는 이유가 있었다)</div>
+                    <div class="trend-cat">스마트기기</div>
+                </div>
+            </a>
+        
+            <a href="post/HP-2025-노트북15-156-코어i5-인텔-13세대-완벽-분석.html" class="trend-item">
+                <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1773033576805.webp" alt=""></div>
+                <div class="trend-info">
+                    <div class="trend-title">HP 2025 노트북15 15.6 코어i5 인텔 13세대 완벽 분석 (사무용·대학생 노트북, 이 가격에 이 사양이 말이 되나요?)</div>
+                    <div class="trend-cat">PC/노트북</div>
                 </div>
             </a>
         
@@ -406,7 +364,7 @@ a{text-decoration:none;color:inherit}
 
 <script>
 (function() {
-    const posts = [{"id":1773033576805,"groupId":1773033576805,"title":"HP 2025 노트북15 15.6 코어i5 인텔 13세대 완벽 분석 (사무용·대학생 노트북, 이 가격에 이 사양이 말이 되나요?)","filename":"post/HP-2025-노트북15-156-코어i5-인텔-13세대-완벽-분석.html","excerpt":"인텔 13세대 i5, 16GB 램, 512GB SSD, 윈도우11 홈 탑재. 일주일간 직접 테스트하며 느낀 확실한 장점과 절대 숨기지 않을 단점까지 솔직하게 정리했습니다.","date":"2026. 3. 9.","category":"PC/노트북","tags":["노트북","리뷰"],"keywords":"노트북, 리뷰","thumbnail":"https://pickrise.com/images/thumb-1773033576805.webp"},{"id":1772873523097,"groupId":1772873523097,"title":"삼성전자 갤럭시 S26 자급제 실사용 리뷰 — 디자인·성능·카메라 총정리 (아이폰 이탈자들이 돌아오는 이유가 있었다)","filename":"post/삼성전자-갤럭시-S26-자급제-실사용-리뷰-디자인성능카메라-총정리.html","excerpt":"엑시노스 2500 탑재, 120Hz AMOLED 디스플레이, 그리고 Galaxy AI까지. 일주일간 직접 사용하며 확인한 갤럭시 S26의 확실한 강점과 반드시 알아야 할 단점을 솔직하게 정리했습니다.","date":"2026. 3. 7.","category":"스마트기기","tags":["스마트폰","삼성","리뷰","웨어러블"],"keywords":"스마트폰, 삼성, 리뷰, 웨어러블","thumbnail":"https://pickrise.com/images/thumb-1772873523097.webp"},{"id":1772868391538,"groupId":1772868391537,"title":"쿠쿠 전기보온 에그밥솥 6인용 실사용 리뷰 및 밥맛 테스트 (압력밥솥 vs 전기밥솥, 진짜 차이는?)","filename":"post/쿠쿠-전기보온-에그밥솥-6인용-실사용-리뷰-및-밥맛-테스트.html","excerpt":"동글동글 귀여운 에그 디자인과 에너지 효율 1등급, 그리고 10% 환급 혜택까지. 6만 원대 가성비 밥솥의 실제 밥맛은 과연 어떨까요? 자취생부터 소가족까지, 30개의 실사용 후기를 바탕으로 장단점을 낱낱이 공개합니다.","date":"2026. 3. 6.","category":"생활가전","tags":["가전제품","리뷰"],"keywords":"가전제품, 리뷰","thumbnail":"https://pickrise.com/images/thumb-1772868391538.webp"},{"id":1772867207203,"groupId":1772867207202,"title":"LG전자 디오스 AI 오브제컬렉션 냉장고 832L 실사용 리뷰 및 2도어 vs 4도어 비교 (대용량인데 왜 이렇게 저렴할까?)","filename":"post/LG전자-디오스-AI-오브제컬렉션-냉장고-832L-실사용-리뷰-및-2도어-vs-4.html","excerpt":"24시간 자동 정온 시스템과 AI 냉기 케어로 식재료 신선도를 지키는 832리터 대용량 양문형 냉장고. 넉넉한 수납공간과 세련된 오브제 디자인, 그리고 합리적인 가격까지. 10년 이상 장수한 구형 모델 사용자들의 교체 사례를 통해 본 실제 체감 변화와 숨겨진 단점까지 낱낱이 공개합니다.","date":"2026. 3. 6.","category":"생활가전","tags":["가전제품","스마트홈","리뷰"],"keywords":"가전제품, 스마트홈, 리뷰","thumbnail":"https://pickrise.com/images/thumb-1772867207203.webp"},{"id":1772859741520,"groupId":1772859741519,"title":"LG전자 2025 그램 16 코어Ultra5 실사용 리뷰 (16인치인데 1.2kg? 가벼움의 끝판왕, 직접 확인해봤습니다)","filename":"post/LG전자-2025-그램-16-코어Ultra5-실사용-리뷰.html","excerpt":"1.2kg대의 초경량 16인치 바디, 인텔 코어 Ultra5, WQXGA 고해상도 디스플레이, 77Wh 대용량 배터리. 그램이 매년 선택받는 이유가 있는지 스펙과 실사용 두 가지 관점으로 꼼꼼히 짚어봤습니다.","date":"2026. 3. 7.","category":"PC/노트북","tags":["노트북","리뷰"],"keywords":"노트북, 리뷰","thumbnail":"https://pickrise.com/images/thumb-1772859741520.webp"},{"id":1772857280714,"groupId":1772857280714,"title":"파테크 한일전자 초고출력 헤어 드라이어 2300W 실사용 리뷰 (머리숱 많은 분들, 이거 하나로 해결됩니다)","filename":"post/파테크-한일전자-초고출력-헤어-드라이어-2300W-실사용-리뷰.html","excerpt":"2300W 초고출력, 6단계 세밀한 온도·풍속 조절, 이중 안전장치까지. 쿠팡 헤어드라이어 판매 1위의 이유를 화질이 아닌 바람으로 직접 증명해봤습니다.","date":"2026. 3. 7.","category":"생활가전","tags":["가전제품","스마트홈"],"keywords":"가전제품, 스마트홈","thumbnail":"https://pickrise.com/images/thumb-1772857280714.webp"},{"id":1772856069487,"groupId":1772856069487,"title":"위드라이프 43인치 FHD TV 대기업 정품 패널 실사용 리뷰 (10만 원대 가성비 TV, 진짜 믿고 살 수 있을까?)","filename":"post/위드라이프-43인치-FHD-TV-대기업-정품-패널-실사용-리뷰.html","excerpt":"대기업 정품 패널 탑재, 에너지 소비효율 1등급, 유·무상 5년 AS까지. 10만 원대 중소기업 TV가 이 정도면 충분한지, 화질·음향·내구성까지 낱낱이 파헤쳐 봤습니다.","date":"2026. 3. 7.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1772856069487.webp"},{"id":1772851162047,"groupId":1772851162047,"title":"필립스 3000 시리즈 무선 전기주전자 HD9318/HD9319 완전 분석 (2만 원대 가성비 전기포트, 진짜 살 만할까?)","filename":"post/필립스-3000-시리즈-무선-전기주전자-HD9318HD9319-완전-분석.html","excerpt":"빠른 가열 속도, 군더더기 없는 디자인, 탄탄한 안전 시스템까지. 필립스 3000 시리즈 전기주전자가 꾸준히 베스트셀러 자리를 지키는 이유를 하드웨어 구조부터 실사용 환경까지 낱낱이 분석했습니다.","date":"2026. 3. 7.","category":"생활가전","tags":["가전제품","스마트홈"],"keywords":"가전제품, 스마트홈","thumbnail":"https://pickrise.com/images/thumb-1772851162047.webp"},{"id":1772830209125,"groupId":1772830209125,"title":"이노스 FHD 삼탠바이미 32인치 스마트TV + 무빙거치대 솔직 리뷰 (가성비 이동식 TV의 끝판왕일까?)","filename":"post/이노스-FHD-삼탠바이미-32인치-스마트TV-무빙거치대-솔직-리뷰.html","excerpt":"LG·삼성 이동식 TV의 절반 가격으로 '삼탠바이미' 스타일을 구현할 수 있다면? 이노스 FHD 삼탠바이미 32인치의 화질, 이동성, 스마트 기능까지 낱낱이 파헤쳤습니다.","date":"2026. 3. 7.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1772830209125.webp"}];
+    const posts = [{"id":1773034610848,"groupId":1773034610848,"title":"무빙큐빅스 스마트 40인치 삼탠바이미 화이트에디션 SET 완벽 분석 (스탠바이미 절반 가격으로 똑같이 누릴 수 있을까?)","filename":"post/무빙큐빅스-스마트-40인치-삼탠바이미-화이트에디션-SET-완벽-분석.html","excerpt":"이동식 거치대 + 40인치 스마트 TV 세트를 30만 원대에. 직접 조립하고 일주일간 거실, 침실, 주방에서 굴려본 솔직한 장단점 총정리입니다.","date":"2026. 3. 9.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1773034610848.webp"},{"id":1773033576805,"groupId":1773033576805,"title":"HP 2025 노트북15 15.6 코어i5 인텔 13세대 완벽 분석 (사무용·대학생 노트북, 이 가격에 이 사양이 말이 되나요?)","filename":"post/HP-2025-노트북15-156-코어i5-인텔-13세대-완벽-분석.html","excerpt":"인텔 13세대 i5, 16GB 램, 512GB SSD, 윈도우11 홈 탑재. 일주일간 직접 테스트하며 느낀 확실한 장점과 절대 숨기지 않을 단점까지 솔직하게 정리했습니다.","date":"2026. 3. 9.","category":"PC/노트북","tags":["노트북","리뷰"],"keywords":"노트북, 리뷰","thumbnail":"https://pickrise.com/images/thumb-1773033576805.webp"},{"id":1772873523097,"groupId":1772873523097,"title":"삼성전자 갤럭시 S26 자급제 실사용 리뷰 — 디자인·성능·카메라 총정리 (아이폰 이탈자들이 돌아오는 이유가 있었다)","filename":"post/삼성전자-갤럭시-S26-자급제-실사용-리뷰-디자인성능카메라-총정리.html","excerpt":"엑시노스 2500 탑재, 120Hz AMOLED 디스플레이, 그리고 Galaxy AI까지. 일주일간 직접 사용하며 확인한 갤럭시 S26의 확실한 강점과 반드시 알아야 할 단점을 솔직하게 정리했습니다.","date":"2026. 3. 7.","category":"스마트기기","tags":["스마트폰","삼성","리뷰","웨어러블"],"keywords":"스마트폰, 삼성, 리뷰, 웨어러블","thumbnail":"https://pickrise.com/images/thumb-1772873523097.webp"},{"id":1772868391538,"groupId":1772868391537,"title":"쿠쿠 전기보온 에그밥솥 6인용 실사용 리뷰 및 밥맛 테스트 (압력밥솥 vs 전기밥솥, 진짜 차이는?)","filename":"post/쿠쿠-전기보온-에그밥솥-6인용-실사용-리뷰-및-밥맛-테스트.html","excerpt":"동글동글 귀여운 에그 디자인과 에너지 효율 1등급, 그리고 10% 환급 혜택까지. 6만 원대 가성비 밥솥의 실제 밥맛은 과연 어떨까요? 자취생부터 소가족까지, 30개의 실사용 후기를 바탕으로 장단점을 낱낱이 공개합니다.","date":"2026. 3. 6.","category":"생활가전","tags":["가전제품","리뷰"],"keywords":"가전제품, 리뷰","thumbnail":"https://pickrise.com/images/thumb-1772868391538.webp"},{"id":1772867207203,"groupId":1772867207202,"title":"LG전자 디오스 AI 오브제컬렉션 냉장고 832L 실사용 리뷰 및 2도어 vs 4도어 비교 (대용량인데 왜 이렇게 저렴할까?)","filename":"post/LG전자-디오스-AI-오브제컬렉션-냉장고-832L-실사용-리뷰-및-2도어-vs-4.html","excerpt":"24시간 자동 정온 시스템과 AI 냉기 케어로 식재료 신선도를 지키는 832리터 대용량 양문형 냉장고. 넉넉한 수납공간과 세련된 오브제 디자인, 그리고 합리적인 가격까지. 10년 이상 장수한 구형 모델 사용자들의 교체 사례를 통해 본 실제 체감 변화와 숨겨진 단점까지 낱낱이 공개합니다.","date":"2026. 3. 6.","category":"생활가전","tags":["가전제품","스마트홈","리뷰"],"keywords":"가전제품, 스마트홈, 리뷰","thumbnail":"https://pickrise.com/images/thumb-1772867207203.webp"},{"id":1772859741520,"groupId":1772859741519,"title":"LG전자 2025 그램 16 코어Ultra5 실사용 리뷰 (16인치인데 1.2kg? 가벼움의 끝판왕, 직접 확인해봤습니다)","filename":"post/LG전자-2025-그램-16-코어Ultra5-실사용-리뷰.html","excerpt":"1.2kg대의 초경량 16인치 바디, 인텔 코어 Ultra5, WQXGA 고해상도 디스플레이, 77Wh 대용량 배터리. 그램이 매년 선택받는 이유가 있는지 스펙과 실사용 두 가지 관점으로 꼼꼼히 짚어봤습니다.","date":"2026. 3. 7.","category":"PC/노트북","tags":["노트북","리뷰"],"keywords":"노트북, 리뷰","thumbnail":"https://pickrise.com/images/thumb-1772859741520.webp"},{"id":1772857280714,"groupId":1772857280714,"title":"파테크 한일전자 초고출력 헤어 드라이어 2300W 실사용 리뷰 (머리숱 많은 분들, 이거 하나로 해결됩니다)","filename":"post/파테크-한일전자-초고출력-헤어-드라이어-2300W-실사용-리뷰.html","excerpt":"2300W 초고출력, 6단계 세밀한 온도·풍속 조절, 이중 안전장치까지. 쿠팡 헤어드라이어 판매 1위의 이유를 화질이 아닌 바람으로 직접 증명해봤습니다.","date":"2026. 3. 7.","category":"생활가전","tags":["가전제품","스마트홈"],"keywords":"가전제품, 스마트홈","thumbnail":"https://pickrise.com/images/thumb-1772857280714.webp"},{"id":1772856069487,"groupId":1772856069487,"title":"위드라이프 43인치 FHD TV 대기업 정품 패널 실사용 리뷰 (10만 원대 가성비 TV, 진짜 믿고 살 수 있을까?)","filename":"post/위드라이프-43인치-FHD-TV-대기업-정품-패널-실사용-리뷰.html","excerpt":"대기업 정품 패널 탑재, 에너지 소비효율 1등급, 유·무상 5년 AS까지. 10만 원대 중소기업 TV가 이 정도면 충분한지, 화질·음향·내구성까지 낱낱이 파헤쳐 봤습니다.","date":"2026. 3. 7.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1772856069487.webp"},{"id":1772851162047,"groupId":1772851162047,"title":"필립스 3000 시리즈 무선 전기주전자 HD9318/HD9319 완전 분석 (2만 원대 가성비 전기포트, 진짜 살 만할까?)","filename":"post/필립스-3000-시리즈-무선-전기주전자-HD9318HD9319-완전-분석.html","excerpt":"빠른 가열 속도, 군더더기 없는 디자인, 탄탄한 안전 시스템까지. 필립스 3000 시리즈 전기주전자가 꾸준히 베스트셀러 자리를 지키는 이유를 하드웨어 구조부터 실사용 환경까지 낱낱이 분석했습니다.","date":"2026. 3. 7.","category":"생활가전","tags":["가전제품","스마트홈"],"keywords":"가전제품, 스마트홈","thumbnail":"https://pickrise.com/images/thumb-1772851162047.webp"},{"id":1772830209125,"groupId":1772830209125,"title":"이노스 FHD 삼탠바이미 32인치 스마트TV + 무빙거치대 솔직 리뷰 (가성비 이동식 TV의 끝판왕일까?)","filename":"post/이노스-FHD-삼탠바이미-32인치-스마트TV-무빙거치대-솔직-리뷰.html","excerpt":"LG·삼성 이동식 TV의 절반 가격으로 '삼탠바이미' 스타일을 구현할 수 있다면? 이노스 FHD 삼탠바이미 32인치의 화질, 이동성, 스마트 기능까지 낱낱이 파헤쳤습니다.","date":"2026. 3. 7.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1772830209125.webp"}];
     posts.sort((a, b) => b.id - a.id);
     const PER_PAGE = 10;
     let currentPage = 1;
