@@ -6,9 +6,9 @@
     <title>PickRise | 스마트한 소비를 위한 가전 및 디지털 기기 리뷰</title>
     
 
-    <!-- ✅ SEO 메타 태그 (인덱스용) -->
+    <!-- ✅ SEO 메타 태그 -->
     <meta name="description" content="데이터와 실사용 경험에 기반한 스마트 기기, 가전제품 리뷰 및 IT 트렌드 정보 플랫폼">
-    <meta name="keywords" content="스마트기기, PC/노트북, 생활가전, 테크트렌드, 테크, 리뷰, 가전, 스마트폰, 노트북, 벤치마크, 추천">
+    <meta name="keywords" content="스마트기기, PC/노트북, 생활가전, 테크트렌드, 테크, 리뷰, 가전, 스마트폰, 노트북, 추천">
     <link rel="canonical" href="https://pickrise.com/index.html">
     <link rel="icon" type="image/png" href="https://pickrise.com/images/favicon.png">
 
@@ -29,7 +29,7 @@
 
     <meta name="theme-color" content="#ffffff">
 
-    <!-- ✅ 구조화된 데이터(JSON-LD) -->
+    <!-- ✅ 구조화된 데이터 -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -37,14 +37,7 @@
         "name": "PickRise",
         "url": "https://pickrise.com/index.html",
         "description": "데이터와 실사용 경험에 기반한 스마트 기기, 가전제품 리뷰 및 IT 트렌드 정보 플랫폼",
-        "publisher": {
-            "@type": "Organization",
-            "name": "PickRise",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://pickrise.com/images/logo.png"
-            }
-        }
+        "publisher": { "@type": "Organization", "name": "PickRise", "logo": { "@type": "ImageObject", "url": "https://pickrise.com/images/logo.png" } }
     }
     </script>
 
@@ -52,128 +45,145 @@
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
 
     <style>
-:root{--bg-page:#f8fafc;--text-main:#0f172a;--text-sub:#475569;--text-light:#94a3b8;--primary:#3b82f6;--primary-light:#eff6ff;--border:#e2e8f0;--max-width:1240px;--header-h:72px;}
+/* 🚀 프리미엄 모던 미니멀리즘 디자인 시스템 적용 */
+:root{
+    --bg-page: #fcfcfc;
+    --text-main: #1e293b;
+    --text-sub: #475569;
+    --text-light: #94a3b8;
+    --primary: #2563eb;
+    --primary-light: #eff6ff;
+    --border: #f1f5f9;
+    --max-width: 1200px;
+    --header-h: 70px;
+}
 *{box-sizing:border-box;margin:0;padding:0}
 
-/* 🚀 모바일 가로 스크롤(화면 밀림) 완벽 차단 */
-html, body { font-family:'Pretendard',-apple-system,sans-serif; background:var(--bg-page); color:var(--text-main); line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x: hidden; width: 100%; }
+/* 가로 스크롤 방지 및 기본 폰트 설정 */
+html, body { font-family:'Pretendard',-apple-system,sans-serif; background:var(--bg-page); color:var(--text-main); line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x: hidden; width: 100%; letter-spacing: -0.02em; }
 a{text-decoration:none;color:inherit}
 
-/* 필터 바 & 퀵가이드 탭 */
-.filter-bar { position: sticky; top: var(--header-h); z-index: 50; background: rgba(255,255,255,0.9); backdrop-filter: blur(12px); border-bottom: 1px solid #e2e8f0; }
-.filter-inner { max-width: var(--max-width); margin: 0 auto; display: flex; align-items: center; height: 70px; }
-.tab-scroll { display: flex; gap: 10px; overflow-x: auto; scrollbar-width: none; padding: 0 24px; width: 100%; align-items: center; }
+/* 필터 바 & 퀵가이드 탭 (애플/토스 스타일) */
+.filter-bar { position: sticky; top: var(--header-h); z-index: 50; background: rgba(252,252,252,0.85); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(0,0,0,0.03); }
+.filter-inner { max-width: var(--max-width); margin: 0 auto; display: flex; align-items: center; height: 64px; }
+.tab-scroll { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; padding: 0 24px; width: 100%; align-items: center; }
 .tab-scroll::-webkit-scrollbar { display: none; }
-.cat-tab { padding: 8px 20px; border-radius: 30px; border: 1px solid #e2e8f0; background: #fff; color: #64748b; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s; white-space: nowrap; flex-shrink: 0; }
-.cat-tab:hover { background: #f8fafc; color: #0f172a; border-color: #cbd5e1; }
-.cat-tab.active { background: #0f172a; color: #ffffff; border-color: #0f172a; }
-.special-tab { background: linear-gradient(135deg, #ef4444, #f97316); color: white !important; border: none; font-weight: 500; padding: 8px 22px; }
-.special-tab:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3); }
-.special-tab.active { background: #0f172a; color: #ffffff !important; box-shadow: none; transform: none; }
+.cat-tab { padding: 8px 18px; border-radius: 20px; border: 1px solid transparent; background: #f1f5f9; color: #475569; font-size: 14px; font-weight: 500; cursor: pointer; transition: all 0.2s ease; white-space: nowrap; flex-shrink: 0; }
+.cat-tab:hover { background: #e2e8f0; color: #0f172a; }
+.cat-tab.active { background: #0f172a; color: #ffffff; font-weight: 600; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+.special-tab { color: #2563eb; background: #eff6ff; font-weight: 600; }
+.special-tab.active { background: #2563eb; color: #ffffff; }
 
 /* 라이브 서치 */
-.live-search-dropdown { position: absolute; top: calc(100% + 10px); left: 0; width: 340px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); z-index: 1000; overflow: hidden; display: none; max-height: 400px; overflow-y: auto; }
-.live-search-item { display: flex; gap: 12px; padding: 12px 16px; border-bottom: 1px solid #f1f5f9; cursor: pointer; transition: 0.2s; align-items: center; }
+.live-search-dropdown { position: absolute; top: calc(100% + 10px); left: 0; width: 340px; background: #ffffff; border: 1px solid var(--border); border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.06); z-index: 1000; overflow: hidden; display: none; max-height: 400px; overflow-y: auto; }
+.live-search-item { display: flex; gap: 12px; padding: 12px 16px; border-bottom: 1px solid #f8fafc; cursor: pointer; transition: 0.2s; align-items: center; }
 .live-search-item:last-child { border-bottom: none; }
 .live-search-item:hover { background: #f8fafc; }
-.ls-thumb { width: 48px; height: 48px; border-radius: 8px; object-fit: cover; background: #f1f5f9; flex-shrink: 0; border: 1px solid #e2e8f0;}
+.ls-thumb { width: 44px; height: 44px; border-radius: 8px; object-fit: cover; background: #f1f5f9; flex-shrink: 0; }
 .ls-info { flex: 1; min-width: 0; }
-.ls-title { font-size: 13.5px; font-weight: 700; color: #1e293b; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 2px; }
-.ls-cat { font-size: 11px; color: var(--primary); font-weight: 700; }
+.ls-title { font-size: 14px; font-weight: 600; color: #1e293b; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 2px; }
+.ls-cat { font-size: 11px; color: var(--text-light); font-weight: 500; }
 
 /* 메인 레이아웃 */
-.feed-layout { max-width: var(--max-width); margin: 40px auto; padding: 0 24px; display: grid; grid-template-columns: 1fr 340px; gap: 40px; align-items: start; width: 100%; box-sizing: border-box; }
+.feed-layout { max-width: var(--max-width); margin: 50px auto; padding: 0 24px; display: grid; grid-template-columns: 1fr 320px; gap: 60px; align-items: start; width: 100%; box-sizing: border-box; }
 
-/* Hero Post */
-.hero-post { display: flex; background: #ffffff; border-radius: 24px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.04); margin-bottom: 40px; border: 1px solid #f1f5f9; cursor: pointer; transition: transform 0.3s; flex-direction: column; width: 100%; }
-.hero-post:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); border-color: #e2e8f0; }
-.hero-thumb { width: 100%; aspect-ratio: 16/9; position: relative; background:#f8fafc;}
-.hero-thumb img { width: 100%; height: 100%; object-fit: contain; }
-.hero-info { padding: 40px; }
-.hero-cat { font-size: 12px; color: var(--primary); font-weight: 800; letter-spacing: 0.05em; margin-bottom: 12px; display: block;}
-.hero-title { font-size: 28px; font-weight: 800; color: #0f172a; line-height: 1.35; margin-bottom: 16px; word-break: keep-all; letter-spacing: -0.02em;}
-.hero-excerpt { font-size: 16px; color: #64748b; line-height: 1.6; }
+/* Hero Post (메인 추천 글) */
+.hero-post { display: flex; background: transparent; cursor: pointer; transition: transform 0.3s ease; flex-direction: column; width: 100%; margin-bottom: 50px; }
+.hero-post:hover { transform: translateY(-4px); }
+.hero-thumb { width: 100%; aspect-ratio: 16/9; position: relative; background: #f1f5f9; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.03); margin-bottom: 24px; }
+.hero-thumb img { width: 100%; height: 100%; object-fit: contain; transition: transform 0.5s ease; }
+.hero-post:hover .hero-thumb img { transform: scale(1.03); }
+.hero-info { padding: 0 8px; }
+.hero-cat { font-size: 13px; color: var(--primary); font-weight: 600; margin-bottom: 10px; display: block; letter-spacing: 0.02em; }
+.hero-title { font-size: 26px; font-weight: 700; color: #0f172a; line-height: 1.4; margin-bottom: 12px; word-break: keep-all; letter-spacing: -0.03em; }
+.hero-excerpt { font-size: 15px; color: #64748b; line-height: 1.6; }
 
-/* Grid Posts & Inline Banner */
-.post-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; width: 100%; }
-.post-card { cursor: pointer; border-radius: 20px; background: #ffffff; transition: all 0.3s; display: flex; flex-direction: column; border: 1px solid #f1f5f9; overflow: hidden; width: 100%; }
-.post-card:hover { transform: translateY(-4px); box-shadow: 0 15px 30px rgba(0,0,0,0.06); border-color: #e2e8f0; }
-.card-thumb { width: 100%; aspect-ratio: 16/10; background:#f8fafc; overflow: hidden;}
-.card-thumb img { width: 100%; height: 100%; object-fit: contain; transition: transform 0.5s; }
+/* Grid Posts (일반 글 목록) */
+.post-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px 24px; width: 100%; }
+.post-card { cursor: pointer; background: transparent; transition: all 0.3s; display: flex; flex-direction: column; width: 100%; }
+.post-card:hover { transform: translateY(-4px); }
+.card-thumb { width: 100%; aspect-ratio: 16/10; background: #f8fafc; overflow: hidden; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.02); margin-bottom: 16px; border: 1px solid rgba(0,0,0,0.02); }
+.card-thumb img { width: 100%; height: 100%; object-fit: contain; transition: transform 0.5s ease; }
 .post-card:hover .card-thumb img { transform: scale(1.05); }
-.card-body { padding: 24px; display: flex; flex-direction: column; flex: 1;}
-.card-cat { font-size: 11px; color: var(--primary); font-weight: 800; margin-bottom: 10px; display: block;}
-.card-title { font-size: 18px; font-weight: 800; line-height: 1.4; color: var(--text-main); word-break: keep-all; margin-bottom: 10px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;}
+.card-body { padding: 0 4px; display: flex; flex-direction: column; flex: 1;}
+.card-cat { font-size: 12px; color: var(--text-light); font-weight: 600; margin-bottom: 8px; display: block; }
+.card-title { font-size: 17px; font-weight: 600; line-height: 1.45; color: #0f172a; word-break: keep-all; margin-bottom: 8px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; letter-spacing: -0.02em; }
 .card-desc { font-size: 14px; color: #64748b; line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 
-.inline-banner { grid-column: 1 / -1; background: linear-gradient(135deg, #2563eb, #1e40af); border-radius: 20px; padding: 28px 32px; color: #fff; display: flex; justify-content: space-between; align-items: center; cursor: pointer; transition: 0.3s; box-shadow: 0 15px 30px rgba(37,99,235,0.2); margin: 10px 0; }
-.inline-banner:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(37,99,235,0.3); }
-.ib-text h3 { font-size: 20px; font-weight: 800; margin-bottom: 6px; letter-spacing:-0.02em; }
-.ib-text p { font-size: 14px; opacity: 0.85; margin:0; }
-.ib-btn { background: #fff; color: #1e40af; padding: 12px 24px; border-radius: 30px; font-weight: 800; font-size: 14px; flex-shrink: 0; }
+/* Inline Banner (찌라시 느낌 제거, 매거진 프로모션 느낌으로 고급화) */
+.inline-banner { grid-column: 1 / -1; background: #0f172a; border-radius: 16px; padding: 32px 40px; color: #fff; display: flex; justify-content: space-between; align-items: center; cursor: pointer; transition: 0.3s; margin: 10px 0; }
+.inline-banner:hover { opacity: 0.95; transform: translateY(-2px); }
+.ib-text h3 { font-size: 18px; font-weight: 600; margin-bottom: 6px; letter-spacing: -0.02em; color: #f8fafc; }
+.ib-text p { font-size: 14px; color: #94a3b8; margin: 0; font-weight: 400; }
+.ib-btn { background: #ffffff; color: #0f172a; padding: 10px 20px; border-radius: 8px; font-weight: 600; font-size: 13px; flex-shrink: 0; transition: 0.2s; }
 
 /* 사이드바 공통 */
-.feed-sidebar { display: flex; flex-direction: column; gap: 30px; position: sticky; top: calc(var(--header-h) + 24px); }
+.feed-sidebar { display: flex; flex-direction: column; gap: 40px; position: sticky; top: calc(var(--header-h) + 30px); }
 
-.trust-widget { background: linear-gradient(145deg, #0f172a, #1e293b); border-radius: 20px; padding: 30px 24px; color: #ffffff; position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.15); }
-.trust-widget::after { content: ''; position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: #3b82f6; border-radius: 50%; filter: blur(60px); opacity: 0.3; pointer-events: none; }
-.trust-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; position: relative; z-index: 1; }
-.trust-header img { width: 44px; height: 44px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.1); }
-.trust-header h3 { font-size: 16px; font-weight: 800; margin: 0; letter-spacing: -0.01em; }
-.trust-header span { font-size: 12px; color: #94a3b8; font-weight: 600; }
-.trust-desc { font-size: 13.5px; line-height: 1.6; color: #cbd5e1; margin: 0; position: relative; z-index: 1; word-break: keep-all; }
-.trust-desc strong { color: #3b82f6; }
+/* 신뢰도 위젯 (다크 그라데이션 제거, 깔끔한 Editor's Note 스타일) */
+.trust-widget { background: #ffffff; border-radius: 16px; padding: 24px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
+.trust-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.trust-header img { width: 40px; height: 40px; border-radius: 50%; background: #f8fafc; padding: 4px; }
+.trust-header h3 { font-size: 15px; font-weight: 700; margin: 0; color: #0f172a; }
+.trust-header span { font-size: 12px; color: #64748b; font-weight: 500; }
+.trust-desc { font-size: 14px; line-height: 1.6; color: #475569; margin: 0; word-break: keep-all; }
+.trust-desc strong { color: #0f172a; font-weight: 600; }
 
-.tag-cloud-wrap { padding: 20px 24px; display: flex; flex-wrap: wrap; gap: 8px; }
-.tag-cloud-item { background: #f1f5f9; color: #475569; border: 1px solid #e2e8f0; border-radius: 8px; padding: 6px 12px; font-size: 13px; font-weight: 600; cursor: pointer; transition: 0.2s; }
-.tag-cloud-item:hover { background: var(--primary-light); color: var(--primary); border-color: var(--primary); transform: translateY(-2px); box-shadow: 0 4px 10px rgba(59, 130, 246, 0.15); }
+/* 사이드바 공통 헤더 스타일 */
+.widget-header { font-size: 14px; font-weight: 700; color: #0f172a; margin-bottom: 16px; letter-spacing: 0.02em; text-transform: uppercase; }
 
-.trending-widget { background: #ffffff; border: 1px solid #f1f5f9; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.02); overflow: hidden; }
-.trending-header { font-size: 14px; font-weight: 800; color: #0f172a; padding: 20px 24px 16px; letter-spacing: 0.05em; text-transform: uppercase; border-bottom: 1px solid #f1f5f9; display: flex; align-items: center; gap: 8px; }
-.trending-list { display: flex; flex-direction: column; padding: 12px 24px 24px; counter-reset: trend-counter; gap: 16px; }
+/* 태그 클라우드 */
+.tag-cloud-wrap { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag-cloud-item { background: #f1f5f9; color: #475569; border-radius: 6px; padding: 6px 12px; font-size: 13px; font-weight: 500; cursor: pointer; transition: 0.2s; border: none; }
+.tag-cloud-item:hover { background: #e2e8f0; color: #0f172a; }
+
+/* 트렌딩 리뷰 위젯 (투박한 숫자 디자인 변경) */
+.trending-list { display: flex; flex-direction: column; counter-reset: trend-counter; gap: 16px; }
 .trend-item { display: flex; gap: 14px; align-items: center; position: relative; transition: 0.2s; }
 .trend-item:hover .trend-title { color: var(--primary); }
-.trend-item::before { counter-increment: trend-counter; content: counter(trend-counter); width: 24px; height: 24px; background: #f1f5f9; color: #64748b; font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center; border-radius: 6px; flex-shrink: 0; }
-.trend-item:nth-child(1)::before { background: #3b82f6; color: white; }
-.trend-item:nth-child(2)::before { background: #60a5fa; color: white; }
-.trend-item:nth-child(3)::before { background: #93c5fd; color: white; }
-.trend-thumb { width: 56px; height: 56px; border-radius: 10px; overflow: hidden; background: #f8fafc; border: 1px solid #f1f5f9; flex-shrink: 0; }
+.trend-item::before { counter-increment: trend-counter; content: counter(trend-counter); width: 16px; color: #94a3b8; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-family: 'Montserrat', sans-serif; }
+.trend-item:nth-child(1)::before { color: #2563eb; }
+.trend-item:nth-child(2)::before { color: #3b82f6; }
+.trend-item:nth-child(3)::before { color: #60a5fa; }
+.trend-thumb { width: 60px; height: 60px; border-radius: 10px; overflow: hidden; background: #f8fafc; flex-shrink: 0; border: 1px solid rgba(0,0,0,0.02); }
 .trend-thumb img { width: 100%; height: 100%; object-fit: contain; }
 .trend-info { flex: 1; min-width: 0; }
-.trend-cat { font-size: 11px; color: var(--primary); font-weight: 700; margin-bottom: 2px; }
-.trend-title { font-size: 13.5px; font-weight: 700; color: #1e293b; line-height: 1.4; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; transition: 0.2s; }
+.trend-cat { font-size: 11px; color: var(--text-light); font-weight: 600; margin-bottom: 2px; }
+.trend-title { font-size: 14px; font-weight: 600; color: #1e293b; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; transition: 0.2s; }
 
-.ad-block { background: #ffffff; border: 1px solid #f1f5f9; border-radius: 20px; overflow: hidden; }
-.ad-label { font-size: 10px; font-weight: 800; color: #94a3b8; text-transform: uppercase; padding: 12px 20px; border-bottom: 1px dashed #e2e8f0; }
+/* 사이드바 스폰서 배너 영역 */
+.ad-block { background: #ffffff; border: 1px solid var(--border); border-radius: 16px; padding: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.01); }
+.ad-label { font-size: 10px; font-weight: 600; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
 
-.load-more-btn { display: inline-block; width: 100%; padding: 16px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; font-size: 15px; font-weight: 700; color: #475569; cursor: pointer; transition: 0.2s; text-align:center; margin-top:40px; }
-.load-more-btn:hover { background: #f8fafc; color: var(--primary); border-color: var(--primary); }
+/* Load More 버튼 */
+.load-more-btn { display: inline-block; width: 100%; padding: 16px; background: transparent; border: 1px solid #cbd5e1; border-radius: 12px; font-size: 14px; font-weight: 600; color: #475569; cursor: pointer; transition: 0.2s; text-align: center; margin-top: 40px; }
+.load-more-btn:hover { background: #f8fafc; color: #0f172a; border-color: #94a3b8; }
 
-/* 🚀 모바일 반응형 완벽 보완 (VS섹션 삭제 후 여백 정리) */
+/* 🚀 모바일 반응형 완벽 보완 */
 @media (max-width: 1024px) {
-    .feed-layout { grid-template-columns: 1fr; gap: 30px; padding: 0 24px; }
+    .feed-layout { grid-template-columns: 1fr; gap: 40px; padding: 0 24px; }
     .feed-sidebar { display: none; }
 }
 
 @media (max-width: 768px) {
-    .post-grid { grid-template-columns: 1fr; gap: 20px; }
-    .hero-info { padding: 24px; }
-    .hero-title { font-size: 24px; line-height: 1.35; }
-    .hero-excerpt { font-size: 15px; }
+    .post-grid { grid-template-columns: 1fr; gap: 32px; }
+    .hero-thumb { border-radius: 16px; margin-bottom: 16px; }
+    .hero-title { font-size: 22px; line-height: 1.4; margin-bottom: 8px; }
+    .hero-excerpt { font-size: 14px; }
     .tab-scroll { padding: 0 20px; }
-    .inline-banner { flex-direction: column; text-align: center; gap: 16px; padding: 24px 20px; }
-    .ib-btn { width: 100%; }
+    .inline-banner { flex-direction: column; text-align: left; align-items: flex-start; gap: 20px; padding: 24px; }
+    .ib-btn { width: 100%; text-align: center; }
 }
 
 @media (max-width: 480px) {
-    .feed-layout { margin: 20px auto; padding: 0 16px; gap: 24px; }
+    .feed-layout { margin: 24px auto; padding: 0 20px; gap: 32px; }
+    .hero-post { margin-bottom: 30px; }
     .hero-title { font-size: 20px; }
     .hero-excerpt { font-size: 14px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-    .card-body { padding: 20px; }
-    .card-title { font-size: 16.5px; }
+    .card-title { font-size: 16px; }
     .card-desc { font-size: 13.5px; }
-    .filter-bar .tab-scroll { padding: 0 16px; gap: 8px; }
-    .cat-tab { padding: 6px 16px; font-size: 13.5px; }
+    .filter-bar .tab-scroll { padding: 0 20px; gap: 8px; }
+    .cat-tab { padding: 6px 14px; font-size: 13px; }
 }
 
 :root {
@@ -242,7 +252,7 @@ a{text-decoration:none;color:inherit}
 
 <div class="filter-bar">
     <div class="filter-inner">
-        <div class="tab-scroll"><button class="cat-tab active " data-tag="전체">전체</button><button class="cat-tab  special-tab" data-tag="가성비 Best">🔥 가성비 Best</button><button class="cat-tab  special-tab" data-tag="프리미엄 선택">🔥 프리미엄 선택</button><button class="cat-tab  special-tab" data-tag="구매 가이드">🔥 구매 가이드</button><button class="cat-tab  " data-tag="가전제품">가전제품</button><button class="cat-tab  " data-tag="스마트TV">스마트TV</button><button class="cat-tab  " data-tag="노트북">노트북</button><button class="cat-tab  " data-tag="리뷰">리뷰</button><button class="cat-tab  " data-tag="스마트폰">스마트폰</button><button class="cat-tab  " data-tag="삼성">삼성</button><button class="cat-tab  " data-tag="웨어러블">웨어러블</button><button class="cat-tab  " data-tag="스마트홈">스마트홈</button></div>
+        <div class="tab-scroll"><button class="cat-tab active " data-tag="전체">전체</button><button class="cat-tab  special-tab" data-tag="가성비 Best">가성비 Best</button><button class="cat-tab  special-tab" data-tag="프리미엄 선택">프리미엄 선택</button><button class="cat-tab  special-tab" data-tag="구매 가이드">구매 가이드</button><button class="cat-tab  " data-tag="가전제품">가전제품</button><button class="cat-tab  " data-tag="스마트TV">스마트TV</button><button class="cat-tab  " data-tag="노트북">노트북</button><button class="cat-tab  " data-tag="리뷰">리뷰</button><button class="cat-tab  " data-tag="스마트폰">스마트폰</button><button class="cat-tab  " data-tag="삼성">삼성</button><button class="cat-tab  " data-tag="웨어러블">웨어러블</button><button class="cat-tab  " data-tag="스마트홈">스마트홈</button></div>
     </div>
 </div>
 
@@ -272,29 +282,23 @@ a{text-decoration:none;color:inherit}
             <p class="trust-desc">제조사의 딱딱한 스펙 시트 너머, <strong>진짜 실사용 환경에서의 장단점</strong>을 가감 없이 팩트체크합니다.</p>
         </div>
 
-        <!-- 인기 키워드 (Tag Cloud) 위젯 -->
-        <div class="trending-widget">
-            <div class="trending-header">
-                <span class="iconify" data-icon="carbon:tag-group" style="font-size: 18px; color: #3b82f6;"></span>
-                인기 키워드 탐색
-            </div>
-            <div class="tag-cloud-wrap">
-                <button class="tag-cloud-item" data-tag="가전제품">#가전제품</button><button class="tag-cloud-item" data-tag="리뷰">#리뷰</button><button class="tag-cloud-item" data-tag="스마트TV">#스마트TV</button><button class="tag-cloud-item" data-tag="스마트홈">#스마트홈</button><button class="tag-cloud-item" data-tag="노트북">#노트북</button><button class="tag-cloud-item" data-tag="스마트폰">#스마트폰</button><button class="tag-cloud-item" data-tag="삼성">#삼성</button><button class="tag-cloud-item" data-tag="웨어러블">#웨어러블</button>
-            </div>
-        </div>
-
         <!-- 트렌딩 리뷰 위젯 -->
         <div class="trending-widget">
-            <div class="trending-header">
-                <span class="iconify" data-icon="carbon:chart-line" style="font-size: 18px; color: #3b82f6;"></span>
-                Weekly Hot
-            </div>
+            <div class="widget-header">Weekly Hot</div>
             <div class="trending-list">
                 
-            <a href="post/위드라이프-43인치-FHD-TV-대기업-정품-패널-실사용-리뷰.html" class="trend-item">
-                <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1772856069487.webp" alt=""></div>
+            <a href="post/이노스-FHD-삼탠바이미-32인치-스마트TV-무빙거치대-솔직-리뷰.html" class="trend-item">
+                <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1772830209125.webp" alt=""></div>
                 <div class="trend-info">
-                    <div class="trend-title">위드라이프 43인치 FHD TV 대기업 정품 패널 실사용 리뷰 (10만 원대 가성비 TV, 진짜 믿고 살 수 있을까?)</div>
+                    <div class="trend-title">이노스 FHD 삼탠바이미 32인치 스마트TV + 무빙거치대 솔직 리뷰 (가성비 이동식 TV의 끝판왕일까?)</div>
+                    <div class="trend-cat">생활가전</div>
+                </div>
+            </a>
+        
+            <a href="post/무빙큐빅스-스마트-40인치-삼탠바이미-화이트에디션-SET-완벽-분석.html" class="trend-item">
+                <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1773034610848.webp" alt=""></div>
+                <div class="trend-info">
+                    <div class="trend-title">무빙큐빅스 스마트 40인치 삼탠바이미 화이트에디션 SET 완벽 분석 (스탠바이미 절반 가격으로 똑같이 누릴 수 있을까?)</div>
                     <div class="trend-cat">생활가전</div>
                 </div>
             </a>
@@ -307,30 +311,30 @@ a{text-decoration:none;color:inherit}
                 </div>
             </a>
         
-            <a href="post/파테크-한일전자-초고출력-헤어-드라이어-2300W-실사용-리뷰.html" class="trend-item">
-                <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1772857280714.webp" alt=""></div>
+            <a href="post/삼성전자-갤럭시-S26-자급제-실사용-리뷰-디자인성능카메라-총정리.html" class="trend-item">
+                <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1772873523097.webp" alt=""></div>
                 <div class="trend-info">
-                    <div class="trend-title">파테크 한일전자 초고출력 헤어 드라이어 2300W 실사용 리뷰 (머리숱 많은 분들, 이거 하나로 해결됩니다)</div>
+                    <div class="trend-title">삼성전자 갤럭시 S26 자급제 실사용 리뷰 — 디자인·성능·카메라 총정리 (아이폰 이탈자들이 돌아오는 이유가 있었다)</div>
+                    <div class="trend-cat">스마트기기</div>
+                </div>
+            </a>
+        
+            <a href="post/위드라이프-43인치-FHD-TV-대기업-정품-패널-실사용-리뷰.html" class="trend-item">
+                <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1772856069487.webp" alt=""></div>
+                <div class="trend-info">
+                    <div class="trend-title">위드라이프 43인치 FHD TV 대기업 정품 패널 실사용 리뷰 (10만 원대 가성비 TV, 진짜 믿고 살 수 있을까?)</div>
                     <div class="trend-cat">생활가전</div>
                 </div>
             </a>
         
-            <a href="post/LG전자-2025-그램-16-코어Ultra5-실사용-리뷰.html" class="trend-item">
-                <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1772859741520.webp" alt=""></div>
-                <div class="trend-info">
-                    <div class="trend-title">LG전자 2025 그램 16 코어Ultra5 실사용 리뷰 (16인치인데 1.2kg? 가벼움의 끝판왕, 직접 확인해봤습니다)</div>
-                    <div class="trend-cat">PC/노트북</div>
-                </div>
-            </a>
-        
-            <a href="post/쿠쿠-전기보온-에그밥솥-6인용-실사용-리뷰-및-밥맛-테스트.html" class="trend-item">
-                <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1772868391538.webp" alt=""></div>
-                <div class="trend-info">
-                    <div class="trend-title">쿠쿠 전기보온 에그밥솥 6인용 실사용 리뷰 및 밥맛 테스트 (압력밥솥 vs 전기밥솥, 진짜 차이는?)</div>
-                    <div class="trend-cat">생활가전</div>
-                </div>
-            </a>
-        
+            </div>
+        </div>
+
+        <!-- 인기 키워드 (Tag Cloud) 위젯 -->
+        <div class="trending-widget">
+            <div class="widget-header">Trending Tags</div>
+            <div class="tag-cloud-wrap">
+                <button class="tag-cloud-item" data-tag="가전제품">가전제품</button><button class="tag-cloud-item" data-tag="리뷰">리뷰</button><button class="tag-cloud-item" data-tag="스마트TV">스마트TV</button><button class="tag-cloud-item" data-tag="스마트홈">스마트홈</button><button class="tag-cloud-item" data-tag="노트북">노트북</button><button class="tag-cloud-item" data-tag="스마트폰">스마트폰</button><button class="tag-cloud-item" data-tag="삼성">삼성</button><button class="tag-cloud-item" data-tag="웨어러블">웨어러블</button>
             </div>
         </div>
 
@@ -414,10 +418,10 @@ a{text-decoration:none;color:inherit}
     const inlineBannerHtml = `
         <div class="inline-banner" onclick="alert('기획전 페이지로 이동합니다.')">
             <div class="ib-text">
-                <h3>🎒 2026년 신학기 가성비 노트북 TOP 5</h3>
-                <p>스펙부터 실사용 후기까지, 에디터가 직접 고른 최고의 선택</p>
+                <h3>Editor's Choice : 신학기 노트북 가이드</h3>
+                <p>스펙부터 실사용 후기까지, 용도별 최적의 선택</p>
             </div>
-            <div class="ib-btn">기획전 보기 &rarr;</div>
+            <div class="ib-btn">컬렉션 보기</div>
         </div>
     `;
 
