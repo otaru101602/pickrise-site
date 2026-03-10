@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PickRise | 스마트한 소비를 위한 가전 및 디지털 기기 리뷰</title>
+    <!-- 👇 [변경] 페이지 타이틀 자동 적용 -->
+    <title>테크트렌드 리뷰 및 추천 | PickRise</title>
     
 
     <!-- ✅ SEO 메타 태그 -->
@@ -14,7 +15,7 @@
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="PickRise | 스마트한 소비를 위한 가전 및 디지털 기기 리뷰">
+    <meta property="og:title" content="테크트렌드 리뷰 및 추천 | PickRise">
     <meta property="og:description" content="데이터와 실사용 경험에 기반한 스마트 기기, 가전제품 리뷰 및 IT 트렌드 정보 플랫폼">
     <meta property="og:url" content="https://pickrise.com/index.html">
     <meta property="og:image" content="https://pickrise.com/images/logo.png">
@@ -22,7 +23,7 @@
     <meta property="og:locale" content="ko_KR">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="PickRise | 스마트한 소비를 위한 가전 및 디지털 기기 리뷰">
+    <meta name="twitter:title" content="테크트렌드 리뷰 및 추천 | PickRise">
     <meta name="twitter:description" content="데이터와 실사용 경험에 기반한 스마트 기기, 가전제품 리뷰 및 IT 트렌드 정보 플랫폼">
     <meta name="twitter:image" content="https://pickrise.com/images/logo.png">
 
@@ -266,7 +267,7 @@ a { text-decoration:none; color:inherit; }
 
 <div class="filter-bar">
     <div class="filter-inner">
-        <div class="tab-scroll"><button class="cat-tab  " data-tag="전체">전체</button><button class="cat-tab  special-tab" data-tag="가성비 Best">가성비 Best</button><button class="cat-tab  special-tab" data-tag="프리미엄 선택">프리미엄 선택</button><button class="cat-tab  special-tab" data-tag="구매 가이드">구매 가이드</button></div>
+        <div class="tab-scroll"><button class="cat-tab active " data-tag="전체">전체</button><button class="cat-tab  special-tab" data-tag="가성비 Best">가성비 Best</button><button class="cat-tab  special-tab" data-tag="프리미엄 선택">프리미엄 선택</button><button class="cat-tab  special-tab" data-tag="구매 가이드">구매 가이드</button></div>
     </div>
 </div>
 
@@ -348,7 +349,8 @@ a { text-decoration:none; color:inherit; }
     const PER_PAGE = 10;
     let currentPage = 1;
     let filteredPosts =[];
-    let activeTag = '테크트렌드'; // 👈 이 부분 수정
+    // 👇 [변경] 접속 시 태그 필터링을 무조건 '전체'로 풀어서 글이 보이게 만듦
+    let activeTag = '전체';
 
     const heroContainer = document.getElementById('hero-post-container');
     const postGrid = document.getElementById('post-grid');

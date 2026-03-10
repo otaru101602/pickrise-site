@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 👇 [변경] 페이지 타이틀 자동 적용 -->
     <title>PickRise | 스마트한 소비를 위한 가전 및 디지털 기기 리뷰</title>
     
 
@@ -302,6 +303,14 @@ a { text-decoration:none; color:inherit; }
             <div class="widget-header">Weekly Trending</div>
             <div class="trending-list">
                 
+            <a href="post/LG전자-디오스-AI-오브제컬렉션-냉장고-832L-실사용-리뷰-및-2도어-vs-4.html" class="trend-item">
+                <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1772867207203.webp" alt=""></div>
+                <div class="trend-info">
+                    <div class="trend-title">LG전자 디오스 AI 오브제컬렉션 냉장고 832L 실사용 리뷰 및 2도어 vs 4도어 비교 (대용량인데 왜 이렇게 저렴할까?)</div>
+                    <div class="trend-cat">생활가전</div>
+                </div>
+            </a>
+        
             <a href="post/이노스-FHD-삼탠바이미-32인치-스마트TV-무빙거치대-솔직-리뷰.html" class="trend-item">
                 <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1772830209125.webp" alt=""></div>
                 <div class="trend-info">
@@ -310,10 +319,10 @@ a { text-decoration:none; color:inherit; }
                 </div>
             </a>
         
-            <a href="post/LG전자-디오스-AI-오브제컬렉션-냉장고-832L-실사용-리뷰-및-2도어-vs-4.html" class="trend-item">
-                <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1772867207203.webp" alt=""></div>
+            <a href="post/home-appliance/쿠첸-더핏-슬림-전기-압력밥솥-6인용-완벽-분석.html" class="trend-item">
+                <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1773102736015.webp" alt=""></div>
                 <div class="trend-info">
-                    <div class="trend-title">LG전자 디오스 AI 오브제컬렉션 냉장고 832L 실사용 리뷰 및 2도어 vs 4도어 비교 (대용량인데 왜 이렇게 저렴할까?)</div>
+                    <div class="trend-title">쿠첸 더핏 슬림 전기 압력밥솥 6인용 완벽 분석 (같은 쌀인데 왜 이렇게 맛있지? 그 이유를 밝힙니다)</div>
                     <div class="trend-cat">생활가전</div>
                 </div>
             </a>
@@ -326,19 +335,11 @@ a { text-decoration:none; color:inherit; }
                 </div>
             </a>
         
-            <a href="post/무빙큐빅스-스마트-40인치-삼탠바이미-화이트에디션-SET-완벽-분석.html" class="trend-item">
-                <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1773034610848.webp" alt=""></div>
+            <a href="post/삼성전자-갤럭시-S26-자급제-실사용-리뷰-디자인성능카메라-총정리.html" class="trend-item">
+                <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1772873523097.webp" alt=""></div>
                 <div class="trend-info">
-                    <div class="trend-title">무빙큐빅스 스마트 40인치 삼탠바이미 화이트에디션 SET 완벽 분석 (스탠바이미 절반 가격으로 똑같이 누릴 수 있을까?)</div>
-                    <div class="trend-cat">생활가전</div>
-                </div>
-            </a>
-        
-            <a href="post/위드라이프-43인치-FHD-TV-대기업-정품-패널-실사용-리뷰.html" class="trend-item">
-                <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1772856069487.webp" alt=""></div>
-                <div class="trend-info">
-                    <div class="trend-title">위드라이프 43인치 FHD TV 대기업 정품 패널 실사용 리뷰 (10만 원대 가성비 TV, 진짜 믿고 살 수 있을까?)</div>
-                    <div class="trend-cat">생활가전</div>
+                    <div class="trend-title">삼성전자 갤럭시 S26 자급제 실사용 리뷰 — 디자인·성능·카메라 총정리 (아이폰 이탈자들이 돌아오는 이유가 있었다)</div>
+                    <div class="trend-cat">스마트기기</div>
                 </div>
             </a>
         
@@ -388,7 +389,8 @@ a { text-decoration:none; color:inherit; }
     const PER_PAGE = 10;
     let currentPage = 1;
     let filteredPosts =[];
-    let activeTag = '전체'; // 👈 이 부분 수정
+    // 👇 [변경] 접속 시 태그 필터링을 무조건 '전체'로 풀어서 글이 보이게 만듦
+    let activeTag = '전체';
 
     const heroContainer = document.getElementById('hero-post-container');
     const postGrid = document.getElementById('post-grid');
