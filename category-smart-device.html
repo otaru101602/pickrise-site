@@ -62,7 +62,7 @@
   --f-sans: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
   --f-mono: 'DM Mono', 'Courier New', monospace;
   --f-disp: 'Bebas Neue', sans-serif;
-  --max-w: 1280px; --gutter: 68px; --hh: 78px; --fh: 64px;
+  --max-w: 1420px; --gutter: 68px; --hh: 78px; --fh: 64px;
   --r-2xl:  28px;
   --r-xl:   22px;
   --r-lg:   16px;
@@ -145,7 +145,7 @@ button { font-family: var(--f-sans); cursor: pointer; border: none; background: 
 .hero-wrap { margin-bottom: 80px; padding-bottom: 80px; border-bottom: 1px solid var(--border); position: relative; }
 .hero-wrap::before { content: 'FEATURED REVIEW'; position: absolute; top: -32px; left: 0; font-family: var(--f-mono); font-size: 10px; font-weight: 500; color: var(--ink-20); letter-spacing: .32em; text-transform: uppercase; display: block; }
 .hero-grid { display: grid; grid-template-columns: 55% 1fr; gap: 48px; align-items: center; cursor: pointer; }
-.hero-img-box { position: relative; aspect-ratio: 16/10; border-radius: var(--r-2xl); overflow: hidden; background: var(--off); border: 1px solid var(--border); box-shadow: var(--sh-hero); }
+.hero-img-box { position: relative; aspect-ratio: 3/2; border-radius: var(--r-2xl); overflow: hidden; background: var(--off); border: 1px solid var(--border); box-shadow: var(--sh-hero); }
 .hero-img-box img { width: 100%; height: 100%; object-fit: contain; transition: transform .9s var(--ease-out-expo); }
 .hero-grid:hover .hero-img-box img { transform: scale(1.04); }
 .hero-img-box::before { content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(145deg, rgba(255,255,255,.08) 0%, transparent 55%); border-radius: inherit; }
