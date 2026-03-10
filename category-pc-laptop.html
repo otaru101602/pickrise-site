@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 👇 [변경] 페이지 타이틀 자동 적용 -->
     <title>PC/노트북 리뷰 및 추천 | PickRise</title>
     
 
-    <!-- ✅ SEO 메타 태그 -->
     <meta name="description" content="데이터와 실사용 경험에 기반한 스마트 기기, 가전제품 리뷰 및 IT 트렌드 정보 플랫폼">
     <meta name="keywords" content="스마트기기, PC/노트북, 생활가전, 테크트렌드, 테크, 리뷰, 가전, 스마트폰, 노트북, 매거진">
     <link rel="canonical" href="https://pickrise.com/index.html">
@@ -22,12 +20,11 @@
     <meta property="og:site_name" content="PickRise">
     <meta property="og:locale" content="ko_KR">
 
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="PC/노트북 리뷰 및 추천 | PickRise">
-    <meta name="twitter:description" content="데이터와 실사용 경험에 기반한 스마트 기기, 가전제품 리뷰 및 IT 트렌드 정보 플랫폼">
-    <meta name="twitter:image" content="https://pickrise.com/images/logo.png">
-
-    <meta name="theme-color" content="#ffffff">
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&family=Noto+Serif+KR:wght@400;600;700;900&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
 
     <script type="application/ld+json">
     {
@@ -40,489 +37,556 @@
     }
     </script>
 
-    <!-- 구글 폰트 (숫자 타이포그래피용 영문 폰트) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css">
-    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
-
     <style>
-/* 🚀 압도적인 개방감을 주는 와이드 & 박스리스(Box-less) 디자인 시스템 */
+/* ═══════════════════════════════════════════════════════════
+   PICKRISE 5.0  ·  Pure White Editorial — Maximum Polish
+   ═══════════════════════════════════════════════════════════ */
 :root {
-    --bg-page: #ffffff; /* 순백색으로 가장 깔끔하고 넓어보이게 */
-    --bg-surface: #f8fafc; /* 연한 배경 (태그, 칩 용도) */
-    --text-primary: #0f172a;
-    --text-secondary: #475569;
-    --text-tertiary: #94a3b8;
-    --accent: #2563eb;
-    --border: #e2e8f0;
-    --max-width: 1280px; /* 기존 1200px에서 더 넓혀서 시원하게 */
-    --header-h: 70px;
+  --white:      #ffffff;
+  --off:        #fafafa;
+  --border:     #f0f0f5;
+  --border-md:  #e4e4ed;
+  --dark:       #0b0b13;
+  --ink:        #0b0b13;
+  --ink-70:     #30304a;
+  --ink-50:     #62627e;
+  --ink-35:     #8e8ea8;
+  --ink-20:     #b8b8cc;
+  --ink-10:     #dcdcea;
+  --blue:       #1641c8;
+  --blue-d:     #102da8;
+  --blue-m:     #3b5bdb;
+  --blue-l:     #eef2ff;
+  --blue-b:     rgba(59,91,219,.12);
+  --f-serif:  'Noto Serif KR', 'Georgia', serif;
+  --f-sans:   'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+  --f-mono:   'DM Mono', 'Courier New', monospace;
+  --f-disp:   'Bebas Neue', sans-serif;
+  --max-w:   1680px;
+  --gutter:  68px;
+  --hh:      78px;
+  --fh:      64px;
+  --r-2xl:  28px;
+  --r-xl:   22px;
+  --r-lg:   16px;
+  --r-md:   11px;
+  --r-sm:   7px;
+  --sh-xs:  0 1px 2px rgba(11,11,19,.04);
+  --sh-sm:  0 1px 3px rgba(11,11,19,.04), 0 6px 18px rgba(11,11,19,.055);
+  --sh-md:  0 2px 6px rgba(11,11,19,.04), 0 12px 32px rgba(11,11,19,.07);
+  --sh-lg:  0 4px 10px rgba(11,11,19,.04), 0 24px 60px rgba(11,11,19,.09);
+  --sh-hero:0 2px 4px rgba(11,11,19,.03), 0 16px 40px rgba(11,11,19,.08), 0 48px 96px rgba(11,11,19,.05);
+  --sh-float:0 20px 60px rgba(11,11,19,.14);
+  --ease-out-expo: cubic-bezier(.16,1,.3,1);
+  --ease-in-out:   cubic-bezier(.4,0,.2,1);
 }
-*{box-sizing:border-box;margin:0;padding:0}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 17.5px; -webkit-text-size-adjust: 100%; text-rendering: optimizeLegibility; }
+body { font-family: var(--f-sans); background: var(--white); color: var(--ink); line-height: 1.7; -webkit-font-smoothing: antialiased; overflow-x: hidden; letter-spacing: -.022em; }
+a { text-decoration: none; color: inherit; }
+img { display: block; max-width: 100%; }
+button { font-family: var(--f-sans); cursor: pointer; border: none; background: none; }
+::selection { background: var(--blue-l); color: var(--blue); }
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--ink-10); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--ink-20); }
 
-html, body { font-family:'Pretendard',-apple-system,sans-serif; background:var(--bg-page); color:var(--text-primary); line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x: hidden; width: 100%; letter-spacing: -0.015em; }
-a { text-decoration:none; color:inherit; }
+/* PROGRESS BAR */
+#progress-bar { position: fixed; top: 0; left: 0; height: 2px; width: 0%; background: linear-gradient(90deg, var(--blue) 0%, var(--blue-m) 100%); z-index: 9999; transition: width .08s linear; border-radius: 0 2px 2px 0; box-shadow: 0 0 8px rgba(59,91,219,.4); }
 
-/* 필터 바 (여백을 넉넉히 주어 답답함 해소) */
-.filter-bar { position: sticky; top: var(--header-h); z-index: 50; background: rgba(255,255,255,0.9); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(0,0,0,0.04); padding: 8px 0; }
-.filter-inner { max-width: var(--max-width); margin: 0 auto; display: flex; align-items: center; height: 64px; }
-.tab-scroll { display: flex; gap: 10px; overflow-x: auto; scrollbar-width: none; padding: 0 24px; width: 100%; align-items: center; }
-.tab-scroll::-webkit-scrollbar { display: none; }
-.cat-tab { padding: 10px 24px; border-radius: 40px; border: 1px solid transparent; background: var(--bg-surface); color: var(--text-secondary); font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); white-space: nowrap; flex-shrink: 0; }
-.cat-tab:hover { background: #f1f5f9; color: var(--text-primary); }
-.cat-tab.active { background: var(--text-primary); color: #ffffff; box-shadow: 0 8px 20px rgba(15,23,42,0.12); transform: translateY(-1px); }
-.special-tab { color: #2563eb; background: #eff6ff; }
-.special-tab.active { background: #2563eb; color: #ffffff; box-shadow: 0 8px 20px rgba(37,99,235,0.2); }
+/* HEADER */
+.site-header { position: sticky; top: 0; z-index: 800; background: rgba(255,255,255,.88); backdrop-filter: blur(32px) saturate(200%); border-bottom: 1px solid var(--border); transition: border-color .25s, box-shadow .3s; }
+.site-header.scrolled { border-color: var(--border-md); box-shadow: 0 1px 0 var(--border), var(--sh-md); }
+.header-inner { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter); height: var(--hh); display: flex; align-items: center; justify-content: space-between; gap: 40px; position: relative; }
+.logo { display: flex; align-items: center; flex-shrink: 0; text-decoration: none; }
 
-/* 라이브 서치 */
-.live-search-dropdown { position: absolute; top: calc(100% + 10px); left: 0; width: 340px; background: #ffffff; border: 1px solid var(--border); border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); z-index: 1000; overflow: hidden; display: none; max-height: 400px; overflow-y: auto; }
-.live-search-item { display: flex; gap: 14px; padding: 14px 16px; border-bottom: 1px solid #f8fafc; cursor: pointer; transition: 0.2s; align-items: center; }
-.live-search-item:last-child { border-bottom: none; }
-.live-search-item:hover { background: #f8fafc; }
-.ls-thumb { width: 44px; height: 44px; border-radius: 10px; object-fit: cover; background: #f1f5f9; flex-shrink: 0; }
-.ls-info { flex: 1; min-width: 0; }
-.ls-title { font-size: 14px; font-weight: 600; color: var(--text-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 2px; }
-.ls-cat { font-size: 11px; color: var(--accent); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
+/* NAV */
+.site-nav { position: absolute; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 0; }
+.site-nav a { position: relative; font-size: 15px; font-weight: 600; color: var(--ink-50); padding: 8px 20px; border-radius: 50px; transition: color .18s, background .18s; letter-spacing: -.01em; white-space: nowrap; }
+.site-nav a::after { content: ''; position: absolute; bottom: 6px; left: 50%; transform: translateX(-50%); width: 0; height: 2px; border-radius: 1px; background: var(--blue); transition: width .2s var(--ease-out-expo); }
+.site-nav a:hover { color: var(--ink); }
+.site-nav a:hover::after { width: 20px; }
 
-/* 🚀 메인 레이아웃 (Grid Gap을 80px로 넓혀 숨통 트임) */
-.feed-layout { max-width: var(--max-width); margin: 70px auto 100px; padding: 0 24px; display: grid; grid-template-columns: 1fr 340px; gap: 80px; align-items: start; width: 100%; box-sizing: border-box; }
+/* SEARCH */
+.header-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.search-wrap { position: relative; }
+.search-field { width: 244px; padding: 10px 18px 10px 42px; font-size: 14.5px; font-family: var(--f-sans); font-weight: 500; background: var(--off); border: 1.5px solid transparent; border-radius: 50px; color: var(--ink); outline: none; transition: width .3s var(--ease-out-expo), background .2s, border-color .2s, box-shadow .2s; letter-spacing: -.01em; }
+.search-field::placeholder { color: var(--ink-20); }
+.search-field:focus { background: var(--white); border-color: var(--blue-m); width: 308px; box-shadow: 0 0 0 4px var(--blue-b); }
+.search-ico { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--ink-20); font-size: 16px; pointer-events: none; display: flex; transition: color .2s; }
+.search-wrap:focus-within .search-ico { color: var(--blue-m); }
+.search-drop { position: absolute; top: calc(100% + 10px); right: 0; width: 440px; background: var(--white); border: 1px solid var(--border-md); border-radius: var(--r-xl); box-shadow: 0 4px 8px rgba(11,11,19,.04), var(--sh-float); z-index: 900; overflow: hidden; display: none; animation: dropIn .18s var(--ease-out-expo); max-height: 400px; overflow-y:auto; }
+@keyframes dropIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
+.sdi { display: flex; gap: 14px; padding: 14px 20px; border-bottom: 1px solid var(--border); align-items: center; text-decoration: none; color: inherit; transition: background .14s; }
+.sdi:last-child { border-bottom: none; }
+.sdi:hover { background: var(--off); }
+.sdi-thumb { width: 52px; height: 52px; border-radius: var(--r-md); object-fit: contain; background: var(--off); border: 1px solid var(--border); flex-shrink: 0; }
+.sdi-title { font-size: 14.5px; font-weight: 600; color: var(--ink); margin-bottom: 3px; letter-spacing: -.02em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.sdi-cat { font-family: var(--f-mono); font-size: 10.5px; color: var(--blue-m); letter-spacing: .1em; text-transform: uppercase; }
+.sdi-empty { padding: 20px; text-align: center; font-size: 14.5px; color: var(--ink-35); }
+.icon-btn { display: none; width: 42px; height: 42px; border-radius: 50%; align-items: center; justify-content: center; color: var(--ink); font-size: 21px; transition: background .18s, transform .18s; }
+.icon-btn:hover { background: var(--off); }
+.icon-btn:active { transform: scale(.93); }
 
-/* 💎 Hero Post (박스리스, 시원한 잡지 스타일) */
-.hero-post { display: flex; background: transparent; cursor: pointer; flex-direction: column; width: 100%; margin-bottom: 70px; border: none; box-shadow: none; padding: 0; }
-.hero-post:hover .hero-thumb img { transform: scale(1.02); }
-.hero-thumb { width: 100%; aspect-ratio: 16/9; position: relative; background: #f8fafc; border-radius: 24px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.06); margin-bottom: 32px; border: 1px solid rgba(0,0,0,0.03); }
-.hero-thumb img { width: 100%; height: 100%; object-fit: contain; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
-.hero-info { padding: 0 10px; text-align: left; }
-.hero-cat { display: inline-block; font-size: 13px; font-family: 'Montserrat', sans-serif; font-weight: 800; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 16px; }
-.hero-title { font-size: 34px; font-weight: 800; color: var(--text-primary); line-height: 1.35; margin-bottom: 16px; word-break: keep-all; letter-spacing: -0.03em; }
-.hero-excerpt { font-size: 17px; color: var(--text-secondary); line-height: 1.6; max-width: 800px; margin: 0; }
+/* FILTER BAR */
+.filter-bar { position: sticky; top: var(--hh); z-index: 700; background: rgba(255,255,255,.95); backdrop-filter: blur(20px) saturate(180%); border-bottom: 1px solid var(--border); }
+.filter-inner { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter); height: var(--fh); display: flex; align-items: center; }
+.tab-row { display: flex; gap: 5px; overflow-x: auto; scrollbar-width: none; padding: 7px 0; width: 100%; align-items: center; }
+.tab-row::-webkit-scrollbar { display: none; }
+.pill { padding: 8px 20px; border-radius: 50px; border: 1.5px solid transparent; background: transparent; color: var(--ink-35); font-size: 14.5px; font-weight: 600; cursor: pointer; white-space: nowrap; flex-shrink: 0; letter-spacing: -.01em; line-height: 1.45; transition: color .18s, background .18s, border-color .18s, box-shadow .18s; }
+.pill:hover { color: var(--ink-70); background: var(--off); }
+.pill.on { background: var(--ink); color: var(--white); border-color: var(--ink); box-shadow: 0 3px 12px rgba(11,11,19,.18); }
+.pill-blue { color: var(--blue); border-color: rgba(22,65,200,.16); background: var(--blue-l); }
+.pill-blue:hover { background: rgba(59,91,219,.1); }
+.pill-blue.on { background: var(--blue); color: var(--white); border-color: var(--blue); box-shadow: 0 3px 14px rgba(22,65,200,.28); }
 
-/* 💎 Grid Posts (박스리스 디자인 적용 - 테두리 삭제, 이미지만 팝업) */
-.post-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 60px 40px; width: 100%; }
-.post-card { background: transparent; cursor: pointer; display: flex; flex-direction: column; width: 100%; border: none; box-shadow: none; padding: 0; }
-.post-card:hover .card-thumb img { transform: scale(1.03); }
-.card-thumb { width: 100%; aspect-ratio: 16/10; background: #f8fafc; overflow: hidden; border-radius: 20px; margin-bottom: 24px; box-shadow: 0 12px 30px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.03); transition: transform 0.4s ease; }
-.card-thumb img { width: 100%; height: 100%; object-fit: contain; transition: transform 0.6s ease; }
-.card-body { padding: 0 8px; display: flex; flex-direction: column; flex: 1;}
-.card-cat { font-size: 12px; font-family: 'Montserrat', sans-serif; font-weight: 700; color: var(--text-tertiary); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px; display: block; }
-.card-title { font-size: 20px; font-weight: 700; line-height: 1.4; color: var(--text-primary); word-break: keep-all; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; letter-spacing: -0.02em; }
-.card-desc { font-size: 15px; color: var(--text-secondary); line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+/* MAIN LAYOUT */
+.page-body { max-width: var(--max-w); margin: 80px auto 200px; padding: 0 var(--gutter); display: grid; grid-template-columns: 1fr 396px; gap: 92px; align-items: start; }
 
-/* Inline Banner (프리미엄 구독 유도 느낌) */
-.inline-banner { grid-column: 1 / -1; background: var(--text-primary); border-radius: 24px; padding: 40px 50px; color: #fff; display: flex; justify-content: space-between; align-items: center; cursor: pointer; transition: 0.3s; margin: 20px 0; box-shadow: 0 20px 40px rgba(15,23,42,0.15); }
-.inline-banner:hover { opacity: 0.95; transform: translateY(-4px); }
-.ib-text h3 { font-size: 22px; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.02em; color: #ffffff; }
-.ib-text p { font-size: 15px; color: #cbd5e1; margin: 0; font-weight: 400; }
-.ib-btn { background: #ffffff; color: var(--text-primary); padding: 14px 28px; border-radius: 30px; font-weight: 700; font-size: 14px; flex-shrink: 0; transition: 0.2s; }
+/* HERO POST */
+.hero-wrap { margin-bottom: 92px; padding-bottom: 92px; border-bottom: 1px solid var(--border); position: relative; }
+.hero-wrap::before { content: 'FEATURED REVIEW'; position: absolute; top: -32px; left: 0; font-family: var(--f-mono); font-size: 10px; font-weight: 500; color: var(--ink-10); letter-spacing: .32em; text-transform: uppercase; display: block; }
+.hero-grid { display: grid; grid-template-columns: 54% 1fr; gap: 64px; align-items: center; cursor: pointer; }
+.hero-img-box { position: relative; aspect-ratio: 16/10; border-radius: var(--r-2xl); overflow: hidden; background: var(--off); border: 1px solid var(--border); box-shadow: var(--sh-hero); }
+.hero-img-box img { width: 100%; height: 100%; object-fit: contain; transition: transform .9s var(--ease-out-expo); }
+.hero-grid:hover .hero-img-box img { transform: scale(1.04); }
+.hero-img-box::before { content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(145deg, rgba(255,255,255,.08) 0%, transparent 55%); border-radius: inherit; }
+.hero-img-badge { position: absolute; top: 18px; left: 18px; z-index: 2; background: rgba(255,255,255,.92); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,.6); border-radius: var(--r-sm); padding: 5px 12px; font-family: var(--f-mono); font-size: 10.5px; font-weight: 500; color: var(--blue); letter-spacing: .1em; text-transform: uppercase; }
+.hero-text { display: flex; flex-direction: column; }
+.hero-eyebrow { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+.hero-date { font-family: var(--f-mono); font-size: 12.5px; color: var(--ink-20); letter-spacing: .03em; }
+.hero-divider { flex: 1; height: 1px; background: var(--border); }
+.hero-title { font-family: var(--f-serif); font-size: 46px; font-weight: 700; line-height: 1.28; color: var(--ink); word-break: keep-all; letter-spacing: -.04em; margin-bottom: 20px; transition: color .22s; }
+.hero-grid:hover .hero-title { color: var(--blue); }
+.hero-excerpt { font-size: 17.5px; font-weight: 400; color: var(--ink-50); line-height: 1.82; word-break: keep-all; margin-bottom: 34px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.hero-cta { display: inline-flex; align-items: center; gap: 13px; font-size: 15px; font-weight: 700; color: var(--ink); letter-spacing: -.01em; align-self: flex-start; }
+.hero-arrow { display: inline-flex; width: 40px; height: 40px; background: var(--ink); color: var(--white); border-radius: 50%; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; transition: transform .24s var(--ease-out-expo), background .2s; }
+.hero-grid:hover .hero-arrow { transform: translateX(6px); background: var(--blue); }
 
-/* 사이드바 공통 (위젯 간격 확대) */
-.feed-sidebar { display: flex; flex-direction: column; gap: 40px; position: sticky; top: calc(var(--header-h) + 40px); }
+/* SECTION LABEL */
+.sec-label { display: flex; align-items: center; gap: 18px; margin-bottom: 52px; }
+.sec-label-text { font-family: var(--f-mono); font-size: 10.5px; font-weight: 500; color: var(--ink-20); letter-spacing: .28em; text-transform: uppercase; white-space: nowrap; }
+.sec-label-line { flex: 1; height: 1px; background: var(--border); }
 
-/* 위젯 박스 공통 디자인 (그림자 대폭 축소, 선명한 여백) */
-.widget-box { background: #ffffff; border-radius: 24px; padding: 32px 28px; border: 1px solid var(--border); box-shadow: 0 4px 24px rgba(0,0,0,0.02); }
-.widget-header { font-size: 13px; font-family: 'Montserrat', sans-serif; font-weight: 800; color: var(--text-tertiary); margin-bottom: 24px; letter-spacing: 0.15em; text-transform: uppercase; }
+/* POST GRID */
+.cards { display: grid; grid-template-columns: 1fr 1fr; gap: 72px 48px; }
+.card { cursor: pointer; display: flex; flex-direction: column; transition: transform .32s var(--ease-out-expo); }
+.card:hover { transform: translateY(-7px); }
+.card-img { width: 100%; aspect-ratio: 3/2; background: var(--off); overflow: hidden; border-radius: var(--r-xl); margin-bottom: 24px; border: 1px solid var(--border); box-shadow: var(--sh-sm); position: relative; flex-shrink: 0; transition: box-shadow .32s var(--ease-out-expo); }
+.card:hover .card-img { box-shadow: var(--sh-lg); }
+.card-img img { width: 100%; height: 100%; object-fit: contain; transition: transform .7s var(--ease-out-expo); }
+.card:hover .card-img img { transform: scale(1.07); }
+.card-img::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(150deg, rgba(255,255,255,.05) 0%, transparent 50%); }
+.card-meta { display: flex; align-items: center; gap: 9px; margin-bottom: 10px; }
+.card-cat { font-family: var(--f-mono); font-size: 10.5px; font-weight: 500; color: var(--blue-m); letter-spacing: .1em; text-transform: uppercase; }
+.card-dot { width: 2px; height: 2px; border-radius: 50%; background: var(--ink-10); flex-shrink: 0; }
+.card-date { font-family: var(--f-mono); font-size: 10.5px; color: var(--ink-20); letter-spacing: .02em; }
+.card-title { font-family: var(--f-serif); font-size: 22px; font-weight: 700; line-height: 1.46; color: var(--ink); word-break: keep-all; margin-bottom: 10px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; letter-spacing: -.03em; transition: color .2s; }
+.card:hover .card-title { color: var(--blue); }
+.card-desc { font-size: 15.5px; color: var(--ink-50); line-height: 1.76; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-weight: 400; }
 
-/* 신뢰도 위젯 (고급스러운 Editor's Note 스타일) */
-.trust-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
-.trust-header img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border); padding: 2px; }
-.trust-header h3 { font-size: 16px; font-weight: 800; margin: 0; color: var(--text-primary); }
-.trust-header span { font-size: 13px; font-family: 'Montserrat', sans-serif; color: var(--text-tertiary); font-weight: 600; }
-.trust-desc { font-size: 14px; line-height: 1.6; color: var(--text-secondary); margin: 0; word-break: keep-all; }
-.trust-desc strong { color: var(--text-primary); font-weight: 700; }
+/* PROMO BANNER */
+.promo-banner { grid-column: 1 / -1; background: var(--dark); border-radius: var(--r-2xl); padding: 52px 60px; display: flex; justify-content: space-between; align-items: center; gap: 32px; cursor: pointer; position: relative; overflow: hidden; margin: 8px 0; transition: transform .28s var(--ease-out-expo), box-shadow .28s var(--ease-out-expo); }
+.promo-banner:hover { transform: translateY(-5px); box-shadow: var(--sh-float); }
+.promo-banner::before { content: ''; position: absolute; right: -60px; top: -70px; width: 340px; height: 340px; background: radial-gradient(circle, rgba(59,91,219,.2) 0%, transparent 68%); pointer-events: none; }
+.promo-banner::after { content: ''; position: absolute; left: 60%; bottom: -60px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(230,57,70,.1) 0%, transparent 68%); pointer-events: none; }
+.promo-banner-bg { position: absolute; inset: 0; pointer-events: none; opacity: .04; background-image: linear-gradient(rgba(255,255,255,.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.5) 1px, transparent 1px); background-size: 28px 28px; }
+.promo-left { position: relative; z-index: 1; }
+.promo-eye { font-family: var(--f-mono); font-size: 10px; font-weight: 500; color: rgba(255,255,255,.28); letter-spacing: .28em; text-transform: uppercase; margin-bottom: 10px; }
+.promo-title { font-family: var(--f-serif); font-size: 26px; font-weight: 700; color: var(--white); margin-bottom: 7px; letter-spacing: -.03em; }
+.promo-sub { font-size: 16px; color: rgba(255,255,255,.44); font-weight: 400; }
+.promo-btn { position: relative; z-index: 1; flex-shrink: 0; background: var(--white); color: var(--ink); padding: 16px 38px; border-radius: 50px; font-weight: 700; font-size: 15px; transition: background .2s, color .2s, transform .18s; letter-spacing: -.015em; white-space: nowrap; }
+.promo-btn:hover { background: var(--blue-l); color: var(--blue); transform: translateX(-2px); }
 
-/* 태그 클라우드 */
-.tag-cloud-wrap { display: flex; flex-wrap: wrap; gap: 10px; }
-.tag-cloud-item { background: var(--bg-surface); color: var(--text-secondary); border-radius: 8px; padding: 8px 16px; font-size: 14px; font-weight: 500; cursor: pointer; transition: 0.2s; border: 1px solid transparent; }
-.tag-cloud-item:hover { background: #ffffff; color: var(--text-primary); border-color: var(--text-tertiary); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+/* LOAD MORE */
+.more-wrap { margin-top: 68px; text-align: center; }
+.more-btn { display: inline-flex; align-items: center; gap: 11px; padding: 17px 52px; background: var(--white); border: 1.5px solid var(--border-md); border-radius: 50px; font-size: 16px; font-weight: 600; color: var(--ink-50); cursor: pointer; letter-spacing: -.01em; transition: all .22s var(--ease-out-expo); }
+.more-btn:hover { background: var(--ink); color: var(--white); border-color: var(--ink); box-shadow: 0 8px 28px rgba(11,11,19,.16); transform: translateY(-2px); }
+.empty { grid-column: 1 / -1; padding: 96px 0; text-align: center; color: var(--ink-35); font-size: 16.5px; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.empty-icon { font-size: 42px; opacity: .18; }
 
-/* 💎 트렌딩 리뷰 위젯 (우아한 이탤릭 숫자 타이포그래피) */
-.trending-list { display: flex; flex-direction: column; counter-reset: trend-counter; gap: 20px; }
-.trend-item { display: flex; gap: 16px; align-items: center; position: relative; transition: 0.2s; cursor: pointer; }
-.trend-item:hover .trend-title { color: var(--accent); }
-.trend-item::before {
-    counter-increment: trend-counter;
-    content: counter(trend-counter);
-    width: 24px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 28px;
-    font-style: italic;
-    font-weight: 300;
-    color: #cbd5e1;
-    display: flex; align-items: center; justify-content: flex-start; flex-shrink: 0;
-}
-.trend-item:nth-child(1)::before { color: var(--text-primary); font-weight: 400; }
-.trend-thumb { width: 70px; height: 70px; border-radius: 14px; overflow: hidden; background: #f8fafc; flex-shrink: 0; border: 1px solid var(--border); }
-.trend-thumb img { width: 100%; height: 100%; object-fit: contain; }
-.trend-info { flex: 1; min-width: 0; }
-.trend-cat { font-size: 12px; font-family: 'Montserrat', sans-serif; color: var(--text-tertiary); font-weight: 700; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
-.trend-title { font-size: 15px; font-weight: 600; color: var(--text-primary); line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; transition: 0.2s; }
+/* SIDEBAR */
+.sidebar { display: flex; flex-direction: column; gap: 24px; position: sticky; top: calc(var(--hh) + var(--fh) + 26px); }
+.widget { background: var(--white); border-radius: var(--r-xl); padding: 28px 26px; border: 1px solid var(--border); box-shadow: var(--sh-xs); transition: box-shadow .25s; }
+.widget:hover { box-shadow: var(--sh-sm); }
+.wlabel { font-family: var(--f-mono); font-size: 10px; font-weight: 500; color: var(--ink-10); letter-spacing: .32em; text-transform: uppercase; margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
+.wlabel::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+.editor-row { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+.editor-av { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; border:1px solid var(--border); overflow:hidden;}
+.editor-av img { width: 100%; height: 100%; object-fit: cover;}
+.editor-name { font-size: 16.5px; font-weight: 700; color: var(--ink); letter-spacing: -.02em; margin-bottom: 3px; }
+.editor-role { font-family: var(--f-mono); font-size: 11px; color: var(--ink-20); letter-spacing: .04em; }
+.editor-bio { font-size: 15px; line-height: 1.76; color: var(--ink-50); word-break: keep-all; }
+.editor-bio strong { color: var(--ink); font-weight: 700; }
+.trend-list { display: flex; flex-direction: column; }
+.trend-a { display: flex; gap: 13px; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--border); text-decoration: none; color: inherit; transition: opacity .18s; }
+.trend-a:first-child { padding-top: 0; }
+.trend-a:last-child { border-bottom: none; padding-bottom: 0; }
+.trend-a:hover { opacity: .62; }
+.trend-rank { font-family: var(--f-disp); font-size: 26px; line-height: 1; width: 24px; text-align: center; flex-shrink: 0; color: var(--border-md); }
+.trend-a:first-child .trend-rank { color: var(--ink-10); }
+.trend-img { width: 68px; height: 68px; border-radius: 13px; background: var(--off); overflow: hidden; flex-shrink: 0; border: 1px solid var(--border); }
+.trend-img img { width: 100%; height: 100%; object-fit: contain; }
+.trend-t { font-size: 14px; font-weight: 600; color: var(--ink); line-height: 1.48; letter-spacing: -.02em; margin-bottom: 5px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.trend-c { font-family: var(--f-mono); font-size: 10.5px; color: var(--blue-m); letter-spacing: .08em; text-transform: uppercase; }
+.tag-cloud { display: flex; flex-wrap: wrap; gap: 7px; }
+.tag { background: var(--off); color: var(--ink-50); border: 1px solid var(--border); border-radius: var(--r-sm); padding: 7px 14px; font-size: 14px; font-weight: 600; cursor: pointer; letter-spacing: -.01em; transition: background .16s, color .16s, border-color .16s, transform .16s; }
+.tag:hover { background: var(--ink); color: var(--white); border-color: var(--ink); }
+.tag:active { transform: scale(.96); }
 
-/* 사이드바 스폰서 배너 영역 */
-.ad-block { background: #ffffff; border: 1px solid var(--border); border-radius: 24px; padding: 20px; box-shadow: 0 4px 24px rgba(0,0,0,0.02); }
-.ad-label { font-size: 11px; font-family: 'Montserrat', sans-serif; font-weight: 800; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px; text-align: center; }
+/* ADS */
+.ad-box { border-radius: var(--r-lg); padding: 24px; border: 1px solid var(--border); background: var(--white); text-align: center; min-height: 104px; box-shadow: var(--sh-xs); }
+.ad-label { font-family: var(--f-mono); font-size: 9.5px; letter-spacing: .28em; color: var(--ink-20); text-transform: uppercase; margin-bottom: 12px; }
 
-/* Load More 버튼 */
-.load-more-btn { display: inline-block; width: 100%; padding: 20px; background: transparent; border: 1px solid #cbd5e1; border-radius: 16px; font-size: 15px; font-weight: 700; color: var(--text-secondary); cursor: pointer; transition: 0.2s; text-align: center; margin-top: 50px; }
-.load-more-btn:hover { background: #f8fafc; color: var(--text-primary); border-color: var(--text-tertiary); }
+/* DRAWER & OVERLAY */
+.overlay { position: fixed; inset: 0; background: rgba(11,11,19,.56); z-index: 990; display: none; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+.overlay.on { display: block; }
+.drawer { position: fixed; top: 0; right: -360px; width: 360px; height: 100dvh; background: var(--white); z-index: 1000; padding: 32px 28px; display: flex; flex-direction: column; overflow-y: auto; transition: right .36s var(--ease-out-expo); }
+.drawer.on { right: 0; }
+.drawer-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+.drawer-close { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; color: var(--ink); cursor: pointer; transition: background .18s; }
+.drawer-close:hover { background: var(--off); }
+.drawer-nav { display: flex; flex-direction: column; gap: 2px; }
+.drawer-nav a { font-size: 17px; font-weight: 600; color: var(--ink); padding: 14px 14px; border-radius: var(--r-md); transition: background .16s; letter-spacing: -.02em; }
+.drawer-nav a:hover { background: var(--off); }
+.search-bar-mob { display: none; position: fixed; top: var(--hh); left: 0; right: 0; z-index: 690; background: var(--white); padding: 13px 24px; border-bottom: 1px solid var(--border); box-shadow: 0 8px 28px rgba(11,11,19,.07); }
+.search-bar-mob.on { display: block; }
+.search-bar-mob .search-field { width: 100%; border-radius: var(--r-lg); }
 
-/* 🚀 완벽한 모바일 & 태블릿 반응형 처리 */
-@media (max-width: 1100px) {
-    .feed-layout { grid-template-columns: 1fr; gap: 50px; padding: 0 32px; }
-    .feed-sidebar { display: none; }
-}
+/* FOOTER */
+.site-footer { background: var(--dark); padding: 88px var(--gutter) 40px; }
+.footer-inner { max-width: var(--max-w); margin: 0 auto; display: grid; grid-template-columns: 2.2fr 1fr 1fr 1fr; gap: 60px; padding-bottom: 64px; border-bottom: 1px solid rgba(255,255,255,.06); margin-bottom: 28px; }
+.footer-logo { display: flex; align-items: center; margin-bottom: 16px; filter: brightness(0) invert(1); } /* 다크 푸터라 로고를 흰색으로 반전 */
+.footer-about { font-size: 15px; line-height: 1.74; color: rgba(255,255,255,.32); max-width: 280px; word-break: keep-all; }
+.fcol h4 { font-family: var(--f-mono); font-size: 10px; font-weight: 500; color: rgba(255,255,255,.22); letter-spacing: .26em; text-transform: uppercase; margin-bottom: 20px; }
+.fcol a { display: block; font-size: 15.5px; color: rgba(255,255,255,.44); margin-bottom: 13px; transition: color .18s; letter-spacing: -.01em; }
+.fcol a:hover { color: var(--white); }
+.footer-bottom { max-width: var(--max-w); margin: 0 auto; display: flex; justify-content: space-between; align-items: center; font-size: 12.5px; color: rgba(255,255,255,.18); }
+.footer-mono { font-family: var(--f-mono); letter-spacing: .12em; font-size: 10.5px; }
 
-@media (max-width: 768px) {
-    .feed-layout { margin: 40px auto; padding: 0 24px; gap: 50px; }
-    .post-grid { grid-template-columns: 1fr; gap: 40px; }
-    .hero-thumb { border-radius: 20px; margin-bottom: 24px; }
-    .hero-info { padding: 0 4px; }
-    .hero-title { font-size: 26px; line-height: 1.35; margin-bottom: 12px; }
-    .hero-excerpt { font-size: 16px; }
-    .tab-scroll { padding: 0 24px; }
-    .inline-banner { flex-direction: column; text-align: left; align-items: flex-start; gap: 24px; padding: 32px 24px; }
-    .ib-btn { width: 100%; text-align: center; }
-}
+/* ANIMATIONS & RESPONSIVE */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+.au0 { animation: fadeUp .72s var(--ease-out-expo) both; }
+.au1 { animation: fadeUp .52s var(--ease-out-expo) .06s both; }
+.au2 { animation: fadeUp .52s var(--ease-out-expo) .13s both; }
+.au3 { animation: fadeUp .52s var(--ease-out-expo) .20s both; }
+.au4 { animation: fadeUp .52s var(--ease-out-expo) .27s both; }
 
-@media (max-width: 480px) {
-    .feed-layout { margin: 30px auto; padding: 0 20px; gap: 40px; }
-    .hero-post { margin-bottom: 40px; }
-    .hero-thumb { border-radius: 16px; }
-    .hero-title { font-size: 24px; }
-    .hero-excerpt { font-size: 15px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-    .card-title { font-size: 18px; }
-    .card-desc { font-size: 14.5px; }
-    .filter-bar .tab-scroll { padding: 0 20px; gap: 8px; }
-    .cat-tab { padding: 8px 18px; font-size: 14px; }
-}
-
-:root {
-    --bg-page: #f8fafc;
-    --text-main: #0f172a;
-    --text-sub: #475569;
-    --text-light: #94a3b8;
-    --primary: #3b82f6;
-    --primary-dark: #2563eb;
-    --border: #e2e8f0;
-    --bg-surface: #ffffff;
-    --header-h: 72px;
-    --layout-max: 1240px;
-}
-.notice-bar { background: #0f172a; color: #cbd5e1; text-align: center; padding: 10px 24px; font-size: 13px; font-weight: 600; letter-spacing: 0.02em; }
-.site-header { position: sticky; top: -1px; z-index: 500; background: rgb(255 255 255 / 95%); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.05); }
-.header-inner{max-width:var(--layout-max);margin:0 auto;padding:0 24px;height:var(--header-h);display:flex;align-items:center;justify-content:space-between;position:relative}
-.logo{font-size:26px;font-weight:800;color:var(--text-main);display:flex;align-items:center;gap:4px}.nav{display:flex;gap:24px}.nav a { font-size: 15px; font-weight: 600; color: #0f172a; transition: 0.2s; }.nav a:hover{color:var(--primary)}.header-utils{display:flex;align-items:center;gap:12px}.search-box{position:relative;width:240px;transition:all 0.3s}
-.search-input { width: 100%; padding: 14px 16px 14px 40px; font-size: 14px; background-color: #f1f5f9; border: 1px solid transparent; border-radius: 30px; color: #0f172a; outline: none; transition: 0.2s; }.search-input:focus{background-color:#fff; border-color:#3b82f6}.search-icon-pos{position:absolute;left:20px;top:50%;transform:translateY(-50%);color:#94a3b8;pointer-events:none}
-.m-btn { display: none; background: none; border: none; color: #0f172a; cursor: pointer; padding: 8px; font-size: 24px; align-items: center; justify-content: center; }.mobile-sidebar{position:fixed;top:0;right:-280px;width:280px;height:100vh;background:#fff;z-index:1000;box-shadow:-5px 0 20px rgba(0,0,0,0.1);transition:0.3s ease-in-out;padding:40px 24px;display:flex;flex-direction:column;gap:20px}.mobile-sidebar.active{right:0}.m-sidebar-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}.m-sidebar-header img{width:fit-content}.m-nav-list{display:flex;flex-direction:column;gap:10px}.m-nav-list a{font-size:16px;font-weight:600;color:#1e293b;border-bottom:1px solid #f1f5f9;padding:12px 0;display:block}.sidebar-overlay{position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.5);z-index:999;display:none;backdrop-filter:blur(2px)}.sidebar-overlay.active{display:block}
-.footer{background:#0f172a;color:#94a3b8;padding:60px 24px 24px;font-size:14px; margin-top:60px;}.footer-inner{max-width:var(--layout-max);margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}.footer-brand p{margin-top:12px;font-size:13px;line-height:1.6;color:#94a3b8}.footer-logo{font-size:20px;font-weight:800;color:#fff}.footer-col h4{color:#fff;font-size:15px;font-weight:700;margin-bottom:16px}.footer-col a{display:block;color:#94a3b8;margin-bottom:10px;font-size:14px;transition:color 0.2s}.footer-col a:hover{color:#fff}.footer-bottom{max-width:var(--layout-max);margin:0 auto;padding-top:24px;border-top:1px solid #1e293b;text-align:center;font-size:13px;color:#64748b}
-
-/* 🚀 헤더/푸터 공통 모바일 반응형 보완 */
-@media (max-width:768px){
-    .nav{display:none !important}
-    .search-box { display: none; position: absolute; top: var(--header-h); left: 0; width: 100%; background: #ffffff; padding: 10px 16px; border-bottom: 1px solid #e2e8f0; }
-    .search-box.active{display:block !important}
-    .search-input { padding: 12px 16px 12px 36px; }
-    .search-icon-pos{left:28px}
-    .m-btn{display:flex !important}
-    .footer-inner{grid-template-columns:1fr 1fr;gap:24px}
-    .footer-brand{grid-column:1 / -1}
-}
-
-
+@media (max-width: 1440px) { :root { --gutter: 48px; } .page-body { grid-template-columns: 1fr; gap: 64px; } .sidebar, .site-nav { display: none; } .footer-inner { grid-template-columns: 1fr 1fr; gap: 40px; } .footer-brand { grid-column: 1 / -1; } }
+@media (max-width: 1024px) { .hero-grid { grid-template-columns: 1fr; gap: 28px; } .hero-title { font-size: 38px; } }
+@media (max-width: 768px) { :root { --hh: 62px; --gutter: 22px; --fh: 58px; } html { font-size: 16px; } .search-wrap { display: none; } .icon-btn { display: flex; } .page-body { margin: 48px auto 120px; } .hero-title { font-size: 28px; letter-spacing: -.03em; } .hero-excerpt { font-size: 16px; } .promo-banner { flex-direction: column; align-items: flex-start; gap: 22px; padding: 36px 28px; } .promo-btn { width: 100%; text-align: center; display: block; } .site-footer { padding: 64px var(--gutter) 32px; } .footer-inner { grid-template-columns: 1fr; gap: 36px; } .footer-bottom { flex-direction: column; gap: 8px; text-align: center; } }
+@media (max-width: 640px) { .cards { grid-template-columns: 1fr; gap: 56px; } .hero-wrap { margin-bottom: 60px; padding-bottom: 60px; } }
+@media (max-width: 480px) { .hero-title { font-size: 24px; } .card-title { font-size: 20px; } .pill { font-size: 13.5px; padding: 7px 16px; } }
     </style>
 </head>
 <body>
 
+<div id="progress-bar"></div>
 
-<header class="site-header">
-    <div class="header-inner">
-        <a href="https://pickrise.com/index.html" class="logo">
-            <img src="https://pickrise.com/images/logo.png" alt="PickRise" style="height:46px; width:auto;">
-        </a>
-        <nav class="nav"><a href="https://pickrise.com/category-smart-device.html">스마트기기</a><a href="https://pickrise.com/category-pc-laptop.html">PC/노트북</a><a href="https://pickrise.com/category-home-appliance.html">생활가전</a><a href="https://pickrise.com/category-tech-trend.html">테크트렌드</a></nav>
-<div class="header-utils">
-        <div class="search-box" id="global-search-box">
+<div class="overlay" id="overlay"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-head">
+    <a href="https://pickrise.com/index.html" class="logo"><img src="https://pickrise.com/images/logo.png" alt="PickRise" style="height:32px; width:auto; transform:translateY(2px);"></a>
+    <button class="drawer-close" id="drawer-close" aria-label="닫기">×</button>
+  </div>
+  <nav class="drawer-nav"><a href="https://pickrise.com/category-smart-device.html">스마트기기</a><a href="https://pickrise.com/category-pc-laptop.html">PC/노트북</a><a href="https://pickrise.com/category-home-appliance.html">생활가전</a><a href="https://pickrise.com/category-tech-trend.html">테크트렌드</a></nav>
+</div>
 
-            <span class="iconify search-icon-pos" data-icon="carbon:search"></span>
-            <input type="text" class="search-input" id="search-input" placeholder="기기명, 브랜드 검색" autocomplete="off">
-        </div>
-            <button class="m-btn" id="m-search-toggle"><span class="iconify" data-icon="carbon:search"></span></button>
-            <button class="m-btn" id="m-menu-toggle"><span class="iconify" data-icon="carbon:menu"></span></button>
-        </div>
+<div class="search-bar-mob" id="search-bar-mob">
+  <input class="search-field" id="search-mob" type="text" placeholder="기기명, 브랜드 검색" autocomplete="off">
+</div>
 
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a class="logo" href="https://pickrise.com/index.html"><img src="https://pickrise.com/images/logo.png" alt="PickRise" style="height:32px; width:auto; transform:translateY(2px);"></a>
+    <nav class="site-nav"><a href="https://pickrise.com/category-smart-device.html">스마트기기</a><a href="https://pickrise.com/category-pc-laptop.html">PC/노트북</a><a href="https://pickrise.com/category-home-appliance.html">생활가전</a><a href="https://pickrise.com/category-tech-trend.html">테크트렌드</a></nav>
+    <div class="header-right">
+      <div class="search-wrap" id="search-wrap">
+        <span class="iconify search-ico" data-icon="carbon:search"></span>
+        <input class="search-field" id="search-desk" type="text" placeholder="기기명, 브랜드 검색" autocomplete="off">
+        <div class="search-drop" id="search-drop"></div>
+      </div>
+      <button class="icon-btn" id="btn-search" aria-label="검색"><span class="iconify" data-icon="carbon:search"></span></button>
+      <button class="icon-btn" id="btn-menu" aria-label="메뉴"><span class="iconify" data-icon="carbon:menu"></span></button>
+    </div>
+  </div>
 </header>
-<!-- 🚀 진행률 바 (헤더 바로 밑에 부착) -->
-<div class="progress-container"><div class="progress-bar" id="progress-bar"></div></div>
 
-<div class="sidebar-overlay" id="sidebar-overlay"></div>
-<div class="mobile-sidebar" id="mobile-sidebar">
-    <div class="m-sidebar-header">
-        <img src="https://pickrise.com/images/logo.png" alt="PickRise" style="height:24px;">
-        <button id="m-sidebar-close" style="background:none; border:none; font-size:32px;">&times;</button>
-    </div>
-    <nav class="m-nav-list"><a href="https://pickrise.com/category-smart-device.html">스마트기기</a><a href="https://pickrise.com/category-pc-laptop.html">PC/노트북</a><a href="https://pickrise.com/category-home-appliance.html">생활가전</a><a href="https://pickrise.com/category-tech-trend.html">테크트렌드</a></nav>
+<div class="filter-bar" id="filter-bar">
+  <div class="filter-inner">
+    <div class="tab-row"><button class="pill  " data-tag="전체">전체</button><button class="pill pill-blue " data-tag="가성비 Best">가성비 Best</button><button class="pill pill-blue " data-tag="프리미엄 선택">프리미엄 선택</button><button class="pill pill-blue " data-tag="구매 가이드">구매 가이드</button><button class="pill  " data-tag="노트북">노트북</button><button class="pill  " data-tag="리뷰">리뷰</button></div>
+  </div>
 </div>
 
-
-<div class="filter-bar">
-    <div class="filter-inner">
-        <div class="tab-scroll"><button class="cat-tab active " data-tag="전체">전체</button><button class="cat-tab  special-tab" data-tag="가성비 Best">가성비 Best</button><button class="cat-tab  special-tab" data-tag="프리미엄 선택">프리미엄 선택</button><button class="cat-tab  special-tab" data-tag="구매 가이드">구매 가이드</button><button class="cat-tab  " data-tag="노트북">노트북</button><button class="cat-tab  " data-tag="리뷰">리뷰</button></div>
+<div class="page-body">
+  <main class="feed-main">
+    <div id="hero-zone"></div>
+    <div class="sec-label" id="sec-label-target" style="display:none;">
+      <span class="sec-label-text">Latest Reviews</span>
+      <div class="sec-label-line"></div>
     </div>
-</div>
+    <div class="cards" id="card-grid"></div>
+    <div class="more-wrap" id="more-wrap" style="display:none">
+      <button class="more-btn" id="more-btn">
+        더 많은 리뷰 보기
+        <span class="iconify" data-icon="carbon:arrow-down" style="font-size:18px; margin-left:6px;"></span>
+      </button>
+    </div>
+  </main>
 
-<div class="feed-layout">
-
-    <!-- 메인 피드 (좌측) -->
-    <div class="feed-main">
-        <div id="hero-post-container"></div>
-        <div class="post-grid" id="post-grid"></div>
-        <div id="load-more-wrap" style="display:none;">
-            <button class="load-more-btn" id="load-more-btn">리뷰 더 보기</button>
+  <aside class="sidebar">
+    <div class="widget au1">
+      <div class="wlabel">Editor's Note</div>
+      <div class="editor-row">
+        <div class="editor-av"><img src="https://pickrise.com/images/logo.png" alt="PickRise" style="filter: grayscale(100%); padding:4px;"></div>
+        <div>
+          <div class="editor-name">PickRise Editor</div>
+          <div class="editor-role">IT &amp; Tech Reviewer</div>
         </div>
+      </div>
+      <p class="editor-bio">제조사의 스펙 시트 너머, <strong>진짜 실사용 환경의 장단점</strong>을 가감 없이 팩트체크합니다.</p>
     </div>
 
-    <!-- 통합 사이드바 (우측) -->
-    <aside class="feed-sidebar">
-
-        <!-- 에디터 신뢰도 위젯 -->
-        <div class="widget-box">
-            <div class="widget-header">Editor's Note</div>
-            <div class="trust-header">
-                <img src="https://pickrise.com/images/favicon.png" alt="PickRise">
+    <div class="widget au2">
+      <div class="wlabel">Weekly Trending</div>
+      <div class="trend-list">
+            <a href="https://pickrise.com/post/LG전자-2025-그램-16-코어Ultra5-실사용-리뷰.html" class="trend-a">
+                <span class="trend-rank">1</span>
+                <div class="trend-img"><img src="https://pickrise.com/images/thumb-1772859741520.webp" alt="" loading="lazy"></div>
                 <div>
-                    <h3>PickRise Editor</h3>
-                    <span>IT & Tech Reviewer</span>
-                </div>
-            </div>
-            <p class="trust-desc">제조사의 딱딱한 스펙 시트 너머, <strong>진짜 실사용 환경에서의 장단점</strong>을 가감 없이 팩트체크합니다.</p>
-        </div>
-
-        <!-- 트렌딩 리뷰 위젯 -->
-        <div class="widget-box">
-            <div class="widget-header">Weekly Trending</div>
-            <div class="trending-list">
-                
-            <a href="post/HP-2025-노트북15-156-코어i5-인텔-13세대-완벽-분석.html" class="trend-item">
-                <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1773033576805.webp" alt=""></div>
-                <div class="trend-info">
-                    <div class="trend-title">HP 2025 노트북15 15.6 코어i5 인텔 13세대 완벽 분석 (사무용·대학생 노트북, 이 가격에 이 사양이 말이 되나요?)</div>
-                    <div class="trend-cat">PC/노트북</div>
+                    <div class="trend-t">LG전자 2025 그램 16 코어Ultra5 실사용 리뷰 (16인치인데 1.2kg? 가벼움의 끝판왕, 직접 확인해봤습니다)</div>
+                    <div class="trend-c">PC/노트북</div>
                 </div>
             </a>
         
-            <a href="post/LG전자-2025-그램-16-코어Ultra5-실사용-리뷰.html" class="trend-item">
-                <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1772859741520.webp" alt=""></div>
-                <div class="trend-info">
-                    <div class="trend-title">LG전자 2025 그램 16 코어Ultra5 실사용 리뷰 (16인치인데 1.2kg? 가벼움의 끝판왕, 직접 확인해봤습니다)</div>
-                    <div class="trend-cat">PC/노트북</div>
+            <a href="https://pickrise.com/post/HP-2025-노트북15-156-코어i5-인텔-13세대-완벽-분석.html" class="trend-a">
+                <span class="trend-rank">2</span>
+                <div class="trend-img"><img src="https://pickrise.com/images/thumb-1773033576805.webp" alt="" loading="lazy"></div>
+                <div>
+                    <div class="trend-t">HP 2025 노트북15 15.6 코어i5 인텔 13세대 완벽 분석 (사무용·대학생 노트북, 이 가격에 이 사양이 말이 되나요?)</div>
+                    <div class="trend-c">PC/노트북</div>
                 </div>
             </a>
-        
-            </div>
         </div>
+    </div>
 
-        <!-- 인기 키워드 (Tag Cloud) 위젯 -->
-        <div class="widget-box">
-            <div class="widget-header">Popular Tags</div>
-            <div class="tag-cloud-wrap">
-                <button class="tag-cloud-item" data-tag="노트북">#노트북</button><button class="tag-cloud-item" data-tag="리뷰">#리뷰</button>
-            </div>
-        </div>
+    <div class="widget au3">
+      <div class="wlabel">Popular Tags</div>
+      <div class="tag-cloud"><button class="tag" data-tag="노트북">#노트북</button><button class="tag" data-tag="리뷰">#리뷰</button></div>
+    </div>
 
-        <!-- 추천 상품 (광고) 위젯 모음 -->
-        <div class="ad-block"><div class="ad-label">Sponsored</div><div><div style="padding:20px; text-align:center; color:#94a3b8; font-size:13px;">광고 준비 중</div></div></div>
-        <div class="ad-block"><div class="ad-label">Sponsored</div><div><div style="padding:20px; text-align:center; color:#94a3b8; font-size:13px;">광고 준비 중</div></div></div>
-
-    </aside>
-
+    <div class="ad-box au4"><div class="ad-label">Sponsored</div><div><div style="padding:20px; text-align:center; color:#94a3b8; font-size:13px;">광고 준비 중</div></div></div>
+    <div class="ad-box"><div class="ad-label">Sponsored</div><div><div style="padding:20px; text-align:center; color:#94a3b8; font-size:13px;">광고 준비 중</div></div></div>
+  </aside>
 </div>
 
-
-<footer class="footer">
-    <div class="footer-inner">
-        <div class="footer-brand">
-            <div class="footer-logo">PickRise</div>
-            <p>데이터와 실사용 경험에 기반한 스마트 기기, 가전제품 리뷰 및 IT 트렌드 정보 플랫폼</p>
-        </div>
-        <div class="footer-col"><h4>콘텐츠</h4><a href="https://pickrise.com/index.html">리뷰홈</a></div><div class="footer-col"><h4>정보</h4><a href="https://pickrise.com/policy.html">면책조항/운영정책</a></div><div class="footer-col"><h4>문의</h4><a href="https://pickrise.com/contact.html">비즈니스/리뷰 문의</a></div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo"><img src="https://pickrise.com/images/logo.png" alt="PickRise" style="height:32px; width:auto; transform:translateY(2px);"></div>
+      <p class="footer-about">데이터와 실사용 경험에 기반한 스마트 기기, 가전제품 리뷰 및 IT 트렌드 정보 플랫폼</p>
     </div>
-    <div class="footer-bottom">© 2026 PickRise. All rights reserved.</div>
+    <div class="fcol"><h4>콘텐츠</h4><a href="https://pickrise.com/index.html">리뷰홈</a></div><div class="fcol"><h4>정보</h4><a href="https://pickrise.com/policy.html">면책조항/운영정책</a></div><div class="fcol"><h4>문의</h4><a href="https://pickrise.com/contact.html">비즈니스/리뷰 문의</a></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 PickRise. All rights reserved.</span>
+    <span class="footer-mono">CRAFTED WITH PRECISION</span>
+  </div>
 </footer>
 
 <script>
-(function() {
-    const searchBtn = document.getElementById('m-search-toggle');
-    const searchBox = document.getElementById('global-search-box');
-    if(searchBtn) searchBtn.onclick = (e) => { e.stopPropagation(); searchBox.classList.toggle('active'); };
-})();
-</script>
+(function () {
+'use strict';
 
-<script>
-(function() {
-    const posts = [{"id":1773033576805,"groupId":1773033576805,"title":"HP 2025 노트북15 15.6 코어i5 인텔 13세대 완벽 분석 (사무용·대학생 노트북, 이 가격에 이 사양이 말이 되나요?)","filename":"post/HP-2025-노트북15-156-코어i5-인텔-13세대-완벽-분석.html","excerpt":"인텔 13세대 i5, 16GB 램, 512GB SSD, 윈도우11 홈 탑재. 일주일간 직접 테스트하며 느낀 확실한 장점과 절대 숨기지 않을 단점까지 솔직하게 정리했습니다.","date":"2026. 3. 9.","category":"PC/노트북","tags":["노트북","리뷰"],"keywords":"노트북, 리뷰","thumbnail":"https://pickrise.com/images/thumb-1773033576805.webp"},{"id":1772859741520,"groupId":1772859741519,"title":"LG전자 2025 그램 16 코어Ultra5 실사용 리뷰 (16인치인데 1.2kg? 가벼움의 끝판왕, 직접 확인해봤습니다)","filename":"post/LG전자-2025-그램-16-코어Ultra5-실사용-리뷰.html","excerpt":"1.2kg대의 초경량 16인치 바디, 인텔 코어 Ultra5, WQXGA 고해상도 디스플레이, 77Wh 대용량 배터리. 그램이 매년 선택받는 이유가 있는지 스펙과 실사용 두 가지 관점으로 꼼꼼히 짚어봤습니다.","date":"2026. 3. 7.","category":"PC/노트북","tags":["노트북","리뷰"],"keywords":"노트북, 리뷰","thumbnail":"https://pickrise.com/images/thumb-1772859741520.webp"}];
-    posts.sort((a, b) => b.id - a.id);
-    const PER_PAGE = 10;
-    let currentPage = 1;
-    let filteredPosts =[];
-    // 👇 [변경] 접속 시 태그 필터링을 무조건 '전체'로 풀어서 글이 보이게 만듦
-    let activeTag = '전체';
+const posts = [{"id":1773033576805,"groupId":1773033576805,"title":"HP 2025 노트북15 15.6 코어i5 인텔 13세대 완벽 분석 (사무용·대학생 노트북, 이 가격에 이 사양이 말이 되나요?)","filename":"post/HP-2025-노트북15-156-코어i5-인텔-13세대-완벽-분석.html","excerpt":"인텔 13세대 i5, 16GB 램, 512GB SSD, 윈도우11 홈 탑재. 일주일간 직접 테스트하며 느낀 확실한 장점과 절대 숨기지 않을 단점까지 솔직하게 정리했습니다.","date":"2026. 3. 9.","category":"PC/노트북","tags":["노트북","리뷰"],"keywords":"노트북, 리뷰","thumbnail":"https://pickrise.com/images/thumb-1773033576805.webp"},{"id":1772859741520,"groupId":1772859741519,"title":"LG전자 2025 그램 16 코어Ultra5 실사용 리뷰 (16인치인데 1.2kg? 가벼움의 끝판왕, 직접 확인해봤습니다)","filename":"post/LG전자-2025-그램-16-코어Ultra5-실사용-리뷰.html","excerpt":"1.2kg대의 초경량 16인치 바디, 인텔 코어 Ultra5, WQXGA 고해상도 디스플레이, 77Wh 대용량 배터리. 그램이 매년 선택받는 이유가 있는지 스펙과 실사용 두 가지 관점으로 꼼꼼히 짚어봤습니다.","date":"2026. 3. 7.","category":"PC/노트북","tags":["노트북","리뷰"],"keywords":"노트북, 리뷰","thumbnail":"https://pickrise.com/images/thumb-1772859741520.webp"}];
+posts.sort((a, b) => b.id - a.id);
 
-    const heroContainer = document.getElementById('hero-post-container');
-    const postGrid = document.getElementById('post-grid');
-    const loadMoreWrap = document.getElementById('load-more-wrap');
-    const headerSearch = document.querySelector('.search-input');
+const PER = 10;
+let page = 1, activeTag = 'PC/노트북', searchKw = '';
 
-    function getFiltered() {
-        const keyword = (headerSearch ? headerSearch.value : '').toLowerCase().trim();
-        return posts.filter(p => {
-            const matchTag = activeTag === '전체' || (p.tags ||[]).includes(activeTag);
-            const matchSearch = !keyword ||
-                p.title.toLowerCase().includes(keyword) ||
-                (p.excerpt || '').toLowerCase().includes(keyword);
-            return matchTag && matchSearch;
-        });
-    }
+const heroZone  = document.getElementById('hero-zone');
+const cardGrid  = document.getElementById('card-grid');
+const moreWrap  = document.getElementById('more-wrap');
+const searchDesk= document.getElementById('search-desk');
+const searchMob = document.getElementById('search-mob');
+const searchDrop= document.getElementById('search-drop');
+const secLabel  = document.getElementById('sec-label-target');
 
-    function renderHeroCard(post) {
-        return `
-        <div class="hero-post" onclick="location.href='${post.filename}'">
-            <div class="hero-thumb"><img src="${post.thumbnail}" alt="${post.title}" fetchpriority="high"></div>
-            <div class="hero-info">
-                <span class="hero-cat">${post.category}</span>
-                <h2 class="hero-title">${post.title}</h2>
-                <p class="hero-excerpt">${post.excerpt || ''}</p>
-            </div>
-        </div>`;
-    }
+function filtered() {
+  return posts.filter(p => {
+    const mt = activeTag === '전체' || (p.tags||[]).includes(activeTag);
+    const kw = searchKw.toLowerCase();
+    const ms = !kw || p.title.toLowerCase().includes(kw) || (p.excerpt||'').toLowerCase().includes(kw);
+    return mt && ms;
+  });
+}
 
-    function renderCard(post) {
-        return `
-        <div class="post-card" onclick="location.href='${post.filename}'">
-            <div class="card-thumb"><img src="${post.thumbnail}" alt="${post.title}" loading="lazy"></div>
-            <div class="card-body">
-                <span class="card-cat">${post.category}</span>
-                <div class="card-title">${post.title}</div>
-                <div class="card-desc">${post.excerpt || ''}</div>
-            </div>
-        </div>`;
-    }
+function renderHero(p) {
+  heroZone.innerHTML = `
+  <div class="hero-wrap">
+    <div class="hero-grid au0" onclick="location.href='${p.filename}'">
+      <div class="hero-img-box">
+        <img src="${p.thumbnail}" alt="${p.title}" fetchpriority="high">
+        <span class="hero-img-badge">${p.category}</span>
+      </div>
+      <div class="hero-text">
+        <div class="hero-eyebrow">
+          <span class="hero-date">${p.date}</span>
+          <div class="hero-divider"></div>
+        </div>
+        <h2 class="hero-title">${p.title}</h2>
+        <p class="hero-excerpt">${p.excerpt||''}</p>
+        <span class="hero-cta">
+          리뷰 전체 보기
+          <span class="hero-arrow">
+            <span class="iconify" data-icon="carbon:arrow-right" style="font-size:17px"></span>
+          </span>
+        </span>
+      </div>
+    </div>
+  </div>`;
+  secLabel.style.display = 'flex';
+}
 
+function cardHTML(p) {
+  return `<div class="card" onclick="location.href='${p.filename}'">
+    <div class="card-img"><img src="${p.thumbnail}" alt="${p.title}" loading="lazy"></div>
+    <div class="card-meta">
+      <span class="card-cat">${p.category}</span>
+      <span class="card-dot"></span>
+      <span class="card-date">${p.date}</span>
+    </div>
+    <div class="card-title">${p.title}</div>
+    <div class="card-desc">${p.excerpt||''}</div>
+  </div>`;
+}
 
-    function render(reset = false) {
-        filteredPosts = getFiltered();
-        if (reset) {
-            currentPage = 1;
-            postGrid.innerHTML = '';
-            if(heroContainer) heroContainer.innerHTML = '';
-        }
+function bannerHTML() {
+  return `<div class="promo-banner" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+    <div class="promo-banner-bg"></div>
+    <div class="promo-left">
+      <div class="promo-eye">Editor's Pick</div>
+      <div class="promo-title">📦 테크 전문가의 팩트체크 리뷰</div>
+      <div class="promo-sub">제조사 스펙 시트 너머의 진짜 실사용 장단점을 확인하세요.</div>
+    </div>
+    <div class="promo-btn">최신 리뷰 보기</div>
+  </div>`;
+}
 
-        if (filteredPosts.length === 0) {
-            postGrid.innerHTML = '<p style="padding:40px; text-align:center; color:#94a3b8; grid-column:1/-1;">결과가 없습니다.</p>';
-            loadMoreWrap.style.display = 'none'; return;
-        }
+function render(reset = false) {
+  if (reset) { page = 1; cardGrid.innerHTML = ''; heroZone.innerHTML = ''; secLabel.style.display = 'none'; }
+  const list = filtered();
+  if (!list.length) {
+    heroZone.innerHTML = '';
+    secLabel.style.display = 'none';
+    cardGrid.innerHTML = `<div class="empty" style="grid-column:1/-1;"><div class="empty-icon">🔍</div><div>검색 결과가 없습니다</div></div>`;
+    moreWrap.style.display = 'none'; return;
+  }
+  if (page === 1 && reset) renderHero(list[0]);
+  const start = page === 1 ? 1 : (page - 1) * PER + 1;
+  const slice = list.slice(start, start + PER);
+  let html = '';
+  slice.forEach((p, i) => { if (page === 1 && i === 4) html += bannerHTML(); html += cardHTML(p); });
+  cardGrid.innerHTML += html;
+  const shown = page === 1 ? slice.length + 1 : (page-1)*PER+1+slice.length;
+  moreWrap.style.display = shown < list.length ? 'block' : 'none';
+}
 
-        let itemsToRender =[];
-        if (currentPage === 1) {
-            if(heroContainer) heroContainer.innerHTML = renderHeroCard(filteredPosts[0]);
-            itemsToRender = filteredPosts.slice(1, PER_PAGE + 1);
-        } else {
-            const start = (currentPage - 1) * PER_PAGE + 1;
-            itemsToRender = filteredPosts.slice(start, start + PER_PAGE);
-        }
+document.getElementById('more-btn').addEventListener('click', () => { page++; render(false); });
 
-        let htmlStr = '';
-        itemsToRender.forEach((p, idx) => {
-            htmlStr += renderCard(p);
-        });
-
-        postGrid.innerHTML += htmlStr;
-
-        const shown = (currentPage === 1) ? itemsToRender.length + 1 : ((currentPage - 1) * PER_PAGE + 1) + itemsToRender.length;
-        loadMoreWrap.style.display = shown < filteredPosts.length ? 'block' : 'none';
-    }
-
-    document.getElementById('load-more-btn').addEventListener('click', () => { currentPage++; render(false); });
-
-    document.querySelectorAll('.cat-tab').forEach(btn => {
-        btn.addEventListener('click', () => {
-            document.querySelectorAll('.cat-tab').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            activeTag = btn.dataset.tag;
-            if(headerSearch) headerSearch.value = '';
-            render(true);
-        });
-    });
-
-    if (headerSearch) {
-        headerSearch.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') { e.preventDefault(); render(true); }
-        });
-    }
-
-    const searchBox = document.getElementById('global-search-box');
-    if (headerSearch && searchBox) {
-        const dropdown = document.createElement('div');
-        dropdown.className = 'live-search-dropdown';
-        searchBox.appendChild(dropdown);
-
-        headerSearch.addEventListener('input', (e) => {
-            const keyword = e.target.value.toLowerCase().trim();
-            if (!keyword) {
-                dropdown.style.display = 'none';
-                return;
-            }
-            const matched = posts.filter(p => p.title.toLowerCase().includes(keyword) || (p.excerpt || '').toLowerCase().includes(keyword)).slice(0, 5);
-
-            if (matched.length > 0) {
-                dropdown.innerHTML = matched.map(p => `
-                    <a href="${p.filename}" class="live-search-item">
-                        <img src="${p.thumbnail}" class="ls-thumb" alt="">
-                        <div class="ls-info">
-                            <div class="ls-title">${p.title}</div>
-                            <div class="ls-cat">${p.category}</div>
-                        </div>
-                    </a>
-                `).join('');
-            } else {
-                dropdown.innerHTML = '<div style="padding:16px; text-align:center; color:#94a3b8; font-size:13px;">검색 결과가 없습니다.</div>';
-            }
-            dropdown.style.display = 'block';
-        });
-
-        document.addEventListener('click', (e) => {
-            if (!searchBox.contains(e.target)) {
-                dropdown.style.display = 'none';
-            }
-        });
-
-        headerSearch.addEventListener('focus', () => {
-            if (headerSearch.value.trim() !== '') dropdown.style.display = 'block';
-        });
-    }
-
-    document.querySelectorAll('.tag-cloud-item').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const targetTag = btn.dataset.tag;
-            const targetTab = Array.from(document.querySelectorAll('.cat-tab')).find(t => t.dataset.tag === targetTag);
-
-            if (targetTab) {
-                document.querySelectorAll('.cat-tab').forEach(b => b.classList.remove('active'));
-                targetTab.classList.add('active');
-                activeTag = targetTag;
-                targetTab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-            } else {
-                document.querySelectorAll('.cat-tab').forEach(b => b.classList.remove('active'));
-                activeTag = targetTag;
-            }
-
-            if(headerSearch) headerSearch.value = '';
-            render(true);
-            window.scrollTo({ top: document.querySelector('.filter-bar').offsetTop - 20, behavior: 'smooth' });
-        });
-    });
-
+document.querySelectorAll('.pill').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.pill').forEach(b => b.classList.remove('on'));
+    btn.classList.add('on');
+    activeTag = btn.dataset.tag; searchKw = '';
+    if (searchDesk) searchDesk.value = '';
+    if (searchMob)  searchMob.value  = '';
     render(true);
+  });
+});
+
+document.querySelectorAll('.tag').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const tag = btn.dataset.tag;
+    const pill = [...document.querySelectorAll('.pill')].find(p => p.dataset.tag === tag);
+    document.querySelectorAll('.pill').forEach(b => b.classList.remove('on'));
+    if (pill) { pill.classList.add('on'); pill.scrollIntoView({ behavior:'smooth', inline:'center', block:'nearest' }); }
+    else { activeTag = tag; } // pill에 없어도 태그 필터링은 동작
+    searchKw = '';
+    if (searchDesk) searchDesk.value = '';
+    render(true);
+    document.getElementById('filter-bar').scrollIntoView({ behavior:'smooth', block:'nearest' });
+  });
+});
+
+function liveSearch(kw) {
+  if (!kw) { searchDrop.style.display = 'none'; return; }
+  const hits = posts.filter(p => p.title.toLowerCase().includes(kw) || (p.excerpt||'').toLowerCase().includes(kw)).slice(0, 6);
+  searchDrop.innerHTML = hits.length
+    ? hits.map(p => `
+        <a href="${p.filename}" class="sdi">
+          <img class="sdi-thumb" src="${p.thumbnail}" alt="" loading="lazy">
+          <div>
+            <div class="sdi-title">${p.title}</div>
+            <div class="sdi-cat">${p.category}</div>
+          </div>
+        </a>`).join('')
+    : `<div class="sdi-empty">검색 결과가 없습니다</div>`;
+  searchDrop.style.display = 'block';
+}
+
+if (searchDesk) {
+  searchDesk.addEventListener('input', () => liveSearch(searchDesk.value.trim().toLowerCase()));
+  searchDesk.addEventListener('keydown', e => {
+    if (e.key === 'Enter') { searchKw = searchDesk.value.trim(); searchDrop.style.display = 'none'; render(true); }
+  });
+  document.addEventListener('click', e => {
+    const wrap = document.getElementById('search-wrap');
+    if (wrap && !wrap.contains(e.target)) searchDrop.style.display = 'none';
+  });
+}
+if (searchMob) {
+  searchMob.addEventListener('keydown', e => {
+    if (e.key === 'Enter') {
+      searchKw = searchMob.value.trim();
+      document.getElementById('search-bar-mob').classList.remove('on');
+      render(true);
+    }
+  });
+}
+
+const overlay = document.getElementById('overlay');
+const drawer  = document.getElementById('drawer');
+const open  = () => { drawer.classList.add('on');  overlay.classList.add('on');  document.body.style.overflow='hidden'; };
+const close = () => { drawer.classList.remove('on'); overlay.classList.remove('on'); document.body.style.overflow=''; };
+document.getElementById('btn-menu').addEventListener('click', open);
+document.getElementById('drawer-close').addEventListener('click', close);
+overlay.addEventListener('click', close);
+
+document.getElementById('btn-search').addEventListener('click', () => {
+  const bar = document.getElementById('search-bar-mob');
+  bar.classList.toggle('on');
+  if (bar.classList.contains('on')) searchMob.focus();
+});
+
+const pb  = document.getElementById('progress-bar');
+const hdr = document.getElementById('site-header');
+let ticking = false;
+window.addEventListener('scroll', () => {
+  if (ticking) return;
+  requestAnimationFrame(() => {
+    const scrolled = window.scrollY;
+    const total = document.documentElement.scrollHeight - window.innerHeight;
+    if (pb) pb.style.width = total > 0 ? (scrolled/total*100)+'%' : '0%';
+    if(hdr) hdr.classList.toggle('scrolled', scrolled > 6);
+    ticking = false;
+  });
+  ticking = true;
+}, { passive: true });
+
+render(true);
+
 })();
 </script>
 </body>
