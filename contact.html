@@ -63,71 +63,122 @@
         }
         
 :root {
-    --bg-page: #f8fafc;
-    --text-main: #0f172a;
-    --text-sub: #475569;
-    --text-light: #94a3b8;
-    --primary: #3b82f6;
-    --primary-dark: #2563eb;
-    --border: #e2e8f0;
-    --bg-surface: #ffffff;
-    --header-h: 72px;
-    --layout-max: 1240px;
+  --white: #ffffff; --off: #fafafa; --border: #f0f0f5; --border-md: #e4e4ed;
+  --dark: #0b0b13; --dark2: #14141f;
+  --ink: #0b0b13; --ink-70: #30304a; --ink-50: #62627e; --ink-35: #8e8ea8; --ink-20: #b8b8cc; --ink-10: #dcdcea;
+  --blue: #1641c8; --blue-d: #102da8; --blue-m: #3b5bdb; --blue-l: #eef2ff; --blue-b: rgba(59,91,219,.12);
+  --f-serif: 'Noto Serif KR', 'Georgia', serif;
+  --f-sans: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+  --f-mono: 'DM Mono', 'Courier New', monospace;
+  --f-disp: 'Bebas Neue', sans-serif;
+  --max-w: 1680px; --gutter: 68px; --hh: 78px; --fh: 64px;
+  --r-2xl: 28px; --r-xl: 22px; --r-lg: 16px; --r-md: 11px; --r-sm: 7px;
+  --sh-xs: 0 1px 2px rgba(11,11,19,.04); --sh-sm: 0 1px 3px rgba(11,11,19,.04), 0 6px 18px rgba(11,11,19,.055);
+  --sh-md: 0 2px 6px rgba(11,11,19,.04), 0 12px 32px rgba(11,11,19,.07);
+  --sh-lg: 0 4px 10px rgba(11,11,19,.04), 0 24px 60px rgba(11,11,19,.09);
+  --sh-hero: 0 2px 4px rgba(11,11,19,.03), 0 16px 40px rgba(11,11,19,.08), 0 48px 96px rgba(11,11,19,.05);
+  --ease-out-expo: cubic-bezier(.16,1,.3,1);
 }
-.notice-bar { background: #0f172a; color: #cbd5e1; text-align: center; padding: 10px 24px; font-size: 13px; font-weight: 600; letter-spacing: 0.02em; }
-.site-header { position: sticky; top: -1px; z-index: 500; background: rgb(255 255 255 / 95%); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.05); }
-.header-inner{max-width:var(--layout-max);margin:0 auto;padding:0 24px;height:var(--header-h);display:flex;align-items:center;justify-content:space-between;position:relative}
-.logo{font-size:26px;font-weight:800;color:var(--text-main);display:flex;align-items:center;gap:4px}.nav{display:flex;gap:24px}.nav a { font-size: 15px; font-weight: 600; color: #0f172a; transition: 0.2s; }.nav a:hover{color:var(--primary)}.header-utils{display:flex;align-items:center;gap:12px}.search-box{position:relative;width:240px;transition:all 0.3s}
-.search-input { width: 100%; padding: 14px 16px 14px 40px; font-size: 14px; background-color: #f1f5f9; border: 1px solid transparent; border-radius: 30px; color: #0f172a; outline: none; transition: 0.2s; }.search-input:focus{background-color:#fff; border-color:#3b82f6}.search-icon-pos{position:absolute;left:20px;top:50%;transform:translateY(-50%);color:#94a3b8;pointer-events:none}
-.m-btn { display: none; background: none; border: none; color: #0f172a; cursor: pointer; padding: 8px; font-size: 24px; align-items: center; justify-content: center; }.mobile-sidebar{position:fixed;top:0;right:-280px;width:280px;height:100vh;background:#fff;z-index:1000;box-shadow:-5px 0 20px rgba(0,0,0,0.1);transition:0.3s ease-in-out;padding:40px 24px;display:flex;flex-direction:column;gap:20px}.mobile-sidebar.active{right:0}.m-sidebar-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}.m-sidebar-header img{width:fit-content}.m-nav-list{display:flex;flex-direction:column;gap:10px}.m-nav-list a{font-size:16px;font-weight:600;color:#1e293b;border-bottom:1px solid #f1f5f9;padding:12px 0;display:block}.sidebar-overlay{position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.5);z-index:999;display:none;backdrop-filter:blur(2px)}.sidebar-overlay.active{display:block}
-.footer{background:#0f172a;color:#94a3b8;padding:60px 24px 24px;font-size:14px; margin-top:60px;}.footer-inner{max-width:var(--layout-max);margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}.footer-brand p{margin-top:12px;font-size:13px;line-height:1.6;color:#94a3b8}.footer-logo{font-size:20px;font-weight:800;color:#fff}.footer-col h4{color:#fff;font-size:15px;font-weight:700;margin-bottom:16px}.footer-col a{display:block;color:#94a3b8;margin-bottom:10px;font-size:14px;transition:color 0.2s}.footer-col a:hover{color:#fff}.footer-bottom{max-width:var(--layout-max);margin:0 auto;padding-top:24px;border-top:1px solid #1e293b;text-align:center;font-size:13px;color:#64748b}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 17.5px; text-rendering: optimizeLegibility; }
+body { font-family: var(--f-sans); background: var(--white); color: var(--ink); line-height: 1.7; -webkit-font-smoothing: antialiased; letter-spacing: -.022em; overflow-x: hidden; }
+a { text-decoration: none; color: inherit; }
+img { display: block; max-width: 100%; }
+button { font-family: var(--f-sans); cursor: pointer; border: none; background: none; }
+::selection { background: var(--blue-l); color: var(--blue); }
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--ink-10); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--ink-20); }
 
-/* 🚀 헤더/푸터 공통 모바일 반응형 보완 */
-@media (max-width:768px){
-    .nav{display:none !important}
-    .search-box { display: none; position: absolute; top: var(--header-h); left: 0; width: 100%; background: #ffffff; padding: 10px 16px; border-bottom: 1px solid #e2e8f0; }
-    .search-box.active{display:block !important}
-    .search-input { padding: 12px 16px 12px 36px; }
-    .search-icon-pos{left:28px}
-    .m-btn{display:flex !important}
-    .footer-inner{grid-template-columns:1fr 1fr;gap:24px}
-    .footer-brand{grid-column:1 / -1}
-}
+#progress-bar { position: fixed; top: 0; left: 0; height: 2px; width: 0%; background: linear-gradient(90deg, var(--blue) 0%, var(--blue-m) 100%); z-index: 9999; transition: width .08s linear; border-radius: 0 2px 2px 0; box-shadow: 0 0 8px rgba(59,91,219,.4); }
 
+.site-header { position: sticky; top: 0; z-index: 800; background: rgba(255,255,255,.88); backdrop-filter: blur(32px) saturate(200%); border-bottom: 1px solid var(--border); transition: border-color .25s, box-shadow .3s; }
+.site-header.scrolled { border-color: var(--border-md); box-shadow: 0 1px 0 var(--border), var(--sh-md); }
+.header-inner { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter); height: var(--hh); display: flex; align-items: center; justify-content: space-between; gap: 40px; position: relative; }
+.logo { display: flex; align-items: center; flex-shrink: 0; text-decoration: none; }
+.site-nav { position: absolute; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 0; }
+.site-nav a { position: relative; font-size: 15px; font-weight: 600; color: var(--ink-50); padding: 8px 20px; border-radius: 50px; transition: color .18s; letter-spacing: -.01em; white-space: nowrap; }
+.site-nav a::after { content: ''; position: absolute; bottom: 6px; left: 50%; transform: translateX(-50%); width: 0; height: 2px; border-radius: 1px; background: var(--blue); transition: width .2s var(--ease-out-expo); }
+.site-nav a:hover { color: var(--ink); }
+.site-nav a:hover::after { width: 20px; }
+.header-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.search-wrap { position: relative; }
+.search-field { width: 244px; padding: 10px 18px 10px 42px; font-size: 14.5px; font-family: var(--f-sans); font-weight: 500; background: var(--off); border: 1.5px solid transparent; border-radius: 50px; color: var(--ink); outline: none; transition: width .3s var(--ease-out-expo), background .2s, border-color .2s, box-shadow .2s; letter-spacing: -.01em; }
+.search-field::placeholder { color: var(--ink-20); }
+.search-field:focus { background: var(--white); border-color: var(--blue-m); width: 308px; box-shadow: 0 0 0 4px var(--blue-b); }
+.search-ico { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--ink-20); font-size: 16px; pointer-events: none; transition: color .2s; }
+.search-wrap:focus-within .search-ico { color: var(--blue-m); }
+.icon-btn { display: none; width: 42px; height: 42px; border-radius: 50%; align-items: center; justify-content: center; color: var(--ink); font-size: 21px; transition: background .18s, transform .18s; }
+.icon-btn:hover { background: var(--off); }
+.icon-btn:active { transform: scale(.93); }
+
+.overlay { position: fixed; inset: 0; background: rgba(11,11,19,.56); z-index: 990; display: none; backdrop-filter: blur(8px); }
+.overlay.on { display: block; }
+.drawer { position: fixed; top: 0; right: -360px; width: 360px; height: 100dvh; background: var(--white); z-index: 1000; padding: 32px 28px; display: flex; flex-direction: column; overflow-y: auto; transition: right .36s var(--ease-out-expo); }
+.drawer.on { right: 0; }
+.drawer-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+.drawer-close { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; color: var(--ink); cursor: pointer; transition: background .18s; }
+.drawer-close:hover { background: var(--off); }
+.drawer-nav { display: flex; flex-direction: column; gap: 2px; }
+.drawer-nav a { font-size: 17px; font-weight: 600; color: var(--ink); padding: 14px 14px; border-radius: var(--r-md); transition: background .16s; letter-spacing: -.02em; }
+.drawer-nav a:hover { background: var(--off); }
+.search-bar-mob { display: none; position: fixed; top: var(--hh); left: 0; right: 0; z-index: 690; background: var(--white); padding: 13px 24px; border-bottom: 1px solid var(--border); box-shadow: 0 8px 28px rgba(11,11,19,.07); }
+.search-bar-mob.on { display: block; }
+.search-bar-mob .search-field { width: 100%; border-radius: var(--r-lg); }
+
+.site-footer { background: var(--dark); padding: 88px var(--gutter) 40px; margin-top: 80px; }
+.footer-inner { max-width: var(--max-w); margin: 0 auto; display: grid; grid-template-columns: 2.2fr 1fr 1fr 1fr; gap: 60px; padding-bottom: 64px; border-bottom: 1px solid rgba(255,255,255,.06); margin-bottom: 28px; }
+.footer-logo { display: flex; align-items: center; margin-bottom: 16px; filter: brightness(0) invert(1); }
+.footer-about { font-size: 15px; line-height: 1.74; color: rgba(255,255,255,.32); max-width: 280px; word-break: keep-all; }
+.fcol h4 { font-family: var(--f-mono); font-size: 10px; font-weight: 500; color: rgba(255,255,255,.22); letter-spacing: .26em; text-transform: uppercase; margin-bottom: 20px; }
+.fcol a { display: block; font-size: 15.5px; color: rgba(255,255,255,.44); margin-bottom: 13px; transition: color .18s; letter-spacing: -.01em; }
+.fcol a:hover { color: var(--white); }
+.footer-bottom { max-width: var(--max-w); margin: 0 auto; display: flex; justify-content: space-between; align-items: center; font-size: 12.5px; color: rgba(255,255,255,.18); }
+.footer-mono { font-family: var(--f-mono); letter-spacing: .12em; font-size: 10.5px; }
+
+/* Sidebar Widgets (Shared) */
+.sidebar { display: flex; flex-direction: column; gap: 24px; position: sticky; top: calc(var(--hh) + 32px); align-self: start; height: max-content; padding-bottom: 32px; z-index: 10; }
+.widget { background: var(--white); border-radius: var(--r-xl); padding: 28px 26px; border: 1px solid var(--border); box-shadow: var(--sh-xs); transition: box-shadow .25s; }
+.widget:hover { box-shadow: var(--sh-sm); }
+.wlabel { font-family: var(--f-mono); font-size: 10px; font-weight: 500; color: var(--ink-10); letter-spacing: .32em; text-transform: uppercase; margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
+.wlabel::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+.ad-box { border-radius: var(--r-lg); padding: 24px; border: 1px solid var(--border); background: var(--white); text-align: center; min-height: 104px; box-shadow: var(--sh-xs); }
+.ad-label { font-family: var(--f-mono); font-size: 9.5px; letter-spacing: .28em; color: var(--ink-20); text-transform: uppercase; margin-bottom: 12px; }
+
+@media (max-width: 1440px) { :root { --gutter: 48px; } .sidebar { display: none; } .site-nav { display: none; } .footer-inner { grid-template-columns: 1fr 1fr; gap: 40px; } }
+@media (max-width: 768px) { :root { --hh: 62px; --gutter: 22px; --fh: 58px; } html { font-size: 16px; } .search-wrap { display: none; } .icon-btn { display: flex; } .site-footer { padding: 64px var(--gutter) 32px; } .footer-inner { grid-template-columns: 1fr; gap: 36px; } .footer-bottom { flex-direction: column; gap: 8px; text-align: center; } }
 
     </style>
 </head>
 <body>
     
-<header class="site-header">
-    <div class="header-inner">
-        <a href="https://pickrise.com/index.html" class="logo">
-            <img src="https://pickrise.com/images/logo.png" alt="PickRise" style="height:46px; width:auto;">
-        </a>
-        <nav class="nav"><a href="https://pickrise.com/category-smart-device.html">스마트기기</a><a href="https://pickrise.com/category-pc-laptop.html">PC/노트북</a><a href="https://pickrise.com/category-home-appliance.html">생활가전</a><a href="https://pickrise.com/category-tech-trend.html">테크트렌드</a></nav>
-<div class="header-utils">
-        <div class="search-box" id="global-search-box">
-
-            <span class="iconify search-icon-pos" data-icon="carbon:search"></span>
-            <input type="text" class="search-input" id="search-input" placeholder="기기명, 브랜드 검색" autocomplete="off">
-        </div>
-            <button class="m-btn" id="m-search-toggle"><span class="iconify" data-icon="carbon:search"></span></button>
-            <button class="m-btn" id="m-menu-toggle"><span class="iconify" data-icon="carbon:menu"></span></button>
-        </div>
-
-</header>
-<!-- 🚀 진행률 바 (헤더 바로 밑에 부착) -->
-<div class="progress-container"><div class="progress-bar" id="progress-bar"></div></div>
-
-<div class="sidebar-overlay" id="sidebar-overlay"></div>
-<div class="mobile-sidebar" id="mobile-sidebar">
-    <div class="m-sidebar-header">
-        <img src="https://pickrise.com/images/logo.png" alt="PickRise" style="height:24px;">
-        <button id="m-sidebar-close" style="background:none; border:none; font-size:32px;">&times;</button>
-    </div>
-    <nav class="m-nav-list"><a href="https://pickrise.com/category-smart-device.html">스마트기기</a><a href="https://pickrise.com/category-pc-laptop.html">PC/노트북</a><a href="https://pickrise.com/category-home-appliance.html">생활가전</a><a href="https://pickrise.com/category-tech-trend.html">테크트렌드</a></nav>
+<div id="progress-bar"></div>
+<div class="overlay" id="overlay"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-head">
+    <a href="https://pickrise.com/index.html" class="logo"><img src="https://pickrise.com/images/logo.png" alt="PickRise" style="height:32px; width:auto; transform:translateY(2px);"></a>
+    <button class="drawer-close" id="drawer-close" aria-label="닫기">×</button>
+  </div>
+  <nav class="drawer-nav"><a href="https://pickrise.com/category-smart-device.html">스마트기기</a><a href="https://pickrise.com/category-pc-laptop.html">PC/노트북</a><a href="https://pickrise.com/category-home-appliance.html">생활가전</a><a href="https://pickrise.com/category-tech-trend.html">테크트렌드</a></nav>
 </div>
-
+<div class="search-bar-mob" id="search-bar-mob">
+  <input class="search-field" id="search-mob" type="text" placeholder="기기명, 브랜드 검색" autocomplete="off">
+</div>
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a class="logo" href="https://pickrise.com/index.html"><img src="https://pickrise.com/images/logo.png" alt="PickRise" style="height:32px; width:auto; transform:translateY(2px);"></a>
+    <nav class="site-nav"><a href="https://pickrise.com/category-smart-device.html">스마트기기</a><a href="https://pickrise.com/category-pc-laptop.html">PC/노트북</a><a href="https://pickrise.com/category-home-appliance.html">생활가전</a><a href="https://pickrise.com/category-tech-trend.html">테크트렌드</a></nav>
+    <div class="header-right">
+      <div class="search-wrap" id="search-wrap">
+        <span class="iconify search-ico" data-icon="carbon:search"></span>
+        <input class="search-field" id="search-desk" type="text" placeholder="기기명, 브랜드 검색" autocomplete="off">
+      </div>
+      <button class="icon-btn" id="btn-search" aria-label="검색"><span class="iconify" data-icon="carbon:search"></span></button>
+      <button class="icon-btn" id="btn-menu" aria-label="메뉴"><span class="iconify" data-icon="carbon:menu"></span></button>
+    </div>
+  </div>
+</header>
     
             <header class="static-header">
                 <h1 class="static-title">비즈니스 및 리뷰 문의</h1>
@@ -161,22 +212,44 @@
             </main>
         
     
-<footer class="footer">
-    <div class="footer-inner">
-        <div class="footer-brand">
-            <div class="footer-logo">PickRise</div>
-            <p>데이터와 실사용 경험에 기반한 스마트 기기, 가전제품 리뷰 및 IT 트렌드 정보 플랫폼</p>
-        </div>
-        <div class="footer-col"><h4>콘텐츠</h4><a href="https://pickrise.com/index.html">리뷰홈</a></div><div class="footer-col"><h4>정보</h4><a href="https://pickrise.com/policy.html">면책조항/운영정책</a></div><div class="footer-col"><h4>문의</h4><a href="https://pickrise.com/contact.html">비즈니스/리뷰 문의</a></div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo"><img src="https://pickrise.com/images/logo.png" alt="PickRise" style="height:32px; width:auto; transform:translateY(2px);"></div>
+      <p class="footer-about">데이터와 실사용 경험에 기반한 스마트 기기, 가전제품 리뷰 및 IT 트렌드 정보 플랫폼</p>
     </div>
-    <div class="footer-bottom">© 2026 PickRise. All rights reserved.</div>
+    <div class="fcol"><h4>콘텐츠</h4><a href="https://pickrise.com/index.html">리뷰홈</a></div><div class="fcol"><h4>정보</h4><a href="https://pickrise.com/policy.html">면책조항/운영정책</a></div><div class="fcol"><h4>문의</h4><a href="https://pickrise.com/contact.html">비즈니스/리뷰 문의</a></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 PickRise. All rights reserved.</span>
+    <span class="footer-mono">CRAFTED WITH PRECISION</span>
+  </div>
 </footer>
 
     <script>
+    // 2. 모바일 UI 토글
     (function() {
-        const searchBtn = document.getElementById('m-search-toggle');
-        const searchBox = document.getElementById('global-search-box');
-        if(searchBtn) searchBtn.onclick = (e) => { e.stopPropagation(); searchBox.classList.toggle('active'); };
+        const searchBtn = document.getElementById('btn-search');
+        const searchBox = document.getElementById('search-bar-mob');
+        const searchInput = document.getElementById('search-mob');
+        const menuBtn = document.getElementById('btn-menu');
+        const sidebar = document.getElementById('drawer');
+        const overlay = document.getElementById('overlay');
+        const closeBtn = document.getElementById('drawer-close');
+
+        if(searchBtn) {
+            searchBtn.onclick = (e) => {
+                e.stopPropagation();
+                searchBox.classList.toggle('on');
+                if (searchBox.classList.contains('on')) searchInput.focus();
+            };
+        }
+        if(menuBtn) {
+            menuBtn.onclick = () => { sidebar.classList.add('on'); overlay.classList.add('on'); document.body.style.overflow='hidden'; };
+        }
+        const closeMenu = () => { sidebar.classList.remove('on'); overlay.classList.remove('on'); document.body.style.overflow=''; };
+        if(closeBtn) closeBtn.onclick = closeMenu;
+        if(overlay) overlay.onclick = closeMenu;
     })();
     </script>
 </body>
