@@ -59,13 +59,10 @@
   --blue-l:     #eef2ff;
   --blue-b:     rgba(59,91,219,.12);
   --f-serif:  'Noto Serif KR', 'Georgia', serif;
-  --f-sans:   'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
-  --f-mono:   'DM Mono', 'Courier New', monospace;
-  --f-disp:   'Bebas Neue', sans-serif;
-  --max-w:   1480px;
-  --gutter:  68px;
-  --hh:      78px;
-  --fh:      64px;
+  --f-sans: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+  --f-mono: 'DM Mono', 'Courier New', monospace;
+  --f-disp: 'Bebas Neue', sans-serif;
+  --max-w: 1280px; --gutter: 68px; --hh: 78px; --fh: 64px;
   --r-2xl:  28px;
   --r-xl:   22px;
   --r-lg:   16px;
@@ -141,13 +138,13 @@ button { font-family: var(--f-sans); cursor: pointer; border: none; background: 
 .pill-blue:hover { background: rgba(59,91,219,.1); }
 .pill-blue.on { background: var(--blue); color: var(--white); border-color: var(--blue); box-shadow: 0 3px 14px rgba(22,65,200,.28); }
 
-/* MAIN LAYOUT */
-.page-body { max-width: var(--max-w); margin: 80px auto 200px; padding: 0 var(--gutter); display: grid; grid-template-columns: 1fr 396px; gap: 92px; align-items: start; }
+/* MAIN LAYOUT (사이드바 축소) */
+.page-body { max-width: var(--max-w); margin: 80px auto 200px; padding: 0 var(--gutter); display: grid; grid-template-columns: 1fr 320px; gap: 64px; align-items: start; }
 
 /* HERO POST */
-.hero-wrap { margin-bottom: 92px; padding-bottom: 92px; border-bottom: 1px solid var(--border); position: relative; }
-.hero-wrap::before { content: 'FEATURED REVIEW'; position: absolute; top: -32px; left: 0; font-family: var(--f-mono); font-size: 10px; font-weight: 500; color: var(--ink-10); letter-spacing: .32em; text-transform: uppercase; display: block; }
-.hero-grid { display: grid; grid-template-columns: 54% 1fr; gap: 64px; align-items: center; cursor: pointer; }
+.hero-wrap { margin-bottom: 80px; padding-bottom: 80px; border-bottom: 1px solid var(--border); position: relative; }
+.hero-wrap::before { content: 'FEATURED REVIEW'; position: absolute; top: -32px; left: 0; font-family: var(--f-mono); font-size: 10px; font-weight: 500; color: var(--ink-20); letter-spacing: .32em; text-transform: uppercase; display: block; }
+.hero-grid { display: grid; grid-template-columns: 55% 1fr; gap: 48px; align-items: center; cursor: pointer; }
 .hero-img-box { position: relative; aspect-ratio: 16/10; border-radius: var(--r-2xl); overflow: hidden; background: var(--off); border: 1px solid var(--border); box-shadow: var(--sh-hero); }
 .hero-img-box img { width: 100%; height: 100%; object-fit: contain; transition: transform .9s var(--ease-out-expo); }
 .hero-grid:hover .hero-img-box img { transform: scale(1.04); }
@@ -287,7 +284,7 @@ button { font-family: var(--f-sans); cursor: pointer; border: none; background: 
 <div class="overlay" id="overlay"></div>
 <div class="drawer" id="drawer">
   <div class="drawer-head">
-    <a href="https://pickrise.com/index.html" class="logo"><img src="https://pickrise.com/images/logo.png" alt="PickRise" style="height:32px; width:auto; transform:translateY(2px);"></a>
+    <a href="https://pickrise.com/index.html" class="logo"><img src="https://pickrise.com/images/logo.png" alt="PickRise" style="height:42px; width:auto; transform:translateY(2px);"></a>
     <button class="drawer-close" id="drawer-close" aria-label="닫기">×</button>
   </div>
   <nav class="drawer-nav"><a href="https://pickrise.com/category-smart-device.html">스마트기기</a><a href="https://pickrise.com/category-pc-laptop.html">PC/노트북</a><a href="https://pickrise.com/category-home-appliance.html">생활가전</a><a href="https://pickrise.com/category-tech-trend.html">테크트렌드</a></nav>
@@ -299,7 +296,7 @@ button { font-family: var(--f-sans); cursor: pointer; border: none; background: 
 
 <header class="site-header" id="site-header">
   <div class="header-inner">
-    <a class="logo" href="https://pickrise.com/index.html"><img src="https://pickrise.com/images/logo.png" alt="PickRise" style="height:32px; width:auto; transform:translateY(2px);"></a>
+    <a class="logo" href="https://pickrise.com/index.html"><img src="https://pickrise.com/images/logo.png" alt="PickRise" style="height:42px; width:auto; transform:translateY(2px);"></a>
     <nav class="site-nav"><a href="https://pickrise.com/category-smart-device.html">스마트기기</a><a href="https://pickrise.com/category-pc-laptop.html">PC/노트북</a><a href="https://pickrise.com/category-home-appliance.html">생활가전</a><a href="https://pickrise.com/category-tech-trend.html">테크트렌드</a></nav>
     <div class="header-right">
       <div class="search-wrap" id="search-wrap">
@@ -351,47 +348,47 @@ button { font-family: var(--f-sans); cursor: pointer; border: none; background: 
     <div class="widget au2">
       <div class="wlabel">Weekly Trending</div>
       <div class="trend-list">
-            <a href="https://pickrise.com/post/무빙큐빅스-스마트-40인치-삼탠바이미-화이트에디션-SET-완벽-분석.html" class="trend-a">
+            <a href="https://pickrise.com/post/HP-2025-노트북15-156-코어i5-인텔-13세대-완벽-분석.html" class="trend-a">
                 <span class="trend-rank">1</span>
-                <div class="trend-img"><img src="https://pickrise.com/images/thumb-1773034610848.webp" alt="" loading="lazy"></div>
+                <div class="trend-img"><img src="https://pickrise.com/images/thumb-1773033576805.webp" alt="" loading="lazy"></div>
                 <div>
-                    <div class="trend-t">무빙큐빅스 스마트 40인치 삼탠바이미 화이트에디션 SET 완벽 분석 (스탠바이미 절반 가격으로 똑같이 누릴 수 있을까?)</div>
-                    <div class="trend-c">생활가전</div>
+                    <div class="trend-t">HP 2025 노트북15 15.6 코어i5 인텔 13세대 완벽 분석 (사무용·대학생 노트북, 이 가격에 이 사양이 말이 되나요?)</div>
+                    <div class="trend-c">PC/노트북</div>
                 </div>
             </a>
         
-            <a href="https://pickrise.com/post/LG-트롬-오브제컬렉션-워시콤보-FH25VAX-미니워시-세트-완벽-분석.html" class="trend-a">
+            <a href="https://pickrise.com/post/삼성전자-갤럭시-S26-자급제-실사용-리뷰-디자인성능카메라-총정리.html" class="trend-a">
                 <span class="trend-rank">2</span>
-                <div class="trend-img"><img src="https://pickrise.com/images/thumb-1773045562155.webp" alt="" loading="lazy"></div>
+                <div class="trend-img"><img src="https://pickrise.com/images/thumb-1772873523097.webp" alt="" loading="lazy"></div>
                 <div>
-                    <div class="trend-t">LG 트롬 오브제컬렉션 워시콤보 FH25VAX + 미니워시 세트 완벽 분석 (세탁·건조 한 번에, 진짜 삶의 질이 달라지는 세탁기)</div>
-                    <div class="trend-c">생활가전</div>
+                    <div class="trend-t">삼성전자 갤럭시 S26 자급제 실사용 리뷰 — 디자인·성능·카메라 총정리 (아이폰 이탈자들이 돌아오는 이유가 있었다)</div>
+                    <div class="trend-c">스마트기기</div>
                 </div>
             </a>
         
-            <a href="https://pickrise.com/post/home-appliance/쿠첸-더핏-슬림-전기-압력밥솥-6인용-완벽-분석.html" class="trend-a">
+            <a href="https://pickrise.com/post/파테크-한일전자-초고출력-헤어-드라이어-2300W-실사용-리뷰.html" class="trend-a">
                 <span class="trend-rank">3</span>
-                <div class="trend-img"><img src="https://pickrise.com/images/thumb-1773147188120.webp" alt="" loading="lazy"></div>
+                <div class="trend-img"><img src="https://pickrise.com/images/thumb-1772857280714.webp" alt="" loading="lazy"></div>
                 <div>
-                    <div class="trend-t">쿠첸 더핏 슬림 전기 압력밥솥 6인용 완벽 분석 (같은 쌀인데 왜 이렇게 맛있지? 그 이유를 밝힙니다)</div>
+                    <div class="trend-t">파테크 한일전자 초고출력 헤어 드라이어 2300W 실사용 리뷰 (머리숱 많은 분들, 이거 하나로 해결됩니다)</div>
                     <div class="trend-c">생활가전</div>
                 </div>
             </a>
         
-            <a href="https://pickrise.com/post/필립스-3000-시리즈-무선-전기주전자-HD9318HD9319-완전-분석.html" class="trend-a">
+            <a href="https://pickrise.com/post/LG전자-2025-그램-16-코어Ultra5-실사용-리뷰.html" class="trend-a">
                 <span class="trend-rank">4</span>
-                <div class="trend-img"><img src="https://pickrise.com/images/thumb-1772851162047.webp" alt="" loading="lazy"></div>
+                <div class="trend-img"><img src="https://pickrise.com/images/thumb-1772859741520.webp" alt="" loading="lazy"></div>
                 <div>
-                    <div class="trend-t">필립스 3000 시리즈 무선 전기주전자 HD9318/HD9319 완전 분석 (2만 원대 가성비 전기포트, 진짜 살 만할까?)</div>
-                    <div class="trend-c">생활가전</div>
+                    <div class="trend-t">LG전자 2025 그램 16 코어Ultra5 실사용 리뷰 (16인치인데 1.2kg? 가벼움의 끝판왕, 직접 확인해봤습니다)</div>
+                    <div class="trend-c">PC/노트북</div>
                 </div>
             </a>
         
-            <a href="https://pickrise.com/post/이노스-FHD-삼탠바이미-32인치-스마트TV-무빙거치대-솔직-리뷰.html" class="trend-a">
+            <a href="https://pickrise.com/post/쿠쿠-전기보온-에그밥솥-6인용-실사용-리뷰-및-밥맛-테스트.html" class="trend-a">
                 <span class="trend-rank">5</span>
-                <div class="trend-img"><img src="https://pickrise.com/images/thumb-1772830209125.webp" alt="" loading="lazy"></div>
+                <div class="trend-img"><img src="https://pickrise.com/images/thumb-1772868391538.webp" alt="" loading="lazy"></div>
                 <div>
-                    <div class="trend-t">이노스 FHD 삼탠바이미 32인치 스마트TV + 무빙거치대 솔직 리뷰 (가성비 이동식 TV의 끝판왕일까?)</div>
+                    <div class="trend-t">쿠쿠 전기보온 에그밥솥 6인용 실사용 리뷰 및 밥맛 테스트 (압력밥솥 vs 전기밥솥, 진짜 차이는?)</div>
                     <div class="trend-c">생활가전</div>
                 </div>
             </a>
@@ -411,7 +408,7 @@ button { font-family: var(--f-sans); cursor: pointer; border: none; background: 
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-brand">
-      <div class="footer-logo"><img src="https://pickrise.com/images/logo.png" alt="PickRise" style="height:32px; width:auto; transform:translateY(2px);"></div>
+      <div class="footer-logo"><img src="https://pickrise.com/images/logo.png" alt="PickRise" style="height:42px; width:auto; transform:translateY(2px);"></div>
       <p class="footer-about">데이터와 실사용 경험에 기반한 스마트 기기, 가전제품 리뷰 및 IT 트렌드 정보 플랫폼</p>
     </div>
     <div class="fcol"><h4>콘텐츠</h4><a href="https://pickrise.com/index.html">리뷰홈</a></div><div class="fcol"><h4>정보</h4><a href="https://pickrise.com/policy.html">면책조항/운영정책</a></div><div class="fcol"><h4>문의</h4><a href="https://pickrise.com/contact.html">비즈니스/리뷰 문의</a></div>

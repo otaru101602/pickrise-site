@@ -10,57 +10,10 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&family=Noto+Serif+KR:wght@400;600;700;900&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
 
     <style>
-        :root {
-            --bg-page: #ffffff;
-            --bg-surface: #f8fafc;
-            --text-primary: #0f172a;
-            --text-secondary: #475569;
-            --text-tertiary: #94a3b8;
-            --accent: #2563eb;
-            --border: #e2e8f0;
-            --max-width: 800px;
-            --header-h: 70px;
-        }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        html, body { font-family: 'Pretendard', -apple-system, sans-serif; background: var(--bg-page); color: var(--text-primary); line-height: 1.6; -webkit-font-smoothing: antialiased; }
-        a { text-decoration: none; color: inherit; }
-
-        .static-header { padding: 80px 20px 40px; text-align: center; background: var(--bg-surface); border-bottom: 1px solid var(--border); }
-        .static-title { font-size: 36px; font-weight: 800; color: var(--text-primary); margin-bottom: 16px; letter-spacing: -0.02em; }
-        .static-desc { font-size: 16px; color: var(--text-secondary); }
-
-        .static-body { max-width: var(--max-width); margin: 60px auto 100px; padding: 0 24px; }
-
-        /* Policy Styles */
-        .policy-content h3 { font-size: 20px; font-weight: 700; margin: 40px 0 16px; color: var(--text-primary); }
-        .policy-content p { font-size: 16px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 16px; word-break: keep-all; }
-        .policy-content ul { padding-left: 20px; margin-bottom: 24px; color: var(--text-secondary); }
-        .policy-content li { margin-bottom: 8px; line-height: 1.6; }
-
-        /* Contact Styles */
-        .contact-card { background: #ffffff; border: 1px solid var(--border); border-radius: 24px; padding: 40px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.03); margin-bottom: 40px; }
-        .contact-btn { display: inline-flex; align-items: center; gap: 10px; padding: 16px 32px; background: var(--accent); color: #fff; font-size: 16px; font-weight: 700; border-radius: 12px; transition: 0.2s; box-shadow: 0 4px 15px rgba(37,99,235,0.2); margin-top: 20px; }
-        .contact-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(37,99,235,0.3); }
-        .faq-item { border-bottom: 1px solid var(--border); padding: 24px 0; }
-        .faq-q { font-size: 17px; font-weight: 700; color: var(--text-primary); margin-bottom: 10px; display: flex; gap: 10px; align-items: flex-start; }
-        .faq-q::before { content: 'Q.'; color: var(--accent); }
-        .faq-a { font-size: 15px; color: var(--text-secondary); line-height: 1.6; display: flex; gap: 10px; align-items: flex-start; padding-left: 28px; }
-
-        /* 404 Styles */
-        .error-wrap { text-align: center; padding: 100px 20px; }
-        .error-code { font-size: 120px; font-family: 'Montserrat', sans-serif; font-weight: 900; color: var(--border); line-height: 1; margin-bottom: 20px; }
-        .error-msg { font-size: 24px; font-weight: 700; color: var(--text-primary); margin-bottom: 30px; }
-
-        @media (max-width: 768px) {
-            .static-header { padding: 60px 20px 30px; }
-            .static-title { font-size: 28px; }
-            .contact-card { padding: 30px 20px; }
-        }
         
 :root {
   --white: #ffffff; --off: #fafafa; --border: #f0f0f5; --border-md: #e4e4ed;
@@ -71,7 +24,7 @@
   --f-sans: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
   --f-mono: 'DM Mono', 'Courier New', monospace;
   --f-disp: 'Bebas Neue', sans-serif;
-  --max-w: 1480px; --gutter: 68px; --hh: 78px; --fh: 64px;
+  --max-w: 1280px; --gutter: 68px; --hh: 78px; --fh: 64px;
   --r-2xl: 28px; --r-xl: 22px; --r-lg: 16px; --r-md: 11px; --r-sm: 7px;
   --sh-xs: 0 1px 2px rgba(11,11,19,.04); --sh-sm: 0 1px 3px rgba(11,11,19,.04), 0 6px 18px rgba(11,11,19,.055);
   --sh-md: 0 2px 6px rgba(11,11,19,.04), 0 12px 32px rgba(11,11,19,.07);
@@ -149,6 +102,36 @@ button { font-family: var(--f-sans); cursor: pointer; border: none; background: 
 @media (max-width: 1440px) { :root { --gutter: 48px; } .sidebar { display: none; } .site-nav { display: none; } .footer-inner { grid-template-columns: 1fr 1fr; gap: 40px; } }
 @media (max-width: 768px) { :root { --hh: 62px; --gutter: 22px; --fh: 58px; } html { font-size: 16px; } .search-wrap { display: none; } .icon-btn { display: flex; } .site-footer { padding: 64px var(--gutter) 32px; } .footer-inner { grid-template-columns: 1fr; gap: 36px; } .footer-bottom { flex-direction: column; gap: 8px; text-align: center; } }
 
+        /* Static Page Editorial Styling */
+        .static-wrap { max-width: 860px; margin: 80px auto 160px; padding: 0 var(--gutter); }
+        .static-header { text-align: center; margin-bottom: 64px; }
+        .static-title { font-family: var(--f-serif); font-size: 46px; font-weight: 700; color: var(--ink); margin-bottom: 16px; letter-spacing: -.03em; }
+        .static-desc { font-size: 17.5px; color: var(--ink-50); letter-spacing: -.01em; }
+
+        .static-content { font-size: 17px; line-height: 1.85; color: var(--ink-70); }
+        .static-content h3 { font-family: var(--f-serif); font-size: 26px; font-weight: 700; color: var(--ink); margin: 64px 0 24px; border-bottom: 1px solid var(--border-md); padding-bottom: 16px; letter-spacing: -.02em;}
+        .static-content p { margin-bottom: 24px; word-break: keep-all;}
+        .static-content ul { padding-left: 24px; margin-bottom: 32px; }
+        .static-content li { margin-bottom: 12px; }
+
+        /* Contact Box */
+        .contact-box { background: var(--off); border: 1px solid var(--border); border-radius: var(--r-2xl); padding: 56px 40px; text-align: center; box-shadow: var(--sh-sm); margin-bottom: 64px; }
+        .contact-btn { display: inline-flex; align-items: center; gap: 12px; padding: 18px 42px; background: var(--ink); color: var(--white); font-size: 16.5px; font-weight: 700; border-radius: 50px; transition: all .24s var(--ease-out-expo); margin-top: 28px; position:relative; overflow:hidden;}
+        .contact-btn:hover { background: var(--blue); transform: translateY(-4px); box-shadow: var(--sh-md); }
+        @keyframes shine-sweep { 0% { left: -100%; } 20% { left: 100%; } 100% { left: 100%; } }
+        .contact-btn::after { content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%); transform: skewX(-20deg); animation: shine-sweep 3s infinite; }
+
+        /* FAQ */
+        .faq-item { border-bottom: 1px solid var(--border); padding: 28px 0; }
+        .faq-q { font-size: 19px; font-weight: 700; color: var(--ink); margin-bottom: 14px; display: flex; gap: 14px; align-items: flex-start; letter-spacing: -.02em;}
+        .faq-q::before { content: 'Q.'; color: var(--blue); font-family: var(--f-disp); font-size: 26px; line-height: 1; margin-top:2px;}
+        .faq-a { font-size: 16.5px; color: var(--ink-50); display: flex; align-items: flex-start; padding-left: 36px; line-height: 1.7; word-break:keep-all;}
+
+        /* 404 */
+        .error-wrap { text-align: center; padding: 120px 0; }
+        .error-code { font-family: var(--f-disp); font-size: 160px; color: var(--border-md); line-height: 1; margin-bottom: 24px; text-shadow: 4px 4px 0px var(--off);}
+
+        @media (max-width: 768px) { .static-title { font-size: 32px; } .contact-box { padding: 40px 24px; } .static-wrap{ margin: 40px auto 100px; } }
     </style>
 </head>
 <body>
@@ -157,7 +140,7 @@ button { font-family: var(--f-sans); cursor: pointer; border: none; background: 
 <div class="overlay" id="overlay"></div>
 <div class="drawer" id="drawer">
   <div class="drawer-head">
-    <a href="https://pickrise.com/index.html" class="logo"><img src="https://pickrise.com/images/logo.png" alt="PickRise" style="height:32px; width:auto; transform:translateY(2px);"></a>
+    <a href="https://pickrise.com/index.html" class="logo"><img src="https://pickrise.com/images/logo.png" alt="PickRise" style="height:42px; width:auto; transform:translateY(2px);"></a>
     <button class="drawer-close" id="drawer-close" aria-label="닫기">×</button>
   </div>
   <nav class="drawer-nav"><a href="https://pickrise.com/category-smart-device.html">스마트기기</a><a href="https://pickrise.com/category-pc-laptop.html">PC/노트북</a><a href="https://pickrise.com/category-home-appliance.html">생활가전</a><a href="https://pickrise.com/category-tech-trend.html">테크트렌드</a></nav>
@@ -167,7 +150,7 @@ button { font-family: var(--f-sans); cursor: pointer; border: none; background: 
 </div>
 <header class="site-header" id="site-header">
   <div class="header-inner">
-    <a class="logo" href="https://pickrise.com/index.html"><img src="https://pickrise.com/images/logo.png" alt="PickRise" style="height:32px; width:auto; transform:translateY(2px);"></a>
+    <a class="logo" href="https://pickrise.com/index.html"><img src="https://pickrise.com/images/logo.png" alt="PickRise" style="height:42px; width:auto; transform:translateY(2px);"></a>
     <nav class="site-nav"><a href="https://pickrise.com/category-smart-device.html">스마트기기</a><a href="https://pickrise.com/category-pc-laptop.html">PC/노트북</a><a href="https://pickrise.com/category-home-appliance.html">생활가전</a><a href="https://pickrise.com/category-tech-trend.html">테크트렌드</a></nav>
     <div class="header-right">
       <div class="search-wrap" id="search-wrap">
@@ -179,21 +162,23 @@ button { font-family: var(--f-sans); cursor: pointer; border: none; background: 
     </div>
   </div>
 </header>
-    
-            <main class="static-body error-wrap">
+    <main class="static-wrap">
+        
+            <div class="error-wrap">
                 <div class="error-code">404</div>
-                <h1 class="error-msg">페이지를 찾을 수 없습니다</h1>
-                <p style="color: var(--text-secondary); margin-bottom: 40px;">요청하신 페이지의 주소가 변경되었거나, 삭제되어 현재 찾을 수 없습니다.<br>입력하신 주소가 정확한지 다시 한번 확인해 주세요.</p>
-                <a href="https://pickrise.com/index.html" style="display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: var(--text-primary); color: #fff; font-weight: 700; border-radius: 12px; transition: 0.2s;">
+                <h1 style="font-family:var(--f-serif); font-size: 32px; font-weight: 700; color: var(--ink); margin-bottom: 20px;">페이지를 찾을 수 없습니다</h1>
+                <p style="color: var(--ink-50); margin-bottom: 48px; font-size:17px; line-height:1.6;">요청하신 페이지의 주소가 변경되었거나, 삭제되어 현재 찾을 수 없습니다.<br>입력하신 주소가 정확한지 다시 한번 확인해 주세요.</p>
+                <a href="https://pickrise.com/index.html" style="display: inline-flex; align-items: center; gap: 10px; padding: 18px 40px; background: var(--ink); color: var(--white); font-weight: 700; border-radius: 50px; transition: all .2s var(--ease-out-expo);">
                     <span class="iconify" data-icon="carbon:home"></span> 홈으로 돌아가기
                 </a>
-            </main>
+            </div>
         
+    </main>
     
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-brand">
-      <div class="footer-logo"><img src="https://pickrise.com/images/logo.png" alt="PickRise" style="height:32px; width:auto; transform:translateY(2px);"></div>
+      <div class="footer-logo"><img src="https://pickrise.com/images/logo.png" alt="PickRise" style="height:42px; width:auto; transform:translateY(2px);"></div>
       <p class="footer-about">데이터와 실사용 경험에 기반한 스마트 기기, 가전제품 리뷰 및 IT 트렌드 정보 플랫폼</p>
     </div>
     <div class="fcol"><h4>콘텐츠</h4><a href="https://pickrise.com/index.html">리뷰홈</a></div><div class="fcol"><h4>정보</h4><a href="https://pickrise.com/policy.html">면책조항/운영정책</a></div><div class="fcol"><h4>문의</h4><a href="https://pickrise.com/contact.html">비즈니스/리뷰 문의</a></div>
@@ -205,7 +190,6 @@ button { font-family: var(--f-sans); cursor: pointer; border: none; background: 
 </footer>
 
     <script>
-    // 2. 모바일 UI 토글
     (function() {
         const searchBtn = document.getElementById('btn-search');
         const searchBox = document.getElementById('search-bar-mob');
@@ -215,16 +199,8 @@ button { font-family: var(--f-sans); cursor: pointer; border: none; background: 
         const overlay = document.getElementById('overlay');
         const closeBtn = document.getElementById('drawer-close');
 
-        if(searchBtn) {
-            searchBtn.onclick = (e) => {
-                e.stopPropagation();
-                searchBox.classList.toggle('on');
-                if (searchBox.classList.contains('on')) searchInput.focus();
-            };
-        }
-        if(menuBtn) {
-            menuBtn.onclick = () => { sidebar.classList.add('on'); overlay.classList.add('on'); document.body.style.overflow='hidden'; };
-        }
+        if(searchBtn) { searchBtn.onclick = (e) => { e.stopPropagation(); searchBox.classList.toggle('on'); if(searchBox.classList.contains('on')) searchInput.focus(); }; }
+        if(menuBtn) { menuBtn.onclick = () => { sidebar.classList.add('on'); overlay.classList.add('on'); document.body.style.overflow='hidden'; }; }
         const closeMenu = () => { sidebar.classList.remove('on'); overlay.classList.remove('on'); document.body.style.overflow=''; };
         if(closeBtn) closeBtn.onclick = closeMenu;
         if(overlay) overlay.onclick = closeMenu;

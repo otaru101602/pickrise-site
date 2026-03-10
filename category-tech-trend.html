@@ -59,13 +59,10 @@
   --blue-l:     #eef2ff;
   --blue-b:     rgba(59,91,219,.12);
   --f-serif:  'Noto Serif KR', 'Georgia', serif;
-  --f-sans:   'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
-  --f-mono:   'DM Mono', 'Courier New', monospace;
-  --f-disp:   'Bebas Neue', sans-serif;
-  --max-w:   1480px;
-  --gutter:  68px;
-  --hh:      78px;
-  --fh:      64px;
+  --f-sans: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+  --f-mono: 'DM Mono', 'Courier New', monospace;
+  --f-disp: 'Bebas Neue', sans-serif;
+  --max-w: 1280px; --gutter: 68px; --hh: 78px; --fh: 64px;
   --r-2xl:  28px;
   --r-xl:   22px;
   --r-lg:   16px;
@@ -141,13 +138,13 @@ button { font-family: var(--f-sans); cursor: pointer; border: none; background: 
 .pill-blue:hover { background: rgba(59,91,219,.1); }
 .pill-blue.on { background: var(--blue); color: var(--white); border-color: var(--blue); box-shadow: 0 3px 14px rgba(22,65,200,.28); }
 
-/* MAIN LAYOUT */
-.page-body { max-width: var(--max-w); margin: 80px auto 200px; padding: 0 var(--gutter); display: grid; grid-template-columns: 1fr 396px; gap: 92px; align-items: start; }
+/* MAIN LAYOUT (사이드바 축소) */
+.page-body { max-width: var(--max-w); margin: 80px auto 200px; padding: 0 var(--gutter); display: grid; grid-template-columns: 1fr 320px; gap: 64px; align-items: start; }
 
 /* HERO POST */
-.hero-wrap { margin-bottom: 92px; padding-bottom: 92px; border-bottom: 1px solid var(--border); position: relative; }
-.hero-wrap::before { content: 'FEATURED REVIEW'; position: absolute; top: -32px; left: 0; font-family: var(--f-mono); font-size: 10px; font-weight: 500; color: var(--ink-10); letter-spacing: .32em; text-transform: uppercase; display: block; }
-.hero-grid { display: grid; grid-template-columns: 54% 1fr; gap: 64px; align-items: center; cursor: pointer; }
+.hero-wrap { margin-bottom: 80px; padding-bottom: 80px; border-bottom: 1px solid var(--border); position: relative; }
+.hero-wrap::before { content: 'FEATURED REVIEW'; position: absolute; top: -32px; left: 0; font-family: var(--f-mono); font-size: 10px; font-weight: 500; color: var(--ink-20); letter-spacing: .32em; text-transform: uppercase; display: block; }
+.hero-grid { display: grid; grid-template-columns: 55% 1fr; gap: 48px; align-items: center; cursor: pointer; }
 .hero-img-box { position: relative; aspect-ratio: 16/10; border-radius: var(--r-2xl); overflow: hidden; background: var(--off); border: 1px solid var(--border); box-shadow: var(--sh-hero); }
 .hero-img-box img { width: 100%; height: 100%; object-fit: contain; transition: transform .9s var(--ease-out-expo); }
 .hero-grid:hover .hero-img-box img { transform: scale(1.04); }
@@ -287,7 +284,7 @@ button { font-family: var(--f-sans); cursor: pointer; border: none; background: 
 <div class="overlay" id="overlay"></div>
 <div class="drawer" id="drawer">
   <div class="drawer-head">
-    <a href="https://pickrise.com/index.html" class="logo"><img src="https://pickrise.com/images/logo.png" alt="PickRise" style="height:32px; width:auto; transform:translateY(2px);"></a>
+    <a href="https://pickrise.com/index.html" class="logo"><img src="https://pickrise.com/images/logo.png" alt="PickRise" style="height:42px; width:auto; transform:translateY(2px);"></a>
     <button class="drawer-close" id="drawer-close" aria-label="닫기">×</button>
   </div>
   <nav class="drawer-nav"><a href="https://pickrise.com/category-smart-device.html">스마트기기</a><a href="https://pickrise.com/category-pc-laptop.html">PC/노트북</a><a href="https://pickrise.com/category-home-appliance.html">생활가전</a><a href="https://pickrise.com/category-tech-trend.html">테크트렌드</a></nav>
@@ -299,7 +296,7 @@ button { font-family: var(--f-sans); cursor: pointer; border: none; background: 
 
 <header class="site-header" id="site-header">
   <div class="header-inner">
-    <a class="logo" href="https://pickrise.com/index.html"><img src="https://pickrise.com/images/logo.png" alt="PickRise" style="height:32px; width:auto; transform:translateY(2px);"></a>
+    <a class="logo" href="https://pickrise.com/index.html"><img src="https://pickrise.com/images/logo.png" alt="PickRise" style="height:42px; width:auto; transform:translateY(2px);"></a>
     <nav class="site-nav"><a href="https://pickrise.com/category-smart-device.html">스마트기기</a><a href="https://pickrise.com/category-pc-laptop.html">PC/노트북</a><a href="https://pickrise.com/category-home-appliance.html">생활가전</a><a href="https://pickrise.com/category-tech-trend.html">테크트렌드</a></nav>
     <div class="header-right">
       <div class="search-wrap" id="search-wrap">
@@ -366,7 +363,7 @@ button { font-family: var(--f-sans); cursor: pointer; border: none; background: 
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-brand">
-      <div class="footer-logo"><img src="https://pickrise.com/images/logo.png" alt="PickRise" style="height:32px; width:auto; transform:translateY(2px);"></div>
+      <div class="footer-logo"><img src="https://pickrise.com/images/logo.png" alt="PickRise" style="height:42px; width:auto; transform:translateY(2px);"></div>
       <p class="footer-about">데이터와 실사용 경험에 기반한 스마트 기기, 가전제품 리뷰 및 IT 트렌드 정보 플랫폼</p>
     </div>
     <div class="fcol"><h4>콘텐츠</h4><a href="https://pickrise.com/index.html">리뷰홈</a></div><div class="fcol"><h4>정보</h4><a href="https://pickrise.com/policy.html">면책조항/운영정책</a></div><div class="fcol"><h4>문의</h4><a href="https://pickrise.com/contact.html">비즈니스/리뷰 문의</a></div>
