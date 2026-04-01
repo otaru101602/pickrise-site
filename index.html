@@ -9,164 +9,370 @@
     <meta name="keywords"    content="스마트기기, PC/노트북, 생활가전, 테크트렌드, 테크, 리뷰, 가전, 스마트폰, 노트북">
     <link rel="canonical"    href="https://pickrise.com/index.html">
     <link rel="icon"         type="image/png" href="https://pickrise.com/images/favicon.png">
-
     <meta property="og:type"        content="website">
     <meta property="og:title"       content="PickRise | 스마트한 소비를 위한 가전 및 디지털 기기 리뷰">
     <meta property="og:description" content="데이터와 실사용 경험에 기반한 스마트 기기, 가전제품 리뷰 및 IT 트렌드 정보 플랫폼">
     <meta property="og:url"         content="https://pickrise.com/index.html">
     <meta property="og:image"       content="https://pickrise.com/images/logo.png">
     <meta property="og:site_name"   content="PickRise">
+    <meta property="og:locale"      content="ko_KR">
+    <meta name="twitter:card"        content="summary_large_image">
+    <meta name="twitter:title"       content="PickRise | 스마트한 소비를 위한 가전 및 디지털 기기 리뷰">
+    <meta name="twitter:description" content="데이터와 실사용 경험에 기반한 스마트 기기, 가전제품 리뷰 및 IT 트렌드 정보 플랫폼">
+    <meta name="twitter:image"       content="https://pickrise.com/images/logo.png">
+    <meta name="theme-color" content="#ffffff">
 
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "PickRise",
+        "url": "https://pickrise.com/index.html",
+        "description": "데이터와 실사용 경험에 기반한 스마트 기기, 가전제품 리뷰 및 IT 트렌드 정보 플랫폼",
+        "publisher": {
+            "@type": "Organization", "name": "PickRise",
+            "logo": { "@type": "ImageObject", "url": "https://pickrise.com/images/logo.png" }
+        }
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css">
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
 
 <style>
 /* =====================================================
-   인덱스 페이지 프리미엄 CSS
+   인덱스 페이지 전용 CSS
    ===================================================== */
-body { overflow-x: hidden; }
+
+/* ---------- 변수 & 리셋 ---------- */
+:root {
+    --bg-page:      #ffffff;
+    --bg-surface:   #f8fafc;
+    --text-primary: #0f172a;
+    --text-secondary:#475569;
+    --text-tertiary:#94a3b8;
+    --accent:       #2563eb;
+    --border:       #e2e8f0;
+    --max-width:    1280px;
+    --header-h:     70px;
+}
+*, html, body { box-sizing:border-box; margin:0; padding:0; }
+body {
+    font-family:'Pretendard',-apple-system,sans-serif;
+    background:var(--bg-page); color:var(--text-primary);
+    line-height:1.6; -webkit-font-smoothing:antialiased;
+    overflow-x:hidden; letter-spacing:-.015em;
+}
+a { text-decoration:none; color:inherit; }
 
 /* ---------- 카테고리 필터 바 ---------- */
 .filter-bar {
-    position: sticky; top: var(--header-h); z-index: 50;
-    background: rgba(251, 252, 253, 0.9); backdrop-filter: blur(16px);
-    border-bottom: 1px solid var(--border); padding: 12px 0;
+    position:sticky; top:var(--header-h); z-index:50;
+    background:rgba(255,255,255,.9); backdrop-filter:blur(16px);
+    border-bottom:1px solid rgba(0,0,0,.04); padding:8px 0;
 }
-.filter-inner { max-width: var(--layout-max); margin: 0 auto; display: flex; align-items: center; }
-.tab-scroll { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; padding: 0 24px; width: 100%; align-items: center; }
-.tab-scroll::-webkit-scrollbar { display: none; }
+.filter-inner { max-width:var(--max-width); margin:0 auto; display:flex; align-items:center; height:64px; }
+.tab-scroll {
+    display:flex; gap:10px; overflow-x:auto; scrollbar-width:none;
+    padding:0 24px; width:100%; align-items:center;
+}
+.tab-scroll::-webkit-scrollbar { display:none; }
 .cat-tab {
-    padding: 10px 20px; border-radius: 40px; border: 1px solid transparent;
-    background: transparent; color: var(--text-tertiary); font-size: 15px; font-weight: 600;
-    cursor: pointer; transition: 0.2s; white-space: nowrap; flex-shrink: 0;
+    padding:10px 24px; border-radius:40px; border:1px solid transparent;
+    background:var(--bg-surface); color:var(--text-secondary);
+    font-size:15px; font-weight:600; cursor:pointer;
+    transition:all .2s cubic-bezier(.4,0,.2,1); white-space:nowrap; flex-shrink:0;
 }
-.cat-tab:hover { color: var(--text-primary); background: var(--bg-surface-low); }
-.cat-tab.active { background: var(--text-primary); color: #fff; box-shadow: var(--shadow-ambient-sm); }
-.special-tab { color: var(--secondary); }
-.special-tab.active { background: var(--secondary); color: #fff; }
+.cat-tab:hover  { background:#f1f5f9; color:var(--text-primary); }
+.cat-tab.active {
+    background:var(--text-primary); color:#fff;
+    box-shadow:0 8px 20px rgba(15,23,42,.12); transform:translateY(-1px);
+}
+.special-tab        { color:#2563eb; background:#eff6ff; }
+.special-tab.active { background:#2563eb; color:#fff; box-shadow:0 8px 20px rgba(37,99,235,.2); }
 
 /* ---------- 라이브 서치 드롭다운 ---------- */
 .live-search-dropdown {
-    position: absolute; top: calc(100% + 12px); left: 0; width: 340px;
-    background: var(--bg-surface); border-radius: 20px; box-shadow: var(--shadow-ambient);
-    z-index: 1000; overflow: hidden; display: none; max-height: 400px; overflow-y: auto;
+    position:absolute; top:calc(100% + 10px); left:0; width:340px;
+    background:#fff; border:1px solid var(--border); border-radius:20px;
+    box-shadow:0 20px 40px rgba(0,0,0,.08); z-index:1000;
+    overflow:hidden; display:none; max-height:400px; overflow-y:auto;
 }
-.live-search-item { display: flex; gap: 14px; padding: 16px; border-bottom: 1px solid var(--bg-surface-low); cursor: pointer; transition: 0.2s; align-items: center; }
-.live-search-item:last-child { border-bottom: none; }
-.live-search-item:hover { background: var(--bg-surface-low); }
-.ls-thumb { width: 48px; height: 48px; border-radius: 12px; object-fit: cover; background: var(--bg-surface-low); flex-shrink: 0; }
-.ls-info { flex: 1; min-width: 0; }
-.ls-title { font-size: 14px; font-weight: 600; color: var(--text-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 2px; }
-.ls-cat { font-size: 11px; color: var(--secondary); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
+.live-search-item {
+    display:flex; gap:14px; padding:14px 16px;
+    border-bottom:1px solid #f8fafc; cursor:pointer; transition:.2s; align-items:center;
+}
+.live-search-item:last-child { border-bottom:none; }
+.live-search-item:hover { background:#f8fafc; }
+.ls-thumb { width:44px; height:44px; border-radius:10px; object-fit:cover; background:#f1f5f9; flex-shrink:0; }
+.ls-info  { flex:1; min-width:0; }
+.ls-title { font-size:14px; font-weight:600; color:var(--text-primary); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; margin-bottom:2px; }
+.ls-cat   { font-size:11px; color:var(--accent); font-weight:700; letter-spacing:.05em; text-transform:uppercase; }
 
 /* ---------- 메인 피드 레이아웃 ---------- */
-.feed-layout { max-width: var(--layout-max); margin: 60px auto 100px; padding: 0 32px; display: grid; grid-template-columns: 1fr 340px; gap: 80px; align-items: start; width: 100%; }
+.feed-layout {
+    max-width:var(--max-width); margin:70px auto 100px; padding:0 24px;
+    display:grid; grid-template-columns:1fr 340px; gap:80px;
+    align-items:start; width:100%;
+}
 
 /* ---------- 히어로 포스트 ---------- */
-.hero-post { display: flex; flex-direction: column; width: 100%; margin-bottom: 80px; cursor: pointer; }
-.hero-post:hover .hero-thumb img { transform: scale(1.02); }
-.hero-thumb { width: 100%; aspect-ratio: 16/9; background: var(--bg-surface-low); border-radius: var(--radius-2xl); overflow: hidden; box-shadow: var(--shadow-ambient); margin-bottom: 32px; }
-.hero-thumb img { width: 100%; height: 100%; object-fit: contain; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
-.hero-info { padding: 0 8px; }
-.hero-cat { display: inline-block; font-size: 13px; font-weight: 700; color: var(--secondary); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 16px; }
-.hero-title { font-size: 32px; font-weight: 700; color: var(--text-primary); line-height: 1.3; margin-bottom: 16px; word-break: keep-all; letter-spacing: -0.02em; }
-.hero-excerpt { font-size: 16px; color: var(--text-secondary); line-height: 1.6; }
+.hero-post { display:flex; flex-direction:column; width:100%; margin-bottom:70px; cursor:pointer; }
+.hero-post:hover .hero-thumb img { transform:scale(1.02); }
+.hero-thumb {
+    width:100%; aspect-ratio:16/9; background:#f8fafc;
+    border-radius:24px; overflow:hidden;
+    box-shadow:0 20px 40px rgba(0,0,0,.06); margin-bottom:32px;
+    border:1px solid rgba(0,0,0,.03);
+}
+.hero-thumb img { width:100%; height:100%; object-fit:contain; transition:transform .6s cubic-bezier(.16,1,.3,1); }
+.hero-info  { padding:0 10px; }
+.hero-cat   {
+    display:inline-block; font-size:13px; font-family:'Montserrat',sans-serif;
+    font-weight:800; color:var(--accent); letter-spacing:.1em;
+    text-transform:uppercase; margin-bottom:16px;
+}
+.hero-title   { font-size:34px; font-weight:800; color:var(--text-primary); line-height:1.35; margin-bottom:16px; word-break:keep-all; letter-spacing:-.03em; }
+.hero-excerpt { font-size:17px; color:var(--text-secondary); line-height:1.6; }
 
 /* ---------- 포스트 그리드 ---------- */
-.post-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 60px 40px; width: 100%; }
-.post-card { display: flex; flex-direction: column; width: 100%; cursor: pointer; }
-.post-card:hover .card-thumb img { transform: scale(1.03); }
-.card-thumb { width: 100%; aspect-ratio: 16/10; background: var(--bg-surface-low); overflow: hidden; border-radius: var(--radius-xl); margin-bottom: 24px; box-shadow: var(--shadow-ambient-sm); }
-.card-thumb img { width: 100%; height: 100%; object-fit: contain; transition: transform 0.5s ease; }
-.card-body { padding: 0 4px; display: flex; flex-direction: column; flex: 1; }
-.card-cat { font-size: 12px; font-weight: 700; color: var(--text-tertiary); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 12px; }
-.card-title { font-size: 20px; font-weight: 700; line-height: 1.4; color: var(--text-primary); word-break: keep-all; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; letter-spacing: -0.01em; }
-.card-desc { font-size: 15px; color: var(--text-secondary); line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.post-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:60px 40px; width:100%; }
+.post-card { display:flex; flex-direction:column; width:100%; cursor:pointer; }
+.post-card:hover .card-thumb img { transform:scale(1.03); }
+.card-thumb {
+    width:100%; aspect-ratio:16/10; background:#f8fafc;
+    overflow:hidden; border-radius:20px; margin-bottom:24px;
+    box-shadow:0 12px 30px rgba(0,0,0,.04);
+    border:1px solid rgba(0,0,0,.03); transition:transform .4s ease;
+}
+.card-thumb img { width:100%; height:100%; object-fit:contain; transition:transform .6s ease; }
+.card-body  { padding:0 8px; display:flex; flex-direction:column; flex:1; }
+.card-cat   {
+    font-size:12px; font-family:'Montserrat',sans-serif; font-weight:700;
+    color:var(--text-tertiary); letter-spacing:.08em; text-transform:uppercase; margin-bottom:12px;
+}
+.card-title { font-size:20px; font-weight:700; line-height:1.4; color:var(--text-primary); word-break:keep-all; margin-bottom:12px; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; letter-spacing:-.02em; }
+.card-desc  { font-size:15px; color:var(--text-secondary); line-height:1.6; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
 
 /* ---------- 인라인 배너 ---------- */
-.inline-banner { grid-column: 1 / -1; background: var(--text-primary); border-radius: var(--radius-2xl); padding: 40px 50px; color: #fff; display: flex; justify-content: space-between; align-items: center; cursor: pointer; transition: 0.3s; margin: 20px 0; box-shadow: var(--shadow-ambient); }
-.inline-banner:hover { transform: translateY(-4px); }
-.ib-text h3 { font-size: 22px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.02em; color: #fff; }
-.ib-text p { font-size: 15px; color: var(--text-tertiary); margin: 0; }
-.ib-btn { background: #fff; color: var(--text-primary); padding: 14px 28px; border-radius: 30px; font-weight: 700; font-size: 14px; flex-shrink: 0; transition: 0.2s; }
+.inline-banner {
+    grid-column:1 / -1; background:var(--text-primary); border-radius:24px;
+    padding:40px 50px; color:#fff; display:flex; justify-content:space-between;
+    align-items:center; cursor:pointer; transition:.3s; margin:20px 0;
+    box-shadow:0 20px 40px rgba(15,23,42,.15);
+}
+.inline-banner:hover { opacity:.95; transform:translateY(-4px); }
+.ib-text h3 { font-size:22px; font-weight:800; margin-bottom:8px; letter-spacing:-.02em; color:#fff; }
+.ib-text p  { font-size:15px; color:#cbd5e1; margin:0; }
+.ib-btn     { background:#fff; color:var(--text-primary); padding:14px 28px; border-radius:30px; font-weight:700; font-size:14px; flex-shrink:0; transition:.2s; }
 
 /* ---------- 사이드바 ---------- */
-.feed-sidebar { display: flex; flex-direction: column; gap: 40px; position: sticky; top: calc(var(--header-h) + 40px); }
-.widget-box { background: var(--bg-surface); border-radius: var(--radius-2xl); padding: 32px; box-shadow: var(--shadow-ambient-sm); }
-.widget-header { font-size: 13px; font-weight: 700; color: var(--text-tertiary); margin-bottom: 24px; letter-spacing: 0.1em; text-transform: uppercase; }
+.feed-sidebar {
+    display:flex; flex-direction:column; gap:40px;
+    position:sticky; top:calc(var(--header-h) + 40px);
+}
+.widget-box {
+    background:#fff; border-radius:24px; padding:32px 28px;
+    border:1px solid var(--border); box-shadow:0 4px 24px rgba(0,0,0,.02);
+}
+.widget-header {
+    font-size:13px; font-family:'Montserrat',sans-serif; font-weight:800;
+    color:var(--text-tertiary); margin-bottom:24px;
+    letter-spacing:.15em; text-transform:uppercase;
+}
 
-/* 신뢰도 위젯 */
-.trust-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
-.trust-header img { width: 56px; height: 56px; border-radius: 16px; object-fit: cover; }
-.trust-header h3 { font-size: 16px; font-weight: 700; margin: 0; color: var(--text-primary); }
-.trust-header span { font-size: 13px; color: var(--text-tertiary); font-weight: 500; }
-.trust-desc { font-size: 14px; line-height: 1.6; color: var(--text-secondary); word-break: keep-all; }
-.trust-desc strong { color: var(--text-primary); font-weight: 700; }
+/* 에디터 신뢰도 위젯 */
+.trust-header       { display:flex; align-items:center; gap:14px; margin-bottom:16px; }
+.trust-header img   { width:50px; height:50px; border-radius:50%; object-fit:cover; border:1px solid var(--border); padding:2px; }
+.trust-header h3    { font-size:16px; font-weight:800; margin:0; color:var(--text-primary); }
+.trust-header span  { font-size:13px; font-family:'Montserrat',sans-serif; color:var(--text-tertiary); font-weight:600; }
+.trust-desc         { font-size:14px; line-height:1.6; color:var(--text-secondary); word-break:keep-all; }
+.trust-desc strong  { color:var(--text-primary); font-weight:700; }
 
 /* 태그 클라우드 */
-.tag-cloud-wrap { display: flex; flex-wrap: wrap; gap: 10px; }
-.tag-cloud-item { background: var(--bg-surface-low); color: var(--text-secondary); border-radius: 8px; padding: 8px 16px; font-size: 14px; font-weight: 500; cursor: pointer; border: none; transition: 0.2s; }
-.tag-cloud-item:hover { background: var(--text-primary); color: #fff; box-shadow: var(--shadow-ambient-sm); }
+.tag-cloud-wrap { display:flex; flex-wrap:wrap; gap:10px; }
+.tag-cloud-item {
+    background:var(--bg-surface); color:var(--text-secondary); border-radius:8px;
+    padding:8px 16px; font-size:14px; font-weight:500; cursor:pointer;
+    transition:.2s; border:1px solid transparent;
+}
+.tag-cloud-item:hover { background:#fff; color:var(--text-primary); border-color:var(--text-tertiary); box-shadow:0 4px 12px rgba(0,0,0,.05); }
 
 /* 트렌딩 위젯 */
-.trending-list { display: flex; flex-direction: column; gap: 20px; }
-.trend-item { display: flex; gap: 16px; align-items: center; cursor: pointer; transition: 0.2s; }
-.trend-item:hover .trend-title { color: var(--secondary); }
-.trend-number { width: 24px; font-size: 24px; font-weight: 300; color: var(--text-tertiary); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-family:serif; font-style:italic; }
-.trend-item:nth-child(1) .trend-number { color: var(--text-primary); font-weight: 600; }
-.trend-thumb { width: 70px; height: 70px; border-radius: 12px; overflow: hidden; background: var(--bg-surface-low); flex-shrink: 0; }
-.trend-thumb img { width: 100%; height: 100%; object-fit: contain; }
-.trend-cat { font-size: 12px; color: var(--text-tertiary); font-weight: 700; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
-.trend-title { font-size: 15px; font-weight: 600; color: var(--text-primary); line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; transition: 0.2s; }
+.trending-list  { display:flex; flex-direction:column; counter-reset:trend-counter; gap:20px; }
+.trend-item     { display:flex; gap:16px; align-items:center; cursor:pointer; transition:.2s; }
+.trend-item:hover .trend-title { color:var(--accent); }
+.trend-item::before {
+    counter-increment:trend-counter; content:counter(trend-counter);
+    width:24px; font-family:'Montserrat',sans-serif; font-size:28px;
+    font-style:italic; font-weight:300; color:#cbd5e1;
+    display:flex; align-items:center; flex-shrink:0;
+}
+.trend-item:nth-child(1)::before { color:var(--text-primary); font-weight:400; }
+.trend-thumb    { width:70px; height:70px; border-radius:14px; overflow:hidden; background:#f8fafc; flex-shrink:0; border:1px solid var(--border); }
+.trend-thumb img{ width:100%; height:100%; object-fit:contain; }
+.trend-cat      { font-size:12px; font-family:'Montserrat',sans-serif; color:var(--text-tertiary); font-weight:700; margin-bottom:4px; text-transform:uppercase; letter-spacing:.05em; }
+.trend-title    { font-size:15px; font-weight:600; color:var(--text-primary); line-height:1.4; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; transition:.2s; }
 
 /* 광고 블록 */
-.ad-block { background: var(--bg-surface); border-radius: var(--radius-2xl); padding: 24px; box-shadow: var(--shadow-ambient-sm); }
-.ad-label { font-size: 11px; font-weight: 700; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px; text-align: center; }
+.ad-block   { background:#fff; border:1px solid var(--border); border-radius:24px; padding:20px; box-shadow:0 4px 24px rgba(0,0,0,.02); }
+.ad-label   { font-size:11px; font-family:'Montserrat',sans-serif; font-weight:800; color:var(--text-tertiary); text-transform:uppercase; letter-spacing:.1em; margin-bottom:16px; text-align:center; }
 
 /* 더보기 버튼 */
-.load-more-btn { display: block; width: 100%; padding: 20px; background: var(--bg-surface); border: none; border-radius: var(--radius-xl); font-size: 15px; font-weight: 600; color: var(--text-secondary); cursor: pointer; transition: 0.2s; text-align: center; margin-top: 60px; box-shadow: var(--shadow-ambient-sm); }
-.load-more-btn:hover { background: var(--text-primary); color: #fff; box-shadow: var(--shadow-ambient); transform: translateY(-2px); }
+.load-more-btn {
+    display:inline-block; width:100%; padding:20px; background:transparent;
+    border:1px solid #cbd5e1; border-radius:16px; font-size:15px; font-weight:700;
+    color:var(--text-secondary); cursor:pointer; transition:.2s; text-align:center; margin-top:50px;
+}
+.load-more-btn:hover { background:#f8fafc; color:var(--text-primary); border-color:var(--text-tertiary); }
 
 /* ---------- 반응형 ---------- */
-@media (max-width: 1100px) {
-    .feed-layout { grid-template-columns: 1fr; gap: 60px; padding: 0 32px; }
-    .feed-sidebar { display: none; }
+@media (max-width:1100px) {
+    .feed-layout  { grid-template-columns:1fr; gap:50px; padding:0 32px; }
+    .feed-sidebar { display:none; }
 }
-@media (max-width: 768px) {
-    .post-grid { grid-template-columns: 1fr; gap: 40px; }
-    .hero-thumb { border-radius: 20px; margin-bottom: 24px; }
-    .hero-title { font-size: 26px; }
-    .hero-excerpt { font-size: 15px; }
-    .inline-banner { flex-direction: column; align-items: flex-start; gap: 24px; padding: 32px 24px; }
-    .ib-btn { width: 100%; text-align: center; }
+@media (max-width:768px) {
+    .feed-layout  { margin:40px auto; padding:0 24px; }
+    .post-grid    { grid-template-columns:1fr; gap:40px; }
+    .hero-thumb   { border-radius:20px; margin-bottom:24px; }
+    .hero-title   { font-size:26px; }
+    .hero-excerpt { font-size:16px; }
+    .inline-banner{ flex-direction:column; align-items:flex-start; gap:24px; padding:32px 24px; }
+    .ib-btn       { width:100%; text-align:center; }
 }
-@media (max-width: 480px) {
-    .feed-layout { padding: 0 20px; }
-    .hero-title { font-size: 24px; }
-    .cat-tab { padding: 8px 16px; font-size: 14px; }
+@media (max-width:480px) {
+    .feed-layout  { margin:30px auto; padding:0 20px; }
+    .hero-post    { margin-bottom:40px; }
+    .hero-title   { font-size:24px; }
+    .hero-excerpt { display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+    .card-title   { font-size:18px; }
+    .cat-tab      { padding:8px 18px; font-size:14px; }
 }
 
-{{SHARED_CSS}}
+
+:root {
+    --bg-page:     #f8fafc;
+    --text-main:   #0f172a;
+    --text-sub:    #475569;
+    --text-light:  #94a3b8;
+    --primary:     #3b82f6;
+    --primary-dark:#2563eb;
+    --border:      #e2e8f0;
+    --bg-surface:  #ffffff;
+    --header-h:    72px;
+    --layout-max:  1240px;
+}
+
+/* 공지 바 */
+.notice-bar {
+    background:#0f172a; color:#cbd5e1; text-align:center;
+    padding:10px 24px; font-size:13px; font-weight:600; letter-spacing:.02em;
+}
+
+/* 사이트 헤더 */
+.site-header {
+    position:sticky; top:-1px; z-index:500;
+    background:rgb(255 255 255 / 95%); backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(0,0,0,.05);
+}
+.header-inner {
+    max-width:var(--layout-max); margin:0 auto; padding:0 24px;
+    height:var(--header-h); display:flex; align-items:center;
+    justify-content:space-between; position:relative;
+}
+.logo { font-size:26px; font-weight:800; color:var(--text-main); display:flex; align-items:center; gap:4px; }
+
+/* 데스크탑 네비 */
+.nav { display:flex; gap:24px; }
+.nav a { font-size:15px; font-weight:600; color:#0f172a; transition:.2s; }
+.nav a:hover { color:var(--primary); }
+
+/* 헤더 유틸 (검색·모바일 버튼) */
+.header-utils { display:flex; align-items:center; gap:12px; }
+.search-box { position:relative; width:240px; transition:all .3s; }
+.search-input {
+    width:100%; padding:14px 16px 14px 40px; font-size:14px;
+    background-color:#f1f5f9; border:1px solid transparent; border-radius:30px;
+    color:#0f172a; outline:none; transition:.2s;
+}
+.search-input:focus { background-color:#fff; border-color:#3b82f6; }
+.search-icon-pos { position:absolute; left:20px; top:50%; transform:translateY(-50%); color:#94a3b8; pointer-events:none; }
+
+/* 모바일 버튼 */
+.m-btn {
+    display:none; background:none; border:none; color:#0f172a;
+    cursor:pointer; padding:8px; font-size:24px;
+    align-items:center; justify-content:center;
+}
+
+/* 모바일 사이드바 */
+.mobile-sidebar {
+    position:fixed; top:0; right:-280px; width:280px; height:100vh;
+    background:#fff; z-index:1000; box-shadow:-5px 0 20px rgba(0,0,0,.1);
+    transition:.3s ease-in-out; padding:40px 24px;
+    display:flex; flex-direction:column; gap:20px;
+}
+.mobile-sidebar.active { right:0; }
+.m-sidebar-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; }
+.m-sidebar-header img { width:fit-content; }
+.m-nav-list { display:flex; flex-direction:column; gap:10px; }
+.m-nav-list a { font-size:16px; font-weight:600; color:#1e293b; border-bottom:1px solid #f1f5f9; padding:12px 0; display:block; }
+
+.sidebar-overlay {
+    position:fixed; top:0; left:0; width:100vw; height:100vh;
+    background:rgba(0,0,0,.5); z-index:999; display:none; backdrop-filter:blur(2px);
+}
+.sidebar-overlay.active { display:block; }
+
+/* 푸터 */
+.footer { background:#0f172a; color:#94a3b8; padding:60px 24px 24px; font-size:14px; margin-top:60px; }
+.footer-inner {
+    max-width:var(--layout-max); margin:0 auto;
+    display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px; margin-bottom:40px;
+}
+.footer-brand p  { margin-top:12px; font-size:13px; line-height:1.6; color:#94a3b8; }
+.footer-logo     { font-size:20px; font-weight:800; color:#fff; }
+.footer-col h4   { color:#fff; font-size:15px; font-weight:700; margin-bottom:16px; }
+.footer-col a    { display:block; color:#94a3b8; margin-bottom:10px; font-size:14px; transition:color .2s; }
+.footer-col a:hover { color:#fff; }
+.footer-bottom {
+    max-width:var(--layout-max); margin:0 auto; padding-top:24px;
+    border-top:1px solid #1e293b; text-align:center; font-size:13px; color:#64748b;
+}
+
+/* 반응형 */
+@media (max-width:768px) {
+    .nav { display:none !important; }
+    .search-box {
+        display:none; position:absolute; top:var(--header-h); left:0;
+        width:100%; background:#fff; padding:10px 16px; border-bottom:1px solid #e2e8f0;
+    }
+    .search-box.active  { display:block !important; }
+    .search-input       { padding:12px 16px 12px 36px; }
+    .search-icon-pos    { left:28px; }
+    .m-btn              { display:flex !important; }
+    .footer-inner       { grid-template-columns:1fr 1fr; gap:24px; }
+    .footer-brand       { grid-column:1 / -1; }
+}
 </style>
 </head>
 <body>
 
 
-<style>
-/* 아이콘 선 얇게 처리 */
-.iconify, .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
-</style>
 <header class="site-header">
     <div class="header-inner">
         <a href="https://pickrise.com/index.html" class="logo">
-            <span style="color:var(--text-primary);">PickRise.</span>
+            <img src="https://pickrise.com/images/logo.png" alt="PickRise" style="height:46px;width:auto;">
         </a>
         <nav class="nav"><a href="https://pickrise.com/index.html#스마트기기">스마트기기</a><a href="https://pickrise.com/index.html#PC/노트북">PC/노트북</a><a href="https://pickrise.com/index.html#생활가전">생활가전</a><a href="https://pickrise.com/index.html#테크트렌드">테크트렌드</a></nav>
         <div class="header-utils">
             <div class="search-box" id="global-search-box">
                 <span class="iconify search-icon-pos" data-icon="carbon:search"></span>
                 <input type="text" class="search-input" id="search-input"
-                       placeholder="어떤 제품을 찾으시나요?" autocomplete="off">
+                       placeholder="기기명, 브랜드 검색" autocomplete="off">
             </div>
             <button class="m-btn" id="m-search-toggle">
                 <span class="iconify" data-icon="carbon:search"></span>
@@ -178,15 +384,15 @@ body { overflow-x: hidden; }
     </div>
 </header>
 
-<div class="progress-container" style="position:fixed;top:var(--header-h);left:0;width:100%;height:3px;z-index:1000;background:transparent;">
-    <div class="progress-bar" id="progress-bar" style="height:100%;background:var(--secondary);width:0%;transition:width .1s ease-out;"></div>
+<div class="progress-container">
+    <div class="progress-bar" id="progress-bar"></div>
 </div>
 
 <div class="sidebar-overlay" id="sidebar-overlay"></div>
 <div class="mobile-sidebar" id="mobile-sidebar">
     <div class="m-sidebar-header">
-        <span class="logo">PickRise.</span>
-        <button id="m-sidebar-close" style="background:none;border:none;font-size:32px;color:var(--text-tertiary);">&times;</button>
+        <img src="https://pickrise.com/images/logo.png" alt="PickRise" style="height:24px;">
+        <button id="m-sidebar-close" style="background:none;border:none;font-size:32px;">&times;</button>
     </div>
     <nav class="m-nav-list"><a href="https://pickrise.com/index.html#스마트기기">스마트기기</a><a href="https://pickrise.com/index.html#PC/노트북">PC/노트북</a><a href="https://pickrise.com/index.html#생활가전">생활가전</a><a href="https://pickrise.com/index.html#테크트렌드">테크트렌드</a></nav>
 </div>
@@ -194,7 +400,7 @@ body { overflow-x: hidden; }
 <!-- 카테고리 필터 바 -->
 <div class="filter-bar">
     <div class="filter-inner">
-        <div class="tab-scroll"><button class="cat-tab active" data-tag="전체">전체</button><button class="cat-tab special-tab" data-tag="가성비 Best">가성비 Best</button><button class="cat-tab special-tab" data-tag="프리미엄 선택">프리미엄 선택</button><button class="cat-tab special-tab" data-tag="구매 가이드">구매 가이드</button><button class="cat-tab" data-tag="스마트폰">스마트폰</button><button class="cat-tab" data-tag="삼성">삼성</button><button class="cat-tab" data-tag="리뷰">리뷰</button><button class="cat-tab" data-tag="가전제품">가전제품</button><button class="cat-tab" data-tag="세탁기">세탁기</button><button class="cat-tab" data-tag="밥솥">밥솥</button><button class="cat-tab" data-tag="스마트TV">스마트TV</button><button class="cat-tab" data-tag="노트북">노트북</button><button class="cat-tab" data-tag="웨어러블">웨어러블</button><button class="cat-tab" data-tag="스마트홈">스마트홈</button></div>
+        <div class="tab-scroll"><button class="cat-tab active" data-tag="전체">전체</button><button class="cat-tab special-tab" data-tag="가성비 Best">가성비 Best</button><button class="cat-tab special-tab" data-tag="프리미엄 선택">프리미엄 선택</button><button class="cat-tab special-tab" data-tag="구매 가이드">구매 가이드</button><button class="cat-tab" data-tag="가전제품">가전제품</button><button class="cat-tab" data-tag="세탁기">세탁기</button><button class="cat-tab" data-tag="밥솥">밥솥</button><button class="cat-tab" data-tag="스마트TV">스마트TV</button><button class="cat-tab" data-tag="노트북">노트북</button><button class="cat-tab" data-tag="리뷰">리뷰</button><button class="cat-tab" data-tag="스마트폰">스마트폰</button><button class="cat-tab" data-tag="삼성">삼성</button><button class="cat-tab" data-tag="웨어러블">웨어러블</button><button class="cat-tab" data-tag="스마트홈">스마트홈</button></div>
     </div>
 </div>
 
@@ -222,43 +428,38 @@ body { overflow-x: hidden; }
         <div class="widget-box">
             <div class="widget-header">Weekly Trending</div>
             <div class="trending-list">
+                <a href="post/LG전자-디오스-AI-오브제컬렉션-냉장고-832L-실사용-리뷰-및-2도어-vs-4.html" class="trend-item">
+                    <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1772867207203.webp" alt="" loading="lazy"></div>
+                    <div class="trend-info">
+                        <div class="trend-title">LG전자 디오스 AI 오브제컬렉션 냉장고 832L 실사용 리뷰 및 2도어 vs 4도어 비교 (대용량인데 왜 이렇게 저렴할까?)</div>
+                        <div class="trend-cat">생활가전</div>
+                    </div>
+                </a>
+                <a href="post/LG-트롬-오브제컬렉션-워시콤보-FH25VAX-미니워시-세트-완벽-분석.html" class="trend-item">
+                    <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1773045562155.webp" alt="" loading="lazy"></div>
+                    <div class="trend-info">
+                        <div class="trend-title">LG 트롬 오브제컬렉션 워시콤보 FH25VAX + 미니워시 세트 완벽 분석 (세탁·건조 한 번에, 진짜 삶의 질이 달라지는 세탁기)</div>
+                        <div class="trend-cat">생활가전</div>
+                    </div>
+                </a>
+                <a href="post/파테크-한일전자-초고출력-헤어-드라이어-2300W-실사용-리뷰.html" class="trend-item">
+                    <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1772857280714.webp" alt="" loading="lazy"></div>
+                    <div class="trend-info">
+                        <div class="trend-title">파테크 한일전자 초고출력 헤어 드라이어 2300W 실사용 리뷰 (머리숱 많은 분들, 이거 하나로 해결됩니다)</div>
+                        <div class="trend-cat">생활가전</div>
+                    </div>
+                </a>
                 <a href="post/LG전자-2025-그램-16-코어Ultra5-실사용-리뷰.html" class="trend-item">
-                    <div class="trend-number">1</div>
                     <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1772859741520.webp" alt="" loading="lazy"></div>
                     <div class="trend-info">
                         <div class="trend-title">LG전자 2025 그램 16 코어Ultra5 실사용 리뷰 (16인치인데 1.2kg? 가벼움의 끝판왕, 직접 확인해봤습니다)</div>
                         <div class="trend-cat">PC/노트북</div>
                     </div>
                 </a>
-                <a href="post/삼성전자-갤럭시-S26-자급제-실사용-리뷰-디자인성능카메라-총정리.html" class="trend-item">
-                    <div class="trend-number">2</div>
-                    <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1772873523097.webp" alt="" loading="lazy"></div>
+                <a href="post/home-appliance/쿠첸-더핏-슬림-전기-압력밥솥-6인용-완벽-분석.html" class="trend-item">
+                    <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1773148511342.webp" alt="" loading="lazy"></div>
                     <div class="trend-info">
-                        <div class="trend-title">삼성전자 갤럭시 S26 자급제 실사용 리뷰 — 디자인·성능·카메라 총정리 (아이폰 이탈자들이 돌아오는 이유가 있었다)</div>
-                        <div class="trend-cat">스마트기기</div>
-                    </div>
-                </a>
-                <a href="post/home-appliance/LG-트롬-오브제컬렉션-워시콤보-FH25VA-완벽-분석.html" class="trend-item">
-                    <div class="trend-number">3</div>
-                    <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1773149008211.webp" alt="" loading="lazy"></div>
-                    <div class="trend-info">
-                        <div class="trend-title">LG 트롬 오브제컬렉션 워시콤보 FH25VA 완벽 분석 (세탁 25kg+건조 15kg, 빨래에서 해방되는 진짜 방법)</div>
-                        <div class="trend-cat">생활가전</div>
-                    </div>
-                </a>
-                <a href="post/위드라이프-43인치-FHD-TV-대기업-정품-패널-실사용-리뷰.html" class="trend-item">
-                    <div class="trend-number">4</div>
-                    <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1772856069487.webp" alt="" loading="lazy"></div>
-                    <div class="trend-info">
-                        <div class="trend-title">위드라이프 43인치 FHD TV 대기업 정품 패널 실사용 리뷰 (10만 원대 가성비 TV, 진짜 믿고 살 수 있을까?)</div>
-                        <div class="trend-cat">생활가전</div>
-                    </div>
-                </a>
-                <a href="post/LG-트롬-오브제컬렉션-워시콤보-FH25VAX-미니워시-세트-완벽-분석.html" class="trend-item">
-                    <div class="trend-number">5</div>
-                    <div class="trend-thumb"><img src="https://pickrise.com/images/thumb-1773045562155.webp" alt="" loading="lazy"></div>
-                    <div class="trend-info">
-                        <div class="trend-title">LG 트롬 오브제컬렉션 워시콤보 FH25VAX + 미니워시 세트 완벽 분석 (세탁·건조 한 번에, 진짜 삶의 질이 달라지는 세탁기)</div>
+                        <div class="trend-title">쿠첸 더핏 슬림 전기 압력밥솥 6인용 완벽 분석 (같은 쌀인데 왜 이렇게 맛있지? 그 이유를 밝힙니다)</div>
                         <div class="trend-cat">생활가전</div>
                     </div>
                 </a></div>
@@ -266,7 +467,7 @@ body { overflow-x: hidden; }
 
         <div class="widget-box">
             <div class="widget-header">Popular Tags</div>
-            <div class="tag-cloud-wrap"><button class="tag-cloud-item" data-tag="가전제품">#가전제품</button><button class="tag-cloud-item" data-tag="리뷰">#리뷰</button><button class="tag-cloud-item" data-tag="세탁기">#세탁기</button><button class="tag-cloud-item" data-tag="스마트TV">#스마트TV</button><button class="tag-cloud-item" data-tag="스마트홈">#스마트홈</button><button class="tag-cloud-item" data-tag="스마트폰">#스마트폰</button><button class="tag-cloud-item" data-tag="삼성">#삼성</button><button class="tag-cloud-item" data-tag="노트북">#노트북</button><button class="tag-cloud-item" data-tag="밥솥">#밥솥</button><button class="tag-cloud-item" data-tag="웨어러블">#웨어러블</button></div>
+            <div class="tag-cloud-wrap"><button class="tag-cloud-item" data-tag="가전제품">#가전제품</button><button class="tag-cloud-item" data-tag="리뷰">#리뷰</button><button class="tag-cloud-item" data-tag="스마트TV">#스마트TV</button><button class="tag-cloud-item" data-tag="스마트홈">#스마트홈</button><button class="tag-cloud-item" data-tag="세탁기">#세탁기</button><button class="tag-cloud-item" data-tag="노트북">#노트북</button><button class="tag-cloud-item" data-tag="밥솥">#밥솥</button><button class="tag-cloud-item" data-tag="스마트폰">#스마트폰</button><button class="tag-cloud-item" data-tag="삼성">#삼성</button><button class="tag-cloud-item" data-tag="웨어러블">#웨어러블</button></div>
         </div>
 
         <div class="ad-block"><div class="ad-label">Sponsored</div><div><div style="padding:20px;text-align:center;color:#94a3b8;font-size:13px;">광고 준비 중</div></div></div>
@@ -278,32 +479,32 @@ body { overflow-x: hidden; }
 <footer class="footer">
     <div class="footer-inner">
         <div class="footer-brand">
-            <div class="footer-logo">PickRise.</div>
+            <div class="footer-logo">PickRise</div>
             <p>데이터와 실사용 경험에 기반한 스마트 기기, 가전제품 리뷰 및 IT 트렌드 정보 플랫폼</p>
         </div>
         <div class="footer-col"><h4>콘텐츠</h4><a href="https://pickrise.com/index.html">리뷰홈</a></div><div class="footer-col"><h4>정보</h4><a href="https://pickrise.com/policy.html">면책조항/운영정책</a></div><div class="footer-col"><h4>문의</h4><a href="https://pickrise.com/contact.html">비즈니스/리뷰 문의</a></div>
     </div>
     <div class="footer-bottom">
-        ⓒ 2026 PickRise Editorial. All rights reserved.
+        ⓒ 2026 PickRise. All rights reserved.
     </div>
 </footer>
 
 <script>
 (function () {
-    const posts = [{"id":1775002446720,"groupId":1775012880199,"title":"삼성전자 갤럭시 S26 자급제 실사용 리뷰 및 아이폰 16 프로 비교 (사전예약 더블 스토리지 혜택, 놓치면 손해)","filename":"post/삼성전자-갤럭시-S26-자급제-실사용-리뷰-및-아이폰-16-프로-비교.html","excerpt":"사전예약 시 256GB 가격으로 512GB를 받는 더블 스토리지 이벤트와 쿠팡 로켓배송의 빠른 도착. 아이폰에서 갈아탄 사용자들의 극찬부터 4~7년 된 구형 갤럭시 사용자들의 체감 업그레이드까지. 가벼운 무게, 빠른 성능, 그리고 코발트 바이올렛·스카이블루 색상의 실물 매력을 낱낱이 공개합니다.","date":"2026. 3. 7.","category":"스마트기기","tags":["스마트폰","삼성","리뷰"],"keywords":"스마트폰, 삼성, 리뷰","thumbnail":"https://pickrise.com/images/thumb-1775002446720.webp"},{"id":1774654151738,"groupId":1774655942667,"title":"LG 트롬 오브제컬렉션 워시콤보 FH25VA 완벽 분석 (세탁 25kg+건조 15kg, 빨래에서 해방되는 진짜 방법)","filename":"post/LG-트롬-오브제컬렉션-워시콤보-FH25VA-완벽-분석.html","excerpt":"세탁 후 건조까지 자동으로 이어지는 일체형 세탁건조기. 퇴근하면 뽀송한 빨래가 기다리는 삶이 실제로 가능한지, 실사용자 경험을 바탕으로 솔직하게 분석합니다.","date":"2026. 3. 10.","category":"생활가전","tags":["가전제품","세탁기"],"keywords":"가전제품, 세탁기","thumbnail":"https://pickrise.com/images/thumb-1774654151738.webp"},{"id":1773149008211,"groupId":1773199499212,"title":"LG 트롬 오브제컬렉션 워시콤보 FH25VA 완벽 분석 (세탁 25kg+건조 15kg, 빨래에서 해방되는 진짜 방법)","filename":"post/home-appliance/LG-트롬-오브제컬렉션-워시콤보-FH25VA-완벽-분석.html","excerpt":"세탁 후 건조까지 자동으로 이어지는 일체형 세탁건조기. 퇴근하면 뽀송한 빨래가 기다리는 삶이 실제로 가능한지, 실사용자 경험을 바탕으로 솔직하게 분석합니다.","date":"2026. 3. 10.","category":"생활가전","tags":["가전제품","세탁기"],"keywords":"가전제품, 세탁기","thumbnail":"https://pickrise.com/images/thumb-1773149008211.webp","_originalImage":"https://thumbnail.coupangcdn.com/thumbnails/remote/492x492ex/image/vendor_inventory/8452/84274318cffeeb96d3113a7c41f437f327aa8e392755657de5374c843bfe.jpg"},{"id":1773148511342,"groupId":1773148511341,"title":"쿠첸 더핏 슬림 전기 압력밥솥 6인용 완벽 분석 (같은 쌀인데 왜 이렇게 맛있지? 그 이유를 밝힙니다)","filename":"post/home-appliance/쿠첸-더핏-슬림-전기-압력밥솥-6인용-완벽-분석.html","excerpt":"슬림한 디자인, 찰진 압력 밥맛, 냉동보관밥 기능까지. 60명의 실사용자가 공통으로 '왜 이제 바꿨나' 라고 표현하는 밥솥의 진실을 분석합니다.","date":"2026. 3. 9.","category":"생활가전","tags":["가전제품","밥솥"],"keywords":"가전제품, 밥솥","thumbnail":"https://pickrise.com/images/thumb-1773148511342.webp","_originalImage":"https://thumbnail.coupangcdn.com/thumbnails/remote/492x492ex/image/retail/images/936473410487268-493dc6d2-d694-41ce-9636-efec59a6e902.jpg"},{"id":1773045562155,"groupId":1773045562154,"title":"LG 트롬 오브제컬렉션 워시콤보 FH25VAX + 미니워시 세트 완벽 분석 (세탁·건조 한 번에, 진짜 삶의 질이 달라지는 세탁기)","filename":"post/LG-트롬-오브제컬렉션-워시콤보-FH25VAX-미니워시-세트-완벽-분석.html","excerpt":"세탁 25kg + 건조 15kg + 미니워시 4kg. 빨래를 넣고 건조까지 완료된 채 꺼내는 경험이 실제로 어떤 변화를 가져오는지, 수십 명의 실사용 데이터를 바탕으로 솔직하게 분석합니다.","date":"2026. 3. 9.","category":"생활가전","tags":["가전제품","세탁기"],"keywords":"가전제품, 세탁기","thumbnail":"https://pickrise.com/images/thumb-1773045562155.webp"},{"id":1773034610848,"groupId":1773034610848,"title":"무빙큐빅스 스마트 40인치 삼탠바이미 화이트에디션 SET 완벽 분석 (스탠바이미 절반 가격으로 똑같이 누릴 수 있을까?)","filename":"post/무빙큐빅스-스마트-40인치-삼탠바이미-화이트에디션-SET-완벽-분석.html","excerpt":"이동식 거치대 + 40인치 스마트 TV 세트를 30만 원대에. 직접 조립하고 일주일간 거실, 침실, 주방에서 굴려본 솔직한 장단점 총정리입니다.","date":"2026. 3. 9.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1773034610848.webp"},{"id":1773033576805,"groupId":1773033576805,"title":"HP 2025 노트북15 15.6 코어i5 인텔 13세대 완벽 분석 (사무용·대학생 노트북, 이 가격에 이 사양이 말이 되나요?)","filename":"post/HP-2025-노트북15-156-코어i5-인텔-13세대-완벽-분석.html","excerpt":"인텔 13세대 i5, 16GB 램, 512GB SSD, 윈도우11 홈 탑재. 일주일간 직접 테스트하며 느낀 확실한 장점과 절대 숨기지 않을 단점까지 솔직하게 정리했습니다.","date":"2026. 3. 9.","category":"PC/노트북","tags":["노트북","리뷰"],"keywords":"노트북, 리뷰","thumbnail":"https://pickrise.com/images/thumb-1773033576805.webp"},{"id":1772873523097,"groupId":1772873523097,"title":"삼성전자 갤럭시 S26 자급제 실사용 리뷰 — 디자인·성능·카메라 총정리 (아이폰 이탈자들이 돌아오는 이유가 있었다)","filename":"post/삼성전자-갤럭시-S26-자급제-실사용-리뷰-디자인성능카메라-총정리.html","excerpt":"엑시노스 2500 탑재, 120Hz AMOLED 디스플레이, 그리고 Galaxy AI까지. 일주일간 직접 사용하며 확인한 갤럭시 S26의 확실한 강점과 반드시 알아야 할 단점을 솔직하게 정리했습니다.","date":"2026. 3. 7.","category":"스마트기기","tags":["스마트폰","삼성","리뷰","웨어러블"],"keywords":"스마트폰, 삼성, 리뷰, 웨어러블","thumbnail":"https://pickrise.com/images/thumb-1772873523097.webp"},{"id":1772868391538,"groupId":1772868391537,"title":"쿠쿠 전기보온 에그밥솥 6인용 실사용 리뷰 및 밥맛 테스트 (압력밥솥 vs 전기밥솥, 진짜 차이는?)","filename":"post/쿠쿠-전기보온-에그밥솥-6인용-실사용-리뷰-및-밥맛-테스트.html","excerpt":"동글동글 귀여운 에그 디자인과 에너지 효율 1등급, 그리고 10% 환급 혜택까지. 6만 원대 가성비 밥솥의 실제 밥맛은 과연 어떨까요? 자취생부터 소가족까지, 30개의 실사용 후기를 바탕으로 장단점을 낱낱이 공개합니다.","date":"2026. 3. 6.","category":"생활가전","tags":["가전제품","리뷰"],"keywords":"가전제품, 리뷰","thumbnail":"https://pickrise.com/images/thumb-1772868391538.webp"},{"id":1772867207203,"groupId":1772867207202,"title":"LG전자 디오스 AI 오브제컬렉션 냉장고 832L 실사용 리뷰 및 2도어 vs 4도어 비교 (대용량인데 왜 이렇게 저렴할까?)","filename":"post/LG전자-디오스-AI-오브제컬렉션-냉장고-832L-실사용-리뷰-및-2도어-vs-4.html","excerpt":"24시간 자동 정온 시스템과 AI 냉기 케어로 식재료 신선도를 지키는 832리터 대용량 양문형 냉장고. 넉넉한 수납공간과 세련된 오브제 디자인, 그리고 합리적인 가격까지. 10년 이상 장수한 구형 모델 사용자들의 교체 사례를 통해 본 실제 체감 변화와 숨겨진 단점까지 낱낱이 공개합니다.","date":"2026. 3. 6.","category":"생활가전","tags":["가전제품","스마트홈","리뷰"],"keywords":"가전제품, 스마트홈, 리뷰","thumbnail":"https://pickrise.com/images/thumb-1772867207203.webp"},{"id":1772859741520,"groupId":1772859741519,"title":"LG전자 2025 그램 16 코어Ultra5 실사용 리뷰 (16인치인데 1.2kg? 가벼움의 끝판왕, 직접 확인해봤습니다)","filename":"post/LG전자-2025-그램-16-코어Ultra5-실사용-리뷰.html","excerpt":"1.2kg대의 초경량 16인치 바디, 인텔 코어 Ultra5, WQXGA 고해상도 디스플레이, 77Wh 대용량 배터리. 그램이 매년 선택받는 이유가 있는지 스펙과 실사용 두 가지 관점으로 꼼꼼히 짚어봤습니다.","date":"2026. 3. 7.","category":"PC/노트북","tags":["노트북","리뷰"],"keywords":"노트북, 리뷰","thumbnail":"https://pickrise.com/images/thumb-1772859741520.webp"},{"id":1772857280714,"groupId":1772857280714,"title":"파테크 한일전자 초고출력 헤어 드라이어 2300W 실사용 리뷰 (머리숱 많은 분들, 이거 하나로 해결됩니다)","filename":"post/파테크-한일전자-초고출력-헤어-드라이어-2300W-실사용-리뷰.html","excerpt":"2300W 초고출력, 6단계 세밀한 온도·풍속 조절, 이중 안전장치까지. 쿠팡 헤어드라이어 판매 1위의 이유를 화질이 아닌 바람으로 직접 증명해봤습니다.","date":"2026. 3. 7.","category":"생활가전","tags":["가전제품","스마트홈"],"keywords":"가전제품, 스마트홈","thumbnail":"https://pickrise.com/images/thumb-1772857280714.webp"},{"id":1772856069487,"groupId":1772856069487,"title":"위드라이프 43인치 FHD TV 대기업 정품 패널 실사용 리뷰 (10만 원대 가성비 TV, 진짜 믿고 살 수 있을까?)","filename":"post/위드라이프-43인치-FHD-TV-대기업-정품-패널-실사용-리뷰.html","excerpt":"대기업 정품 패널 탑재, 에너지 소비효율 1등급, 유·무상 5년 AS까지. 10만 원대 중소기업 TV가 이 정도면 충분한지, 화질·음향·내구성까지 낱낱이 파헤쳐 봤습니다.","date":"2026. 3. 7.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1772856069487.webp"},{"id":1772851162047,"groupId":1772851162047,"title":"필립스 3000 시리즈 무선 전기주전자 HD9318/HD9319 완전 분석 (2만 원대 가성비 전기포트, 진짜 살 만할까?)","filename":"post/필립스-3000-시리즈-무선-전기주전자-HD9318HD9319-완전-분석.html","excerpt":"빠른 가열 속도, 군더더기 없는 디자인, 탄탄한 안전 시스템까지. 필립스 3000 시리즈 전기주전자가 꾸준히 베스트셀러 자리를 지키는 이유를 하드웨어 구조부터 실사용 환경까지 낱낱이 분석했습니다.","date":"2026. 3. 7.","category":"생활가전","tags":["가전제품","스마트홈"],"keywords":"가전제품, 스마트홈","thumbnail":"https://pickrise.com/images/thumb-1772851162047.webp"},{"id":1772830209125,"groupId":1772830209125,"title":"이노스 FHD 삼탠바이미 32인치 스마트TV + 무빙거치대 솔직 리뷰 (가성비 이동식 TV의 끝판왕일까?)","filename":"post/이노스-FHD-삼탠바이미-32인치-스마트TV-무빙거치대-솔직-리뷰.html","excerpt":"LG·삼성 이동식 TV의 절반 가격으로 '삼탠바이미' 스타일을 구현할 수 있다면? 이노스 FHD 삼탠바이미 32인치의 화질, 이동성, 스마트 기능까지 낱낱이 파헤쳤습니다.","date":"2026. 3. 7.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1772830209125.webp"}];
+    const posts = [{"id":1773149008211,"groupId":1773199499212,"title":"LG 트롬 오브제컬렉션 워시콤보 FH25VA 완벽 분석 (세탁 25kg+건조 15kg, 빨래에서 해방되는 진짜 방법)","filename":"post/home-appliance/LG-트롬-오브제컬렉션-워시콤보-FH25VA-완벽-분석.html","excerpt":"세탁 후 건조까지 자동으로 이어지는 일체형 세탁건조기. 퇴근하면 뽀송한 빨래가 기다리는 삶이 실제로 가능한지, 실사용자 경험을 바탕으로 솔직하게 분석합니다.","date":"2026. 3. 10.","category":"생활가전","tags":["가전제품","세탁기"],"keywords":"가전제품, 세탁기","thumbnail":"https://pickrise.com/images/thumb-1773149008211.webp","_originalImage":"https://thumbnail.coupangcdn.com/thumbnails/remote/492x492ex/image/vendor_inventory/8452/84274318cffeeb96d3113a7c41f437f327aa8e392755657de5374c843bfe.jpg"},{"id":1773148511342,"groupId":1773148511341,"title":"쿠첸 더핏 슬림 전기 압력밥솥 6인용 완벽 분석 (같은 쌀인데 왜 이렇게 맛있지? 그 이유를 밝힙니다)","filename":"post/home-appliance/쿠첸-더핏-슬림-전기-압력밥솥-6인용-완벽-분석.html","excerpt":"슬림한 디자인, 찰진 압력 밥맛, 냉동보관밥 기능까지. 60명의 실사용자가 공통으로 '왜 이제 바꿨나' 라고 표현하는 밥솥의 진실을 분석합니다.","date":"2026. 3. 9.","category":"생활가전","tags":["가전제품","밥솥"],"keywords":"가전제품, 밥솥","thumbnail":"https://pickrise.com/images/thumb-1773148511342.webp","_originalImage":"https://thumbnail.coupangcdn.com/thumbnails/remote/492x492ex/image/retail/images/936473410487268-493dc6d2-d694-41ce-9636-efec59a6e902.jpg"},{"id":1773045562155,"groupId":1773045562154,"title":"LG 트롬 오브제컬렉션 워시콤보 FH25VAX + 미니워시 세트 완벽 분석 (세탁·건조 한 번에, 진짜 삶의 질이 달라지는 세탁기)","filename":"post/LG-트롬-오브제컬렉션-워시콤보-FH25VAX-미니워시-세트-완벽-분석.html","excerpt":"세탁 25kg + 건조 15kg + 미니워시 4kg. 빨래를 넣고 건조까지 완료된 채 꺼내는 경험이 실제로 어떤 변화를 가져오는지, 수십 명의 실사용 데이터를 바탕으로 솔직하게 분석합니다.","date":"2026. 3. 9.","category":"생활가전","tags":["가전제품","세탁기"],"keywords":"가전제품, 세탁기","thumbnail":"https://pickrise.com/images/thumb-1773045562155.webp"},{"id":1773034610848,"groupId":1773034610848,"title":"무빙큐빅스 스마트 40인치 삼탠바이미 화이트에디션 SET 완벽 분석 (스탠바이미 절반 가격으로 똑같이 누릴 수 있을까?)","filename":"post/무빙큐빅스-스마트-40인치-삼탠바이미-화이트에디션-SET-완벽-분석.html","excerpt":"이동식 거치대 + 40인치 스마트 TV 세트를 30만 원대에. 직접 조립하고 일주일간 거실, 침실, 주방에서 굴려본 솔직한 장단점 총정리입니다.","date":"2026. 3. 9.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1773034610848.webp"},{"id":1773033576805,"groupId":1773033576805,"title":"HP 2025 노트북15 15.6 코어i5 인텔 13세대 완벽 분석 (사무용·대학생 노트북, 이 가격에 이 사양이 말이 되나요?)","filename":"post/HP-2025-노트북15-156-코어i5-인텔-13세대-완벽-분석.html","excerpt":"인텔 13세대 i5, 16GB 램, 512GB SSD, 윈도우11 홈 탑재. 일주일간 직접 테스트하며 느낀 확실한 장점과 절대 숨기지 않을 단점까지 솔직하게 정리했습니다.","date":"2026. 3. 9.","category":"PC/노트북","tags":["노트북","리뷰"],"keywords":"노트북, 리뷰","thumbnail":"https://pickrise.com/images/thumb-1773033576805.webp"},{"id":1772873523097,"groupId":1772873523097,"title":"삼성전자 갤럭시 S26 자급제 실사용 리뷰 — 디자인·성능·카메라 총정리 (아이폰 이탈자들이 돌아오는 이유가 있었다)","filename":"post/삼성전자-갤럭시-S26-자급제-실사용-리뷰-디자인성능카메라-총정리.html","excerpt":"엑시노스 2500 탑재, 120Hz AMOLED 디스플레이, 그리고 Galaxy AI까지. 일주일간 직접 사용하며 확인한 갤럭시 S26의 확실한 강점과 반드시 알아야 할 단점을 솔직하게 정리했습니다.","date":"2026. 3. 7.","category":"스마트기기","tags":["스마트폰","삼성","리뷰","웨어러블"],"keywords":"스마트폰, 삼성, 리뷰, 웨어러블","thumbnail":"https://pickrise.com/images/thumb-1772873523097.webp"},{"id":1772868391538,"groupId":1772868391537,"title":"쿠쿠 전기보온 에그밥솥 6인용 실사용 리뷰 및 밥맛 테스트 (압력밥솥 vs 전기밥솥, 진짜 차이는?)","filename":"post/쿠쿠-전기보온-에그밥솥-6인용-실사용-리뷰-및-밥맛-테스트.html","excerpt":"동글동글 귀여운 에그 디자인과 에너지 효율 1등급, 그리고 10% 환급 혜택까지. 6만 원대 가성비 밥솥의 실제 밥맛은 과연 어떨까요? 자취생부터 소가족까지, 30개의 실사용 후기를 바탕으로 장단점을 낱낱이 공개합니다.","date":"2026. 3. 6.","category":"생활가전","tags":["가전제품","리뷰"],"keywords":"가전제품, 리뷰","thumbnail":"https://pickrise.com/images/thumb-1772868391538.webp"},{"id":1772867207203,"groupId":1772867207202,"title":"LG전자 디오스 AI 오브제컬렉션 냉장고 832L 실사용 리뷰 및 2도어 vs 4도어 비교 (대용량인데 왜 이렇게 저렴할까?)","filename":"post/LG전자-디오스-AI-오브제컬렉션-냉장고-832L-실사용-리뷰-및-2도어-vs-4.html","excerpt":"24시간 자동 정온 시스템과 AI 냉기 케어로 식재료 신선도를 지키는 832리터 대용량 양문형 냉장고. 넉넉한 수납공간과 세련된 오브제 디자인, 그리고 합리적인 가격까지. 10년 이상 장수한 구형 모델 사용자들의 교체 사례를 통해 본 실제 체감 변화와 숨겨진 단점까지 낱낱이 공개합니다.","date":"2026. 3. 6.","category":"생활가전","tags":["가전제품","스마트홈","리뷰"],"keywords":"가전제품, 스마트홈, 리뷰","thumbnail":"https://pickrise.com/images/thumb-1772867207203.webp"},{"id":1772859741520,"groupId":1772859741519,"title":"LG전자 2025 그램 16 코어Ultra5 실사용 리뷰 (16인치인데 1.2kg? 가벼움의 끝판왕, 직접 확인해봤습니다)","filename":"post/LG전자-2025-그램-16-코어Ultra5-실사용-리뷰.html","excerpt":"1.2kg대의 초경량 16인치 바디, 인텔 코어 Ultra5, WQXGA 고해상도 디스플레이, 77Wh 대용량 배터리. 그램이 매년 선택받는 이유가 있는지 스펙과 실사용 두 가지 관점으로 꼼꼼히 짚어봤습니다.","date":"2026. 3. 7.","category":"PC/노트북","tags":["노트북","리뷰"],"keywords":"노트북, 리뷰","thumbnail":"https://pickrise.com/images/thumb-1772859741520.webp"},{"id":1772857280714,"groupId":1772857280714,"title":"파테크 한일전자 초고출력 헤어 드라이어 2300W 실사용 리뷰 (머리숱 많은 분들, 이거 하나로 해결됩니다)","filename":"post/파테크-한일전자-초고출력-헤어-드라이어-2300W-실사용-리뷰.html","excerpt":"2300W 초고출력, 6단계 세밀한 온도·풍속 조절, 이중 안전장치까지. 쿠팡 헤어드라이어 판매 1위의 이유를 화질이 아닌 바람으로 직접 증명해봤습니다.","date":"2026. 3. 7.","category":"생활가전","tags":["가전제품","스마트홈"],"keywords":"가전제품, 스마트홈","thumbnail":"https://pickrise.com/images/thumb-1772857280714.webp"},{"id":1772856069487,"groupId":1772856069487,"title":"위드라이프 43인치 FHD TV 대기업 정품 패널 실사용 리뷰 (10만 원대 가성비 TV, 진짜 믿고 살 수 있을까?)","filename":"post/위드라이프-43인치-FHD-TV-대기업-정품-패널-실사용-리뷰.html","excerpt":"대기업 정품 패널 탑재, 에너지 소비효율 1등급, 유·무상 5년 AS까지. 10만 원대 중소기업 TV가 이 정도면 충분한지, 화질·음향·내구성까지 낱낱이 파헤쳐 봤습니다.","date":"2026. 3. 7.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1772856069487.webp"},{"id":1772851162047,"groupId":1772851162047,"title":"필립스 3000 시리즈 무선 전기주전자 HD9318/HD9319 완전 분석 (2만 원대 가성비 전기포트, 진짜 살 만할까?)","filename":"post/필립스-3000-시리즈-무선-전기주전자-HD9318HD9319-완전-분석.html","excerpt":"빠른 가열 속도, 군더더기 없는 디자인, 탄탄한 안전 시스템까지. 필립스 3000 시리즈 전기주전자가 꾸준히 베스트셀러 자리를 지키는 이유를 하드웨어 구조부터 실사용 환경까지 낱낱이 분석했습니다.","date":"2026. 3. 7.","category":"생활가전","tags":["가전제품","스마트홈"],"keywords":"가전제품, 스마트홈","thumbnail":"https://pickrise.com/images/thumb-1772851162047.webp"},{"id":1772830209125,"groupId":1772830209125,"title":"이노스 FHD 삼탠바이미 32인치 스마트TV + 무빙거치대 솔직 리뷰 (가성비 이동식 TV의 끝판왕일까?)","filename":"post/이노스-FHD-삼탠바이미-32인치-스마트TV-무빙거치대-솔직-리뷰.html","excerpt":"LG·삼성 이동식 TV의 절반 가격으로 '삼탠바이미' 스타일을 구현할 수 있다면? 이노스 FHD 삼탠바이미 32인치의 화질, 이동성, 스마트 기능까지 낱낱이 파헤쳤습니다.","date":"2026. 3. 7.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1772830209125.webp"}];
     posts.sort((a, b) => b.id - a.id);
 
-    const PER_PAGE = 10;
-    let currentPage = 1;
-    let filteredPosts = [];
-    let activeTag = '전체';
+    const PER_PAGE       = 10;
+    let currentPage      = 1;
+    let filteredPosts    = [];
+    let activeTag        = '전체';
 
-    const heroContainer = document.getElementById('hero-post-container');
-    const postGrid = document.getElementById('post-grid');
-    const loadMoreWrap = document.getElementById('load-more-wrap');
-    const searchInput = document.querySelector('.search-input');
+    const heroContainer  = document.getElementById('hero-post-container');
+    const postGrid       = document.getElementById('post-grid');
+    const loadMoreWrap   = document.getElementById('load-more-wrap');
+    const searchInput    = document.querySelector('.search-input');
 
-    // ── 카드 HTML 생성 ──
+    // ── 카드 HTML 생성 ──────────────────────────────────
     function heroCard(p) {
         return `<div class="hero-post" onclick="location.href='${p.filename}'">
             <div class="hero-thumb"><img src="${p.thumbnail}" alt="${p.title}" fetchpriority="high"></div>
@@ -327,24 +528,27 @@ body { overflow-x: hidden; }
     }
 
     const inlineBanner = `
-        <div class="inline-banner" onclick="alert('기획전 준비중입니다.')">
+        <div class="inline-banner" onclick="alert('기획전 페이지로 이동합니다.')">
             <div class="ib-text">
-                <h3>Editor's Choice : 최적의 선택 가이드</h3>
-                <p>스펙부터 실사용 후기까지, 꼼꼼하게 큐레이션 했습니다.</p>
+                <h3>Editor's Choice : 신학기 노트북 가이드</h3>
+                <p>스펙부터 실사용 후기까지, 용도별 최적의 선택을 만나보세요.</p>
             </div>
             <div class="ib-btn">컬렉션 보기</div>
         </div>`;
 
-    // ── 필터링 및 렌더링 ──
+    // ── 필터링 ──────────────────────────────────────────
     function getFiltered() {
         const keyword = (searchInput ? searchInput.value : '').toLowerCase().trim();
         return posts.filter(p => {
-            const matchTag = activeTag === '전체' || (p.tags || []).includes(activeTag);
-            const matchSearch = !keyword || p.title.toLowerCase().includes(keyword) || (p.excerpt || '').toLowerCase().includes(keyword);
+            const matchTag    = activeTag === '전체' || (p.tags || []).includes(activeTag);
+            const matchSearch = !keyword ||
+                p.title.toLowerCase().includes(keyword) ||
+                (p.excerpt || '').toLowerCase().includes(keyword);
             return matchTag && matchSearch;
         });
     }
 
+    // ── 렌더링 ──────────────────────────────────────────
     function render(reset = false) {
         filteredPosts = getFiltered();
         if (reset) {
@@ -354,7 +558,7 @@ body { overflow-x: hidden; }
         }
 
         if (filteredPosts.length === 0) {
-            postGrid.innerHTML = '<p style="padding:40px;text-align:center;color:var(--text-tertiary);grid-column:1/-1;">결과가 없습니다.</p>';
+            postGrid.innerHTML = '<p style="padding:40px;text-align:center;color:#94a3b8;grid-column:1/-1;">결과가 없습니다.</p>';
             loadMoreWrap.style.display = 'none';
             return;
         }
@@ -375,13 +579,16 @@ body { overflow-x: hidden; }
         });
         postGrid.innerHTML += html;
 
-        const shown = currentPage === 1 ? items.length + 1 : (currentPage - 1) * PER_PAGE + 1 + items.length;
+        const shown = currentPage === 1
+            ? items.length + 1
+            : (currentPage - 1) * PER_PAGE + 1 + items.length;
         loadMoreWrap.style.display = shown < filteredPosts.length ? 'block' : 'none';
     }
 
-    // ── 이벤트 ──
+    // ── 이벤트 ──────────────────────────────────────────
     document.getElementById('load-more-btn').addEventListener('click', () => {
-        currentPage++; render(false);
+        currentPage++;
+        render(false);
     });
 
     document.querySelectorAll('.cat-tab').forEach(btn => {
@@ -395,7 +602,9 @@ body { overflow-x: hidden; }
     });
 
     if (searchInput) {
-        searchInput.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); render(true); } });
+        searchInput.addEventListener('keydown', e => {
+            if (e.key === 'Enter') { e.preventDefault(); render(true); }
+        });
     }
 
     // 라이브 서치 드롭다운
@@ -409,7 +618,10 @@ body { overflow-x: hidden; }
             const kw = e.target.value.toLowerCase().trim();
             if (!kw) { dropdown.style.display = 'none'; return; }
 
-            const matched = posts.filter(p => p.title.toLowerCase().includes(kw) || (p.excerpt || '').toLowerCase().includes(kw)).slice(0, 5);
+            const matched = posts
+                .filter(p => p.title.toLowerCase().includes(kw) || (p.excerpt || '').toLowerCase().includes(kw))
+                .slice(0, 5);
+
             dropdown.innerHTML = matched.length
                 ? matched.map(p => `
                     <a href="${p.filename}" class="live-search-item">
@@ -419,21 +631,29 @@ body { overflow-x: hidden; }
                             <div class="ls-cat">${p.category}</div>
                         </div>
                     </a>`).join('')
-                : '<div style="padding:16px;text-align:center;color:var(--text-tertiary);font-size:13px;">검색 결과가 없습니다.</div>';
+                : '<div style="padding:16px;text-align:center;color:#94a3b8;font-size:13px;">검색 결과가 없습니다.</div>';
+
             dropdown.style.display = 'block';
         });
 
-        searchInput.addEventListener('focus', () => { if (searchInput.value.trim()) dropdown.style.display = 'block'; });
-        document.addEventListener('click', e => { if (!searchBox.contains(e.target)) dropdown.style.display = 'none'; });
+        searchInput.addEventListener('focus', () => {
+            if (searchInput.value.trim()) dropdown.style.display = 'block';
+        });
+        document.addEventListener('click', e => {
+            if (!searchBox.contains(e.target)) dropdown.style.display = 'none';
+        });
     }
 
-    // 태그 클라우드 연동
+    // 태그 클라우드 클릭
     document.querySelectorAll('.tag-cloud-item').forEach(btn => {
         btn.addEventListener('click', () => {
-            const tag = btn.dataset.tag;
+            const tag    = btn.dataset.tag;
             const tabBtn = [...document.querySelectorAll('.cat-tab')].find(t => t.dataset.tag === tag);
             document.querySelectorAll('.cat-tab').forEach(b => b.classList.remove('active'));
-            if (tabBtn) { tabBtn.classList.add('active'); tabBtn.scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' }); }
+            if (tabBtn) {
+                tabBtn.classList.add('active');
+                tabBtn.scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' });
+            }
             activeTag = tag;
             if (searchInput) searchInput.value = '';
             render(true);
