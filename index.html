@@ -144,8 +144,8 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
     overflow: hidden;
     margin-bottom: 96px;
     display: flex;
-    flex-direction: column-reverse; /* 모바일: 상단 이미지, 하단 텍스트 */
-    background-color: var(--primary-container);
+    flex-direction: column; /* 모바일: 상단 텍스트, 하단 이미지 (column-reverse 에서 column으로 변경) */
+    background-color: #1c1c1e; /* 모바일 텍스트 배경색과 통일 */
     text-decoration: none;
     transition: all 0.3s ease;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
@@ -153,7 +153,7 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
 @media (min-width: 1024px) {
     .hero-section {
         display: block; /* 데스크탑: 앱솔루트 겹침 레이아웃 */
-        height: 480px;
+        height: 560px; /* 요청하신 높이 반영 */
         min-height: 480px;
     }
 }
@@ -168,7 +168,7 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
     flex-direction: column;
     justify-content: center;
     word-break: keep-all;
-    background-color: var(--primary-container); /* 모바일은 단색 배경 */
+    background-color: #1c1c1e; /* 요청하신 모바일 배경색 */
 }
 @media (min-width: 1024px) {
     .hero-content {
@@ -176,8 +176,8 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
         top: 0;
         left: 0;
         bottom: 0;
-        width: 60%; /* 데스크탑에서는 좌측 60% 영역만 차지 */
-        padding: 64px;
+        width: 60%;
+        padding: 40px; /* 요청하신 패딩 반영 */
         background-color: transparent; /* 데스크탑은 그라데이션 배경 사용 */
     }
 }
@@ -186,8 +186,8 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
     align-self: flex-start;
     display: inline-block;
     padding: 4px 16px;
-    background-color: #3980f4;
-    color: #ffffff;
+    background-color: #ffffff; /* 요청하신 배지 색상 (화이트) */
+    color: #000000; /* 요청하신 텍스트 색상 (블랙) */
     font-size: 12px;
     font-weight: 700;
     border-radius: 999px;
@@ -206,7 +206,7 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
 }
 .hero-sub-title {
     font-size: 18px;
-    color: #7c839b;
+    color: #ffffff; /* 요청하신 화이트 색상 반영 */
     font-weight: 500;
     margin-bottom: 16px;
 }
@@ -214,6 +214,7 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
     font-size: 16px;
     color: #94a3b8;
     line-height: 1.625;
+    font-weight: 300; /* 요청하신 폰트 웨이트 300 반영 */
     margin-bottom: 40px;
     max-width: 480px;
     font-family: 'Inter', 'Pretendard', sans-serif;
@@ -229,7 +230,7 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
     gap: 12px;
     padding: 14px 28px;
     background-color: #ffffff;
-    color: var(--primary-container);
+    color: #1c1c1e;
     font-weight: 700;
     font-size: 15px;
     border-radius: 8px;
@@ -240,7 +241,7 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
     gap: 16px;
 }
 
-/* 히어로 이미지 배경 (모바일은 독립, 데스크탑은 우측 절대배치) */
+/* 히어로 이미지 배경 (모바일은 하단에 독립, 데스크탑은 우측 절대배치) */
 .hero-image-wrap {
     position: relative;
     width: 100%;
@@ -265,7 +266,7 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: right center; /* 썸네일 박스 우측 정렬 유지 */
+    object-position: right center;
     transition: filter 0.5s ease;
 }
 .hero-section:hover .hero-image-wrap img {
@@ -281,7 +282,8 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
         display: block;
         position: absolute;
         inset: 0;
-        background: linear-gradient(to right, var(--primary-container) 0%, rgba(19,27,46,0.8) 35%, transparent 100%);
+        /* 사용자가 변경한 #1c1c1e 배경색에 맞춰 그라데이션 자연스럽게 연결 */
+        background: linear-gradient(to right, #1c1c1e 0%, rgba(28,28,30,0.8) 35%, transparent 100%);
         z-index: 2;
     }
 }
@@ -420,6 +422,11 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
                 #가전제품
             </button>
         
+            <button class="cat-tab " data-tag="리뷰">
+                <span class="material-symbols-outlined" style="font-size:18px;">tag</span>
+                #리뷰
+            </button>
+        
             <button class="cat-tab " data-tag="스마트TV">
                 <span class="material-symbols-outlined" style="font-size:18px;">tag</span>
                 #스마트TV
@@ -462,7 +469,7 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
 
             <div class="widget-tags">
                 <h4 class="widget-title">Trending Tags</h4>
-                <div class="tag-cloud"><button class="tag-item" data-tag="가전제품">#가전제품</button><button class="tag-item" data-tag="스마트TV">#스마트TV</button></div>
+                <div class="tag-cloud"><button class="tag-item" data-tag="가전제품">#가전제품</button><button class="tag-item" data-tag="스마트TV">#스마트TV</button><button class="tag-item" data-tag="리뷰">#리뷰</button></div>
             </div>
 
             <div class="widget-categories">
@@ -470,7 +477,7 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
                 <ul class="cat-list">
             <li class="cat-list-item" onclick="document.querySelector('.search-input').value='생활가전'; document.querySelector('.search-input').dispatchEvent(new KeyboardEvent('keydown',{'key':'Enter'}));">
                 <span class="cat-list-name">생활가전</span>
-                <span class="cat-list-count">8</span>
+                <span class="cat-list-count">9</span>
             </li>
         </ul>
             </div>
@@ -501,7 +508,7 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
 
 <script>
 (function(){
-const posts=[{"id":1775138930354,"groupId":1775138930354,"title":"와이드뷰 FHD QLED 화이트에디션 스마트TV + 삼탠바이미 V3 세트 완전 분석 (원룸·자취생을 위한 이동식 TV의 정석)","filename":"post/wideview-fhd-qled-smarttv-samsung-standbyme-v3.html","excerpt":"바퀴 하나로 삶의 동선이 바뀐다. 고정식 TV의 시대가 저물고 이동식 스탠드형 TV가 주목받는 이유를 이 제품이 명확히 보여줍니다. 화질·이동성·가성비를 실사용 환경 기준으로 낱낱이 점검했습니다.","date":"2026. 4. 2.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1775138930354.webp"},{"id":1775137713385,"groupId":1775137713385,"title":"와이드뷰 FHD QLED 화이트에디션 스마트TV + 삼탠바이미 V3 세트 완전 분석 (원룸·자취생을 위한 이동식 TV의 정석)","filename":"post/wideview-fhd-qled-tv-samtandaeubaimi-v3.html","excerpt":"바퀴 하나로 삶의 동선이 바뀐다. 고정식 TV의 시대가 저물고 이동식 스탠드형 TV가 주목받는 이유를 이 제품이 명확히 보여줍니다. 화질·이동성·가성비를 실사용 환경 기준으로 낱낱이 점검했습니다.","date":"2026. 4. 2.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1775137713385.webp"},{"id":1775135580344,"groupId":1775135580344,"title":"와이드뷰 FHD QLED 화이트에디션 스마트TV + 삼탠바이미 V3 세트 완전 분석 (원룸·자취생을 위한 이동식 TV의 정석)","filename":"post/wideview-fhd-qled-smarttv-samsung-stantbymi-v3.html","excerpt":"바퀴 하나로 삶의 동선이 바뀐다. 고정식 TV의 시대가 저물고 이동식 스탠드형 TV가 주목받는 이유를 이 제품이 명확히 보여줍니다. 화질·이동성·가성비를 실사용 환경 기준으로 낱낱이 점검했습니다.","date":"2026. 4. 2.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1775135580344.webp"},{"id":1775134205248,"groupId":1775134205248,"title":"와이드뷰 FHD QLED 화이트에디션 스마트TV + 삼탠바이미 V3 세트 완전 분석 (원룸·자취생을 위한 이동식 TV의 정석)","filename":"post/wideview-fhd-qled-tv-samtandbyme-v3.html","excerpt":"바퀴 하나로 삶의 동선이 바뀐다. 고정식 TV의 시대가 저물고 이동식 스탠드형 TV가 주목받는 이유를 이 제품이 명확히 보여줍니다. 화질·이동성·가성비를 실사용 환경 기준으로 낱낱이 점검했습니다.","date":"2026. 4. 2.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1775134205248.webp"},{"id":1775133860049,"groupId":1775133860049,"title":"와이드뷰 FHD QLED 화이트에디션 스마트TV + 삼탠바이미 V3 세트 완전 분석 (원룸·자취생을 위한 이동식 TV의 정석)","filename":"post/wideview-fhd-qled-smarttv-samsung-standbymi-v3.html","excerpt":"바퀴 하나로 삶의 동선이 바뀐다. 고정식 TV의 시대가 저물고 이동식 스탠드형 TV가 주목받는 이유를 이 제품이 명확히 보여줍니다. 화질·이동성·가성비를 실사용 환경 기준으로 낱낱이 점검했습니다.","date":"2026. 4. 2.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1775133860049.webp"},{"id":1775132974718,"groupId":1775132974718,"title":"와이드뷰 FHD QLED 화이트에디션 스마트TV + 삼탠바이미 V3 세트 완전 분석 (원룸·자취생을 위한 이동식 TV의 정석)","filename":"post/wideview-fhd-qled-tv-samsung-stanbyme-v3.html","excerpt":"바퀴 하나로 삶의 동선이 바뀐다. 고정식 TV의 시대가 저물고 이동식 스탠드형 TV가 주목받는 이유를 이 제품이 명확히 보여줍니다. 화질·이동성·가성비를 실사용 환경 기준으로 낱낱이 점검했습니다.","date":"2026. 4. 2.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1775132974718.webp"},{"id":1775130924597,"groupId":1775138694778,"title":"와이드뷰 FHD QLED 화이트에디션 스마트TV + 삼탠바이미 V3 세트 완전 분석 (원룸·자취생을 위한 이동식 TV의 정석)","filename":"post/wideview-fhd-qled-smarttv-samsung-standbymeby-v3.html","excerpt":"바퀴 하나로 삶의 동선이 바뀐다. 고정식 TV의 시대가 저물고 이동식 스탠드형 TV가 주목받는 이유를 이 제품이 명확히 보여줍니다. 화질·이동성·가성비를 실사용 환경 기준으로 낱낱이 점검했습니다.","date":"2026. 4. 2.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1775130924597.webp"},{"id":1775129364100,"groupId":1775130517944,"title":"와이드뷰 FHD QLED 화이트에디션 스마트TV + 삼탠바이미 V3 세트 완전 분석 (원룸·자취생을 위한 이동식 TV의 정석)","filename":"post/wideview-fhd-qled-tv-samsung-standbymeby-v3.html","excerpt":"바퀴 하나로 삶의 동선이 바뀐다. 고정식 TV의 시대가 저물고 이동식 스탠드형 TV가 주목받는 이유를 이 제품이 명확히 보여줍니다. 화질·이동성·가성비를 실사용 환경 기준으로 낱낱이 점검했습니다.","date":"2026. 4. 2.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1775129364100.webp"}];
+const posts=[{"id":1775139819676,"groupId":1775139819676,"title":"쿠쿠 전기보온 에그밥솥 6인용 실사용 리뷰 및 밥맛 테스트 (압력밥솥 vs 전기밥솥, 진짜 차이는?)","filename":"post/cuckoo-egg-rice-cooker-review.html","excerpt":"동글동글 귀여운 에그 디자인과 에너지 효율 1등급, 그리고 10% 환급 혜택까지. 6만 원대 가성비 밥솥의 실제 밥맛은 과연 어떨까요? 자취생부터 소가족까지, 30개의 실사용 후기를 바탕으로 장단점을 낱낱이 공개합니다.","date":"2026. 3. 6.","category":"생활가전","tags":["가전제품","리뷰"],"keywords":"가전제품, 리뷰","thumbnail":"https://pickrise.com/images/thumb-1775139819676.webp"},{"id":1775138930354,"groupId":1775138930354,"title":"와이드뷰 FHD QLED 화이트에디션 스마트TV + 삼탠바이미 V3 세트 완전 분석 (원룸·자취생을 위한 이동식 TV의 정석)","filename":"post/wideview-fhd-qled-smarttv-samsung-standbyme-v3.html","excerpt":"바퀴 하나로 삶의 동선이 바뀐다. 고정식 TV의 시대가 저물고 이동식 스탠드형 TV가 주목받는 이유를 이 제품이 명확히 보여줍니다. 화질·이동성·가성비를 실사용 환경 기준으로 낱낱이 점검했습니다.","date":"2026. 4. 2.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1775138930354.webp"},{"id":1775137713385,"groupId":1775137713385,"title":"와이드뷰 FHD QLED 화이트에디션 스마트TV + 삼탠바이미 V3 세트 완전 분석 (원룸·자취생을 위한 이동식 TV의 정석)","filename":"post/wideview-fhd-qled-tv-samtandaeubaimi-v3.html","excerpt":"바퀴 하나로 삶의 동선이 바뀐다. 고정식 TV의 시대가 저물고 이동식 스탠드형 TV가 주목받는 이유를 이 제품이 명확히 보여줍니다. 화질·이동성·가성비를 실사용 환경 기준으로 낱낱이 점검했습니다.","date":"2026. 4. 2.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1775137713385.webp"},{"id":1775135580344,"groupId":1775135580344,"title":"와이드뷰 FHD QLED 화이트에디션 스마트TV + 삼탠바이미 V3 세트 완전 분석 (원룸·자취생을 위한 이동식 TV의 정석)","filename":"post/wideview-fhd-qled-smarttv-samsung-stantbymi-v3.html","excerpt":"바퀴 하나로 삶의 동선이 바뀐다. 고정식 TV의 시대가 저물고 이동식 스탠드형 TV가 주목받는 이유를 이 제품이 명확히 보여줍니다. 화질·이동성·가성비를 실사용 환경 기준으로 낱낱이 점검했습니다.","date":"2026. 4. 2.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1775135580344.webp"},{"id":1775134205248,"groupId":1775134205248,"title":"와이드뷰 FHD QLED 화이트에디션 스마트TV + 삼탠바이미 V3 세트 완전 분석 (원룸·자취생을 위한 이동식 TV의 정석)","filename":"post/wideview-fhd-qled-tv-samtandbyme-v3.html","excerpt":"바퀴 하나로 삶의 동선이 바뀐다. 고정식 TV의 시대가 저물고 이동식 스탠드형 TV가 주목받는 이유를 이 제품이 명확히 보여줍니다. 화질·이동성·가성비를 실사용 환경 기준으로 낱낱이 점검했습니다.","date":"2026. 4. 2.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1775134205248.webp"},{"id":1775133860049,"groupId":1775133860049,"title":"와이드뷰 FHD QLED 화이트에디션 스마트TV + 삼탠바이미 V3 세트 완전 분석 (원룸·자취생을 위한 이동식 TV의 정석)","filename":"post/wideview-fhd-qled-smarttv-samsung-standbymi-v3.html","excerpt":"바퀴 하나로 삶의 동선이 바뀐다. 고정식 TV의 시대가 저물고 이동식 스탠드형 TV가 주목받는 이유를 이 제품이 명확히 보여줍니다. 화질·이동성·가성비를 실사용 환경 기준으로 낱낱이 점검했습니다.","date":"2026. 4. 2.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1775133860049.webp"},{"id":1775132974718,"groupId":1775132974718,"title":"와이드뷰 FHD QLED 화이트에디션 스마트TV + 삼탠바이미 V3 세트 완전 분석 (원룸·자취생을 위한 이동식 TV의 정석)","filename":"post/wideview-fhd-qled-tv-samsung-stanbyme-v3.html","excerpt":"바퀴 하나로 삶의 동선이 바뀐다. 고정식 TV의 시대가 저물고 이동식 스탠드형 TV가 주목받는 이유를 이 제품이 명확히 보여줍니다. 화질·이동성·가성비를 실사용 환경 기준으로 낱낱이 점검했습니다.","date":"2026. 4. 2.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1775132974718.webp"},{"id":1775130924597,"groupId":1775138694778,"title":"와이드뷰 FHD QLED 화이트에디션 스마트TV + 삼탠바이미 V3 세트 완전 분석 (원룸·자취생을 위한 이동식 TV의 정석)","filename":"post/wideview-fhd-qled-smarttv-samsung-standbymeby-v3.html","excerpt":"바퀴 하나로 삶의 동선이 바뀐다. 고정식 TV의 시대가 저물고 이동식 스탠드형 TV가 주목받는 이유를 이 제품이 명확히 보여줍니다. 화질·이동성·가성비를 실사용 환경 기준으로 낱낱이 점검했습니다.","date":"2026. 4. 2.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1775130924597.webp"},{"id":1775129364100,"groupId":1775130517944,"title":"와이드뷰 FHD QLED 화이트에디션 스마트TV + 삼탠바이미 V3 세트 완전 분석 (원룸·자취생을 위한 이동식 TV의 정석)","filename":"post/wideview-fhd-qled-tv-samsung-standbymeby-v3.html","excerpt":"바퀴 하나로 삶의 동선이 바뀐다. 고정식 TV의 시대가 저물고 이동식 스탠드형 TV가 주목받는 이유를 이 제품이 명확히 보여줍니다. 화질·이동성·가성비를 실사용 환경 기준으로 낱낱이 점검했습니다.","date":"2026. 4. 2.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1775129364100.webp"}];
 posts.sort((a,b)=>b.id-a.id);
 const PER=10; let page=1, filtered=[];
 const heroC=document.getElementById('hero-post-container'), grid=document.getElementById('post-grid'), lmw=document.getElementById('load-more-wrap'), si=document.querySelector('.search-input');
