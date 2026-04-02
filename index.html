@@ -525,6 +525,11 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
                 #가성비
             </button>
         
+            <button class="cat-tab " data-tag="애플">
+                <span class="material-symbols-outlined" style="font-size:18px;">tag</span>
+                #애플
+            </button>
+        
             <button class="cat-tab " data-tag="스마트폰">
                 <span class="material-symbols-outlined" style="font-size:18px;">tag</span>
                 #스마트폰
@@ -538,11 +543,6 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
             <button class="cat-tab " data-tag="리뷰">
                 <span class="material-symbols-outlined" style="font-size:18px;">tag</span>
                 #리뷰
-            </button>
-        
-            <button class="cat-tab " data-tag="가전제품">
-                <span class="material-symbols-outlined" style="font-size:18px;">tag</span>
-                #가전제품
             </button>
         </div>
 
@@ -582,20 +582,20 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
 
             <div class="widget-tags">
                 <h4 class="widget-title">Trending Tags</h4>
-                <div class="tag-cloud"><button class="tag-item" data-tag="리뷰">#리뷰</button><button class="tag-item" data-tag="가전제품">#가전제품</button><button class="tag-item" data-tag="스마트폰">#스마트폰</button><button class="tag-item" data-tag="삼성">#삼성</button><button class="tag-item" data-tag="스마트TV">#스마트TV</button></div>
+                <div class="tag-cloud"><button class="tag-item" data-tag="리뷰">#리뷰</button><button class="tag-item" data-tag="가전제품">#가전제품</button><button class="tag-item" data-tag="스마트기기">#스마트기기</button><button class="tag-item" data-tag="애플">#애플</button><button class="tag-item" data-tag="스마트폰">#스마트폰</button><button class="tag-item" data-tag="삼성">#삼성</button><button class="tag-item" data-tag="스마트TV">#스마트TV</button></div>
             </div>
 
             <div class="widget-categories">
                 <h4 class="widget-title">Popular Categories</h4>
                 <ul class="cat-list">
-            <li class="cat-list-item" onclick="document.querySelector('.search-input').value='생활가전'; document.querySelector('.search-input').dispatchEvent(new KeyboardEvent('keydown',{'key':'Enter'}));">
-                <span class="cat-list-name">생활가전</span>
+            <li class="cat-list-item" onclick="document.querySelector('.search-input').value='스마트기기'; document.querySelector('.search-input').dispatchEvent(new KeyboardEvent('keydown',{'key':'Enter'}));">
+                <span class="cat-list-name">스마트기기</span>
                 <span class="cat-list-count">2</span>
             </li>
         
-            <li class="cat-list-item" onclick="document.querySelector('.search-input').value='스마트기기'; document.querySelector('.search-input').dispatchEvent(new KeyboardEvent('keydown',{'key':'Enter'}));">
-                <span class="cat-list-name">스마트기기</span>
-                <span class="cat-list-count">1</span>
+            <li class="cat-list-item" onclick="document.querySelector('.search-input').value='생활가전'; document.querySelector('.search-input').dispatchEvent(new KeyboardEvent('keydown',{'key':'Enter'}));">
+                <span class="cat-list-name">생활가전</span>
+                <span class="cat-list-count">2</span>
             </li>
         </ul>
             </div>
@@ -626,7 +626,7 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
 
 <script>
 (function(){
-const posts=[{"id":1775153442144,"groupId":1775153442144,"title":"삼성전자 갤럭시 S26 자급제 실사용 리뷰 및 아이폰 16 프로 비교 (사전예약 더블 스토리지 혜택, 놓치면 손해)","filename":"post/samsung-galaxy-s26-vs-iphone-16-pro-review.html","excerpt":"사전예약 시 256GB 가격으로 512GB를 받는 더블 스토리지 이벤트와 쿠팡 로켓배송의 빠른 도착. 아이폰에서 갈아탄 사용자들의 극찬부터 4~7년 된 구형 갤럭시 사용자들의 체감 업그레이드까지. 가벼운 무게, 빠른 성능, 그리고 코발트 바이올렛·스카이블루 색상의 실물 매력을 낱낱이 공개합니다.","date":"2026. 3. 7.","category":"스마트기기","tags":["스마트폰","삼성","리뷰"],"keywords":"스마트폰, 삼성, 리뷰","thumbnail":"https://pickrise.com/images/thumb-1775153442144.webp"},{"id":1775153341983,"groupId":1775153341983,"title":"쿠쿠 전기보온 에그밥솥 6인용 실사용 리뷰 및 밥맛 테스트 (압력밥솥 vs 전기밥솥, 진짜 차이는?)","filename":"post/cuckoo-egg-rice-cooker-review.html","excerpt":"동글동글 귀여운 에그 디자인과 에너지 효율 1등급, 그리고 10% 환급 혜택까지. 6만 원대 가성비 밥솥의 실제 밥맛은 과연 어떨까요? 자취생부터 소가족까지, 30개의 실사용 후기를 바탕으로 장단점을 낱낱이 공개합니다.","date":"2026. 3. 6.","category":"생활가전","tags":["가전제품","리뷰"],"keywords":"가전제품, 리뷰","thumbnail":"https://pickrise.com/images/thumb-1775153341983.webp"},{"id":1775151347586,"groupId":1775151347585,"title":"와이드뷰 FHD QLED 화이트에디션 스마트TV + 삼탠바이미 V3 세트 완전 분석 (원룸·자취생을 위한 이동식 TV의 정석)","filename":"post/wideview-fhd-qled-tv-samsung-standbymeby-v3.html","excerpt":"바퀴 하나로 삶의 동선이 바뀐다. 고정식 TV의 시대가 저물고 이동식 스탠드형 TV가 주목받는 이유를 이 제품이 명확히 보여줍니다. 화질·이동성·가성비를 실사용 환경 기준으로 낱낱이 점검했습니다.","date":"2026. 4. 2.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1775151347586.webp"}];
+const posts=[{"id":1775155089011,"groupId":1775155089011,"title":"Apple 2025 에어팟 프로 3 USB-C 완전 분석 — 노이즈 캔슬링·음질·생태계 연동 총정리 (프로 2 쓰는 분, 지금 바꿔야 할까?)","filename":"post/apple-airpods-pro-3-usb-c-review.html","excerpt":"H3 칩셋 탑재로 전작 대비 최대 2배 강화된 ANC, 새롭게 추가된 심박 센서, USB-C 충전 통일까지. 애플 생태계 사용자라면 외면하기 어려운 완성도를 갖춘 2025년 최신 무선 이어폰을 낱낱이 점검했습니다.","date":"2026. 4. 3.","category":"스마트기기","tags":["스마트기기","애플"],"keywords":"스마트기기, 애플","thumbnail":"https://pickrise.com/images/thumb-1775155089011.webp"},{"id":1775153442144,"groupId":1775153442144,"title":"삼성전자 갤럭시 S26 자급제 실사용 리뷰 및 아이폰 16 프로 비교 (사전예약 더블 스토리지 혜택, 놓치면 손해)","filename":"post/samsung-galaxy-s26-vs-iphone-16-pro-review.html","excerpt":"사전예약 시 256GB 가격으로 512GB를 받는 더블 스토리지 이벤트와 쿠팡 로켓배송의 빠른 도착. 아이폰에서 갈아탄 사용자들의 극찬부터 4~7년 된 구형 갤럭시 사용자들의 체감 업그레이드까지. 가벼운 무게, 빠른 성능, 그리고 코발트 바이올렛·스카이블루 색상의 실물 매력을 낱낱이 공개합니다.","date":"2026. 3. 7.","category":"스마트기기","tags":["스마트폰","삼성","리뷰"],"keywords":"스마트폰, 삼성, 리뷰","thumbnail":"https://pickrise.com/images/thumb-1775153442144.webp"},{"id":1775153341983,"groupId":1775153341983,"title":"쿠쿠 전기보온 에그밥솥 6인용 실사용 리뷰 및 밥맛 테스트 (압력밥솥 vs 전기밥솥, 진짜 차이는?)","filename":"post/cuckoo-egg-rice-cooker-review.html","excerpt":"동글동글 귀여운 에그 디자인과 에너지 효율 1등급, 그리고 10% 환급 혜택까지. 6만 원대 가성비 밥솥의 실제 밥맛은 과연 어떨까요? 자취생부터 소가족까지, 30개의 실사용 후기를 바탕으로 장단점을 낱낱이 공개합니다.","date":"2026. 3. 6.","category":"생활가전","tags":["가전제품","리뷰"],"keywords":"가전제품, 리뷰","thumbnail":"https://pickrise.com/images/thumb-1775153341983.webp"},{"id":1775151347586,"groupId":1775151347585,"title":"와이드뷰 FHD QLED 화이트에디션 스마트TV + 삼탠바이미 V3 세트 완전 분석 (원룸·자취생을 위한 이동식 TV의 정석)","filename":"post/wideview-fhd-qled-tv-samsung-standbymeby-v3.html","excerpt":"바퀴 하나로 삶의 동선이 바뀐다. 고정식 TV의 시대가 저물고 이동식 스탠드형 TV가 주목받는 이유를 이 제품이 명확히 보여줍니다. 화질·이동성·가성비를 실사용 환경 기준으로 낱낱이 점검했습니다.","date":"2026. 4. 2.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1775151347586.webp"}];
 posts.sort((a,b)=>b.id-a.id);
 const PER=10; let page=1, filtered=[];
 const heroC=document.getElementById('hero-post-container'), grid=document.getElementById('post-grid'), lmw=document.getElementById('load-more-wrap'), si=document.querySelector('.search-input');
