@@ -19,15 +19,6 @@
 <style>
 body{background:#fbfcfd;}
 .index-wrap{padding-top:calc(var(--header-h) + 16px);}
-.filter-bar{position:sticky;top:var(--header-h);z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(224,227,229,.5);padding:6px 0;}
-.filter-inner{max-width:var(--layout-max);margin:0 auto;display:flex;align-items:center;height:52px;}
-.tab-scroll{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:0 40px;width:100%;align-items:center;}
-.tab-scroll::-webkit-scrollbar{display:none;}
-.cat-tab{padding:7px 20px;border-radius:9999px;border:1px solid transparent;background:var(--bg-container);color:#64748b;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;white-space:nowrap;flex-shrink:0;font-family:inherit;}
-.cat-tab:hover{background:var(--bg-container-low);color:#1e293b;}
-.cat-tab.active{background:#1e293b;color:#fff;box-shadow:0 4px 12px rgba(30,41,59,.15);}
-.special-tab{color:var(--primary);background:#e6f4f7;}
-.special-tab.active{background:var(--primary);color:#fff;}
 .live-search-dropdown{position:absolute;top:calc(100% + 8px);left:0;width:340px;background:#fff;border:1px solid #e2e8f0;border-radius:16px;box-shadow:0 16px 40px rgba(0,0,0,.08);z-index:1000;overflow:hidden;display:none;max-height:380px;overflow-y:auto;}
 .live-search-item{display:flex;gap:12px;padding:12px 16px;border-bottom:1px solid #f8fafc;cursor:pointer;transition:.15s;align-items:center;text-decoration:none;color:inherit;}
 .live-search-item:last-child{border-bottom:none;}
@@ -39,25 +30,27 @@ body{background:#fbfcfd;}
 .feed-layout{max-width:var(--layout-max);margin:0 auto 80px;padding:32px 40px 0;display:flex;flex-direction:row;gap:48px;align-items:start;}
 .feed-main{flex:1;min-width:0;display:flex;flex-direction:column;gap:48px;}
 
+/* 히어로 */
 .hero-post{position:relative;height:440px;border-radius:20px;overflow:hidden;box-shadow:0 8px 24px rgba(25,28,31,.05);display:block;text-decoration:none;}
 .hero-post:hover .hero-thumb img{transform:scale(1.04);}
 .hero-thumb{position:absolute;inset:0;width:100%;height:100%;}
 .hero-thumb img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s cubic-bezier(.16,1,.3,1);}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.82) 0%,rgba(0,0,0,.35) 45%,transparent 100%);}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.82) 0%,rgba(0,0,0,.45) 45%,transparent 100%);}
 .hero-info{position:absolute;bottom:0;left:0;right:0;padding:36px 40px;display:flex;justify-content:space-between;align-items:flex-end;}
 .hero-info-left{max-width:600px;}
 .hero-badge{display:inline-block;background:var(--primary);color:#fff;font-size:11px;font-weight:700;padding:5px 12px;border-radius:9999px;letter-spacing:.08em;margin-bottom:16px;text-transform:uppercase;}
+.hero-sub-title{font-size:15px;color:#94a3b8;font-weight:600;margin-bottom:4px;letter-spacing:-.01em;}
 .hero-title{font-size:clamp(24px,3vw,38px);font-weight:800;color:#fff;line-height:1.25;letter-spacing:-.03em;margin-bottom:12px;word-break:keep-all;}
 .hero-excerpt{font-size:15px;color:rgba(255,255,255,.8);line-height:1.6;font-weight:500;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
 .hero-score{background:rgba(255,255,255,.1);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.2);border-radius:16px;padding:16px 20px;text-align:center;min-width:90px;flex-shrink:0;}
 .hero-score-num{font-size:36px;font-weight:800;color:#fff;line-height:1;letter-spacing:-.03em;}
 .hero-score-label{font-size:11px;color:rgba(255,255,255,.7);margin-top:6px;font-weight:600;letter-spacing:.04em;}
+
 .feed-section-header{display:flex;justify-content:space-between;align-items:flex-end;padding-bottom:0;}
 .feed-section-title{font-size:22px;font-weight:800;color:#1e293b;letter-spacing:-.03em;}
 .feed-section-sub{font-size:14px;color:#64748b;font-weight:500;margin-top:6px;}
-.sort-btns{display:flex;gap:4px;background:#f2f4f6;padding:4px;border-radius:12px;}
-.sort-btn{padding:6px 16px;border-radius:8px;border:none;background:transparent;font-size:13px;font-weight:600;color:#64748b;cursor:pointer;transition:all .2s;font-family:inherit;}
-.sort-btn.active{background:#fff;color:#1e293b;box-shadow:0 1px 3px rgba(0,0,0,.06);}
+
+/* 카드 */
 .post-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
 .post-card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 4px 16px rgba(25,28,31,.04);border:1px solid rgba(224,227,229,.6);display:flex;flex-direction:column;transition:all .25s cubic-bezier(.4,0,.2,1);text-decoration:none;color:inherit;}
 .post-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(25,28,31,.08);}
@@ -69,6 +62,7 @@ body{background:#fbfcfd;}
 .card-score-total{font-size:10px;color:#94a3b8;font-weight:600;}
 .card-body{padding:24px;display:flex;flex-direction:column;flex:1;}
 .card-cat{font-size:11px;font-weight:700;color:#94a3b8;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px;}
+.card-sub-title{font-size:12px;color:#64748b;font-weight:600;margin-bottom:2px;letter-spacing:-.01em;}
 .card-title{font-size:17px;font-weight:700;color:#1e293b;line-height:1.4;margin-bottom:14px;letter-spacing:-.02em;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
 .card-pros-cons{display:flex;flex-direction:column;gap:8px;flex:1;margin-bottom:20px;}
 .card-pro,.card-con{display:flex;align-items:flex-start;gap:8px;font-size:13px;font-weight:500;line-height:1.4;}
@@ -77,15 +71,19 @@ body{background:#fbfcfd;}
 .con-icon{color:#f87171;font-size:15px;flex-shrink:0;font-weight:700;}
 .card-btn{width:100%;padding:11px;background:#f7f9fb;border:none;border-radius:12px;font-size:13px;font-weight:600;color:#475569;cursor:pointer;transition:all .2s;font-family:inherit;}
 .card-btn:hover{background:#1e293b;color:#fff;}
+
 .inline-banner{grid-column:1/-1;background:#1e293b;border-radius:20px;padding:32px 40px;color:#fff;display:flex;justify-content:space-between;align-items:center;cursor:pointer;transition:.25s;}
 .inline-banner:hover{background:#131b2e;transform:translateY(-2px);}
 .ib-text h3{font-size:20px;font-weight:800;margin-bottom:6px;letter-spacing:-.02em;color:#fff;}
 .ib-text p{font-size:14px;color:#94a3b8;margin:0;}
 .ib-btn{background:#fff;color:#1e293b;padding:12px 24px;border-radius:9999px;font-weight:700;font-size:13px;flex-shrink:0;transition:.2s;white-space:nowrap;}
+
 .load-more-btn{display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 32px;background:#1e293b;color:#fff;border:none;border-radius:9999px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;margin:8px auto 0;font-family:inherit;}
 .load-more-btn:hover{background:#0f172a;box-shadow:0 8px 24px rgba(15,23,42,.15);}
 #load-more-wrap{display:none;text-align:center;}
-.feed-sidebar{width:300px;flex-shrink:0;display:flex;flex-direction:column;gap:16px;position:sticky;top:calc(var(--header-h) + 68px);}
+
+/* 사이드바 */
+.feed-sidebar{width:300px;flex-shrink:0;display:flex;flex-direction:column;gap:16px;position:sticky;top:calc(var(--header-h) + 32px);}
 .widget-box{background:#fff;border-radius:20px;padding:24px;border:1px solid rgba(224,227,229,.6);box-shadow:0 4px 16px rgba(25,28,31,.03);}
 .widget-header{font-size:11px;font-weight:800;color:#94a3b8;margin-bottom:20px;letter-spacing:.14em;text-transform:uppercase;}
 .quick-nav{display:flex;flex-direction:column;gap:4px;margin-bottom:20px;}
@@ -109,12 +107,14 @@ body{background:#fbfcfd;}
 
 @media(max-width:1200px){.feed-sidebar{width:260px;}.feed-layout{gap:32px;padding:24px 24px 0;}}
 @media(max-width:1024px){.feed-layout{flex-direction:column;}.feed-sidebar{display:none;}.post-grid{grid-template-columns:repeat(2,1fr);}}
-@media(max-width:640px){.post-grid{grid-template-columns:1fr;}.tab-scroll{padding:0 16px;}.feed-layout{padding:16px 16px 0;}.hero-info{padding:24px 20px;}.hero-title{font-size:22px;}.inline-banner{flex-direction:column;gap:16px;padding:24px;}.ib-btn{width:100%;text-align:center;}.card-pros-cons{display:none;}}
+@media(max-width:640px){.post-grid{grid-template-columns:1fr;}.feed-layout{padding:16px 16px 0;}.hero-info{padding:24px 20px;}.hero-title{font-size:22px;}.inline-banner{flex-direction:column;gap:16px;padding:24px;}.ib-btn{width:100%;text-align:center;}.card-pros-cons{display:none;}}
 @media(max-width:480px){.feed-section-header{flex-direction:column;gap:12px;align-items:flex-start;}.hero-score{display:none;}}
 :root{--bg-page:#fbfcfd;--text-main:#191c1e;--text-sub:#45464d;--text-light:#76777d;--primary:#00677f;--primary-dark:#004d5f;--accent:#00677f;--border:#e0e3e5;--bg-surface:#f7f9fb;--bg-container:#eceef0;--bg-container-low:#f2f4f6;--header-h:64px;--layout-max:1600px;}
 *,html{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'Pretendard',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg-page);color:var(--text-main);line-height:1.6;-webkit-font-smoothing:antialiased;word-break:keep-all;}
 a{text-decoration:none;color:inherit;}
+
+/* ── 헤더 ── */
 .site-header{position:fixed;top:0;width:100%;z-index:500;background:rgba(255,255,255,.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(224,227,229,.4);}
 .header-inner{max-width:var(--layout-max);margin:0 auto;padding:0 40px;height:var(--header-h);display:flex;align-items:center;justify-content:space-between;}
 .logo{font-size:20px;font-weight:800;color:#1e293b;letter-spacing:-.03em;display:flex;align-items:center;}
@@ -144,6 +144,8 @@ a{text-decoration:none;color:inherit;}
 .sidebar-overlay.active{display:block;}
 .progress-container{position:fixed;top:var(--header-h);left:0;width:100%;height:2px;z-index:1000;}
 .progress-bar{height:100%;background:var(--primary);width:0%;transition:width .1s ease-out;}
+
+/* ── 푸터 ── */
 .footer{background:#fff;border-top:1px solid #eceef0;padding:48px 40px 32px;font-size:14px;}
 .footer-inner{max-width:var(--layout-max);margin:0 auto;display:flex;flex-direction:column;}
 .footer-main{display:flex;justify-content:space-between;align-items:center;padding-bottom:28px;}
@@ -178,14 +180,14 @@ a{text-decoration:none;color:inherit;}
 <button id="m-sidebar-close" class="m-sidebar-close-btn"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
 </div>
 <nav class="m-nav-list"><a href="https://pickrise.com/index.html#스마트기기" class="active">스마트기기</a><a href="https://pickrise.com/index.html#PC/노트북">PC/노트북</a><a href="https://pickrise.com/index.html#생활가전">생활가전</a><a href="https://pickrise.com/index.html#테크트렌드">테크트렌드</a></nav></div>
-<div class="filter-bar"><div class="filter-inner"><div class="tab-scroll"><button class="cat-tab active" data-tag="전체">전체</button><button class="cat-tab special-tab" data-tag="가성비 Best">가성비 Best</button><button class="cat-tab special-tab" data-tag="프리미엄 선택">프리미엄 선택</button><button class="cat-tab special-tab" data-tag="구매 가이드">구매 가이드</button><button class="cat-tab" data-tag="가전제품">가전제품</button><button class="cat-tab" data-tag="스마트TV">스마트TV</button></div></div></div>
+
 <div class="index-wrap">
 <div class="feed-layout">
   <div class="feed-main">
     <div id="hero-post-container"></div>
     <div class="feed-section-header">
       <div><div class="feed-section-title">최신 리뷰</div><div class="feed-section-sub">테크 전문가들의 시선으로 담아낸 디바이스 경험</div></div>
-      <div class="sort-btns"><button class="sort-btn active">최신순</button><button class="sort-btn">평점순</button></div>
+      <div class="sort-btns"></div>
     </div>
     <div class="post-grid" id="post-grid"></div>
     <div id="load-more-wrap"><button class="load-more-btn" id="load-more-btn"><span>리뷰 더 보기</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></button></div>
@@ -203,9 +205,8 @@ a{text-decoration:none;color:inherit;}
     <div class="widget-box">
       <div class="widget-header">Top by Category</div>
       <div class="rank-list">
-<div class="rank-item" onclick="document.querySelector('[data-tag=\'생활가전\']')?.click()">
-<span class="rank-label">🍳 생활가전</span>
-<span class="rank-score">1편</span>
+<div class="rank-item" onclick="document.getElementById('search-input').value='생활가전'; document.getElementById('search-input').dispatchEvent(new KeyboardEvent('keydown',{'key':'Enter'}));">
+<span class="rank-label">🍳 생활가전</span><span class="rank-score">2편</span>
 </div></div>
     </div>
     <div class="widget-box">
@@ -224,18 +225,29 @@ a{text-decoration:none;color:inherit;}
 </div>
 <div class="footer-bottom">ⓒ 2026 PickRise Editorial. All rights reserved.</div>
 </div></footer>
+
 <script>
 (function(){
-const posts=[{"id":1775106029500,"groupId":1775106029500,"title":"와이드뷰 FHD QLED 화이트에디션 스마트TV + 삼탠바이미 V3 세트 완전 분석 (원룸·자취생을 위한 이동식 TV의 정석)","filename":"post/wideview-fhd-qled-smarttv-samsung-standbymi-v3.html","excerpt":"바퀴 하나로 삶의 동선이 바뀐다. 고정식 TV의 시대가 저물고 이동식 스탠드형 TV가 주목받는 이유를 이 제품이 명확히 보여줍니다. 화질·이동성·가성비를 실사용 환경 기준으로 낱낱이 점검했습니다.","date":"2026. 4. 2.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1775106029500.webp"}];
+const posts=[{"id":1775110286382,"groupId":1775110286382,"title":"와이드뷰 FHD QLED 화이트에디션 스마트TV + 삼탠바이미 V3 세트 완전 분석 (원룸·자취생을 위한 이동식 TV의 정석)","filename":"post/wideview-fhd-qled-smarttv-samsung-standbyme-v3.html","excerpt":"바퀴 하나로 삶의 동선이 바뀐다. 고정식 TV의 시대가 저물고 이동식 스탠드형 TV가 주목받는 이유를 이 제품이 명확히 보여줍니다. 화질·이동성·가성비를 실사용 환경 기준으로 낱낱이 점검했습니다.","date":"2026. 4. 2.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1775110286382.webp"},{"id":1775106029500,"groupId":1775106029500,"title":"와이드뷰 FHD QLED 화이트에디션 스마트TV + 삼탠바이미 V3 세트 완전 분석 (원룸·자취생을 위한 이동식 TV의 정석)","filename":"post/wideview-fhd-qled-smarttv-samsung-standbymi-v3.html","excerpt":"바퀴 하나로 삶의 동선이 바뀐다. 고정식 TV의 시대가 저물고 이동식 스탠드형 TV가 주목받는 이유를 이 제품이 명확히 보여줍니다. 화질·이동성·가성비를 실사용 환경 기준으로 낱낱이 점검했습니다.","date":"2026. 4. 2.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1775106029500.webp"}];
 posts.sort((a,b)=>b.id-a.id);
-const PER=10;let page=1,filtered=[],activeTag='전체';
+const PER=10;let page=1,filtered=[];
 const heroC=document.getElementById('hero-post-container'),grid=document.getElementById('post-grid'),lmw=document.getElementById('load-more-wrap'),si=document.querySelector('.search-input');
+
+const formatTitle = (t, isHero) => {
+    const m = t.match(/\(([^)]+)\)/);
+    if(m) {
+        return isHero
+            ? `<div class="hero-sub-title">${m[1]}</div><div class="hero-title">${t.replace(m[0], '').trim()}</div>`
+            : `<div class="card-sub-title">${m[1]}</div><div class="card-title">${t.replace(m[0], '').trim()}</div>`;
+    }
+    return isHero ? `<div class="hero-title">${t}</div>` : `<div class="card-title">${t}</div>`;
+};
 
 const heroCard=p=>`<a href="${p.filename}" class="hero-post">
 <div class="hero-thumb"><img src="${p.thumbnail}" alt="${p.title}" fetchpriority="high"></div>
 <div class="hero-overlay"></div>
 <div class="hero-info">
-<div class="hero-info-left"><span class="hero-badge">Editor's Choice</span><div class="hero-title">${p.title}</div><div class="hero-excerpt">${p.excerpt||''}</div></div>
+<div class="hero-info-left"><span class="hero-badge">Editor's Choice</span>${formatTitle(p.title, true)}<div class="hero-excerpt">${p.excerpt||''}</div></div>
 <div class="hero-score"><div class="hero-score-num">9.8</div><div class="hero-score-label">에디터 평점</div></div>
 </div>
 </a>`;
@@ -243,7 +255,7 @@ const heroCard=p=>`<a href="${p.filename}" class="hero-post">
 const postCard=p=>`<a href="${p.filename}" class="post-card">
 <div class="card-thumb"><img src="${p.thumbnail}" alt="${p.title}" loading="lazy"><div class="card-score"><span class="card-score-num">9.2</span><span class="card-score-total">/10</span></div></div>
 <div class="card-body">
-<div class="card-cat">${p.category}</div><div class="card-title">${p.title}</div>
+<div class="card-cat">${p.category}</div>${formatTitle(p.title, false)}
 <div class="card-pros-cons">
 <div class="card-pro"><span class="pro-icon">+</span><span>${p.excerpt?p.excerpt.substring(0,40)+'...':'실사용 리뷰 보기'}</span></div>
 <div class="card-con"><span class="con-icon">−</span><span>상세 스펙 분석 포함</span></div>
@@ -257,11 +269,11 @@ const banner=`<div class="inline-banner" style="grid-column:1/-1;">
 <div class="ib-btn">컬렉션 보기</div>
 </div>`;
 
-const getF=()=>{const kw=(si?si.value:'').toLowerCase().trim();return posts.filter(p=>{const mt=activeTag==='전체'||(p.tags||[]).includes(activeTag);const ms=!kw||p.title.toLowerCase().includes(kw)||(p.excerpt||'').toLowerCase().includes(kw);return mt&&ms;});};
+const getF=()=>{const kw=(si?si.value:'').toLowerCase().trim();return posts.filter(p=>{return !kw||p.title.toLowerCase().includes(kw)||(p.excerpt||'').toLowerCase().includes(kw)||(p.category||'').toLowerCase().includes(kw);});};
 
 function render(reset=false){
   filtered=getF();if(reset){page=1;grid.innerHTML='';if(heroC)heroC.innerHTML='';}
-  if(!filtered.length){grid.innerHTML='<p style="padding:40px;text-align:center;color:#94a3b8;grid-column:1/-1;font-size:14px;">결과가 없습니다.</p>';lmw.style.display='none';return;}
+  if(!filtered.length){grid.innerHTML='<p style="padding:40px;text-align:center;color:#94a3b8;grid-column:1/-1;font-size:14px;">검색 결과가 없습니다.</p>';lmw.style.display='none';return;}
   let items=[];
   if(page===1){if(heroC)heroC.innerHTML=heroCard(filtered[0]);items=filtered.slice(1,PER+1);}
   else{const s=(page-1)*PER+1;items=filtered.slice(s,s+PER);}
@@ -272,7 +284,6 @@ function render(reset=false){
 }
 
 document.getElementById('load-more-btn').addEventListener('click',()=>{page++;render(false);});
-document.querySelectorAll('.cat-tab').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.cat-tab').forEach(x=>x.classList.remove('active'));b.classList.add('active');activeTag=b.dataset.tag;if(si)si.value='';render(true);}));
 if(si)si.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();render(true);}});
 
 const sb=document.getElementById('global-search-box');
@@ -290,14 +301,9 @@ if(si&&sb){
 }
 
 document.querySelectorAll('.tag-cloud-item').forEach(b=>b.addEventListener('click',()=>{
-  const tag=b.dataset.tag,tb=[...document.querySelectorAll('.cat-tab')].find(t=>t.dataset.tag===tag);
-  document.querySelectorAll('.cat-tab').forEach(x=>x.classList.remove('active'));
-  if(tb){tb.classList.add('active');tb.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});}
-  activeTag=tag;if(si)si.value='';render(true);
-  window.scrollTo({top:document.querySelector('.filter-bar').offsetTop-20,behavior:'smooth'});
+  if(si){ si.value=b.dataset.tag; render(true); }
+  window.scrollTo({top:0,behavior:'smooth'});
 }));
-
-document.querySelectorAll('.sort-btn').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.sort-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active');}));
 
 const mb=document.getElementById('m-menu-toggle'),sd=document.getElementById('mobile-sidebar'),ov=document.getElementById('sidebar-overlay'),cb=document.getElementById('m-sidebar-close');
 if(mb)mb.onclick=()=>{sd.classList.add('active');ov.classList.add('active');};
