@@ -99,109 +99,203 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
 .progress-bar{height:100%;background:var(--accent);width:0%;transition:width .1s ease-out;}
 
 
-/* Layout & Container */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --surface: #f7f9fb;
+  --surface-low: #f2f4f6;
+  --surface-high: #e0e3e5;
+  --primary-container: #131b2e;
+  --accent: #3980f4;
+  --text-main: #020617; /* slate-950 */
+  --text-sub: #475569;  /* slate-600 */
+  --text-light: #94a3b8; /* slate-400 */
+  --header-h: 80px;
+  --max-w: 1280px; /* 기존 1440px에서 레이아웃 밀도를 위해 1280px로 축소 */
+}
+
+body {
+  font-family: 'Inter', 'Pretendard', sans-serif;
+  background-color: var(--surface);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+.font-display {
+  font-family: 'Manrope', 'Pretendard', sans-serif;
+  letter-spacing: -0.02em;
+}
+a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
+
+/* ── 헤더 (Glassmorphism) ── */
+.site-header {
+  position: fixed; top: 0; width: 100%; z-index: 500;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+  height: var(--header-h);
+}
+.header-inner {
+  max-width: var(--max-w); margin: 0 auto; padding: 0 32px;
+  height: 100%; display: flex; justify-content: space-between; align-items: center;
+}
+.header-left { display: flex; align-items: center; gap: 48px; }
+.logo { font-family: 'Manrope', sans-serif; font-size: 24px; font-weight: 900; letter-spacing: -0.04em; color: var(--text-main); display:flex; align-items:center; gap:8px;}
+.nav { display: none; gap: 32px; }
+@media (min-width: 768px) { .nav { display: flex; } }
+.nav a { font-size: 15px; font-weight: 600; color: var(--text-sub); font-family: 'Manrope', sans-serif; padding-bottom: 4px; border-bottom: 2px solid transparent; letter-spacing:-0.02em;}
+.nav a:hover, .nav a.active { color: var(--text-main); border-color: var(--text-main); }
+.header-utils { display: flex; gap: 24px; align-items: center; }
+.icon-btn { background: none; border: none; cursor: pointer; color: var(--text-main); display: flex; align-items: center; justify-content: center; }
+.icon-btn:active { opacity: 0.7; transform: scale(0.95); }
+.search-box { position:relative; display:none; }
+.search-box.active { display:block; position:absolute; top:var(--header-h); left:0; width:100%; background:#fff; padding:20px 32px; box-shadow:0 10px 20px rgba(0,0,0,0.05); }
+.search-input { width:100%; max-width:400px; padding:12px 20px; border-radius:30px; border:1px solid var(--surface-high); background:var(--surface-low); font-size:15px; outline:none; transition:0.3s; }
+.search-input:focus { background:#fff; border-color:var(--text-light); }
+
+/* ── 푸터 (No-Line Rule) ── */
+.site-footer {
+  background-color: #f8fafc; border-top: 1px solid var(--surface-high);
+  padding: 96px 0; margin-top: 80px;
+}
+.footer-inner {
+  max-width: var(--max-w); margin: 0 auto; padding: 0 32px;
+  display: flex; flex-direction: column; gap: 48px;
+}
+@media (min-width: 1024px) {
+  .footer-inner { flex-direction: row; justify-content: space-between; align-items: flex-end; }
+}
+.footer-brand-info { max-width: 400px; }
+.footer-logo { font-family: 'Manrope', sans-serif; font-size: 20px; font-weight: 800; color: var(--text-main); margin-bottom: 24px; }
+.footer-desc { font-size: 16px; color: var(--text-sub); line-height: 1.8; margin-bottom: 24px; }
+.footer-copyright { font-size: 14px; font-weight: 500; color: var(--text-light); }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 32px; }
+.footer-nav a { font-size: 15px; font-weight: 500; color: var(--text-sub); text-decoration: underline; text-underline-offset: 4px; }
+.footer-nav a:hover { color: var(--text-main); }
+.footer-nav a.accent { color: #2563eb; font-weight: 700; }
+.footer-nav a.accent:hover { color: #1d4ed8; }
+
+/* 프로그레스 / 모달 기본 유지 */
+.progress-container{position:fixed;top:var(--header-h);left:0;width:100%;height:2px;z-index:1000;}
+.progress-bar{height:100%;background:var(--accent);width:0%;transition:width .1s ease-out;}
+
+/* ── 메인 레이아웃 ── */
 .index-wrap { padding-top: calc(var(--header-h) + 48px); padding-bottom: 80px; max-width: var(--max-w); margin: 0 auto; padding-left: 32px; padding-right: 32px; }
 
-/* Category Chips (Horizontal Scroll) */
-.chip-scroll { display: flex; gap: 12px; overflow-x: auto; padding-bottom: 16px; margin-bottom: 48px; scrollbar-width: none; }
+/* Category Chips */
+.chip-scroll { display: flex; gap: 12px; overflow-x: auto; padding-bottom: 16px; margin-bottom: 56px; scrollbar-width: none; }
 .chip-scroll::-webkit-scrollbar { display: none; }
 .cat-tab { display: flex; align-items: center; gap: 8px; padding: 10px 24px; border-radius: 999px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; white-space: nowrap; border: none; font-family: 'Inter', sans-serif;}
 .cat-tab.active { background: var(--primary-container); color: #fff; box-shadow: 0 10px 20px rgba(19, 27, 46, 0.15); transform: translateY(-2px); }
 .cat-tab:not(.active) { background: var(--surface-high); color: var(--text-main); }
 .cat-tab:not(.active):hover { background: var(--surface-low); color: var(--text-main); }
 
-/* Hero Section (Centerfold Style) */
-.hero-section { position: relative; border-radius: 12px; overflow: hidden; margin-bottom: 96px; display: grid; grid-template-columns: 1fr; background: var(--primary-container); min-height: 600px; cursor: pointer; text-decoration:none; transition: all 0.5s ease;}
-@media (min-width: 1024px) { .hero-section { grid-template-columns: 1fr 1fr; } }
-.hero-content { padding: 48px; z-index: 10; display:flex; flex-direction:column; justify-content:center; }
-@media (min-width: 1024px) { .hero-content { padding: 80px; } }
-.hero-badge { align-self: flex-start; background: var(--accent); color: #fff; font-size: 12px; font-weight: 800; padding: 4px 16px; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 24px; }
-.hero-sub-title { font-size: 20px; color: #94a3b8; font-weight: 500; margin-bottom: 8px; }
-.hero-title { font-size: clamp(32px, 4vw, 60px); font-weight: 800; color: #fff; line-height: 1.15; margin-bottom: 24px; font-family: 'Manrope', 'Pretendard', sans-serif; letter-spacing: -0.04em;}
-.hero-excerpt { font-size: 18px; color: #cbd5e1; line-height: 1.6; margin-bottom: 40px; max-width: 500px; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;}
-.hero-read-btn { align-self: flex-start; display: flex; align-items: center; gap: 12px; background: #fff; color: var(--primary-container); font-weight: 800; padding: 16px 32px; border-radius: 8px; font-size: 16px; transition: all 0.3s; box-shadow: 0 20px 40px rgba(0,0,0,0.2);}
-.hero-section:hover .hero-read-btn { background: var(--surface-low); }
-.hero-image { position: relative; min-height: 400px; overflow:hidden; }
-.hero-image img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s ease; image-rendering: crisp-edges; }
+/* Hero Section (완벽한 비율로 수정) */
+.hero-section { position: relative; border-radius: 16px; overflow: hidden; margin-bottom: 96px; display: grid; grid-template-columns: 1fr; background: var(--primary-container); min-height: 500px; cursor: pointer; text-decoration:none; transition: all 0.5s ease; box-shadow: 0 25px 50px rgba(15,23,42,0.15);}
+@media (min-width: 1024px) {
+    .hero-section { grid-template-columns: 1.2fr 1fr; } /* 텍스트 55%, 이미지 45% 비율 */
+}
+.hero-content { padding: 48px; z-index: 10; display:flex; flex-direction:column; justify-content:center; background: var(--primary-container);}
+@media (min-width: 1024px) { .hero-content { padding: 64px 80px; } }
+.hero-badge { align-self: flex-start; background: #fff; color: #000; font-size: 12px; font-weight: 800; padding: 6px 16px; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 24px; }
+.hero-sub-title { font-size: 18px; color: #94a3b8; font-weight: 600; margin-bottom: 8px; }
+.hero-title { font-size: clamp(32px, 3.5vw, 56px); font-weight: 800; color: #fff; line-height: 1.2; margin-bottom: 24px; font-family: 'Manrope', 'Pretendard', sans-serif; letter-spacing: -0.04em;}
+.hero-excerpt { font-size: 17px; color: #cbd5e1; line-height: 1.6; margin-bottom: 40px; max-width: 90%; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;}
+.hero-read-btn { align-self: flex-start; display: flex; align-items: center; gap: 12px; background: transparent; color: #fff; font-weight: 800; font-size: 16px; transition: all 0.3s; padding-bottom:4px; border-bottom: 2px solid #fff;}
+.hero-section:hover .hero-read-btn { gap: 16px; color: var(--accent); border-color: var(--accent); }
+
+/* 히어로 이미지 영역 (그라데이션 자연스럽게 연결) */
+.hero-image { position: relative; min-height: 300px; overflow:hidden; background: #0a0f1c; }
+.hero-image img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: right center; transition: transform 0.7s ease; image-rendering: crisp-edges; }
 .hero-section:hover .hero-image img { transform: scale(1.05); }
-.hero-gradient { position: absolute; inset: 0; background: linear-gradient(to top, var(--primary-container), transparent); }
-@media (min-width: 1024px) { .hero-gradient { background: linear-gradient(to right, var(--primary-container), transparent); } }
+.hero-gradient { position: absolute; inset: 0; background: linear-gradient(to top, var(--primary-container) 0%, transparent 40%); }
+@media (min-width: 1024px) {
+    .hero-gradient { background: linear-gradient(to right, var(--primary-container) 0%, rgba(19,27,46,0.5) 40%, transparent 100%); }
+}
 
 /* Feed Layout Grid */
 .feed-layout { display: grid; grid-template-columns: 1fr; gap: 64px; }
-@media (min-width: 1024px) { .feed-layout { grid-template-columns: 2fr 1fr; } }
+@media (min-width: 1024px) { .feed-layout { grid-template-columns: 1fr 340px; gap: 80px; } }
 
 /* Main Feed */
-.feed-header { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 1px solid var(--surface-high); padding-bottom: 24px; margin-bottom: 40px; }
-.feed-title { font-size: 32px; font-weight: 800; color: var(--text-main); font-family: 'Manrope', 'Pretendard', sans-serif; letter-spacing: -0.04em;}
-.feed-count { font-weight: 500; color: var(--text-sub); }
+.feed-header { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 2px solid var(--text-main); padding-bottom: 20px; margin-bottom: 48px; }
+.feed-title { font-size: 28px; font-weight: 800; color: var(--text-main); font-family: 'Manrope', 'Pretendard', sans-serif; letter-spacing: -0.04em;}
+.feed-count { font-weight: 600; color: var(--text-sub); font-size: 15px;}
 
-/* No-Line Rule Cards */
-.post-grid { display: flex; flex-direction: column; gap: 64px; }
-.post-card { display: grid; grid-template-columns: 1fr; gap: 32px; cursor: pointer; transition: all 0.3s ease; text-decoration:none; }
-@media (min-width: 768px) { .post-card { grid-template-columns: 280px 1fr; align-items: center; } }
-.post-card:hover .card-title { color: var(--accent); }
-.card-thumb { border-radius: 8px; overflow: hidden; aspect-ratio: 16/10; background: var(--surface-low); }
-@media (min-width: 768px) { .card-thumb { height: 100%; } }
-.card-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; image-rendering: crisp-edges;}
+/* 리뷰 카드 (No-Line Rule, 고급스러운 여백) */
+.post-grid { display: flex; flex-direction: column; gap: 48px; }
+.post-card { display: grid; grid-template-columns: 1fr; gap: 24px; cursor: pointer; transition: all 0.3s ease; text-decoration:none; padding: 24px; border-radius: 16px; background: transparent;}
+.post-card:hover { background: #fff; box-shadow: 0 20px 40px rgba(0,0,0,0.04); transform: translateY(-4px); }
+@media (min-width: 768px) {
+    .post-card { grid-template-columns: 260px 1fr; align-items: center; gap: 40px; padding: 24px; }
+}
+.card-thumb { border-radius: 12px; overflow: hidden; aspect-ratio: 4/3; background: #0f182b; position: relative; box-shadow: 0 10px 20px rgba(0,0,0,0.06);}
+.card-thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform 0.5s ease; image-rendering: crisp-edges;}
 .post-card:hover .card-thumb img { transform: scale(1.05); }
-.card-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
-.card-cat { font-size: 12px; font-weight: 800; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em; font-family: 'Inter', sans-serif;}
-.meta-dot { width: 4px; height: 4px; background: var(--surface-high); border-radius: 50%; }
-.card-date { font-size: 13px; color: var(--text-sub); }
-.card-title { font-family: 'Manrope', 'Pretendard', sans-serif; font-size: 24px; font-weight: 800; color: var(--text-main); line-height: 1.4; margin-bottom: 16px; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; letter-spacing: -0.02em;}
-.card-sub-title { font-size: 14px; color: var(--text-sub); font-weight: 600; margin-bottom: 4px; }
-.card-excerpt { font-family: 'Inter', sans-serif; font-size: 16px; color: var(--text-sub); line-height: 1.6; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;}
-.card-more { display: flex; align-items: center; gap: 8px; color: var(--accent); font-weight: 700; font-size: 14px; margin-top: 16px; }
+.card-body { display: flex; flex-direction: column; justify-content: center;}
+.card-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.card-cat { font-size: 11px; font-weight: 800; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em; font-family: 'Inter', sans-serif; background: rgba(57, 128, 244, 0.1); padding: 4px 10px; border-radius: 6px;}
+.card-date { font-size: 14px; color: var(--text-light); font-weight: 500;}
+.card-title { font-family: 'Manrope', 'Pretendard', sans-serif; font-size: 24px; font-weight: 800; color: var(--text-main); line-height: 1.4; margin-bottom: 16px; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; letter-spacing: -0.02em; transition: color 0.2s;}
+.post-card:hover .card-title { color: var(--accent); }
+.card-sub-title { font-size: 15px; color: var(--text-sub); font-weight: 600; margin-bottom: 4px; }
+.card-excerpt { font-family: 'Inter', sans-serif; font-size: 15px; color: var(--text-sub); line-height: 1.6; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;}
 
 /* Load More */
-#load-more-wrap { display: flex; justify-content: center; margin-top: 80px; }
-.load-more-btn { display: flex; align-items: center; justify-content: center; gap:8px; padding: 16px 32px; border-radius: 12px; background: #fff; border: 1px solid var(--surface-high); cursor: pointer; transition: all 0.3s ease; font-weight: 700; color: var(--text-main); }
-.load-more-btn:hover { background: var(--surface-low); border-color: var(--text-light); }
+#load-more-wrap { display: flex; justify-content: center; margin-top: 64px; }
+.load-more-btn { display: flex; align-items: center; justify-content: center; gap:8px; padding: 16px 40px; border-radius: 999px; background: #fff; border: 1px solid var(--surface-high); cursor: pointer; transition: all 0.3s ease; font-weight: 700; font-size: 15px; color: var(--text-main); box-shadow: 0 4px 10px rgba(0,0,0,0.02);}
+.load-more-btn:hover { background: var(--surface-low); border-color: var(--text-light); transform: translateY(-2px); }
 
-/* Sidebar */
+/* Sidebar (우측 사이드바) */
 .feed-sidebar { display: flex; flex-direction: column; gap: 48px; position:sticky; top:calc(var(--header-h) + 40px);}
 .widget-editor { background: var(--surface-low); border-radius: 16px; padding: 32px; }
 .editor-profile { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; }
-.editor-img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; filter: grayscale(100%); }
-.editor-name { font-size: 18px; font-weight: 800; color: var(--text-main); }
-.editor-role { font-size: 14px; font-weight: 500; color: var(--text-sub); }
-.editor-desc { font-size: 14px; color: var(--text-sub); line-height: 1.8; }
+.editor-img { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; filter: grayscale(100%); }
+.editor-name { font-size: 16px; font-weight: 800; color: var(--text-main); }
+.editor-role { font-size: 13px; font-weight: 500; color: var(--text-sub); margin-top: 2px;}
+.editor-desc { font-size: 14px; color: var(--text-sub); line-height: 1.7; }
 
-.widget-title { font-size: 14px; font-weight: 800; color: var(--text-main); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 24px; display: flex; align-items: center; gap: 8px; }
-.widget-title::before { content: ''; display: block; width: 24px; height: 3px; background: var(--accent); }
+.widget-title { font-size: 13px; font-weight: 800; color: var(--text-main); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 24px; display: flex; align-items: center; gap: 8px; }
+.widget-title::before { content: ''; display: block; width: 24px; height: 3px; background: var(--text-main); }
 
 .tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; }
-.tag-item { padding: 8px 16px; background: #fff; border: 1px solid var(--surface-high); border-radius: 8px; font-size: 14px; color: var(--text-sub); transition: all 0.2s; cursor: pointer; }
+.tag-item { padding: 8px 16px; background: #fff; border: 1px solid var(--surface-high); border-radius: 8px; font-size: 13px; font-weight: 500; color: var(--text-sub); transition: all 0.2s; cursor: pointer; }
 .tag-item:hover { border-color: var(--text-main); color: var(--text-main); }
 
 .cat-list { display: flex; flex-direction: column; gap: 16px; }
 .cat-list-item { display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
-.cat-list-name { font-weight: 600; color: var(--text-sub); transition: color 0.2s; }
+.cat-list-name { font-weight: 600; font-size: 15px; color: var(--text-sub); transition: color 0.2s; }
 .cat-list-item:hover .cat-list-name { color: var(--text-main); }
-.cat-list-count { font-size: 12px; background: var(--surface-high); padding: 2px 8px; border-radius: 4px; color: var(--text-sub); }
+.cat-list-count { font-size: 12px; font-weight: 700; background: var(--surface-high); padding: 4px 10px; border-radius: 6px; color: var(--text-sub); }
 
 .widget-newsletter { background: var(--primary-container); border-radius: 16px; padding: 32px; color: #fff; }
-.nl-title { font-size: 20px; font-weight: 800; margin-bottom: 16px; }
+.nl-title { font-size: 18px; font-weight: 800; margin-bottom: 12px; }
 .nl-desc { font-size: 14px; color: #94a3b8; line-height: 1.6; margin-bottom: 24px; }
-.nl-input { width: 100%; padding: 12px 16px; border-radius: 8px; border: none; background: rgba(255,255,255,0.1); color: #fff; margin-bottom: 16px; outline:none; }
+.nl-input { width: 100%; padding: 14px 16px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #fff; margin-bottom: 16px; outline:none; font-size: 14px;}
 .nl-input::placeholder { color: #64748b; }
-.nl-btn { width: 100%; padding: 12px; border-radius: 8px; border: none; background: #fff; color: var(--primary-container); font-weight: 800; cursor: pointer; transition: background 0.2s; }
+.nl-input:focus { border-color: #fff; }
+.nl-btn { width: 100%; padding: 14px; border-radius: 8px; border: none; background: #fff; color: var(--primary-container); font-weight: 800; font-size: 14px; cursor: pointer; transition: background 0.2s; }
 .nl-btn:hover { background: var(--surface-low); }
 
 /* Live Search */
 .search-box.active .search-input { width: 100%; }
 
 @media (max-width: 1024px) {
-  .hero-content { padding: 40px; background: rgba(19,27,46,0.85); backdrop-filter: blur(12px); border-radius: 12px; margin: 20px; }
+  .hero-section { grid-template-columns: 1fr; min-height: 480px;}
+  .hero-content { padding: 40px; background: rgba(19,27,46,0.85); backdrop-filter: blur(12px); border-radius: 12px; margin: 20px; z-index: 10; position: absolute; bottom: 0; left: 0; right: 0; }
+  .hero-image { position: absolute; inset: 0; height: 100%; min-height: auto;}
   .hero-gradient { background: linear-gradient(to top, rgba(19,27,46,0.9), transparent); }
 }
 @media (max-width: 768px) {
   .index-wrap { padding-left: 20px; padding-right: 20px; }
   .feed-layout { gap: 40px; }
-  .post-card { grid-template-columns: 1fr; gap: 16px; }
+  .post-card { grid-template-columns: 1fr; gap: 20px; padding: 16px; border: 1px solid var(--surface-high); background: #fff;}
   .card-thumb { aspect-ratio: 16/9; }
+  .card-body { padding: 8px 0 0 0; }
   .feed-sidebar { display: none; }
+  .hero-section { min-height: 560px; } /* 모바일에서 높이 증가 */
+  .hero-title { font-size: 28px; }
+  .hero-content { margin: 16px; padding: 24px; }
 }
 
 </style>
@@ -288,8 +382,8 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
 
             <div id="load-more-wrap">
                 <button class="load-more-btn" id="load-more-btn">
-                    <span>리뷰 더 보기</span>
-                    <span class="material-symbols-outlined">expand_more</span>
+                    <span>리포트 더 보기</span>
+                    <span class="material-symbols-outlined" style="font-size: 20px;">expand_more</span>
                 </button>
             </div>
         </div>
@@ -348,7 +442,7 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
 
 <script>
 (function(){
-const posts=[{"id":1775129364100,"groupId":1775129364100,"title":"와이드뷰 FHD QLED 화이트에디션 스마트TV + 삼탠바이미 V3 세트 완전 분석 (원룸·자취생을 위한 이동식 TV의 정석)","filename":"post/wideview-fhd-qled-tv-samsung-standbymeby-v3.html","excerpt":"바퀴 하나로 삶의 동선이 바뀐다. 고정식 TV의 시대가 저물고 이동식 스탠드형 TV가 주목받는 이유를 이 제품이 명확히 보여줍니다. 화질·이동성·가성비를 실사용 환경 기준으로 낱낱이 점검했습니다.","date":"2026. 4. 2.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1775129364100.webp"},{"id":1775128371746,"groupId":1775128371746,"title":"와이드뷰 FHD QLED 화이트에디션 스마트TV + 삼탠바이미 V3 세트 완전 분석 (원룸·자취생을 위한 이동식 TV의 정석)","filename":"post/wideview-fhd-qled-smarttv-samsung-stanbyme-v3.html","excerpt":"바퀴 하나로 삶의 동선이 바뀐다. 고정식 TV의 시대가 저물고 이동식 스탠드형 TV가 주목받는 이유를 이 제품이 명확히 보여줍니다. 화질·이동성·가성비를 실사용 환경 기준으로 낱낱이 점검했습니다.","date":"2026. 4. 2.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1775128371746.webp"},{"id":1775118020094,"groupId":1775118020094,"title":"와이드뷰 FHD QLED 화이트에디션 스마트TV + 삼탠바이미 V3 세트 완전 분석 (원룸·자취생을 위한 이동식 TV의 정석)","filename":"post/wideview-fhd-qled-tv-samsung-standbymi-v3.html","excerpt":"바퀴 하나로 삶의 동선이 바뀐다. 고정식 TV의 시대가 저물고 이동식 스탠드형 TV가 주목받는 이유를 이 제품이 명확히 보여줍니다. 화질·이동성·가성비를 실사용 환경 기준으로 낱낱이 점검했습니다.","date":"2026. 4. 2.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1775118020094.webp"},{"id":1775115678066,"groupId":1775117803389,"title":"와이드뷰 FHD QLED 화이트에디션 스마트TV + 삼탠바이미 V3 세트 완전 분석 (원룸·자취생을 위한 이동식 TV의 정석)","filename":"post/wideview-fhd-qled-smarttv-samtandbyme-v3.html","excerpt":"바퀴 하나로 삶의 동선이 바뀐다. 고정식 TV의 시대가 저물고 이동식 스탠드형 TV가 주목받는 이유를 이 제품이 명확히 보여줍니다. 화질·이동성·가성비를 실사용 환경 기준으로 낱낱이 점검했습니다.","date":"2026. 4. 2.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1775115678066.webp"},{"id":1775114962750,"groupId":1775117710292,"title":"와이드뷰 FHD QLED 화이트에디션 스마트TV + 삼탠바이미 V3 세트 완전 분석 (원룸·자취생을 위한 이동식 TV의 정석)","filename":"post/wideview-fhd-qled-smarttv-samsung-standbymeby-v3.html","excerpt":"바퀴 하나로 삶의 동선이 바뀐다. 고정식 TV의 시대가 저물고 이동식 스탠드형 TV가 주목받는 이유를 이 제품이 명확히 보여줍니다. 화질·이동성·가성비를 실사용 환경 기준으로 낱낱이 점검했습니다.","date":"2026. 4. 2.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1775114962750.webp"},{"id":1775112832852,"groupId":1775114225012,"title":"쿠쿠 전기보온 에그밥솥 6인용 실사용 리뷰 및 밥맛 테스트 (압력밥솥 vs 전기밥솥, 진짜 차이는?)","filename":"post/cuckoo-egg-rice-cooker-review.html","excerpt":"동글동글 귀여운 에그 디자인과 에너지 효율 1등급, 그리고 10% 환급 혜택까지. 6만 원대 가성비 밥솥의 실제 밥맛은 과연 어떨까요? 자취생부터 소가족까지, 30개의 실사용 후기를 바탕으로 장단점을 낱낱이 공개합니다.","date":"2026. 3. 6.","category":"생활가전","tags":["가전제품","리뷰"],"keywords":"가전제품, 리뷰","thumbnail":"https://pickrise.com/images/thumb-1775112832852.webp"},{"id":1775112330132,"groupId":1775118868294,"title":"와이드뷰 FHD QLED 화이트에디션 스마트TV + 삼탠바이미 V3 세트 완전 분석 (원룸·자취생을 위한 이동식 TV의 정석)","filename":"post/wideview-fhd-qled-tv-samtandbyme-v3.html","excerpt":"바퀴 하나로 삶의 동선이 바뀐다. 고정식 TV의 시대가 저물고 이동식 스탠드형 TV가 주목받는 이유를 이 제품이 명확히 보여줍니다. 화질·이동성·가성비를 실사용 환경 기준으로 낱낱이 점검했습니다.","date":"2026. 4. 2.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1775112330132.webp"},{"id":1775111274888,"groupId":1775111274888,"title":"와이드뷰 FHD QLED 화이트에디션 스마트TV + 삼탠바이미 V3 세트 완전 분석 (원룸·자취생을 위한 이동식 TV의 정석)","filename":"post/wideview-fhd-qled-smarttv-samsung-stantvbyme-v3.html","excerpt":"바퀴 하나로 삶의 동선이 바뀐다. 고정식 TV의 시대가 저물고 이동식 스탠드형 TV가 주목받는 이유를 이 제품이 명확히 보여줍니다. 화질·이동성·가성비를 실사용 환경 기준으로 낱낱이 점검했습니다.","date":"2026. 4. 2.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1775111274888.webp"},{"id":1775110286382,"groupId":1775110286382,"title":"와이드뷰 FHD QLED 화이트에디션 스마트TV + 삼탠바이미 V3 세트 완전 분석 (원룸·자취생을 위한 이동식 TV의 정석)","filename":"post/wideview-fhd-qled-smarttv-samsung-standbyme-v3.html","excerpt":"바퀴 하나로 삶의 동선이 바뀐다. 고정식 TV의 시대가 저물고 이동식 스탠드형 TV가 주목받는 이유를 이 제품이 명확히 보여줍니다. 화질·이동성·가성비를 실사용 환경 기준으로 낱낱이 점검했습니다.","date":"2026. 4. 2.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1775110286382.webp"},{"id":1775106029500,"groupId":1775106029500,"title":"와이드뷰 FHD QLED 화이트에디션 스마트TV + 삼탠바이미 V3 세트 완전 분석 (원룸·자취생을 위한 이동식 TV의 정석)","filename":"post/wideview-fhd-qled-smarttv-samsung-standbymi-v3.html","excerpt":"바퀴 하나로 삶의 동선이 바뀐다. 고정식 TV의 시대가 저물고 이동식 스탠드형 TV가 주목받는 이유를 이 제품이 명확히 보여줍니다. 화질·이동성·가성비를 실사용 환경 기준으로 낱낱이 점검했습니다.","date":"2026. 4. 2.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1775106029500.webp"}];
+const posts=[{"id":1775129364100,"groupId":1775129364100,"title":"와이드뷰 FHD QLED 화이트에디션 스마트TV + 삼탠바이미 V3 세트 완전 분석 (원룸·자취생을 위한 이동식 TV의 정석)","filename":"post/wideview-fhd-qled-tv-samsung-standbymeby-v3.html","excerpt":"바퀴 하나로 삶의 동선이 바뀐다. 고정식 TV의 시대가 저물고 이동식 스탠드형 TV가 주목받는 이유를 이 제품이 명확히 보여줍니다. 화질·이동성·가성비를 실사용 환경 기준으로 낱낱이 점검했습니다.","date":"2026. 4. 2.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1775129364100.webp"},{"id":1775128371746,"groupId":1775128371746,"title":"와이드뷰 FHD QLED 화이트에디션 스마트TV + 삼탠바이미 V3 세트 완전 분석 (원룸·자취생을 위한 이동식 TV의 정석)","filename":"post/wideview-fhd-qled-smarttv-samsung-stanbyme-v3.html","excerpt":"바퀴 하나로 삶의 동선이 바뀐다. 고정식 TV의 시대가 저물고 이동식 스탠드형 TV가 주목받는 이유를 이 제품이 명확히 보여줍니다. 화질·이동성·가성비를 실사용 환경 기준으로 낱낱이 점검했습니다.","date":"2026. 4. 2.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1775128371746.webp"},{"id":1775118020094,"groupId":1775118020094,"title":"와이드뷰 FHD QLED 화이트에디션 스마트TV + 삼탠바이미 V3 세트 완전 분석 (원룸·자취생을 위한 이동식 TV의 정석)","filename":"post/wideview-fhd-qled-tv-samsung-standbymi-v3.html","excerpt":"바퀴 하나로 삶의 동선이 바뀐다. 고정식 TV의 시대가 저물고 이동식 스탠드형 TV가 주목받는 이유를 이 제품이 명확히 보여줍니다. 화질·이동성·가성비를 실사용 환경 기준으로 낱낱이 점검했습니다.","date":"2026. 4. 2.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1775118020094.webp"},{"id":1775115678066,"groupId":1775117803389,"title":"와이드뷰 FHD QLED 화이트에디션 스마트TV + 삼탠바이미 V3 세트 완전 분석 (원룸·자취생을 위한 이동식 TV의 정석)","filename":"post/wideview-fhd-qled-smarttv-samtandbyme-v3.html","excerpt":"바퀴 하나로 삶의 동선이 바뀐다. 고정식 TV의 시대가 저물고 이동식 스탠드형 TV가 주목받는 이유를 이 제품이 명확히 보여줍니다. 화질·이동성·가성비를 실사용 환경 기준으로 낱낱이 점검했습니다.","date":"2026. 4. 2.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1775115678066.webp"},{"id":1775114962750,"groupId":1775117710292,"title":"와이드뷰 FHD QLED 화이트에디션 스마트TV + 삼탠바이미 V3 세트 완전 분석 (원룸·자취생을 위한 이동식 TV의 정석)","filename":"post/wideview-fhd-qled-smarttv-samsung-standbymeby-v3.html","excerpt":"바퀴 하나로 삶의 동선이 바뀐다. 고정식 TV의 시대가 저물고 이동식 스탠드형 TV가 주목받는 이유를 이 제품이 명확히 보여줍니다. 화질·이동성·가성비를 실사용 환경 기준으로 낱낱이 점검했습니다.","date":"2026. 4. 2.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1775114962750.webp"},{"id":1775112832852,"groupId":1775129558832,"title":"쿠쿠 전기보온 에그밥솥 6인용 실사용 리뷰 및 밥맛 테스트 (압력밥솥 vs 전기밥솥, 진짜 차이는?)","filename":"post/cuckoo-egg-rice-cooker-review.html","excerpt":"동글동글 귀여운 에그 디자인과 에너지 효율 1등급, 그리고 10% 환급 혜택까지. 6만 원대 가성비 밥솥의 실제 밥맛은 과연 어떨까요? 자취생부터 소가족까지, 30개의 실사용 후기를 바탕으로 장단점을 낱낱이 공개합니다.","date":"2026. 3. 6.","category":"생활가전","tags":["가전제품","리뷰"],"keywords":"가전제품, 리뷰","thumbnail":"https://pickrise.com/images/thumb-1775112832852.webp"},{"id":1775112330132,"groupId":1775118868294,"title":"와이드뷰 FHD QLED 화이트에디션 스마트TV + 삼탠바이미 V3 세트 완전 분석 (원룸·자취생을 위한 이동식 TV의 정석)","filename":"post/wideview-fhd-qled-tv-samtandbyme-v3.html","excerpt":"바퀴 하나로 삶의 동선이 바뀐다. 고정식 TV의 시대가 저물고 이동식 스탠드형 TV가 주목받는 이유를 이 제품이 명확히 보여줍니다. 화질·이동성·가성비를 실사용 환경 기준으로 낱낱이 점검했습니다.","date":"2026. 4. 2.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1775112330132.webp"},{"id":1775111274888,"groupId":1775111274888,"title":"와이드뷰 FHD QLED 화이트에디션 스마트TV + 삼탠바이미 V3 세트 완전 분석 (원룸·자취생을 위한 이동식 TV의 정석)","filename":"post/wideview-fhd-qled-smarttv-samsung-stantvbyme-v3.html","excerpt":"바퀴 하나로 삶의 동선이 바뀐다. 고정식 TV의 시대가 저물고 이동식 스탠드형 TV가 주목받는 이유를 이 제품이 명확히 보여줍니다. 화질·이동성·가성비를 실사용 환경 기준으로 낱낱이 점검했습니다.","date":"2026. 4. 2.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1775111274888.webp"},{"id":1775110286382,"groupId":1775110286382,"title":"와이드뷰 FHD QLED 화이트에디션 스마트TV + 삼탠바이미 V3 세트 완전 분석 (원룸·자취생을 위한 이동식 TV의 정석)","filename":"post/wideview-fhd-qled-smarttv-samsung-standbyme-v3.html","excerpt":"바퀴 하나로 삶의 동선이 바뀐다. 고정식 TV의 시대가 저물고 이동식 스탠드형 TV가 주목받는 이유를 이 제품이 명확히 보여줍니다. 화질·이동성·가성비를 실사용 환경 기준으로 낱낱이 점검했습니다.","date":"2026. 4. 2.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1775110286382.webp"},{"id":1775106029500,"groupId":1775106029500,"title":"와이드뷰 FHD QLED 화이트에디션 스마트TV + 삼탠바이미 V3 세트 완전 분석 (원룸·자취생을 위한 이동식 TV의 정석)","filename":"post/wideview-fhd-qled-smarttv-samsung-standbymi-v3.html","excerpt":"바퀴 하나로 삶의 동선이 바뀐다. 고정식 TV의 시대가 저물고 이동식 스탠드형 TV가 주목받는 이유를 이 제품이 명확히 보여줍니다. 화질·이동성·가성비를 실사용 환경 기준으로 낱낱이 점검했습니다.","date":"2026. 4. 2.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1775106029500.webp"}];
 posts.sort((a,b)=>b.id-a.id);
 const PER=10; let page=1, filtered=[];
 const heroC=document.getElementById('hero-post-container'), grid=document.getElementById('post-grid'), lmw=document.getElementById('load-more-wrap'), si=document.querySelector('.search-input');
@@ -390,7 +484,6 @@ const postCard=p=> {
             </div>
             ${formatTitle(p.title, false)}
             <div class="card-excerpt">${p.excerpt||''}</div>
-            <div class="card-more">자세히 보기 <span class="material-symbols-outlined" style="font-size:16px;">north_east</span></div>
         </div>
     </a>`;
 };
