@@ -175,9 +175,9 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
         top: 0;
         left: 0;
         bottom: 0;
-        width: 60%;
-        padding: 40px; /* 요청하신 패딩 반영 */
-        background-color: transparent; /* 데스크탑은 그라데이션 배경 사용 */
+        width: 50%;
+        padding: 40px;
+        background-color: transparent;
     }
 }
 
@@ -201,6 +201,7 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
     margin-bottom: 20px;
     letter-spacing: -0.04em;
     font-family: 'Manrope', 'Pretendard', sans-serif;
+    /* text-shadow: 0 0px 13px rgba(0, 0, 0, 0.25); */
 }
 .hero-sub-title {
     font-size: 18px;
@@ -213,7 +214,6 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
     color: #94a3b8;
     line-height: 1.625;
     font-weight: 300; /* 요청하신 폰트 웨이트 300 반영 */
-    margin-bottom: 40px;
     max-width: 480px;
     font-family: 'Inter', 'Pretendard', sans-serif;
     display: -webkit-box;
@@ -249,13 +249,13 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
     background-color: #0f182b;
 }
 @media (min-width: 1024px) {
-    .hero-image-wrap {
+        .hero-image-wrap {
         position: absolute;
-        top: 0;
+        top: 20px;
         right: 0;
         bottom: 0;
         height: 100%;
-        width: 75%; /* 데스크탑에서는 우측 75%까지 이미지 확장 */
+        width: 65%;
     }
 }
 .hero-image-wrap img {
@@ -366,16 +366,16 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
 /* ── 평점 배지 UI ── */
 .score-badge-hero {
     position: absolute;
-    bottom: 24px;
+    bottom: 44px;
     right: 24px;
     background: #1a1a1c;
     border-radius: 12px;
-    padding: 16px 20px;
+    padding: 20px 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    /* border: 1px solid rgba(255, 255, 255, 0.08); */
     z-index: 20;
 }
 .score-badge-hero .sb-label {
@@ -383,11 +383,10 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
     color: #94a3b8;
     letter-spacing: 0.05em; /* 한글에 맞게 자간 축소 */
     margin-bottom: 6px;
-    font-weight: 700;
 }
 .score-badge-hero .sb-value {
     font-size: 36px;
-    font-weight: 800;
+    font-weight: 600;
     color: #ffffff;
     font-family: 'Manrope', 'Pretendard', sans-serif;
     line-height: 1;
@@ -398,8 +397,8 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
 }
 .score-badge-hero .sb-value span {
     font-size: 16px;
-    color: #64748b;
-    font-weight: 600;
+    color: #656565;
+    font-weight: 500;
 }
 .score-badge-hero .sb-stars {
     font-size: 16px;
@@ -513,11 +512,6 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
                 #가전제품
             </button>
         
-            <button class="cat-tab " data-tag="리뷰">
-                <span class="material-symbols-outlined" style="font-size:18px;">tag</span>
-                #리뷰
-            </button>
-        
             <button class="cat-tab " data-tag="스마트TV">
                 <span class="material-symbols-outlined" style="font-size:18px;">tag</span>
                 #스마트TV
@@ -560,7 +554,7 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
 
             <div class="widget-tags">
                 <h4 class="widget-title">Trending Tags</h4>
-                <div class="tag-cloud"><button class="tag-item" data-tag="가전제품">#가전제품</button><button class="tag-item" data-tag="리뷰">#리뷰</button><button class="tag-item" data-tag="스마트TV">#스마트TV</button></div>
+                <div class="tag-cloud"><button class="tag-item" data-tag="가전제품">#가전제품</button><button class="tag-item" data-tag="스마트TV">#스마트TV</button></div>
             </div>
 
             <div class="widget-categories">
@@ -568,7 +562,7 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
                 <ul class="cat-list">
             <li class="cat-list-item" onclick="document.querySelector('.search-input').value='생활가전'; document.querySelector('.search-input').dispatchEvent(new KeyboardEvent('keydown',{'key':'Enter'}));">
                 <span class="cat-list-name">생활가전</span>
-                <span class="cat-list-count">2</span>
+                <span class="cat-list-count">1</span>
             </li>
         </ul>
             </div>
@@ -599,7 +593,7 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
 
 <script>
 (function(){
-const posts=[{"id":1775152262983,"groupId":1775152338614,"title":"쿠쿠 전기보온 에그밥솥 6인용 실사용 리뷰 및 밥맛 테스트 (압력밥솥 vs 전기밥솥, 진짜 차이는?)","filename":"post/cuckoo-egg-rice-cooker-review.html","excerpt":"동글동글 귀여운 에그 디자인과 에너지 효율 1등급, 그리고 10% 환급 혜택까지. 6만 원대 가성비 밥솥의 실제 밥맛은 과연 어떨까요? 자취생부터 소가족까지, 30개의 실사용 후기를 바탕으로 장단점을 낱낱이 공개합니다.","date":"2026. 3. 6.","category":"생활가전","tags":["가전제품","리뷰"],"keywords":"가전제품, 리뷰","thumbnail":"https://pickrise.com/images/thumb-1775152262983.webp"},{"id":1775151347586,"groupId":1775151347585,"title":"와이드뷰 FHD QLED 화이트에디션 스마트TV + 삼탠바이미 V3 세트 완전 분석 (원룸·자취생을 위한 이동식 TV의 정석)","filename":"post/wideview-fhd-qled-tv-samsung-standbymeby-v3.html","excerpt":"바퀴 하나로 삶의 동선이 바뀐다. 고정식 TV의 시대가 저물고 이동식 스탠드형 TV가 주목받는 이유를 이 제품이 명확히 보여줍니다. 화질·이동성·가성비를 실사용 환경 기준으로 낱낱이 점검했습니다.","date":"2026. 4. 2.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1775151347586.webp"}];
+const posts=[{"id":1775151347586,"groupId":1775151347585,"title":"와이드뷰 FHD QLED 화이트에디션 스마트TV + 삼탠바이미 V3 세트 완전 분석 (원룸·자취생을 위한 이동식 TV의 정석)","filename":"post/wideview-fhd-qled-tv-samsung-standbymeby-v3.html","excerpt":"바퀴 하나로 삶의 동선이 바뀐다. 고정식 TV의 시대가 저물고 이동식 스탠드형 TV가 주목받는 이유를 이 제품이 명확히 보여줍니다. 화질·이동성·가성비를 실사용 환경 기준으로 낱낱이 점검했습니다.","date":"2026. 4. 2.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1775151347586.webp"}];
 posts.sort((a,b)=>b.id-a.id);
 const PER=10; let page=1, filtered=[];
 const heroC=document.getElementById('hero-post-container'), grid=document.getElementById('post-grid'), lmw=document.getElementById('load-more-wrap'), si=document.querySelector('.search-input');
