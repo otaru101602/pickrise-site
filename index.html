@@ -5,203 +5,154 @@
 <title>PickRise | 스마트한 소비를 위한 가전 및 디지털 기기 리뷰</title>
 
 <meta name="description" content="데이터와 실사용 경험에 기반한 스마트 기기, 가전제품 리뷰 및 IT 트렌드 정보 플랫폼">
-<meta name="keywords" content="스마트기기, PC/노트북, 생활가전, 테크트렌드, 테크, 리뷰, 가전, 스마트폰, 노트북">
-<link rel="canonical" href="https://pickrise.com/index.html"><link rel="icon" type="image/png" href="https://pickrise.com/images/logo.png">
-<meta property="og:type" content="website"><meta property="og:title" content="PickRise | 스마트한 소비를 위한 가전 및 디지털 기기 리뷰">
-<meta property="og:description" content="데이터와 실사용 경험에 기반한 스마트 기기, 가전제품 리뷰 및 IT 트렌드 정보 플랫폼"><meta property="og:url" content="https://pickrise.com/index.html">
-<meta property="og:image" content="https://pickrise.com/images/logo.png"><meta property="og:site_name" content="PickRise">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="PickRise | 스마트한 소비를 위한 가전 및 디지털 기기 리뷰">
-<meta name="twitter:description" content="데이터와 실사용 경험에 기반한 스마트 기기, 가전제품 리뷰 및 IT 트렌드 정보 플랫폼">
-<meta name="theme-color" content="#f7f9fb">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<meta name="keywords" content="리뷰, 가전, 스마트폰, 노트북, 테크">
+<link rel="canonical" href="https://pickrise.com/index.html">
+<link rel="icon" type="image/png" href="https://pickrise.com/images/logo.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="PickRise | 스마트한 소비를 위한 가전 및 디지털 기기 리뷰">
+<meta property="og:description" content="데이터와 실사용 경험에 기반한 스마트 기기, 가전제품 리뷰 및 IT 트렌드 정보 플랫폼">
+<meta property="og:url" content="https://pickrise.com/index.html">
+<meta property="og:image" content="https://pickrise.com/images/logo.png">
+<meta name="theme-color" content="#f5f6f8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;}
 
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800;900&family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap');
 
 :root {
-  --surface: #f7f9fb;
-  --surface-low: #f2f4f6;
-  --surface-high: #e0e3e5;
-  --primary-container: #131b2e;
-  --accent: #3980f4;
-  --text-main: #020617;
-  --text-sub: #475569;
-  --text-light: #94a3b8;
-  --header-h: 72px;
-  --max-w: 1440px;
-  --radius-card: 14px;
+  --surface: #f5f6f8;
+  --surface-low: #eef0f3;
+  --surface-high: #dde0e5;
+  --primary-container: #0f1523;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --text-main: #0a0d14;
+  --text-sub: #4a5568;
+  --text-light: #8a9ab0;
+  --header-h: 64px;
+  --max-w: 1280px;
+  --card-radius: 14px;
+  --transition: 0.25s cubic-bezier(0.4,0,0.2,1);
 }
 
 *, *::before, *::after { box-sizing: border-box; }
 
 body {
-  font-family: 'Inter', 'Pretendard', sans-serif;
-  background-color: var(--surface);
+  font-family: 'Inter', 'Pretendard', -apple-system, sans-serif;
+  background: var(--surface);
   color: var(--text-main);
-  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
 }
-.font-display {
-  font-family: 'Manrope', 'Pretendard', sans-serif;
-  letter-spacing: -0.03em;
-}
-a { text-decoration: none; color: inherit; transition: all 0.25s ease; }
+
+a { text-decoration: none; color: inherit; }
 img { display: block; max-width: 100%; }
 
-/* ── 헤더 (Glassmorphism) ── */
+/* ── 헤더 ── */
 .site-header {
   position: fixed; top: 0; width: 100%; z-index: 500;
-  background: rgba(247, 249, 251, 0.82);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(0,0,0,0.06);
+  background: #fff;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
   height: var(--header-h);
 }
 .header-inner {
-  max-width: var(--max-w); margin: 0 auto; padding: 0 40px;
-  height: 100%; display: flex; justify-content: space-between; align-items: center;
-  gap: 40px;
+  max-width: var(--max-w); margin: 0 auto; padding: 0 36px;
+  height: 100%; display: flex; align-items: center; gap: 32px;
 }
 .logo {
   font-family: 'Manrope', sans-serif;
-  font-size: 22px; font-weight: 900;
-  letter-spacing: -0.05em; color: var(--text-main);
-  display: flex; align-items: center; gap: 8px;
+  font-size: 20px; font-weight: 900;
+  letter-spacing: -0.04em; color: var(--text-main);
   flex-shrink: 0;
 }
-.nav { display: none; gap: 8px; }
+.nav { display: none; gap: 2px; }
 @media (min-width: 768px) { .nav { display: flex; } }
 .nav a {
-  font-size: 14px; font-weight: 600;
+  font-size: 14px; font-weight: 500;
   color: var(--text-sub);
-  font-family: 'Manrope', sans-serif;
-  padding: 6px 14px;
-  border-radius: 8px;
-  letter-spacing: -0.01em;
+  padding: 6px 14px; border-radius: 8px;
+  transition: color var(--transition);
   position: relative;
-  transition: color 0.2s;
 }
 .nav a::after {
   content: '';
-  position: absolute; bottom: -2px; left: 14px; right: 14px; height: 2px;
-  background: var(--text-main); border-radius: 2px;
-  transform: scaleX(0); transition: transform 0.25s ease;
+  position: absolute; bottom: -1px; left: 14px; right: 14px;
+  height: 2px; background: var(--text-main);
+  transform: scaleX(0); transition: transform var(--transition);
+  border-radius: 2px;
 }
 .nav a:hover { color: var(--text-main); }
 .nav a:hover::after, .nav a.active::after { transform: scaleX(1); }
-.nav a.active { color: var(--text-main); }
+.nav a.active { color: var(--text-main); font-weight: 600; }
 
-.header-utils { display: flex; gap: 8px; align-items: center; flex-shrink: 0; }
+.header-utils { margin-left: auto; display: flex; gap: 6px; align-items: center; }
 .icon-btn {
   background: none; border: none; cursor: pointer;
-  color: var(--text-sub); display: flex; align-items: center;
-  justify-content: center; width: 38px; height: 38px;
-  border-radius: 10px; transition: all 0.2s;
+  color: var(--text-sub); width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 8px; transition: all var(--transition);
 }
 .icon-btn:hover { background: var(--surface-low); color: var(--text-main); }
 
-/* 검색 박스 */
-.search-box { position: relative; display: none; }
-.search-box.active {
-  display: block; position: absolute;
-  top: var(--header-h); left: 0; width: 100%;
-  background: rgba(247,249,251,0.96);
-  padding: 16px 40px;
-  border-bottom: 1px solid var(--surface-high);
-  backdrop-filter: blur(20px);
+/* 검색창 */
+.search-wrapper {
+  position: relative; display: none;
 }
-.search-input {
-  width: 100%; max-width: 480px;
-  padding: 12px 20px; border-radius: 12px;
+.search-wrapper.active { display: flex; }
+.search-input-field {
+  padding: 8px 16px 8px 40px; border-radius: 10px;
   border: 1.5px solid var(--surface-high);
-  background: #fff; font-size: 15px; outline: none;
-  transition: border-color 0.2s;
-  font-family: 'Inter', sans-serif;
+  background: var(--surface-low);
+  font-size: 13px; outline: none; width: 240px;
+  transition: border-color var(--transition), background var(--transition);
+  font-family: 'Inter', sans-serif; color: var(--text-main);
 }
-.search-input:focus { border-color: var(--accent); }
-
-/* ── 푸터 ── */
-.site-footer {
-  background-color: #fff;
-  border-top: 1px solid var(--surface-high);
-  padding: 80px 0 40px;
-  margin-top: 80px;
+.search-wrapper::before {
+  content: '';
+  position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
+  width: 14px; height: 14px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238a9ab0' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E");
+  background-size: cover; pointer-events: none;
 }
-.footer-inner {
-  max-width: var(--max-w); margin: 0 auto; padding: 0 40px;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 60px;
-  align-items: start;
-}
-@media (max-width: 768px) {
-  .footer-inner { grid-template-columns: 1fr; gap: 40px; }
-}
-.footer-brand-info { max-width: 360px; }
-.footer-logo {
-  font-family: 'Manrope', sans-serif;
-  font-size: 18px; font-weight: 900;
-  color: var(--text-main); margin-bottom: 16px;
-  letter-spacing: -0.04em;
-}
-.footer-desc { font-size: 14px; color: var(--text-sub); line-height: 1.75; margin-bottom: 28px; }
-.footer-copyright { font-size: 13px; font-weight: 500; color: var(--text-light); }
-.footer-nav { display: flex; flex-wrap: wrap; gap: 10px 28px; padding-top: 4px; }
-.footer-nav a { font-size: 14px; font-weight: 500; color: var(--text-sub); }
-.footer-nav a:hover { color: var(--text-main); }
-.footer-nav a.accent { color: var(--accent); font-weight: 600; }
-
-/* 프로그레스 */
-.progress-container { position: fixed; top: var(--header-h); left: 0; width: 100%; height: 2px; z-index: 1000; }
-.progress-bar { height: 100%; background: var(--accent); width: 0%; transition: width 0.1s ease-out; }
-
-
-:root {
-  --surface: #f7f9fb;
-  --surface-low: #f2f4f6;
-  --surface-high: #e0e3e5;
-  --primary-container: #131b2e;
-  --accent: #3980f4;
-  --text-main: #020617;
-  --text-sub: #475569;
-  --text-light: #94a3b8;
-  --header-h: 72px;
-  --max-w: 1280px;
+.search-input-field:focus {
+  border-color: var(--accent);
+  background: #fff;
 }
 
-/* ── 메인 레이아웃 ── */
+/* ── 메인 래퍼 ── */
 .index-wrap {
-  padding-top: calc(var(--header-h) + 56px);
+  padding-top: calc(var(--header-h) + 40px);
   padding-bottom: 100px;
   max-width: var(--max-w);
   margin: 0 auto;
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: 36px;
+  padding-right: 36px;
 }
 
-/* ── Category Chips ── */
+/* ── 카테고리 칩 ── */
 .chip-scroll {
-  display: flex; gap: 10px;
+  display: flex; gap: 8px;
   overflow-x: auto; padding-bottom: 4px;
-  margin-bottom: 52px;
+  margin-bottom: 40px;
   scrollbar-width: none;
 }
 .chip-scroll::-webkit-scrollbar { display: none; }
+
 .cat-tab {
-  display: inline-flex; align-items: center; gap: 6px;
-  padding: 9px 20px;
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 7px 16px;
   border-radius: 999px;
-  font-size: 13px; font-weight: 600;
-  cursor: pointer; transition: all 0.25s ease;
+  font-size: 13px; font-weight: 500;
+  cursor: pointer; transition: all var(--transition);
   white-space: nowrap; border: none;
   font-family: 'Inter', sans-serif;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.01em; line-height: 1;
 }
 .cat-tab.active {
-  background: var(--primary-container); color: #fff;
-  box-shadow: 0 8px 24px rgba(19, 27, 46, 0.18);
+  background: var(--primary-container);
+  color: #fff;
 }
 .cat-tab:not(.active) {
   background: #fff;
@@ -209,268 +160,247 @@ img { display: block; max-width: 100%; }
   border: 1px solid var(--surface-high);
 }
 .cat-tab:not(.active):hover {
-  border-color: var(--text-light);
+  border-color: #b0b8c8;
   color: var(--text-main);
+  background: #fff;
 }
 
-/* ── Hero Section ── */
+/* ── 히어로 배너 ── */
 .hero-section {
   position: relative;
-  border-radius: 20px;
+  border-radius: 18px;
   overflow: hidden;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
   display: block;
-  text-decoration: none;
-  background-color: #070b14;
-  height: 520px;
-  box-shadow: 0 32px 64px -12px rgba(7, 11, 20, 0.35);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  height: 480px;
+  background: var(--primary-container);
+  box-shadow: 0 20px 60px -10px rgba(15, 21, 35, 0.3);
+  transition: box-shadow var(--transition);
 }
-.hero-section:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 40px 80px -12px rgba(7, 11, 20, 0.4);
-}
-@media (max-width: 1024px) { .hero-section { height: 460px; } }
-@media (max-width: 768px) { .hero-section { height: auto; min-height: 480px; border-radius: 16px; } }
+.hero-section:hover { box-shadow: 0 28px 70px -10px rgba(15,21,35,0.38); }
 
+@media (max-width: 1024px) { .hero-section { height: 420px; } }
+@media (max-width: 768px) { .hero-section { height: auto; min-height: 440px; border-radius: 14px; } }
+
+/* 블러 배경 */
 .hero-bg-blur {
   position: absolute; inset: -30px;
   background-size: cover; background-position: center;
-  filter: blur(50px) brightness(0.5) saturate(1.3);
-  z-index: 0; opacity: 0.9;
-  transition: filter 0.5s ease;
-}
-.hero-section:hover .hero-bg-blur {
-  filter: blur(50px) brightness(0.55) saturate(1.4);
+  filter: blur(60px) brightness(0.4) saturate(1.4);
+  z-index: 0; opacity: 0.85;
 }
 
-/* 텍스트 영역 */
+/* 우측 이미지 */
+.hero-image-wrap {
+  position: absolute; top: 0; right: 0; bottom: 0;
+  width: 62%; z-index: 1; overflow: hidden;
+}
+.hero-image-wrap img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 20%, black 40%);
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 20%, black 40%);
+  transition: transform 0.6s ease;
+}
+.hero-section:hover .hero-image-wrap img { transform: scale(1.03); }
+
+@media (max-width: 768px) {
+  .hero-image-wrap {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+  }
+  .hero-image-wrap img {
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 60%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 60%);
+  }
+}
+
+/* 좌측 콘텐츠 */
 .hero-content {
-  position: absolute;
-  top: 0; left: 0; bottom: 0;
-  width: 55%;
+  position: absolute; top: 0; left: 0; bottom: 0;
+  width: 54%; z-index: 10;
   padding: 52px 48px;
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background: linear-gradient(
-    to right,
-    rgba(7,11,20,0.97) 0%,
-    rgba(7,11,20,0.85) 50%,
+  display: flex; flex-direction: column; justify-content: center;
+  background: linear-gradient(to right,
+    rgba(15,21,35,0.98) 0%,
+    rgba(15,21,35,0.88) 55%,
     transparent 100%
   );
 }
 @media (max-width: 768px) {
   .hero-content {
     position: relative; width: 100%;
-    padding: 36px 28px 28px;
-    background: linear-gradient(to bottom, rgba(7,11,20,0.95) 0%, rgba(7,11,20,0.7) 100%);
+    padding: 36px 28px 100px;
+    background: linear-gradient(to bottom,
+      rgba(15,21,35,0.9) 0%,
+      rgba(15,21,35,0.5) 100%
+    );
   }
 }
 
 .hero-badge {
   align-self: flex-start;
   display: inline-flex; align-items: center; gap: 6px;
-  padding: 5px 14px;
-  background: rgba(57,128,244,0.2);
-  border: 1px solid rgba(57,128,244,0.4);
+  padding: 5px 12px;
+  background: rgba(37,99,235,0.25);
+  border: 1px solid rgba(37,99,235,0.45);
   color: #93c5fd;
   font-size: 11px; font-weight: 700;
-  border-radius: 999px;
-  margin-bottom: 20px;
-  text-transform: uppercase; letter-spacing: 0.08em;
+  border-radius: 999px; margin-bottom: 20px;
+  text-transform: uppercase; letter-spacing: 0.07em;
+  font-family: 'Inter', sans-serif;
 }
-.hero-badge::before {
-  content: ''; width: 6px; height: 6px;
-  background: #3980f4; border-radius: 50%;
-  animation: pulse-dot 2s infinite;
+.hero-badge-dot {
+  width: 5px; height: 5px;
+  background: #60a5fa; border-radius: 50%;
+  animation: hero-dot-pulse 2s infinite;
 }
-@keyframes pulse-dot {
+@keyframes hero-dot-pulse {
   0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(0.8); }
+  50% { opacity: 0.5; transform: scale(0.75); }
 }
 
 .hero-title {
-  font-size: clamp(28px, 3.2vw, 46px);
-  font-weight: 800;
-  color: #ffffff;
-  line-height: 1.2;
-  margin-bottom: 16px;
-  letter-spacing: -0.04em;
   font-family: 'Manrope', 'Pretendard', sans-serif;
+  font-size: clamp(26px, 3vw, 42px);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.22;
+  letter-spacing: -0.04em;
+  margin-bottom: 14px;
   word-break: keep-all;
 }
-.hero-sub-title {
-  font-size: 16px; color: rgba(255,255,255,0.65);
-  font-weight: 500; margin-bottom: 14px;
-  font-family: 'Inter', sans-serif;
-}
+
 .hero-excerpt {
-  font-size: 15px; color: rgba(203,213,225,0.85);
-  line-height: 1.7; font-weight: 400;
-  margin-bottom: 36px; max-width: 440px;
-  display: -webkit-box; -webkit-line-clamp: 2;
+  font-size: 14px; color: rgba(203,213,225,0.8);
+  line-height: 1.75; font-weight: 400;
+  margin-bottom: 32px; max-width: 380px;
+  display: -webkit-box; -webkit-line-clamp: 3;
   -webkit-box-orient: vertical; overflow: hidden;
 }
+
 .hero-cta {
   display: inline-flex; align-items: center; gap: 8px;
-  padding: 13px 28px;
-  background: #fff; color: var(--primary-container);
-  font-size: 14px; font-weight: 700;
-  border-radius: 12px;
-  align-self: flex-start;
-  transition: all 0.25s ease;
-  letter-spacing: -0.02em;
-  font-family: 'Manrope', sans-serif;
-}
-.hero-cta:hover {
+  padding: 12px 24px;
   background: var(--accent); color: #fff;
-  transform: translateX(4px);
+  font-size: 14px; font-weight: 700;
+  border-radius: 10px; align-self: flex-start;
+  transition: background var(--transition), transform var(--transition);
+  font-family: 'Manrope', sans-serif; letter-spacing: -0.02em;
 }
+.hero-cta:hover { background: var(--accent-hover); transform: translateX(3px); }
 
-/* 히어로 이미지 영역 */
-.hero-image-wrap {
-  position: absolute;
-  top: 0; right: 0; bottom: 0;
-  width: 65%;
-  z-index: 1; overflow: hidden;
-}
-@media (max-width: 768px) {
-  .hero-image-wrap {
-    position: absolute; bottom: 0; left: 0;
-    width: 100%; height: 55%; top: auto;
-  }
-}
-.hero-image-wrap img {
-  position: absolute; inset: 0;
-  width: 100%; height: 100%;
-  object-fit: cover; object-position: center;
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 28%, black 100%);
-  mask-image: linear-gradient(to right, transparent 0%, black 28%, black 100%);
-  transition: transform 0.6s ease;
-}
-.hero-section:hover .hero-image-wrap img { transform: scale(1.03); }
-@media (max-width: 768px) {
-  .hero-image-wrap img {
-    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 35%);
-    mask-image: linear-gradient(to bottom, transparent 0%, black 35%);
-  }
-}
-
-/* ── 평점 배지 ── */
+/* 평점 배지 — 히어로 */
 .score-badge-hero {
-  position: absolute; bottom: 40px; left: 52px;
+  position: absolute; bottom: 36px; left: 52px;
+  display: flex; align-items: center; gap: 14px;
   background: rgba(255,255,255,0.07);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 16px; padding: 18px 24px;
-  display: flex; flex-direction: column; align-items: flex-start;
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 14px; padding: 16px 22px;
   z-index: 20;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.25);
 }
-.score-badge-hero .sb-label {
-  font-size: 10px; color: rgba(148,163,184,0.9);
-  letter-spacing: 0.08em; text-transform: uppercase;
-  font-weight: 600; margin-bottom: 6px;
-}
-.score-badge-hero .sb-value {
-  font-size: 34px; font-weight: 700;
-  color: #fff;
-  font-family: 'Manrope', sans-serif;
-  line-height: 1; margin-bottom: 8px;
-  display: flex; align-items: baseline; gap: 3px;
-}
-.score-badge-hero .sb-value span {
-  font-size: 15px; color: rgba(148,163,184,0.7); font-weight: 400;
-}
-.score-badge-hero .sb-stars { font-size: 14px; letter-spacing: 2px; display: flex; }
+.sb-score-block { display: flex; flex-direction: column; align-items: flex-start; }
+.sb-label { font-size: 10px; color: rgba(148,163,184,0.85); letter-spacing: 0.07em; text-transform: uppercase; font-weight: 600; margin-bottom: 4px; }
+.sb-value { font-size: 30px; font-weight: 800; color: #fff; font-family: 'Manrope', sans-serif; line-height: 1; }
+.sb-divider { width: 1px; height: 36px; background: rgba(255,255,255,0.15); }
+.sb-stars-block { display: flex; flex-direction: column; gap: 4px; }
+.sb-stars { display: flex; gap: 2px; }
+.star-on  { color: #fbbf24; font-size: 14px; }
+.star-half{ color: #fbbf24; font-size: 14px; opacity: 0.5; }
+.star-off { color: rgba(255,255,255,0.2); font-size: 14px; }
+.sb-sub { font-size: 11px; color: rgba(148,163,184,0.7); font-weight: 500; }
 
-/* 카드 평점 배지 */
+@media (max-width: 768px) {
+  .score-badge-hero { left: 24px; bottom: 24px; padding: 12px 16px; }
+  .sb-value { font-size: 22px; }
+}
+
+/* 평점 배지 — 카드 */
 .score-badge-card {
-  position: absolute; top: 12px; right: 12px;
-  background: rgba(0,0,0,0.6);
+  position: absolute; top: 10px; right: 10px;
+  display: flex; align-items: center; gap: 5px;
+  background: rgba(0,0,0,0.55);
   backdrop-filter: blur(8px);
-  border-radius: 8px; padding: 5px 10px;
-  display: flex; align-items: center; gap: 6px; z-index: 10;
+  border-radius: 8px; padding: 5px 9px; z-index: 5;
 }
-.score-badge-card .sb-value {
-  font-size: 13px; font-weight: 700;
-  color: #fff; font-family: 'Manrope', sans-serif;
-}
-.score-badge-card .sb-stars { font-size: 10px; letter-spacing: 1px; display: flex; }
+.score-badge-card .sb-value { font-size: 12px; font-weight: 700; color: #fff; line-height: 1; }
+.score-badge-card .sb-stars { display: flex; gap: 1px; }
+.score-badge-card .star-on { font-size: 10px; }
+.score-badge-card .star-half { font-size: 10px; }
+.score-badge-card .star-off { font-size: 10px; }
 
-/* 별점 색상 */
-.star-on { color: #fbbf24; }
-.star-half { color: #fbbf24; opacity: 0.55; }
-.star-off { color: rgba(255,255,255,0.2); }
-
-/* ── Feed Layout ── */
+/* ── 피드 레이아웃 ── */
 .feed-layout {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 60px;
+  gap: 52px;
 }
 @media (min-width: 1024px) {
-  .feed-layout { grid-template-columns: 1fr 320px; gap: 72px; }
+  .feed-layout { grid-template-columns: 1fr 300px; gap: 64px; }
 }
 
-/* Feed Header */
+/* 피드 헤더 */
 .feed-header {
-  display: flex; justify-content: space-between;
-  align-items: flex-end;
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 28px;
+  padding-bottom: 16px;
   border-bottom: 2px solid var(--text-main);
-  padding-bottom: 18px; margin-bottom: 44px;
 }
 .feed-title {
-  font-size: 22px; font-weight: 800;
-  color: var(--text-main);
   font-family: 'Manrope', sans-serif;
-  letter-spacing: -0.04em;
+  font-size: 18px; font-weight: 800;
+  color: var(--text-main); letter-spacing: -0.03em;
+  display: flex; align-items: center; gap: 8px;
 }
-.feed-count { font-weight: 500; color: var(--text-light); font-size: 14px; }
+.feed-title::before {
+  content: '';
+  display: block; width: 4px; height: 18px;
+  background: var(--accent); border-radius: 2px;
+}
+.feed-count { font-size: 13px; color: var(--text-light); font-weight: 400; }
 
-/* ── 리뷰 카드 ── */
+/* ── 포스트 카드 ── */
 .post-grid { display: flex; flex-direction: column; gap: 0; }
 
 .post-card {
   display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 28px;
+  grid-template-columns: 200px 1fr;
+  gap: 24px;
   align-items: center;
-  cursor: pointer; transition: all 0.3s ease;
+  padding: 22px 18px;
+  border-radius: 12px;
+  cursor: pointer;
   text-decoration: none;
-  padding: 28px 24px;
-  border-radius: 16px;
-  background: transparent;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  transition: background var(--transition), box-shadow var(--transition), transform var(--transition);
 }
 .post-card:last-child { border-bottom: none; }
 .post-card:hover {
   background: #fff;
   border-bottom-color: transparent;
-  box-shadow: 0 12px 32px -4px rgba(2, 6, 23, 0.06);
+  box-shadow: 0 8px 28px -4px rgba(10,13,20,0.08);
   transform: translateY(-2px);
 }
+
 @media (max-width: 640px) {
   .post-card {
     grid-template-columns: 1fr;
-    gap: 16px; padding: 20px 16px;
-    background: #fff; border-radius: 14px;
-    border: 1px solid var(--surface-high);
-    margin-bottom: 16px;
+    gap: 14px; padding: 16px;
+    background: #fff; border-radius: 12px;
+    border: 1px solid var(--surface-high); margin-bottom: 12px;
   }
   .post-card:hover { transform: none; }
   .post-grid { gap: 0; }
 }
 
 .card-thumb {
-  border-radius: 12px; overflow: hidden;
+  border-radius: 10px; overflow: hidden;
   aspect-ratio: 4/3;
   background: var(--primary-container);
-  position: relative;
-  flex-shrink: 0;
+  position: relative; flex-shrink: 0;
 }
 .card-thumb img {
   position: absolute; inset: 0;
@@ -484,468 +414,522 @@ img { display: block; max-width: 100%; }
   display: flex; flex-direction: column;
   justify-content: center; word-break: keep-all;
 }
-.card-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.card-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
 .card-cat {
   font-size: 11px; font-weight: 700;
   color: var(--accent); text-transform: uppercase;
-  letter-spacing: 0.06em; font-family: 'Inter', sans-serif;
+  letter-spacing: 0.05em;
 }
-.card-date { font-size: 13px; color: var(--text-light); font-weight: 400; }
+.card-date { font-size: 12px; color: var(--text-light); font-weight: 400; }
 .meta-sep { width: 3px; height: 3px; background: var(--surface-high); border-radius: 50%; }
 
+.card-sub-title { font-size: 12px; color: var(--text-light); font-weight: 500; margin-bottom: 5px; }
 .card-title {
   font-family: 'Manrope', sans-serif;
-  font-size: 20px; font-weight: 700;
-  color: var(--text-main); line-height: 1.4;
-  margin-bottom: 12px;
+  font-size: 18px; font-weight: 700;
+  color: var(--text-main); line-height: 1.38;
+  margin-bottom: 10px; letter-spacing: -0.025em;
   display: -webkit-box; -webkit-line-clamp: 2;
   -webkit-box-orient: vertical; overflow: hidden;
-  letter-spacing: -0.025em;
-  transition: color 0.2s;
+  transition: color var(--transition);
 }
 .post-card:hover .card-title { color: var(--accent); }
-.card-sub-title { font-size: 13px; color: var(--text-light); font-weight: 500; margin-bottom: 6px; }
+
 .card-excerpt {
-  font-size: 14px; color: var(--text-sub);
+  font-size: 13.5px; color: var(--text-sub);
   line-height: 1.65;
   display: -webkit-box; -webkit-line-clamp: 2;
   -webkit-box-orient: vertical; overflow: hidden;
 }
 .card-read-more {
   display: inline-flex; align-items: center; gap: 4px;
-  margin-top: 14px; font-size: 13px; font-weight: 600;
-  color: var(--text-light); transition: color 0.2s;
+  margin-top: 12px; font-size: 13px; font-weight: 600;
+  color: var(--text-light); transition: color var(--transition);
 }
 .post-card:hover .card-read-more { color: var(--accent); }
 
 /* Load More */
-#load-more-wrap { display: flex; justify-content: center; margin-top: 48px; }
+#load-more-wrap { display: flex; justify-content: center; margin-top: 40px; }
 .load-more-btn {
   display: inline-flex; align-items: center; gap: 8px;
-  padding: 14px 36px; border-radius: 999px;
-  background: #fff;
-  border: 1.5px solid var(--surface-high);
-  cursor: pointer; transition: all 0.25s ease;
-  font-weight: 700; font-size: 14px; color: var(--text-main);
+  padding: 12px 32px; border-radius: 999px;
+  background: #fff; border: 1.5px solid var(--surface-high);
+  cursor: pointer; transition: all var(--transition);
+  font-weight: 600; font-size: 13px; color: var(--text-sub);
   font-family: 'Manrope', sans-serif;
-  letter-spacing: -0.02em;
 }
 .load-more-btn:hover {
-  border-color: var(--text-main);
-  box-shadow: 0 8px 20px rgba(2,6,23,0.06);
+  border-color: var(--text-main); color: var(--text-main);
+  box-shadow: 0 6px 18px rgba(10,13,20,0.07);
   transform: translateY(-2px);
 }
 
 /* ── 사이드바 ── */
 .feed-sidebar {
-  display: flex; flex-direction: column; gap: 32px;
-  position: sticky; top: calc(var(--header-h) + 32px);
+  display: flex; flex-direction: column; gap: 24px;
+  position: sticky; top: calc(var(--header-h) + 28px);
 }
 @media (max-width: 1024px) { .feed-sidebar { display: none; } }
 
 /* 에디터 위젯 */
 .widget-editor {
-  background: #fff; border-radius: 16px;
-  padding: 28px;
-  box-shadow: 0 4px 20px rgba(2,6,23,0.04);
+  background: #fff; border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 2px 16px rgba(10,13,20,0.05);
+  border: 1px solid var(--surface-high);
 }
-.editor-profile { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+.editor-profile { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
 .editor-img {
-  width: 52px; height: 52px; border-radius: 50%;
-  object-fit: cover; filter: grayscale(100%);
-  border: 2px solid var(--surface-high);
+  width: 46px; height: 46px; border-radius: 50%;
+  object-fit: cover; border: 2px solid var(--surface-high);
 }
-.editor-name { font-size: 15px; font-weight: 800; color: var(--text-main); font-family: 'Manrope', sans-serif; }
-.editor-role { font-size: 12px; font-weight: 500; color: var(--text-light); margin-top: 2px; }
-.editor-desc { font-size: 13px; color: var(--text-sub); line-height: 1.75; font-style: italic; }
+.editor-name { font-family: 'Manrope', sans-serif; font-size: 14px; font-weight: 800; color: var(--text-main); }
+.editor-role { font-size: 11px; font-weight: 500; color: var(--text-light); margin-top: 1px; }
+.editor-desc { font-size: 13px; color: var(--text-sub); line-height: 1.7; font-style: italic; }
 .editor-quote {
-  margin-top: 16px; padding: 14px 16px;
-  background: var(--surface-low); border-radius: 10px;
-  font-size: 13px; color: var(--text-sub); line-height: 1.65;
+  margin-top: 14px; padding: 12px 14px;
+  background: var(--surface-low); border-radius: 8px;
+  font-size: 12px; color: var(--text-sub); line-height: 1.65;
   border-left: 3px solid var(--accent);
 }
-.editor-actions { display: flex; gap: 10px; margin-top: 16px; }
+.editor-actions { display: flex; gap: 8px; margin-top: 14px; }
 .editor-action-btn {
   display: flex; align-items: center; justify-content: center;
-  width: 36px; height: 36px; border-radius: 10px;
+  width: 32px; height: 32px; border-radius: 8px;
   background: var(--surface-low); border: none; cursor: pointer;
-  color: var(--text-sub); transition: all 0.2s; font-size: 16px;
+  color: var(--text-sub); transition: all var(--transition); font-size: 15px;
 }
 .editor-action-btn:hover { background: var(--primary-container); color: #fff; }
 
 /* 위젯 공통 타이틀 */
 .widget-title {
-  font-size: 11px; font-weight: 800;
+  font-family: 'Manrope', sans-serif;
+  font-size: 12px; font-weight: 800;
   color: var(--text-main); text-transform: uppercase;
-  letter-spacing: 0.1em; margin-bottom: 18px;
-  display: flex; align-items: center; gap: 8px;
-}
-.widget-title::before {
-  content: ''; display: block;
-  width: 20px; height: 2.5px;
-  background: var(--text-main); border-radius: 2px;
+  letter-spacing: 0.08em; margin-bottom: 14px;
 }
 
 /* 태그 클라우드 */
-.widget-tags { }
-.tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; }
+.widget-tags { background: #fff; border-radius: 14px; padding: 20px; border: 1px solid var(--surface-high); }
+.tag-cloud { display: flex; flex-wrap: wrap; gap: 7px; }
 .tag-item {
-  padding: 7px 14px;
-  background: #fff; border: 1px solid var(--surface-high);
-  border-radius: 8px; font-size: 12px; font-weight: 500;
-  color: var(--text-sub); transition: all 0.2s; cursor: pointer;
-  font-family: 'Inter', sans-serif;
+  padding: 6px 12px;
+  background: var(--surface-low); border: 1px solid var(--surface-high);
+  border-radius: 7px; font-size: 12px; font-weight: 500;
+  color: var(--text-sub); transition: all var(--transition); cursor: pointer;
 }
-.tag-item:hover { border-color: var(--text-main); color: var(--text-main); background: var(--surface-low); }
-
-/* 카테고리 리스트 */
-.widget-categories { }
-.cat-list { display: flex; flex-direction: column; gap: 4px; list-style: none; padding: 0; margin: 0; }
-.cat-list-item {
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 10px 12px; border-radius: 10px;
-  cursor: pointer; transition: background 0.2s;
-}
-.cat-list-item:hover { background: var(--surface-low); }
-.cat-list-name { font-weight: 600; font-size: 14px; color: var(--text-sub); transition: color 0.2s; }
-.cat-list-item:hover .cat-list-name { color: var(--text-main); }
-.cat-list-count {
-  font-size: 11px; font-weight: 700;
-  background: var(--surface-high); padding: 3px 9px;
-  border-radius: 6px; color: var(--text-sub);
-}
+.tag-item:hover { border-color: var(--accent); color: var(--accent); background: rgba(37,99,235,0.04); }
 
 /* 뉴스레터 위젯 */
 .widget-newsletter {
   background: var(--primary-container);
-  border-radius: 16px; padding: 28px;
+  border-radius: 14px; padding: 24px;
   color: #fff; position: relative; overflow: hidden;
 }
 .widget-newsletter::before {
-  content: '';
-  position: absolute; top: -60px; right: -60px;
-  width: 180px; height: 180px;
-  background: rgba(57,128,244,0.15);
-  border-radius: 50%; pointer-events: none;
+  content: ''; position: absolute; top: -50px; right: -50px;
+  width: 160px; height: 160px;
+  background: rgba(37,99,235,0.18); border-radius: 50%;
+  pointer-events: none;
 }
-.nl-icon { font-size: 28px; margin-bottom: 12px; }
+.nl-icon { font-size: 26px; margin-bottom: 10px; }
 .nl-title {
-  font-size: 17px; font-weight: 800;
-  margin-bottom: 8px; line-height: 1.3;
   font-family: 'Manrope', sans-serif;
+  font-size: 16px; font-weight: 800;
+  margin-bottom: 7px; line-height: 1.35;
   letter-spacing: -0.03em;
 }
-.nl-desc { font-size: 13px; color: rgba(148,163,184,0.85); line-height: 1.65; margin-bottom: 20px; }
+.nl-desc { font-size: 12px; color: rgba(148,163,184,0.85); line-height: 1.65; margin-bottom: 16px; }
 .nl-input {
-  width: 100%; padding: 12px 14px; border-radius: 10px;
+  width: 100%; padding: 10px 12px; border-radius: 8px;
   border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(255,255,255,0.06); color: #fff;
-  margin-bottom: 10px; outline: none; font-size: 13px;
-  transition: border-color 0.2s;
-  font-family: 'Inter', sans-serif;
+  background: rgba(255,255,255,0.07); color: #fff;
+  margin-bottom: 8px; outline: none; font-size: 12px;
+  transition: border-color var(--transition); font-family: 'Inter', sans-serif;
 }
 .nl-input::placeholder { color: rgba(148,163,184,0.6); }
 .nl-input:focus { border-color: rgba(255,255,255,0.3); }
 .nl-btn {
-  width: 100%; padding: 13px; border-radius: 10px;
+  width: 100%; padding: 11px; border-radius: 8px;
   border: none; background: var(--accent);
   color: #fff; font-weight: 700; font-size: 13px;
-  cursor: pointer; transition: all 0.2s;
+  cursor: pointer; transition: all var(--transition);
   font-family: 'Manrope', sans-serif;
-  letter-spacing: -0.01em;
 }
-.nl-btn:hover { background: #2b6be8; transform: translateY(-1px); }
-.nl-fine { font-size: 11px; color: rgba(148,163,184,0.5); text-align: center; margin-top: 8px; }
+.nl-btn:hover { background: var(--accent-hover); }
+.nl-fine { font-size: 10px; color: rgba(148,163,184,0.5); text-align: center; margin-top: 7px; }
+
+/* ── 푸터 ── */
+.site-footer {
+  background: #fff;
+  border-top: 1px solid var(--surface-high);
+  padding: 60px 0 32px; margin-top: 80px;
+}
+.footer-inner {
+  max-width: var(--max-w); margin: 0 auto; padding: 0 36px;
+  display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 40px; align-items: start;
+}
+@media (max-width: 1024px) { .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; } }
+@media (max-width: 640px) { .footer-inner { grid-template-columns: 1fr; gap: 28px; } }
+
+.footer-col-brand {}
+.footer-logo {
+  font-family: 'Manrope', sans-serif;
+  font-size: 18px; font-weight: 900;
+  color: var(--text-main); margin-bottom: 12px;
+  letter-spacing: -0.04em;
+}
+.footer-desc { font-size: 13px; color: var(--text-sub); line-height: 1.75; margin-bottom: 20px; }
+.footer-social { display: flex; gap: 10px; }
+.footer-social-btn {
+  width: 32px; height: 32px; border-radius: 8px;
+  background: var(--surface-low); border: 1px solid var(--surface-high);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--text-sub); font-size: 14px; transition: all var(--transition); cursor: pointer;
+}
+.footer-social-btn:hover { background: var(--primary-container); color: #fff; border-color: var(--primary-container); }
+
+.footer-col-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: 12px; font-weight: 800; color: var(--text-main);
+  text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 14px;
+}
+.footer-col-links { display: flex; flex-direction: column; gap: 9px; }
+.footer-col-links a { font-size: 13px; color: var(--text-sub); transition: color var(--transition); }
+.footer-col-links a:hover { color: var(--text-main); }
+.footer-col-links a.accent { color: var(--accent); font-weight: 600; }
+
+.footer-bottom {
+  max-width: var(--max-w); margin: 40px auto 0;
+  padding: 20px 36px 0;
+  border-top: 1px solid var(--surface-high);
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 12px;
+}
+.footer-copyright { font-size: 12px; color: var(--text-light); }
+.footer-bottom-links { display: flex; gap: 16px; }
+.footer-bottom-links a { font-size: 12px; color: var(--text-light); transition: color var(--transition); }
+.footer-bottom-links a:hover { color: var(--text-sub); }
+
+/* ── 프로그레스 바 ── */
+.progress-container { position: fixed; top: var(--header-h); left: 0; width: 100%; height: 2px; z-index: 1000; }
+.progress-bar { height: 100%; background: var(--accent); width: 0%; transition: width 0.1s ease-out; }
 
 /* ── 반응형 ── */
 @media (max-width: 768px) {
-  .index-wrap { padding-left: 20px; padding-right: 20px; }
-  .hero-section { border-radius: 14px; }
-  .score-badge-hero { left: 24px; bottom: 28px; padding: 14px 18px; }
-  .score-badge-hero .sb-value { font-size: 26px; }
-  .hero-content { padding: 28px 24px 24px; }
-  .hero-excerpt { -webkit-line-clamp: 2; }
+  .index-wrap { padding-left: 16px; padding-right: 16px; padding-top: calc(var(--header-h) + 24px); }
+  .header-inner { padding: 0 16px; }
+  .chip-scroll { margin-bottom: 28px; }
 }
 
 </style>
 </head>
 <body>
+
+<!-- 헤더 -->
 <header class="site-header">
-<div class="header-inner">
-  <div class="header-left">
+  <div class="header-inner">
     <a href="https://pickrise.com/index.html" class="logo">PickRise</a>
-    <nav class="nav"><a href="https://pickrise.com/index.html#스마트기기" class="active">스마트기기</a><a href="https://pickrise.com/index.html#PC/노트북">PC/노트북</a><a href="https://pickrise.com/index.html#생활가전">생활가전</a><a href="https://pickrise.com/index.html#테크트렌드">테크트렌드</a></nav>
-  </div>
-  <div class="header-utils">
-    <div class="search-box" id="global-search-box">
-      <input type="text" class="search-input" id="search-input" placeholder="관심있는 제품을 검색해보세요" autocomplete="off">
+    <nav class="nav">
+      <a href="https://pickrise.com/index.html#리뷰" class="active">리뷰</a>
+      <a href="https://pickrise.com/index.html#가이드">가이드</a>
+      <a href="https://pickrise.com/index.html#추천">추천 제품</a>
+      <a href="https://pickrise.com/index.html#기획">기획 기사</a>
+    </nav>
+    <div class="header-utils">
+      <div class="search-wrapper" id="search-wrap">
+        <input type="text" class="search-input-field" id="search-input" placeholder="디지털 기기 리뷰 검색..." autocomplete="off">
+      </div>
+      <button class="icon-btn" id="search-toggle-btn" aria-label="검색">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </button>
+      <button class="icon-btn" aria-label="계정">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </button>
     </div>
-    <button class="icon-btn search-btn" id="m-search-toggle"><span class="material-symbols-outlined">search</span></button>
-    <button class="icon-btn user-btn"><span class="material-symbols-outlined">account_circle</span></button>
   </div>
-</div>
 </header>
 <div class="progress-container"><div class="progress-bar" id="progress-bar"></div></div>
 
+<!-- 메인 -->
 <main class="index-wrap">
-    <!-- Category Chips -->
-    <div class="chip-scroll">
-            <button class="cat-tab active" data-tag="생활가전">
-                <span class="material-symbols-outlined" style="font-size:18px;">home_filled</span>
-                #생활가전
-            </button>
+
+  <!-- 카테고리 칩 -->
+  <div class="chip-scroll">
+            <button class="cat-tab active" data-tag="전체">전체</button>
         
-            <button class="cat-tab " data-tag="스마트기기">
-                <span class="material-symbols-outlined" style="font-size:18px;">smartphone</span>
-                #스마트기기
-            </button>
+            <button class="cat-tab " data-tag="스마트폰">스마트폰</button>
         
-            <button class="cat-tab " data-tag="PC/노트북">
-                <span class="material-symbols-outlined" style="font-size:18px;">laptop_mac</span>
-                #PC/노트북
-            </button>
+            <button class="cat-tab " data-tag="음향기기">음향기기</button>
         
-            <button class="cat-tab " data-tag="테크트렌드">
-                <span class="material-symbols-outlined" style="font-size:18px;">trending_up</span>
-                #테크트렌드
-            </button>
+            <button class="cat-tab " data-tag="주방가전">주방가전</button>
         
-            <button class="cat-tab " data-tag="인기추천">
-                <span class="material-symbols-outlined" style="font-size:18px;">star</span>
-                #인기추천
-            </button>
+            <button class="cat-tab " data-tag="생활가전">생활가전</button>
         
-            <button class="cat-tab " data-tag="가성비">
-                <span class="material-symbols-outlined" style="font-size:18px;">savings</span>
-                #가성비
-            </button>
+            <button class="cat-tab " data-tag="컴퓨팅">컴퓨팅</button>
         
-            <button class="cat-tab " data-tag="가전제품">
-                <span class="material-symbols-outlined" style="font-size:18px;">tag</span>
-                #가전제품
-            </button>
-        
-            <button class="cat-tab " data-tag="스마트홈">
-                <span class="material-symbols-outlined" style="font-size:18px;">tag</span>
-                #스마트홈
-            </button>
-        
-            <button class="cat-tab " data-tag="리뷰">
-                <span class="material-symbols-outlined" style="font-size:18px;">tag</span>
-                #리뷰
-            </button>
-        
-            <button class="cat-tab " data-tag="스마트TV">
-                <span class="material-symbols-outlined" style="font-size:18px;">tag</span>
-                #스마트TV
-            </button>
+            <button class="cat-tab " data-tag="게이밍">게이밍</button>
         </div>
 
-    <!-- Hero Section -->
-    <div id="hero-post-container"></div>
+  <!-- 히어로 -->
+  <div id="hero-container"></div>
 
-    <div class="feed-layout">
-        <!-- Main Feed -->
-        <div class="feed-main">
-            <div class="feed-header">
-                <h2 class="feed-title">최신 리서치 피드</h2>
-                <span class="feed-count" id="feed-count-display">총 0개의 리포트</span>
-            </div>
-
-            <div class="post-grid" id="post-grid"></div>
-
-            <div id="load-more-wrap">
-                <button class="load-more-btn" id="load-more-btn">
-                    <span>리포트 더 보기</span>
-                    <span class="material-symbols-outlined" style="font-size: 20px;">expand_more</span>
-                </button>
-            </div>
-        </div>
-
-        <!-- Sidebar -->
-        <aside class="feed-sidebar">
-            <div class="widget-editor">
-                <div class="editor-profile">
-                    <img src="https://pickrise.com/images/logo.png" class="editor-img" alt="Editor">
-                    <div>
-                        <div class="editor-name">Digital Architect</div>
-                        <div class="editor-role">Head of Research</div>
-                    </div>
-                </div>
-                <p class="editor-desc">우리는 기술의 홍수 속에서 가장 빛나는 가치를 선별합니다. 단순한 정보를 넘어선 통찰력 있는 테크 저널리즘을 지향합니다.</p>
-            </div>
-
-            <div class="widget-tags">
-                <h4 class="widget-title">Trending Tags</h4>
-                <div class="tag-cloud"><button class="tag-item" data-tag="가전제품">#가전제품</button><button class="tag-item" data-tag="리뷰">#리뷰</button><button class="tag-item" data-tag="스마트TV">#스마트TV</button><button class="tag-item" data-tag="스마트홈">#스마트홈</button><button class="tag-item" data-tag="스마트기기">#스마트기기</button><button class="tag-item" data-tag="애플">#애플</button><button class="tag-item" data-tag="스마트폰">#스마트폰</button><button class="tag-item" data-tag="삼성">#삼성</button></div>
-            </div>
-
-            <div class="widget-categories">
-                <h4 class="widget-title">Popular Categories</h4>
-                <ul class="cat-list">
-            <li class="cat-list-item" onclick="document.querySelector('.search-input').value='생활가전'; document.querySelector('.search-input').dispatchEvent(new KeyboardEvent('keydown',{'key':'Enter'}));">
-                <span class="cat-list-name">생활가전</span>
-                <span class="cat-list-count">4</span>
-            </li>
-        
-            <li class="cat-list-item" onclick="document.querySelector('.search-input').value='스마트기기'; document.querySelector('.search-input').dispatchEvent(new KeyboardEvent('keydown',{'key':'Enter'}));">
-                <span class="cat-list-name">스마트기기</span>
-                <span class="cat-list-count">2</span>
-            </li>
-        </ul>
-            </div>
-
-            <div class="widget-newsletter">
-                <h4 class="nl-title">Deep Insights in Your Inbox</h4>
-                <p class="nl-desc">주 1회, 가장 깊이 있는 테크 분석 리포트를 메일로 보내드립니다.</p>
-                <input type="email" class="nl-input" placeholder="Email address">
-                <button class="nl-btn" onclick="alert('구독이 완료되었습니다!')">구독하기</button>
-            </div>
-        </aside>
+  <!-- 피드 레이아웃 -->
+  <div class="feed-layout">
+    <div class="feed-main">
+      <div class="feed-header">
+        <h2 class="feed-title">최신 리뷰 &amp; 인사이트</h2>
+        <span class="feed-count" id="feed-count">총 0개</span>
+      </div>
+      <div class="post-grid" id="post-grid"></div>
+      <div id="load-more-wrap">
+        <button class="load-more-btn" id="load-more-btn">
+          <span>더 보기</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+      </div>
     </div>
+
+    <!-- 사이드바 -->
+    <aside class="feed-sidebar">
+      <div class="widget-editor">
+        <div class="editor-profile">
+          <img src="https://pickrise.com/images/logo.png" class="editor-img" alt="에디터">
+          <div>
+            <div class="editor-name">마커스 쏜</div>
+            <div class="editor-role">수석 하드웨어 에디터</div>
+          </div>
+        </div>
+        <p class="editor-desc">"실리콘의 성능과 인간공학적 디자인이 접목될 때, 사용자의 삶을 더 편리하게 만들지 못한다면, 그것은 기술이 아니라 낭비일 뿐입니다."</p>
+        <div class="editor-actions">
+          <button class="editor-action-btn" title="공유">⤤</button>
+          <button class="editor-action-btn" title="이메일">@</button>
+        </div>
+      </div>
+
+      <div class="widget-tags">
+        <div class="widget-title">지금 주목받는 키워드</div>
+        <div class="tag-cloud"><button class="tag-item" data-tag="가전제품">#가전제품</button><button class="tag-item" data-tag="리뷰">#리뷰</button><button class="tag-item" data-tag="스마트홈">#스마트홈</button><button class="tag-item" data-tag="스마트TV">#스마트TV</button><button class="tag-item" data-tag="스마트기기">#스마트기기</button><button class="tag-item" data-tag="애플">#애플</button><button class="tag-item" data-tag="스마트폰">#스마트폰</button><button class="tag-item" data-tag="삼성">#삼성</button></div>
+      </div>
+
+      <div class="widget-newsletter">
+        <div class="nl-icon">✉️</div>
+        <div class="nl-title">더 선데이 다이제스트.</div>
+        <p class="nl-desc">매주 일요일, 45,000명의 구독자에게 전달되는 가장 정확하고 깊이있는 테크 리포트를 만나보세요.</p>
+        <input type="email" class="nl-input" placeholder="이메일 주소 입력">
+        <button class="nl-btn" onclick="alert('구독이 완료되었습니다!')">구독하기</button>
+        <div class="nl-fine">스팸 제로. 언제든 해지 가능.</div>
+      </div>
+    </aside>
+  </div>
 </main>
 
+<!-- 푸터 -->
 <footer class="site-footer">
-<div class="footer-inner">
-  <div class="footer-brand-info">
-    <div class="footer-logo">PickRise</div>
-    <p class="footer-desc">우리는 기술의 홍수 속에서 가장 빛나는 가치를 선별합니다. 단순한 정보를 넘어선 통찰력 있는 테크 저널리즘을 지향합니다.</p>
-    <div class="footer-copyright">© 2026 PickRise. 모든 권리 보유.</div>
+  <div class="footer-inner">
+    <div class="footer-col-brand">
+      <div class="footer-logo">PickRise</div>
+      <p class="footer-desc">현재 기술을 위한 디지털 매거진입니다. 우리는 소음을 걸러 정말로 중요한 하드웨어를 찾습니다.</p>
+      <div class="footer-social">
+        <button class="footer-social-btn" title="RSS">⊞</button>
+        <button class="footer-social-btn" title="뉴스레터">✉</button>
+        <button class="footer-social-btn" title="소셜">◈</button>
+      </div>
+    </div>
+    
+            <div>
+                <div class="footer-col-title">네비게이션</div>
+                <div class="footer-col-links">
+                    <a href="https://pickrise.com/index.html">홈</a><a href="https://pickrise.com/index.html#리뷰">리뷰</a><a href="https://pickrise.com/index.html#가이드">가이드</a><a href="https://pickrise.com/index.html#추천">추천 제품</a>
+                </div>
+            </div>
+        
+            <div>
+                <div class="footer-col-title">회사 소개</div>
+                <div class="footer-col-links">
+                    <a href="https://pickrise.com/about.html">회사 소개</a><a href="https://pickrise.com/policy.html">편집 기준</a><a href="https://pickrise.com/privacy.html">개인정보처리방침</a><a href="https://pickrise.com/contact.html">문의하기</a>
+                </div>
+            </div>
+        
+            <div>
+                <div class="footer-col-title">최신 소식 받기</div>
+                <div class="footer-col-links">
+                    <a href="#" class="accent">뉴스레터 구독 →</a>
+                </div>
+            </div>
+        
   </div>
-  <nav class="footer-nav">
-    <a href="https://pickrise.com/index.html">리뷰홈</a><a href="https://pickrise.com/policy.html">면책조항/운영정책</a><a href="https://pickrise.com/contact.html">비즈니스/리뷰 문의</a>
-    <a href="#" class="accent">뉴스레터 구독</a>
-  </nav>
-</div>
+  <div class="footer-bottom">
+    <div class="footer-copyright">© 2026 PickRise Editorial. 모든 권리 보유.</div>
+    <div class="footer-bottom-links">
+      <a href="https://pickrise.com/privacy.html">개인정보 처리</a>
+      <a href="https://pickrise.com/policy.html">쿠키 정책</a>
+      <a href="https://pickrise.com/contact.html">피드백 제공</a>
+    </div>
+  </div>
 </footer>
 
 <script>
 (function(){
-const posts=[{"id":1775228369858,"groupId":1775228369858,"title":"LG전자 디오스 AI 오브제컬렉션 냉장고 832L 실사용 리뷰 및 2도어 vs 4도어 비교 (대용량인데 왜 이렇게 저렴할까?)","filename":"post/lg-dios-ai-objecollection-refrigerator-832l-review.html","excerpt":"24시간 자동 정온 시스템과 AI 냉기 케어로 식재료 신선도를 지키는 832리터 대용량 양문형 냉장고. 넉넉한 수납공간과 세련된 오브제 디자인, 그리고 합리적인 가격까지. 10년 이상 장수한 구형 모델 사용자들의 교체 사례를 통해 본 실제 체감 변화와 숨겨진 단점까지 낱낱이 공개합니다.","date":"2026. 3. 6.","category":"생활가전","tags":["가전제품","스마트홈","리뷰"],"keywords":"가전제품, 스마트홈, 리뷰","thumbnail":"https://pickrise.com/images/thumb-1775228369858.webp"},{"id":1775156421752,"groupId":1775156421752,"title":"와이드뷰 FHD QLED 화이트에디션 스마트TV + 삼탠바이미 V3 세트 완전 분석 (원룸·자취생을 위한 이동식 TV의 정석)","filename":"post/wideview-fhd-qled-smarttv-samsung-stantbymi-v3.html","excerpt":"바퀴 하나로 삶의 동선이 바뀐다. 고정식 TV의 시대가 저물고 이동식 스탠드형 TV가 주목받는 이유를 이 제품이 명확히 보여줍니다. 화질·이동성·가성비를 실사용 환경 기준으로 낱낱이 점검했습니다.","date":"2026. 4. 2.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1775156421752.webp"},{"id":1775155801565,"groupId":1775155801565,"title":"Apple 2025 에어팟 프로 3 USB-C 완전 분석 — 노이즈 캔슬링·음질·생태계 연동 총정리 (프로 2 쓰는 분, 지금 바꿔야 할까?)","filename":"post/apple-airpods-pro-3-usb-c-review.html","excerpt":"H3 칩셋 탑재로 전작 대비 최대 2배 강화된 ANC, 새롭게 추가된 심박 센서, USB-C 충전 통일까지. 애플 생태계 사용자라면 외면하기 어려운 완성도를 갖춘 2025년 최신 무선 이어폰을 낱낱이 점검했습니다.","date":"2026. 4. 3.","category":"스마트기기","tags":["스마트기기","애플"],"keywords":"스마트기기, 애플","thumbnail":"https://pickrise.com/images/thumb-1775155801565.webp"},{"id":1775153442144,"groupId":1775153442144,"title":"삼성전자 갤럭시 S26 자급제 실사용 리뷰 및 아이폰 16 프로 비교 (사전예약 더블 스토리지 혜택, 놓치면 손해)","filename":"post/samsung-galaxy-s26-vs-iphone-16-pro-review.html","excerpt":"사전예약 시 256GB 가격으로 512GB를 받는 더블 스토리지 이벤트와 쿠팡 로켓배송의 빠른 도착. 아이폰에서 갈아탄 사용자들의 극찬부터 4~7년 된 구형 갤럭시 사용자들의 체감 업그레이드까지. 가벼운 무게, 빠른 성능, 그리고 코발트 바이올렛·스카이블루 색상의 실물 매력을 낱낱이 공개합니다.","date":"2026. 3. 7.","category":"스마트기기","tags":["스마트폰","삼성","리뷰"],"keywords":"스마트폰, 삼성, 리뷰","thumbnail":"https://pickrise.com/images/thumb-1775153442144.webp"},{"id":1775153341983,"groupId":1775153341983,"title":"쿠쿠 전기보온 에그밥솥 6인용 실사용 리뷰 및 밥맛 테스트 (압력밥솥 vs 전기밥솥, 진짜 차이는?)","filename":"post/cuckoo-egg-rice-cooker-review.html","excerpt":"동글동글 귀여운 에그 디자인과 에너지 효율 1등급, 그리고 10% 환급 혜택까지. 6만 원대 가성비 밥솥의 실제 밥맛은 과연 어떨까요? 자취생부터 소가족까지, 30개의 실사용 후기를 바탕으로 장단점을 낱낱이 공개합니다.","date":"2026. 3. 6.","category":"생활가전","tags":["가전제품","리뷰"],"keywords":"가전제품, 리뷰","thumbnail":"https://pickrise.com/images/thumb-1775153341983.webp"},{"id":1775151347586,"groupId":1775151347585,"title":"와이드뷰 FHD QLED 화이트에디션 스마트TV + 삼탠바이미 V3 세트 완전 분석 (원룸·자취생을 위한 이동식 TV의 정석)","filename":"post/wideview-fhd-qled-tv-samsung-standbymeby-v3.html","excerpt":"바퀴 하나로 삶의 동선이 바뀐다. 고정식 TV의 시대가 저물고 이동식 스탠드형 TV가 주목받는 이유를 이 제품이 명확히 보여줍니다. 화질·이동성·가성비를 실사용 환경 기준으로 낱낱이 점검했습니다.","date":"2026. 4. 2.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1775151347586.webp"}];
-posts.sort((a,b)=>b.id-a.id);
-const PER=10; let page=1, filtered=[];
-const heroC=document.getElementById('hero-post-container'), grid=document.getElementById('post-grid'), lmw=document.getElementById('load-more-wrap'), si=document.querySelector('.search-input');
+  const posts = [{"id":1775229582808,"groupId":1775229582807,"title":"LG전자 디오스 AI 오브제컬렉션 냉장고 832L 실사용 리뷰 및 2도어 vs 4도어 비교 (대용량인데 왜 이렇게 저렴할까?)","filename":"post/lg-dios-ai-objecollection-refrigerator-832l-2door-.html","excerpt":"24시간 자동 정온 시스템과 AI 냉기 케어로 식재료 신선도를 지키는 832리터 대용량 양문형 냉장고. 넉넉한 수납공간과 세련된 오브제 디자인, 그리고 합리적인 가격까지. 10년 이상 장수한 구형 모델 사용자들의 교체 사례를 통해 본 실제 체감 변화와 숨겨진 단점까지 낱낱이 공개합니다.","date":"2026. 3. 6.","category":"생활가전","tags":["가전제품","스마트홈","리뷰"],"keywords":"가전제품, 스마트홈, 리뷰","thumbnail":"https://pickrise.com/images/thumb-1775229582808.webp"},{"id":1775228369858,"groupId":1775228369858,"title":"LG전자 디오스 AI 오브제컬렉션 냉장고 832L 실사용 리뷰 및 2도어 vs 4도어 비교 (대용량인데 왜 이렇게 저렴할까?)","filename":"post/lg-dios-ai-objecollection-refrigerator-832l-review.html","excerpt":"24시간 자동 정온 시스템과 AI 냉기 케어로 식재료 신선도를 지키는 832리터 대용량 양문형 냉장고. 넉넉한 수납공간과 세련된 오브제 디자인, 그리고 합리적인 가격까지. 10년 이상 장수한 구형 모델 사용자들의 교체 사례를 통해 본 실제 체감 변화와 숨겨진 단점까지 낱낱이 공개합니다.","date":"2026. 3. 6.","category":"생활가전","tags":["가전제품","스마트홈","리뷰"],"keywords":"가전제품, 스마트홈, 리뷰","thumbnail":"https://pickrise.com/images/thumb-1775228369858.webp"},{"id":1775156421752,"groupId":1775156421752,"title":"와이드뷰 FHD QLED 화이트에디션 스마트TV + 삼탠바이미 V3 세트 완전 분석 (원룸·자취생을 위한 이동식 TV의 정석)","filename":"post/wideview-fhd-qled-smarttv-samsung-stantbymi-v3.html","excerpt":"바퀴 하나로 삶의 동선이 바뀐다. 고정식 TV의 시대가 저물고 이동식 스탠드형 TV가 주목받는 이유를 이 제품이 명확히 보여줍니다. 화질·이동성·가성비를 실사용 환경 기준으로 낱낱이 점검했습니다.","date":"2026. 4. 2.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1775156421752.webp"},{"id":1775155801565,"groupId":1775155801565,"title":"Apple 2025 에어팟 프로 3 USB-C 완전 분석 — 노이즈 캔슬링·음질·생태계 연동 총정리 (프로 2 쓰는 분, 지금 바꿔야 할까?)","filename":"post/apple-airpods-pro-3-usb-c-review.html","excerpt":"H3 칩셋 탑재로 전작 대비 최대 2배 강화된 ANC, 새롭게 추가된 심박 센서, USB-C 충전 통일까지. 애플 생태계 사용자라면 외면하기 어려운 완성도를 갖춘 2025년 최신 무선 이어폰을 낱낱이 점검했습니다.","date":"2026. 4. 3.","category":"스마트기기","tags":["스마트기기","애플"],"keywords":"스마트기기, 애플","thumbnail":"https://pickrise.com/images/thumb-1775155801565.webp"},{"id":1775153442144,"groupId":1775153442144,"title":"삼성전자 갤럭시 S26 자급제 실사용 리뷰 및 아이폰 16 프로 비교 (사전예약 더블 스토리지 혜택, 놓치면 손해)","filename":"post/samsung-galaxy-s26-vs-iphone-16-pro-review.html","excerpt":"사전예약 시 256GB 가격으로 512GB를 받는 더블 스토리지 이벤트와 쿠팡 로켓배송의 빠른 도착. 아이폰에서 갈아탄 사용자들의 극찬부터 4~7년 된 구형 갤럭시 사용자들의 체감 업그레이드까지. 가벼운 무게, 빠른 성능, 그리고 코발트 바이올렛·스카이블루 색상의 실물 매력을 낱낱이 공개합니다.","date":"2026. 3. 7.","category":"스마트기기","tags":["스마트폰","삼성","리뷰"],"keywords":"스마트폰, 삼성, 리뷰","thumbnail":"https://pickrise.com/images/thumb-1775153442144.webp"},{"id":1775153341983,"groupId":1775153341983,"title":"쿠쿠 전기보온 에그밥솥 6인용 실사용 리뷰 및 밥맛 테스트 (압력밥솥 vs 전기밥솥, 진짜 차이는?)","filename":"post/cuckoo-egg-rice-cooker-review.html","excerpt":"동글동글 귀여운 에그 디자인과 에너지 효율 1등급, 그리고 10% 환급 혜택까지. 6만 원대 가성비 밥솥의 실제 밥맛은 과연 어떨까요? 자취생부터 소가족까지, 30개의 실사용 후기를 바탕으로 장단점을 낱낱이 공개합니다.","date":"2026. 3. 6.","category":"생활가전","tags":["가전제품","리뷰"],"keywords":"가전제품, 리뷰","thumbnail":"https://pickrise.com/images/thumb-1775153341983.webp"},{"id":1775151347586,"groupId":1775151347585,"title":"와이드뷰 FHD QLED 화이트에디션 스마트TV + 삼탠바이미 V3 세트 완전 분석 (원룸·자취생을 위한 이동식 TV의 정석)","filename":"post/wideview-fhd-qled-tv-samsung-standbymeby-v3.html","excerpt":"바퀴 하나로 삶의 동선이 바뀐다. 고정식 TV의 시대가 저물고 이동식 스탠드형 TV가 주목받는 이유를 이 제품이 명확히 보여줍니다. 화질·이동성·가성비를 실사용 환경 기준으로 낱낱이 점검했습니다.","date":"2026. 4. 2.","category":"생활가전","tags":["가전제품","스마트TV"],"keywords":"가전제품, 스마트TV","thumbnail":"https://pickrise.com/images/thumb-1775151347586.webp"}];
+  posts.sort((a,b) => b.id - a.id);
 
-const formatTitle = (t, isHero) => {
-    const m = t.match(/\(([^)]+)\)/);
-    if(m) {
-        return isHero
-            ? `<h1 class="hero-title font-display">${t.replace(m[0], '').trim()}</h1><p class="hero-sub-title">${m[0]}</p>`
-            : `<div class="card-sub-title">${m[1]}</div><div class="card-title font-display">${t.replace(m[0], '').trim()}</div>`;
-    }
-    return isHero ? `<h1 class="hero-title font-display">${t}</h1>` : `<div class="card-title font-display">${t}</div>`;
-};
+  const PER = 10;
+  let page = 1, filtered = [];
+  const heroC = document.getElementById('hero-container');
+  const grid = document.getElementById('post-grid');
+  const lmw = document.getElementById('load-more-wrap');
+  const si = document.getElementById('search-input');
+  const countEl = document.getElementById('feed-count');
 
-// 🌟 평점 및 별점 생성 함수 추가
-const getRating = id => {
+  // 평점 생성
+  const getRating = id => {
     const scores = [4.5, 4.6, 4.7, 4.8, 4.9];
-    const numId = parseInt(id) || Math.floor(Math.random() * 100);
-    return scores[numId % scores.length].toFixed(1);
-};
+    return scores[(parseInt(id)||0) % scores.length].toFixed(1);
+  };
 
-const renderStars = score => {
+  // 별점 HTML
+  const renderStars = score => {
     const s = parseFloat(score);
     const full = Math.floor(s);
     const half = s - full >= 0.5 ? 1 : 0;
     const empty = 5 - full - half;
-    let h = '';
-    for(let i=0; i<full; i++) h += '<span class="star-on">★</span>';
-    if(half) h += '<span class="star-half">★</span>';
-    for(let i=0; i<empty; i++) h += '<span class="star-off">★</span>';
-    return h;
-};
+    return '★'.repeat(full).split('').map(() => '<span class="star-on">★</span>').join('') +
+      (half ? '<span class="star-half">★</span>' : '') +
+      '★'.repeat(empty).split('').map(() => '<span class="star-off">★</span>').join('');
+  };
 
-// 🌟 히어로 배너 렌더링 (동기화된 블러 배경 추가)
-// 기존 코드에서 찾을 부분:
-// const heroCard=p=>{
-// ...
-// };
-// 아래로 통째로 교체
+  // 제목 파싱 (괄호 모델명 분리)
+  const parseTitle = t => {
+    const m = t.match(/\(([^)]+)\)/);
+    if(m) return { main: t.replace(m[0], '').trim(), sub: m[1] };
+    return { main: t, sub: null };
+  };
 
-const heroCard=p=>{
+  // 히어로 카드
+  const heroCard = p => {
     const rating = getRating(p.id);
+    const { main, sub } = parseTitle(p.title);
     return `<a href="${p.filename}" class="hero-section">
-    <div class="hero-bg-blur" style="background-image: url('${p.thumbnail}');"></div>
-    <div class="hero-content">
-        <span class="hero-badge">주요 리뷰</span>
-        ${formatTitle(p.title, true)}
-        <div class="hero-excerpt">${p.excerpt||''}</div>
-        <span class="hero-cta">상세 분석 보기 →</span>
+  <div class="hero-bg-blur" style="background-image:url('${p.thumbnail}');"></div>
+  <div class="hero-image-wrap">
+    <img src="${p.thumbnail}" alt="${p.title}" loading="eager">
+  </div>
+  <div class="hero-content">
+    <span class="hero-badge"><span class="hero-badge-dot"></span>주요 리뷰</span>
+    ${sub ? `<div style="font-size:13px;color:rgba(148,163,184,0.8);margin-bottom:8px;font-weight:500;">${sub}</div>` : ''}
+    <h1 class="hero-title">${main}</h1>
+    <p class="hero-excerpt">${p.excerpt||''}</p>
+    <span class="hero-cta">상세 분석 보기 →</span>
+  </div>
+  <div class="score-badge-hero">
+    <div class="sb-score-block">
+      <div class="sb-label">에디터 평점</div>
+      <div class="sb-value">${rating}</div>
     </div>
-    <div class="hero-image-wrap">
-        <img src="${p.thumbnail}" alt="${p.title}">
+    <div class="sb-divider"></div>
+    <div class="sb-stars-block">
+      <div class="sb-stars">${renderStars(rating)}</div>
+      <div class="sb-sub">/ 5.0</div>
     </div>
-    <div class="score-badge-hero">
-        <div class="sb-label">에디터 평점</div>
-        <div class="sb-value">${rating}<span>/ 5.0</span></div>
-        <div class="sb-stars">${renderStars(rating)}</div>
-    </div>
+  </div>
 </a>`;
-};
+  };
 
-const postCard=p=> {
-    const date = p.date ? new Date(p.date).toLocaleDateString('ko-KR', {year:'numeric',month:'2-digit',day:'2-digit'}) : '';
+  // 포스트 카드
+  const postCard = p => {
     const rating = getRating(p.id);
+    const { main, sub } = parseTitle(p.title);
+    const date = p.date ? new Date(p.date).toLocaleDateString('ko-KR', {year:'numeric',month:'2-digit',day:'2-digit'}) : '';
+    const readLabel = p.category === '생활가전' ? '테스트 결과 보기' : p.category === 'PC/노트북' ? '기술 사양 확인하기' : '기술 사양 확인하기';
     return `<a href="${p.filename}" class="post-card">
-        <div class="card-thumb">
-            <img src="${p.thumbnail}" alt="${p.title}" loading="lazy">
-            <div class="score-badge-card">
-                <div class="sb-stars">${renderStars(rating)}</div>
-                <div class="sb-value">${rating}</div>
-            </div>
-        </div>
-        <div class="card-body">
-            <div class="card-meta">
-                <span class="card-cat">${p.category}</span>
-                <span class="meta-sep"></span>
-                <span class="card-date">${date}</span>
-            </div>
-            ${formatTitle(p.title, false)}
-            <div class="card-excerpt">${p.excerpt||''}</div>
-            <span class="card-read-more">기술 사양 확인하기 →</span>
-        </div>
-    </a>`;
-};
+  <div class="card-thumb">
+    <img src="${p.thumbnail}" alt="${p.title}" loading="lazy">
+    <div class="score-badge-card">
+      <div class="sb-stars">${renderStars(rating)}</div>
+      <div class="sb-value">${rating}</div>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="card-meta">
+      <span class="card-cat">${p.category}</span>
+      <span class="meta-sep"></span>
+      <span class="card-date">${date}</span>
+    </div>
+    ${sub ? `<div class="card-sub-title">${sub}</div>` : ''}
+    <div class="card-title">${main}</div>
+    <div class="card-excerpt">${p.excerpt||''}</div>
+    <span class="card-read-more">${readLabel} →</span>
+  </div>
+</a>`;
+  };
 
-const getF=()=>{const kw=(si?si.value:'').toLowerCase().trim();return posts.filter(p=>{return !kw||p.title.toLowerCase().includes(kw)||(p.excerpt||'').toLowerCase().includes(kw)||(p.category||'').toLowerCase().includes(kw);});};
+  // 필터링
+  const getFiltered = () => {
+    const kw = (si ? si.value : '').toLowerCase().trim();
+    return posts.filter(p =>
+      !kw ||
+      p.title.toLowerCase().includes(kw) ||
+      (p.excerpt||'').toLowerCase().includes(kw) ||
+      (p.category||'').toLowerCase().includes(kw)
+    );
+  };
 
-function render(reset=false){
-  filtered=getF();if(reset){page=1;grid.innerHTML='';if(heroC)heroC.innerHTML='';}
-  document.getElementById('feed-count-display').textContent = `총 ${filtered.length}개의 리포트`;
+  // 렌더링
+  function render(reset = false) {
+    filtered = getFiltered();
+    if(reset) { page = 1; grid.innerHTML = ''; if(heroC) heroC.innerHTML = ''; }
+    if(countEl) countEl.textContent = `총 ${filtered.length}개`;
+    if(!filtered.length) {
+      grid.innerHTML = '<p style="padding:40px 0;text-align:center;color:#94a3b8;font-size:15px;">검색 결과가 없습니다.</p>';
+      lmw.style.display = 'none'; return;
+    }
+    if(page === 1 && heroC) heroC.innerHTML = heroCard(filtered[0]);
+    const start = page === 1 ? 1 : (page-1)*PER + 1;
+    const items = filtered.slice(start, start + PER);
+    grid.innerHTML += items.map(postCard).join('');
+    const shown = page === 1 ? items.length + 1 : start + items.length;
+    lmw.style.display = shown < filtered.length ? 'flex' : 'none';
+  }
 
-  if(!filtered.length){grid.innerHTML='<p style="padding:40px;text-align:center;color:#94a3b8;font-size:16px;">검색 결과가 없습니다.</p>';lmw.style.display='none';return;}
-  let items=[];
-  if(page===1){if(heroC)heroC.innerHTML=heroCard(filtered[0]);items=filtered.slice(1,PER+1);}
-  else{const s=(page-1)*PER+1;items=filtered.slice(s,s+PER);}
-  let html='';items.forEach((p,i)=>{html+=postCard(p);});
-  grid.innerHTML+=html;
-  const shown=page===1?items.length+1:(page-1)*PER+1+items.length;
-  lmw.style.display=shown<filtered.length?'flex':'none';
-}
+  // 스크롤 프로그레스
+  window.addEventListener('scroll', () => {
+    const w = document.documentElement.scrollTop;
+    const h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const bar = document.getElementById('progress-bar');
+    if(bar) bar.style.width = (w/h*100) + '%';
+  });
 
-document.getElementById('load-more-btn').addEventListener('click',()=>{page++;render(false);});
-if(si)si.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();render(true);}});
+  // 검색 토글
+  const searchWrap = document.getElementById('search-wrap');
+  const searchBtn = document.getElementById('search-toggle-btn');
+  if(searchBtn && searchWrap) {
+    searchBtn.onclick = e => {
+      e.stopPropagation();
+      searchWrap.classList.toggle('active');
+      if(searchWrap.classList.contains('active')) si.focus();
+    };
+    document.body.onclick = e => {
+      if(!e.target.closest('.header-utils')) searchWrap.classList.remove('active');
+    };
+  }
 
-// 검색창 토글
-const sBox = document.querySelector('.search-box');
-const sBtn = document.querySelector('.search-btn');
-if(sBtn && sBox) {
-    sBtn.onclick = (e) => { e.stopPropagation(); sBox.classList.toggle('active'); if(sBox.classList.contains('active')) si.focus(); };
-    document.body.onclick = (e) => { if(!e.target.closest('.header-utils')) sBox.classList.remove('active'); };
-}
+  // 더보기
+  document.getElementById('load-more-btn').onclick = () => { page++; render(false); };
 
-document.querySelectorAll('.cat-tab, .tag-item').forEach(b=>b.addEventListener('click',()=>{
-  if(si){ si.value=b.dataset.tag; render(true); }
-  window.scrollTo({top:0,behavior:'smooth'});
-}));
+  // 엔터 검색
+  if(si) si.addEventListener('keydown', e => { if(e.key === 'Enter') { e.preventDefault(); render(true); } });
 
-// 모바일 사이드바 (기능 유지)
-const mb=document.getElementById('m-menu-toggle'),sd=document.getElementById('mobile-sidebar'),ov=document.getElementById('sidebar-overlay'),cb=document.getElementById('m-sidebar-close');
-if(mb)mb.onclick=()=>{sd.classList.add('active');ov.classList.add('active');};
-const cl=()=>{sd.classList.remove('active');ov.classList.remove('active');};
-if(cb)cb.onclick=cl;if(ov)ov.onclick=cl;
+  // 카테고리 탭
+  document.querySelectorAll('.cat-tab, .tag-item').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+    if(b.classList.contains('cat-tab')) b.classList.add('active');
+    if(si) { si.value = b.dataset.tag === '전체' ? '' : b.dataset.tag; render(true); }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }));
 
-render(true);
+  render(true);
 })();
 </script>
 </body></html>
